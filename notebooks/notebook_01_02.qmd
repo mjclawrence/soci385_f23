@@ -122,7 +122,7 @@ Here's the code to install the package. You only have to install the package onc
 ```{r}
 #| label: load package
 
-#install.packages("tidyverse")
+install.packages("tidyverse") # Hashtag this line after running this chunk!
 library(tidyverse)
 ```
 
@@ -150,7 +150,7 @@ The `DT` (for datatable) package also includes some nice options (like a search 
 ```{r}
 #| label: installing datatable
 
-#install.packages("DT")
+install.packages("DT") # Hashtag this line after running this chunk!
 library(DT)
 ```
 
