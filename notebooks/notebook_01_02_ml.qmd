@@ -11,6 +11,8 @@ To begin, copy all the text on this screen. Then open RStudio, and in the "File"
 
 ## Welcome to R Studio!
 
+Change global options to use native pipe operator: Tools > Global Options > Code > Editing > Use native pipe operator > Apply.
+
 Let's examine how to navigate this window before we begin.
 
 - The upper left pane is the *text editor* where you keep all of your commands.
