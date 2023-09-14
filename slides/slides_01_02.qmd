@@ -16,7 +16,7 @@ date: "September 14, 2023"
 
 - What are the observations that launched their project?
 
-- What possible explanations for this observation do they want to test?
+- What possible explanations for these observations do they want to test?
 
 - What theories could support those explanations?
 
@@ -38,7 +38,8 @@ date: "September 14, 2023"
   
 ::: {.notes}
 
-- Already have their dependent or response variable
+- Observed number of people killed will become the dependent or response variable
+- Why does that matter = what is at stake?
 
 :::
 
