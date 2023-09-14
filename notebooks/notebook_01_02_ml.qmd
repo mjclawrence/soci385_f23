@@ -144,13 +144,19 @@ Now that the package is installed, you can put a hashtag in front of the `instal
 
 Next we'll get the data using the `read.csv()` function to import a "comma separated value" file.
 
-```{r load data, message = FALSE}
+```{r}
+#| label: load data
+#| message: FALSE
+
 hurricanes <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/hurricanes.csv", stringsAsFactors = TRUE)
 ```
 
 ## Plot Detour
 
-```{r plot example}
+```{r}
+#| label: plot example
+
+# install.packages("ggthemes") #hashtag this line after installing the package
 library(ggthemes)
 
 hurricanes |>  group_by(male_female) |> 
@@ -191,6 +197,7 @@ library(DT)
 
 ```{r}
 #| label: using datatable
+#| eval: FALSE
 
 datatable(hurricanes)
 ```
@@ -233,7 +240,9 @@ Now let's look at another categorical factor variable - `male_female` - which id
 ### REPLACE THIS LINE WITH YOUR CODE ###
 
 ```{r}
-table(hurricanes$male_female)
+#| label: male female table
+
+sort(table(hurricanes$male_female))
 ```
 
 R calls the `male_female` variable a factor variable because its values are text categories rather than numbers. The `gender_mf` variable is a numerical variable that has the same exact information as the `male_female` variable but uses a 0 to indicate a hurricane with a male name and a 1 to indicate a hurricane with a female name. A variable that takes the values 0 and 1 is called a *binary variable*.
@@ -293,6 +302,8 @@ Repeat the summary of the `deaths` variable for hurricanes with female names:
 ### REPLACE THIS LINE WITH YOUR CODE ###
 
 ```{r}
+#: label: summary of deaths by female
+
 summary(hurricanes$deaths[hurricanes$male_female=="female"])
 ```
 
@@ -306,19 +317,37 @@ hurricanes |>
   summarise(mean = mean(deaths))
 ```
 
-```{r}
-#| label: plot example 2
 
-hurricanes |>  group_by(male_female) |> 
-     summarise(deaths_mean = round(mean(deaths),2)) |> 
-  ggplot(aes(x = male_female, y = deaths_mean, fill = male_female)) +
-  geom_col() + 
-  geom_text(aes(label = deaths_mean), size = 6, vjust = 0) + 
-  labs(x = "", y = "Mean Number of Deaths",
-          title = "Mean Number of Deaths by Gender of Hurricane Name") +
-  theme_hc() + scale_fill_economist(name = "") +
-  ylim(c(0,25)) +
-  theme(axis.title = element_text(size = 18),
-           axis.text = element_text(size = 18),
-           title = element_text(size = 12)) + guides(fill = "none")
+
+
+```{r}
+
+#| label: plot example
+
+#install.packages("ggthemes") #hashtag this line after installing the package
+
+library(ggthemes)
+
+hurricanes |> group_by(male_female) |>
+
+summarise(deaths_mean = round(mean(deaths),2)) |>
+
+ggplot(aes(x = male_female, y = deaths_mean, fill = male_female)) +
+
+geom_col() +
+
+geom_text(aes(label = deaths_mean), size = 6, vjust = 0) +
+
+labs(x = "", y = "Mean Number of Deaths", title = "Mean Number of Deaths by Gender of Hurricane Name") +
+
+theme_hc() +
+
+scale_fill_economist(name = "") +
+
+ylim(c(0,25)) +
+
+theme(axis.title = element_text(size = 18), axis.text = element_text(size = 18), title = element_text(size = 12)) +
+
+guides(fill = "none")
+
 ```
