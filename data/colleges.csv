@@ -1,0 +1,140 @@
+"name","public","tier","test_band_tier","par_income_lab","rel_attend_sat","rel_attend","par_top1pc","par_q1","par_q2","par_q3","par_q4","par_q5","par_median"
+"American University","Private","Highly selective private","Other Top 100 Private","Top 1",1.8840725,3.6115713,0.066627838,0.040005263,0.049681608,0.092461064,0.15065844,0.66719359,155300
+"Amherst College","Private","Other elite schools (public and private)","NESCAC","Top 1",2.051353,9.2031021,0.21125141,0.046751086,0.073377781,0.12356301,0.15987736,0.59643084,158200
+"Auburn University","Public","Selective public","Other Top 100 Public","Top 1",2.1030273,3.3870914,0.062016767,0.026276456,0.04694638,0.093340963,0.1870911,0.64634514,143000
+"Barnard College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.6815197,7.9409561,0.17057277,0.065539569,0.08702264,0.071897209,0.12208231,0.65345836,190100
+"Bates College","Private","Other elite schools (public and private)","NESCAC","Top 1",4.004591,9.7827291,0.18308043,0.027576288,0.048343655,0.053130068,0.11385207,0.7570979,226500
+"Baylor University","Private","Highly selective private","Other Top 100 Private","Top 1",3.0540817,4.4281006,0.071125142,0.048036613,0.062431619,0.12042297,0.2023169,0.56679201,127500
+"Binghamton University","Public","Highly selective public","Other Top 100 Public","Top 1",0.4131828,0.8202461,0.011094347,0.059048466,0.096715033,0.10992284,0.19513403,0.53917962,117800
+"Boston College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.3678708,10.072283,0.16143566,0.030744363,0.043444604,0.077316172,0.14631525,0.70217967,194100
+"Boston University","Private","Highly selective private","Other Top 100 Private","Top 1",2.2238138,5.5076189,0.10066225,0.041503854,0.059338745,0.10204161,0.18510543,0.61201048,141000
+"Bowdoin College","Private","Other elite schools (public and private)","NESCAC","Top 1",2.6859634,9.5671368,0.20415856,0.038009994,0.05421422,0.08285293,0.13724858,0.68767422,195900
+"Brandeis University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.5509356,4.7313023,0.071998946,0.047050104,0.08206366,0.11373648,0.1879504,0.56919932,128400
+"Brigham Young University","Private","Selective private","Other Top 100 Private","Top 1",1.1998215,2.3744531,0.042710733,0.018019971,0.032603599,0.093961909,0.26006013,0.59535444,125400
+"Brown University","Private","Ivy Plus","Ivy Plus","Top 1",2.0217488,9.591608,0.19463895,0.040771838,0.052310444,0.088852093,0.11387005,0.7041955,204200
+"Bryn Mawr College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.5223988,4.7791238,0.079009973,0.040959932,0.09567,0.14761609,0.16428547,0.55146861,125200
+"Bucknell University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",4.2627096,11.462481,0.20382737,0.023277035,0.02983772,0.068822935,0.14740843,0.73065388,204200
+"California Institute Of Technology","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",0.61149985,3.4734151,0.030213827,0.029143343,0.023224272,0.053563401,0.20776236,0.6863066,146300
+"Carleton College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.9471489,7.2016096,0.14420605,0.028581569,0.05032254,0.075944245,0.1666414,0.67851025,172400
+"Carnegie Mellon University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",0.92468649,4.1504707,0.070059143,0.040180322,0.053184167,0.092231825,0.15265971,0.661744,154700
+"Case Western Reserve University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",0.76420355,2.3289778,0.041357569,0.036098637,0.04845912,0.12091043,0.21656856,0.57796323,125700
+"Claremont Mckenna College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.6591859,9.483408,0.19594757,0.048013657,0.019198019,0.084778741,0.16895118,0.67905849,201300
+"Clark University","Private","Highly selective private","Other Top 100 Private","Top 1",0.93508637,1.606281,0.036236554,0.047813449,0.093432136,0.11194257,0.24128346,0.50552845,114600
+"Clemson University","Public","Highly selective public","Other Top 100 Public","Top 1",1.738292,2.7376688,NA,NA,NA,NA,NA,NA,NA
+"Colby College","Private","Other elite schools (public and private)","NESCAC","Top 1",3.6214027,10.47447,0.20441216,0.019823959,0.044146247,0.047103174,0.13380142,0.75512522,236100
+"Colgate University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",4.1490998,12.155192,0.22618324,0.025321897,0.038767971,0.072272316,0.090600356,0.77303743,270200
+"College Of The Holy Cross","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.8639469,5.9733829,0.13114452,0.041337401,0.053341955,0.060599707,0.13255584,0.71216524,170700
+"College Of William & Mary","Public","Other elite schools (public and private)","Other Top 100 Public","Top 1",1.1512719,3.8177896,0.064767957,0.019473299,0.029384973,0.072198927,0.14539674,0.73354602,176400
+"Colorado School Of Mines","Public","Highly selective public","Other Top 100 Public","Top 1",0.83767265,2.3695884,0.029686613,0.032381859,0.05237709,0.10939638,0.23907387,0.56677079,122100
+"Columbia University In The City Of New York","Private","Ivy Plus","Ivy Plus","Top 1",1.552302,7.1344371,0.13417278,0.050722204,0.05985152,0.10080864,0.16873179,0.61988592,150900
+"Connecticut College","Private","Other elite schools (public and private)","NESCAC","Top 1",3.9524255,7.0393877,0.18006459,0.037740059,0.044363569,0.065537848,0.12197498,0.73038357,197800
+"Cornell University","Private","Ivy Plus","Ivy Plus","Top 1",1.4440274,5.9951544,0.10454253,0.038381681,0.058287051,0.098954454,0.16345432,0.64092249,151600
+"Dartmouth College","Private","Ivy Plus","Ivy Plus","Top 1",2.5933068,12.395867,0.20691085,0.025454897,0.04223853,0.076420642,0.16332217,0.69256389,200400
+"Davidson College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.2252445,9.8685522,0.17438678,0.037057832,0.044992667,0.081684597,0.13784501,0.69841987,213900
+"Duke University","Private","Ivy Plus","Ivy Plus","Top 1",2.3895047,11.799696,0.19200644,0.038507797,0.052187517,0.074284852,0.14515315,0.68986666,186700
+"Elon University","Private","Highly selective private","Other Top 100 Private","Top 1",4.9890318,7.5963583,0.13976023,0.016483014,0.022200283,0.053585418,0.11838028,0.78935099,208300
+"Emory University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.5833361,7.3926058,0.14870055,0.060102578,0.098690927,0.11818139,0.14251631,0.58050883,139800
+"Florida State University","Public","Selective public","Other Top 100 Public","Top 1",1.1496804,1.2754267,0.025033992,0.052806534,0.07882183,0.13377869,0.22456858,0.51002449,112600
+"Fordham University","Private","Highly selective private","Other Top 100 Private","Top 1",2.158716,4.4660382,0.080372334,0.053413786,0.073790893,0.079011701,0.15100448,0.64277911,151800
+"Franklin & Marshall College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",4.2166023,8.244957,0.17466341,0.029516095,0.045450825,0.088728502,0.11662287,0.71968186,212100
+"George Washington University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.5700734,6.0780745,0.14009148,0.024965886,0.051312659,0.088097855,0.13795748,0.69766611,182200
+"Georgetown University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.6511328,10.800277,0.20837469,0.031137511,0.039507821,0.063941687,0.12634784,0.73906505,229100
+"Georgia Institute Of Technology","Public","Highly selective public","Other Top 100 Public","Top 1",0.76851559,2.5297079,0.032154702,0.045528941,0.06893035,0.10407723,0.19612667,0.5853368,130000
+"Gonzaga University","Private","Highly selective private","Other Top 100 Private","Top 1",2.138659,3.0580957,0.057913456,0.022646017,0.039595664,0.078128919,0.18589085,0.67373854,152800
+"Hamilton College","Private","Other elite schools (public and private)","NESCAC","Top 1",3.1316657,9.4905405,0.19554551,0.021867644,0.043355525,0.073054969,0.14092234,0.72079957,208600
+"Harvard University","Private","Ivy Plus","Ivy Plus","Top 1",1.5416101,7.8841934,0.1507286,0.045289241,0.071358442,0.08757095,0.12136945,0.67441189,168800
+"Haverford College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.970414,8.0520458,0.13762045,0.037091993,0.06514781,0.083880395,0.14308341,0.67079645,168700
+"Howard University","Private","Selective private","Other Top 100 Private","Top 1",0.33164462,0.36910245,0.0045927186,0.10366783,0.16897637,0.1950762,0.239043,0.29323649,68300
+"Johns Hopkins University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.4518782,6.3007388,0.11484687,0.028634718,0.037373483,0.078515187,0.13351655,0.72196019,177300
+"Kenyon College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.511363,9.7542944,0.19814195,0.017425101,0.030446228,0.073993787,0.12598252,0.7521522,213500
+"Lafayette College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.4658077,8.552845,0.16952345,0.016076639,0.028577896,0.063863777,0.15199079,0.73949093,205600
+"Lehigh University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.0090516,7.9447007,0.1361296,0.02482708,0.043405887,0.082768805,0.17501661,0.67398161,167600
+"Loyola Marymount University","Private","Selective private","Other Top 100 Private","Top 1",3.7801497,5.5863099,0.13409404,0.03118211,0.060324006,0.11047792,0.14514354,0.6528725,163700
+"Macalester College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.4076349,4.0310726,0.06784305,0.045658227,0.062562726,0.11151829,0.23435073,0.54591006,125600
+"Marquette University","Private","Highly selective private","Other Top 100 Private","Top 1",2.1789365,3.6295683,0.070057616,0.025667544,0.044741161,0.09104611,0.18481848,0.65372664,148200
+"Massachusetts Institute Of Technology","Private","Ivy Plus","Ivy Plus","Top 1",0.94963819,4.5238862,0.05712878,0.062192395,0.072651595,0.099467292,0.15950464,0.60618412,137400
+"Michigan State University","Public","Selective public","Other Top 100 Public","Top 1",1.4461077,1.7689613,0.025887217,0.049918815,0.07031443,0.12078634,0.23231843,0.52666199,115400
+"Middlebury College","Private","Other elite schools (public and private)","NESCAC","Top 1",2.9044478,10.636151,0.2275054,0.026706958,0.049862314,0.064940222,0.10329953,0.75519097,244300
+"New York University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.9481007,5.892961,0.1140532,0.060492039,0.082705013,0.10461238,0.13577293,0.61641759,149300
+"North Carolina State University","Public","Selective public","Other Top 100 Public","Top 1",0.57369649,1.0774549,0.017982116,0.043171968,0.078023881,0.12948731,0.24156618,0.50775063,112300
+"Northeastern University","Private","Highly selective private","Other Top 100 Private","Top 1",1.1042624,3.7951772,0.059491724,0.036687978,0.056711167,0.093803614,0.16514197,0.64765513,150900
+"Northwestern University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.226187,9.8567572,0.1405261,0.037185118,0.043105785,0.087797791,0.16782725,0.66408408,171200
+"Oberlin College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.0443659,6.1105542,0.093153886,0.019996254,0.041611787,0.071567699,0.16933721,0.69748706,178000
+"Occidental College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.2753763,6.2737665,0.08452417,0.037625309,0.052465774,0.099571481,0.20223092,0.60810649,136200
+"Ohio State University","Public","Highly selective public","Flagship","Top 1",0.80100644,1.3231403,0.020353191,0.049569473,0.078482971,0.14300165,0.26417992,0.46476597,104100
+"Pepperdine University","Private","Highly selective private","Other Top 100 Private","Top 1",3.1521802,5.4160967,0.099315926,0.058351576,0.086389504,0.12424801,0.16714939,0.56386149,128700
+"Pomona College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.7484943,6.9343562,0.1422265,0.04368756,0.062845007,0.11175624,0.11117149,0.67053968,166500
+"Princeton University","Private","Ivy Plus","Ivy Plus","Top 1",1.4075798,7.8286228,0.1699447,0.02155352,0.048574947,0.065413728,0.14625449,0.71820343,186100
+"Purdue University","Public","Selective public","Other Top 100 Public","Top 1",1.1262211,1.9001218,0.031009153,0.041964687,0.054959454,0.11391518,0.24872623,0.54043448,118000
+"Reed College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.3888476,5.3262267,0.07825882,0.032559957,0.062811971,0.084605768,0.16661096,0.65341133,157800
+"Rensselaer Polytechnic Institute","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",0.621391,2.1961746,0.043739092,0.027977493,0.039702229,0.088246167,0.18186182,0.66221237,143200
+"Rice University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.2329268,5.6867676,0.098143123,0.049065046,0.052057989,0.098224968,0.15859444,0.64205754,160800
+"Rutgers, The State University Of New Jersey","Public","Highly selective public","Flagship","Top 1",0.31281069,0.53952873,0.012526981,0.068156719,0.099839628,0.14887886,0.21628757,0.46683714,103500
+"Santa Clara University","Private","Highly selective private","Other Top 100 Private","Top 1",3.300369,7.7986817,0.1437207,0.029371819,0.047943123,0.081267014,0.12789971,0.71351838,193100
+"Scripps College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.8338699,9.2714748,0.14255908,0.024379935,0.033295613,0.095863789,0.20823932,0.6382215,160700
+"Southern Methodist University","Private","Highly selective private","Other Top 100 Private","Top 1",5.7953444,13.035071,0.2286057,0.032685611,0.058479667,0.097423941,0.14459485,0.666816,198900
+"Stanford University","Private","Ivy Plus","Ivy Plus","Top 1",2.0323584,9.2602282,0.17468721,0.040254861,0.055683196,0.090297602,0.15855163,0.65521276,167500
+"State University Of New York At Buffalo","Public","Selective public","Flagship","Top 1",0.218417,0.25803041,0.0064718593,0.074132636,0.10313517,0.13488577,0.26012567,0.42772084,99400
+"State University Of New York At Stony Brook","Public","Highly selective public","Other Top 100 Public","Top 1",0.17748845,0.33630529,0.0051225419,0.10547544,0.14651166,0.14938982,0.19977731,0.39884582,88300
+"Swarthmore College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.3723334,6.1644144,0.089598238,0.043434516,0.062448896,0.076279581,0.16274875,0.65508825,165500
+"Syracuse University","Private","Highly selective private","Other Top 100 Private","Top 1",3.0040526,4.4000955,0.082447633,0.073492363,0.090774938,0.13614444,0.18693334,0.51265508,113800
+"Texas A&M University","Public","Highly selective public","Other Top 100 Public","Top 1",1.4162064,2.1660566,0.041786402,0.03995632,0.064380638,0.11406757,0.18914762,0.592448,130900
+"Texas Christian University","Private","Highly selective private","Other Top 100 Private","Top 1",7.6750937,10.094525,0.16297005,0.027969796,0.047603562,0.084582418,0.13900733,0.7008369,187300
+"Trinity College of Hartford, CT","Private","Highly selective private","NESCAC","Top 1",6.7242355,12.272768,0.26239237,0.029853471,0.038325593,0.074413285,0.10599407,0.75141364,257100
+"Tufts University","Private","Other elite schools (public and private)","NESCAC","Top 1",2.3448439,9.242403,0.18630734,0.028961424,0.034390882,0.05480732,0.11675575,0.76508474,224800
+"University Of Alabama","Public","Selective public","Flagship","Top 1",2.740922,3.0278938,0.057490055,0.041422945,0.06953799,0.10948061,0.19173566,0.58782279,130200
+"University Of Arkansas","Public","Selective public","Flagship","Top 1",1.571272,1.7733254,0.032329634,0.041298572,0.078784361,0.13670491,0.21389261,0.52931947,116300
+"University Of California, Berkeley","Public","Highly selective public","Flagship","Top 1",0.74169397,2.63204,0.037870124,0.07257542,0.095835909,0.12830518,0.16593979,0.53734368,119900
+"University Of California, Davis","Public","Selective public","Other Top 100 Public","Top 1",0.47533798,0.91171885,0.024032984,0.090102389,0.12306285,0.16331029,0.1755344,0.44799009,95400
+"University Of California, Irvine","Public","Highly selective public","Other Top 100 Public","Top 1",0.23283279,0.41966546,0.012870234,0.086560249,0.10470904,0.15112844,0.21185458,0.44574773,98500
+"University Of California, Los Angeles","Public","Other elite schools (public and private)","Flagship","Top 1",0.83420789,2.2465587,0.041450813,0.083149694,0.10883783,0.14285767,0.18127398,0.48388088,104900
+"University Of California, Riverside","Public","Selective public","Other Top 100 Public","Top 1",0.35414931,0.41695097,0.0093415193,0.10553152,0.16130698,0.21311182,0.21889286,0.30115682,68700
+"University Of California, San Diego","Public","Highly selective public","Other Top 100 Public","Top 1",0.43518388,1.0545274,0.017707611,0.11279409,0.15424311,0.16279432,0.17510691,0.39506161,82000
+"University Of California, Santa Barbara","Public","Highly selective public","Other Top 100 Public","Top 1",0.84037644,1.7154119,0.034380272,0.075768396,0.1091106,0.14625715,0.18665391,0.48220992,105800
+"University Of California, Santa Cruz","Public","Selective public","Other Top 100 Public","Top 1",0.56768817,0.88636899,0.022140671,0.072095416,0.10692526,0.15011276,0.19563325,0.47523341,105200
+"University Of Chicago","Private","Ivy Plus","Ivy Plus","Top 1",1.5023307,7.6501842,0.09972138,0.055388927,0.064828023,0.12499616,0.17885,0.57593697,134500
+"University Of Connecticut","Public","Highly selective public","Flagship","Top 1",0.6627512,1.033317,0.020897029,0.03670517,0.067087188,0.12744942,0.21481995,0.55393827,119700
+"University Of Delaware","Public","Selective public","Flagship","Top 1",1.4756664,2.146127,0.040943705,0.018206267,0.035821952,0.084490143,0.18101926,0.68046248,147300
+"University Of Florida","Public","Highly selective public","Flagship","Top 1",0.92916292,1.699909,0.032045525,0.060401224,0.099812917,0.14100888,0.21590559,0.48287144,106700
+"University Of Georgia","Public","Highly selective public","Flagship","Top 1",1.4647925,2.4997697,0.050839324,0.038002852,0.070497975,0.10658097,0.19439165,0.59052658,129800
+"University Of Idaho","Public","Selective public","Flagship","Top 1",0.7139942,0.45741093,0.0081677046,0.05086194,0.096948199,0.17154908,0.28466249,0.39597833,94200
+"University Of Iowa","Public","Selective public","Flagship","Top 1",1.5473475,1.9337851,0.04724621,0.019710874,0.046569914,0.10916482,0.2286163,0.59593815,128000
+"University Of Kansas","Public","Selective public","Flagship","Top 1",1.8366915,2.2356405,0.041651934,0.032162063,0.055346709,0.11382385,0.21328211,0.58538538,125500
+"University Of Kentucky","Public","Selective public","Flagship","Top 1",1.0797763,1.3864223,0.020426881,0.041069247,0.07878349,0.12586494,0.24752083,0.50676143,111900
+"University Of Miami","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.3582547,7.9052291,0.13004477,0.054638311,0.076019131,0.11149383,0.15537784,0.60247099,146600
+"University Of Michigan - Ann Arbor","Public","Highly selective public","Flagship","Top 1",2.1627758,6.3784404,0.093400933,0.036093608,0.048294861,0.080968238,0.17103699,0.66360629,154000
+"University Of Mississippi","Public","Selective public","Flagship","Top 1",3.4900498,3.0015438,0.056502569,0.068062939,0.098300628,0.11201182,0.19153509,0.53008962,116600
+"University Of Montana","Public","Selective public","Flagship","Top 1",1.4180861,1.071281,0.018912675,0.07920488,0.11523861,0.17737891,0.26012072,0.36805695,86700
+"University Of Nevada , Reno","Public","Selective public","Flagship","Top 1",0.85000688,0.62068349,0.019102557,0.04215499,0.075631715,0.16308714,0.26520181,0.45392445,103000
+"University Of New Hampshire","Public","Selective public","Flagship","Top 1",0.86634433,0.88770187,0.017766733,0.035577726,0.053101517,0.12922697,0.23638298,0.5457108,118700
+"University Of New Mexico","Public","Selective public","Flagship","Top 1",0.44744772,0.24113187,0.0060891793,0.1320702,0.16528112,0.19190919,0.24136639,0.26937297,67200
+"University Of North Carolina - Chapel Hill","Public","Other elite schools (public and private)","Flagship","Top 1",1.1441225,3.0632539,0.059754882,0.037973911,0.057286233,0.11132515,0.18953216,0.60388261,135100
+"University Of North Dakota","Public","Selective public","Flagship","Top 1",0.97311401,0.87765378,0.010703173,0.030488934,0.049364559,0.13249171,0.33597305,0.45168179,103700
+"University Of Notre Dame","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.0741725,8.9478331,0.154302,0.015854632,0.027981592,0.056569736,0.15083504,0.74875903,191400
+"University Of Oklahoma","Public","Selective public","Flagship","Top 1",1.8624231,2.552778,0.042199869,0.051203355,0.083150566,0.14835073,0.19932285,0.51797259,113900
+"University Of Oregon","Public","Selective public","Flagship","Top 1",2.2192218,2.5003574,0.042888567,0.046860464,0.075146444,0.12064213,0.19231848,0.56503248,126400
+"University Of Pennsylvania","Private","Ivy Plus","Ivy Plus","Top 1",2.2682042,10.666822,0.18741299,0.032647334,0.048345108,0.084254235,0.1219335,0.71281981,195500
+"University Of Pittsburgh System","Public","Highly selective public","Other Top 100 Public","Top 1",0.64379126,1.1052804,0.019960705,0.036527257,0.064159118,0.13481228,0.25544682,0.50905454,111700
+"University Of Rhode Island","Public","Selective public","Flagship","Top 1",0.96407753,0.79803222,0.018924823,0.048510931,0.078842126,0.13071832,0.21255115,0.52937746,115600
+"University Of Richmond","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",4.1575484,10.557673,0.15121277,0.034199182,0.061469212,0.11047941,0.16846785,0.62538421,149200
+"University Of Rochester","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.138311,3.2540011,0.063580409,0.049947619,0.067504317,0.10918523,0.20759498,0.56576777,126100
+"University Of South Florida","Public","Selective public","Other Top 100 Public","Top 1",0.53326267,0.50977743,0.013344745,0.081979483,0.1423436,0.19047716,0.26082957,0.32437021,79000
+"University Of Southern California","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.4802866,7.9006891,0.1385085,0.049228303,0.066294096,0.10316381,0.14909346,0.63222027,161400
+"University Of Texas At Austin","Public","Highly selective public","Flagship","Top 1",1.3442283,3.0634995,0.053543862,0.060106523,0.091680452,0.12535858,0.16675782,0.55609667,123900
+"University Of Utah","Public","Selective public","Flagship","Top 1",1.5549245,1.7378155,0.030968595,0.044562299,0.082813308,0.12734374,0.26055807,0.48472255,106900
+"University Of Virginia","Public","Other elite schools (public and private)","Flagship","Top 1",1.7157989,5.1644425,0.084623761,0.027691554,0.041277677,0.081385389,0.18146262,0.66818273,155500
+"University Of Wyoming","Public","Selective public","Flagship","Top 1",0.66386497,0.84663725,0.010715356,0.032925427,0.059049267,0.14644279,0.28241387,0.47916868,106400
+"Vanderbilt University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.5356216,11.081232,0.22803631,0.019114733,0.047281064,0.082386762,0.14968118,0.7015363,204500
+"Vassar College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.4451715,4.7840514,0.092714801,0.054111402,0.084008187,0.12284476,0.15117371,0.58786201,132800
+"Villanova University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.1942284,8.2976866,0.14990871,0.023418553,0.03338553,0.067670323,0.12805031,0.74747527,195800
+"Virginia Polytechnic Institute & State University","Public","Highly selective public","Other Top 100 Public","Top 1",0.87504274,1.6204196,0.027973821,0.022946492,0.04714936,0.079807483,0.1907039,0.65939283,142800
+"Wake Forest University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",5.3157392,12.272875,0.21693964,0.023041938,0.057562377,0.089531519,0.11711885,0.71274519,221500
+"Washington And Lee University","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",3.96644,12.347318,0.1906547,0.014685023,0.029988844,0.03980758,0.10454521,0.81097341,261000
+"Washington University In St. Louis","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",2.6995065,12.224758,0.21729413,0.0092534292,0.01690736,0.035180464,0.099844567,0.83881426,272000
+"Wellesley College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.1589504,4.2472167,0.11390733,0.065030679,0.059925236,0.11778574,0.17101493,0.58624327,141000
+"Wesleyan University","Private","Other elite schools (public and private)","NESCAC","Top 1",2.6529307,8.8642855,0.1660227,0.045187704,0.057003926,0.072504058,0.12217711,0.70312715,192400
+"Whitman College","Private","Other elite schools (public and private)","Tier 2 Private","Top 1",1.938409,5.6659856,0.10479984,0.020076323,0.026053529,0.089508206,0.20211095,0.66225111,156200
+"Williams College","Private","Other elite schools (public and private)","NESCAC","Top 1",2.264756,10.404689,0.18114738,0.053200811,0.058890976,0.084145471,0.13386814,0.66989464,185800
+"Worcester Polytechnic Institute","Private","Highly selective private","Other Top 100 Private","Top 1",0.70251346,1.7668672,0.021889502,0.03696657,0.05745519,0.081284434,0.20858368,0.61571008,130700
+"Yale University","Private","Ivy Plus","Ivy Plus","Top 1",1.8412813,8.9829206,0.18662712,0.021422643,0.047050841,0.094461545,0.14251077,0.69455427,192600
+"Yeshiva University","Private","Selective private","Other Top 100 Private","Top 1",2.979527,6.5727205,0.12026647,0.040102791,0.047139212,0.091196209,0.13594094,0.68562084,176300
