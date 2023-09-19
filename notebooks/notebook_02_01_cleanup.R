@@ -1,4 +1,5 @@
 library(tidyverse)
+library(DT)
 
 chetty <- read_csv("https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Data.csv")
 colleges <- read_csv("https://opportunityinsights.org/wp-content/uploads/2018/04/mrc_table3.csv")
