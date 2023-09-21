@@ -14,7 +14,7 @@ output: pdf_document
 
 ***Please show all your code and write your responses in complete sentences as appropriate. Use PDF as your output format when you set up your Quarto file. Submit your rendered PDF and the Quarto (.qmd) file for your notebook. Remember to include your name in the header.***
 
-This week you will continue practicing with descriptive statistics. This assignment requires the `assignment_01.csv` file which includes data from the 2012-2021 waves of the General Social Survey. The dataset is available at [`this link`](https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_01.csv). Your dataset should have 9,731 observations of 4 variables.
+This week you will continue practicing with descriptive statistics. This assignment requires the `assignment_01.csv` file which includes data from the 2012-2021 waves of the General Social Survey. The dataset is available at [`this link`](https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_01.csv). Your dataset should have 9,483 observations of 4 variables.
 
 The variables are:
 
