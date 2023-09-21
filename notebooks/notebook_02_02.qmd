@@ -1,9 +1,3 @@
----
-title: "Week Two, Class Two"
-author: "ML"
-format: html
----
-
 ```{r}
 #| label: reload packages
 #| message: FALSE
@@ -22,8 +16,6 @@ colleges <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/
 ## Creating Variables
 
 Our next goal is to recreate the NYT table ranking colleges by the ratio of students from the top 1 percent of the income distribution to students from the bottom 60 percent.
-
-![College Mobility Table](../385_figures/chetty_colleges_table.png)
 
 We know our dataset already has a variable called `par_top1pc` with each college's proportion of students from the top 1 percent.
 
@@ -59,7 +51,6 @@ We can create a variable for students from the bottom 60% by adding the proporti
 ```{r}
 #| label: introducing mutate
 
-
 top1pc_2 <- top1pc |> 
   mutate(par_q123 = par_q1 + par_q2 + par_q3)
 ```
@@ -68,45 +59,18 @@ Find the proportion of Middlebury students coming from the bottom 60% of the inc
 
 ### REPLACE THIS LINE WITH YOUR CODE
 
-```{r}
-#| label: using new data frame
-
-
-top1pc_2 |> 
-  filter(str_detect(name, "Middlebury")) |> 
-  select(par_q123)
-```
-
 Now we have the two variables (`par_top1pc` and `par_q123`) we need to recreate the NYT table. To compare them, we need another variable that measures the ratio of the proportion of students from the top 1 percent to the proportion of students from the bottom 60 percent. How do you think we do this? Call your new variable `ratio_1_60` and add it to a new dataframe called `top1pc_3`.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-#| label: creating ratio variable
-
-
-top1pc_3 <- top1pc_2 |> 
-  mutate(ratio_1_60 = par_top1pc / par_q123)
-```
 
 What is that ratio at Middlebury? How can you interpret that number in words?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label: More filter and select practice
-
-
-top1pc_3 |> 
-  filter(str_detect(name, "Middlebury")) |> 
-  select(ratio_1_60)
-```
-
 We have all we need to make something that actually looks like the NYT table, and we have the tools to make it happen. We will have to `select` only the column variables that we need. We can keep the observations with the highest values for the `ratio_1_60` variable using the `slice_max()` function. In this example, we add the `n = 10` option to assert that we want the observations with the ten highest values.
 
 ```{r}
 #| label: introducing slice
-
 
 top1pc_3 |> 
   select(name, par_top1pc, par_q123, ratio_1_60) |> 
@@ -115,7 +79,7 @@ top1pc_3 |>
 
 Thinking sociologically: what other ratios might make sense to consider?
 
-## Introducing Plotting
+## If there is time: Introducing plotting
 
 Load in the new data and save it as a new data frame named colleges2
 
@@ -123,11 +87,10 @@ Load in the new data and save it as a new data frame named colleges2
 colleges2 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/colleges2.csv")
 ```
 
-The `ggplot()` function builds plots layer upon layer. The simplest layer has only the aesthetic values of the variable on the x axis and the variable on the y axis
+The `ggplot()` function builds plots layer upon layer. The simplest layer has only the aesthetic values of the variable on the x axis and the variable on the y axis.
 
 ```{r}
 #| label: plot base layer
-
 
 colleges2 |> 
   filter(name == "Middlebury College") |> 
@@ -138,7 +101,6 @@ We want some geometric form to visualize the relationship between these two vari
 
 ```{r}
 #| label: add geom_point()
-
 
 colleges2 |> 
   filter(name == "Middlebury College") |> 
@@ -155,49 +117,5 @@ colleges2 |>
   filter(name == "Middlebury College") |> 
   ggplot(aes(x = par_income_bin, y = rel_attend)) +
   geom_point() + geom_line()
-```
-
-Use the `plotly` package to make interactive figures
-
-```{r}
-#| label: install and load plotly
-#| message: FALSE
-
-#install.packages("plotly") # hashtag this line after installing
-library(plotly)
-```
-
-The plotly functions work best when you save the plot as an object...
-
-```{r}
-#| label: save plot as object
-
-myplot <- colleges2 |> 
-  filter(name == "Middlebury College") |> 
-  ggplot(aes(x = par_income_bin, y = rel_attend)) +
-  geom_point() + geom_line(group = "name")
-
-```
-
-And then run the `ggplotly()` function on that object...
-
-```{r}
-#| label: run ggplotly on saved object
-
-ggplotly(myplot)
-```
-
-You can customize the hover text in the `tooltip` with the text option:
-
-```{r}
-#| label: customizing tooltip text
-
-myplot <- colleges2 |> 
-  filter(name == "Middlebury College") |> 
-  ggplot(aes(x = par_income_bin, y = rel_attend,
-             text = paste(par_income_lab, ": ", round(rel_attend, 3)))) +
-  geom_point() + geom_line(group = "name")
-
-ggplotly(myplot, tooltip = "text")
 ```
 

@@ -318,7 +318,6 @@ In this example, we want to group colleges into their test band tier categories.
 ```{r}
 #| label: introducing group_by
 
-
 colleges |> # the dataframe
   group_by(test_band_tier) |> # we want something for each value of this variable 
   summarise(mean_par_top1pc = mean(par_top1pc)) # what we want for each group
@@ -328,7 +327,6 @@ There is an issue with the "Other Top 100 Public" group. Some observations in th
 
 ```{r}
 #| label: introducing na.rm
-
 
 colleges |> 
   group_by(test_band_tier) |> 
