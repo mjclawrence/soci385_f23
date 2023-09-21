@@ -154,3 +154,25 @@ top1 |>
   filter(name == "Middlebury College") |> 
   select(name, rel_attend, rel_attend_sat)
 
+
+
+chetty_all <- chetty |> 
+  select(name, par_income_bin, par_income_lab,
+         rel_attend, rel_attend_unwgt, 
+         tier_name, test_band_tier) |> 
+  filter(!par_income_lab %in% c("99-99.9", "Top 0.1")) |> 
+  rename(rel_attend_sat = rel_attend,
+         rel_attend = rel_attend_unwgt)
+
+table(chetty_all$par_income_lab)
+
+myplot <- chetty_all |> 
+  filter(name == "Middlebury College") |> 
+  ggplot(aes(x = par_income_bin, y = rel_attend,
+             text = paste(par_income_lab, ":", 
+                          round(rel_attend,2)))) +
+  geom_point() + geom_line(group = "name")
+
+ggplotly(myplot, tooltip = "text")
+
+library(plotly)

@@ -200,7 +200,7 @@ The `select()` function chooses which columns you want. In this example, we only
 select(middlebury, name, rel_attend)
 ```
 
-The real power comes when we combine functions. The advantage of this approach is that we can *chain* functions together using the pipe operator (\|\>) that we set up last class. Now we only need to state the dataframe once.
+The real power comes when we combine functions. The advantage of this approach is that we can *chain* functions together using the pipe operator (|>) that we set up last class. Now we only need to state the dataframe once.
 
 The syntax here is that we are doing something with the `colleges` dataframe (we'll go back to the full dataset), and then in each line list what you are doing with the dataframe. Connect each function with a pipe (\|\>). So if we wanted to pull the value of the `rel_attend` variable for Middlebury we could do this:
 
