@@ -202,7 +202,7 @@ select(middlebury, name, rel_attend)
 
 The real power comes when we combine functions. The advantage of this approach is that we can *chain* functions together using the pipe operator (|>) that we set up last class. Now we only need to state the dataframe once.
 
-The syntax here is that we are doing something with the `colleges` dataframe (we'll go back to the full dataset), and then in each line list what you are doing with the dataframe. Connect each function with a pipe (\|\>). So if we wanted to pull the value of the `rel_attend` variable for Middlebury we could do this:
+The syntax here is that we are doing something with the `colleges` dataframe (we'll go back to the full dataset), and then in each line list what you are doing with the dataframe. Connect each function with a pipe (|>). So if we wanted to pull the value of the `rel_attend` variable for Middlebury we could do this:
 
 ```{r}
 #| label: introducing chains
@@ -211,6 +211,8 @@ colleges |>
   filter(name == "Middlebury College") |> 
   select(rel_attend)
 ```
+
+The keyboard shortcut for the pipe is shift-command-m.
 
 Try using a chain to find the names of the colleges and the `rel_attend` values for the colleges with higher `rel_attend` values than Middlebury.
 
@@ -246,7 +248,7 @@ colleges |>
   arrange(order_by = -rel_attend)
 ```
 
-If you want to sort columns interactively, the datatable package we saw last class works well with chains:
+If you want to sort columns interactively, the datatable package we saw last class works well with chains. We loaded the `DT` package at the start of this notebook; you need to load it to use the `datatable()` function.
 
 ```{r}
 #| label: datatable with chains
@@ -282,6 +284,8 @@ In this example, we want to filter the colleges dataframe to only include observ
 colleges |> 
   filter(str_detect(name, "Middlebury"))
 ```
+
+Note that the `str_detect()` function is case sensitive. 
 
 How could you use `filter()`, `select()` and `str_detect()` to pull the name, public, rel_attend, rel_attend_sat, and par_top1pc values for the California Institute of Technology and the Massachusetts Institute of Technology?
 

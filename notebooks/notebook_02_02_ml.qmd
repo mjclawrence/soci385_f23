@@ -12,7 +12,6 @@ library(tidyverse)
 library(DT)
 ```
 
-
 ```{r}
 #| label: load data
 #| message: FALSE
@@ -21,13 +20,14 @@ colleges <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/
 ```
 
 ## Creating Variables
-Our goal today is to recreate this NYT table showing that Middlebury ranks 9th in the ratio of students from the top 1 percent of the income distribution to students from the bottom 60 percent:
+
+Our next is to recreate this NYT table ranking colleges by the ratio of students from the top 1 percent of the income distribution to students from the bottom 60 percent:
 
 ![College Mobility Table](../385_figures/chetty_colleges_table.png)
 
-We know our dataset already has a variable called `par_top1pc` with each college's proportion of students from the top 1 percent. 
+We know our dataset already has a variable called `par_top1pc` with each college's proportion of students from the top 1 percent.
 
-Let's get the colleges with more than 20% of students from the top 1%. 
+Let's get the colleges with more than 18% of students from the top 1% and put them in a new dataframe called `top1pc`.
 
 ```{r}
 #| label: create dataframe
@@ -36,32 +36,30 @@ top1pc <- colleges |>
   filter(par_top1pc > .18)
 ```
 
-Now we have a new data frame with only 15 observations. It still has all 14 variables and we know we can keep just the variables we want by using the `select()` function. 
+Now we have a new data frame with only 15 observations. It still has all 14 variables and we know we can keep just the variables we want by using the `select()` function.
 
 But the other main variable in the NYT story - the proportion of students from the bottom 60% - does not exist in our original colleges data frame. Instead there are five separate variables with the proportions of students in each quintile (lowest 20% = `par_q1`, second to lowest 20% = `par_q2`, middle 20% = `par_q3`, second to highest 20% = `par_q4`, highest 20% = `par_q5`).
 
 Here are the distributions:
 
-- par_q1 = 0 - 19,800
+-   par_q1 = 0 - 19,800
 
-- par_q2 = 19,801 - 37,300
+-   par_q2 = 19,801 - 37,300
 
-- par_q3 = 37,301 - 65,300
+-   par_q3 = 37,301 - 65,300
 
-- par_q4 = 65,301 - 110,200
+-   par_q4 = 65,301 - 110,200
 
-- par_q5 = 110,201 +
+-   par_q5 = 110,201 +
 
-- par_top1pc = 630,500 +
+-   par_top1pc = 630,500 +
 
-We can create a variable for students from the bottom 60% by adding the proportions in the bottom three quintiles. The function for creating a new variable is `mutate()`. The idea is to create a new variable that will *mutate* our existing dataframe. Our mutation will be to add a new variable called `par_q123` that is the sum of `par_q1` and `par_q2` and `par_q3`.
-
+We can create a variable for students from the bottom 60% by adding the proportions in the bottom three quintiles. The function for creating a new variable is `mutate()`. The idea is to create a new dataframe that will add a variable that will *mutate* our existing dataframe. Our mutation will be to add a new variable called `par_q123` that is the sum of `par_q1` and `par_q2` and `par_q3`.
 
 ```{r}
 top1pc_2 <- top1pc |> 
   mutate(par_q123 = par_q1 + par_q2 + par_q3)
 ```
-
 
 Find the proportion of Middlebury students coming from the bottom 60% of the income distribution.
 
@@ -76,6 +74,7 @@ top1pc_2 |>
 Now we have the two variables (`par_top1pc` and `par_q123`) we need to recreate the NYT table. To compare them, we need another variable that measures the ratio of the proportion of students from the top 1 percent to the proportion of students from the bottom 60 percent. How do you think we do this? Call your new variable `ratio_1_60` and add it to a new dataframe called `top1pc_3`.
 
 ### Replace this line with your code.
+
 ```{r}
 top1pc_3 <- top1pc_2 |> 
   mutate(ratio_1_60 = par_top1pc / par_q123)
@@ -89,8 +88,7 @@ top1pc_3 |>
   select(ratio_1_60)
 ```
 
-We have all we need to make something that actually looks like the NYT table, and we have the tools to make it happen. We will have to `select` only the column variables that we need. We will also `arrange` the observations from the highest to the lowest values of our new ratio variable. And we will want to only see the list of colleges with the top ten ratios using the `top_n()` function.
-
+We have all we need to make something that actually looks like the NYT table, and we have the tools to make it happen. We will have to `select` only the column variables that we need. We can keep the observations with the highest values for the `ratio_1_60` variable using the `slice_max()` function. In this example, we add the `n = 10` option to assert that we want the observations with the ten highest values.
 
 ```{r}
 top1pc_3 |> 
@@ -100,7 +98,11 @@ top1pc_3 |>
 
 ## Introducing Plotting
 
-Load in the new data
+Load in the new data and save it as a new data frame named colleges2
+
+```{r}
+colleges2 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/colleges2.csv")
+```
 
 ```{r}
 colleges2 |> 
