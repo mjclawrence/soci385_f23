@@ -36,7 +36,7 @@ top1pc <- colleges |>
   filter(par_top1pc > .18)
 ```
 
-Now we have a new data frame with only 15 observations. It still has all 14 variables and we know we can keep just the variables we want by using the `select()` function.
+Now we have a new data frame with only 25 observations. It still has all 14 variables and we know we can keep just the variables we want by using the `select()` function.
 
 But the other main variable in the NYT story - the proportion of students from the bottom 60% - does not exist in our original colleges data frame. Instead there are five separate variables with the proportions of students in each quintile (lowest 20% = `par_q1`, second to lowest 20% = `par_q2`, middle 20% = `par_q3`, second to highest 20% = `par_q4`, highest 20% = `par_q5`).
 
@@ -109,7 +109,8 @@ We have all we need to make something that actually looks like the NYT table, an
 
 
 top1pc_3 |> 
-  select(name, par_top1pc, par_q123, ratio_1_60) |> 
+  select(name, par_top1pc, par_q123, ratio_1_60) |>
+  mutate(par_top1pc = par_top1pc*100) |> 
   slice_max(ratio_1_60, n = 10)
 ```
 

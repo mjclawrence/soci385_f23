@@ -30,3 +30,5 @@ mydf2 <- mydf |>
 mydf2 |> 
   group_by(educ) |> 
   summarise(mean_agekdbrn = mean(agekdbrn))
+
+

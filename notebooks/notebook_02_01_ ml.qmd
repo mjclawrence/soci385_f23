@@ -209,7 +209,7 @@ The syntax here is that we are doing something with the `colleges` dataframe (we
 
 colleges |>
   filter(name == "Middlebury College") |> 
-  select(rel_attend)
+  select(name, rel_attend)
 ```
 
 The keyboard shortcut for the pipe is shift-command-m.
@@ -220,8 +220,8 @@ Try using a chain to find the names of the colleges and the `rel_attend` values 
 
 ```{r}
 colleges |> 
-  filter(rel_attend > 10.63615) |> 
-  select(name, rel_attend)
+  filter(rel_attend >= 10.64) |> 
+  select(name, rel_attend) 
 ```
 
 We used the `sort()` function with tables. The equivalent tidyverse function is `arrange()`. By default, `arrange()` arranges by the first column. Assert the variable you want to sort by using the `order_by` option.
@@ -262,6 +262,7 @@ colleges |>
 
 Use `filter()`, `select()`, and `datatable()` to get the name, rel_attend, rel_attend_sat, and par_top1pc variables for the colleges in the NESCAC test band tier. Where does Middlebury fall in each of these rankings?
 
+
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK
 
 ```{r}
@@ -270,6 +271,11 @@ colleges |>
   select(name, rel_attend, rel_attend_sat, par_top1pc) |> 
   datatable()
 ```
+
+```{r}
+table(colleges$test_band_tier)
+```
+
 
 ## Introducing Strings
 
@@ -280,9 +286,8 @@ In this example, we want to filter the colleges dataframe to only include observ
 ```{r}
 #| label: introducing str_detect
 
-
 colleges |> 
-  filter(str_detect(name, "Middlebury"))
+  filter(str_detect(name, "Midd"))
 ```
 
 Note that the `str_detect()` function is case sensitive. 
@@ -298,6 +303,21 @@ colleges |>
   select(name, public, rel_attend, rel_attend_sat, par_top1pc)
 ```
 
+```{r}
+colleges |> 
+  filter(str_detect(name, "Technology")) |>
+  filter(public == "Private") |> 
+  select(name, public)
+```
+
+```{r}
+colleges |> 
+  filter(str_detect(name, "Middlebury") | str_detect(name, "Technology")) |> 
+  filter(public == "Private") |> 
+  select(name)
+```
+
+
 How to include Middlebury as well?
 
 ```{r}
@@ -308,6 +328,12 @@ colleges |>
 ```
 
 ## Summarizing by group
+
+```{r}
+colleges |> 
+  summarise(mean_par_top1pc = mean(par_top1pc, na.rm = TRUE))
+```
+
 
 So far we have been looking at individual colleges. But we know that some colleges share characteristics, like their tiers. It can be useful to know how some measures vary across tiers. For example, how could we find the average proportion of students from the top 1% for each test band tier?
 
@@ -332,3 +358,8 @@ colleges |>
   group_by(test_band_tier) |> 
   summarise(mean_par_top1pc = mean(par_top1pc, na.rm = TRUE))
 ```
+
+```{r}
+
+```
+
