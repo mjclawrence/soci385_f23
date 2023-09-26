@@ -27,13 +27,19 @@ assignment1 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f
 
 - Include your qmd file if you email me with questions
 
-- Remember to add your name and date to the header
+- Remember to add your name to the header
+
+- Review in-class notebooks before starting
 
 - Render as you go so it's easier to identify where problems are
 
-- Load packages when you load your data. And when loading tidyverse, do not include echoes, warnings, and messages
+- Load packages when you load your data. And when loading tidyverse and data, add options to suppress messages.
 
-- Review in-class notebooks before starting
+- Issues with options inside code chunks generally
+
+---
+
+![](385_figures/code_chunk_options.png){fig.align="center"}
 
 ---
 
