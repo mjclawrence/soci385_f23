@@ -402,12 +402,17 @@
 <h2>Assignment 1 General Thoughts</h2>
 <ul>
 <li class="fragment"><p>Include your qmd file if you email me with questions</p></li>
-<li class="fragment"><p>Remember to add your name and date to the header</p></li>
-<li class="fragment"><p>Render as you go so it’s easier to identify where problems are</p></li>
-<li class="fragment"><p>Load packages when you load your data. And when loading tidyverse, do not include echoes, warnings, and messages</p></li>
+<li class="fragment"><p>Remember to add your name to the header</p></li>
 <li class="fragment"><p>Review in-class notebooks before starting</p></li>
+<li class="fragment"><p>Render as you go so it’s easier to identify where problems are</p></li>
+<li class="fragment"><p>Load packages when you load your data. And when loading tidyverse and data, add options to suppress messages.</p></li>
+<li class="fragment"><p>Issues with options inside code chunks generally</p></li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="385_figures/code_chunk_options.png" data-fig.align="center" class="r-stretch"></section>
 <section id="assignment-1-recap" class="slide level2">
 <h2>Assignment 1 Recap</h2>
 <h3 id="what-are-the-mean-and-median-of-agekdbrn">1. What are the mean and median of <code>agekdbrn</code>?</h3>
@@ -596,12 +601,7 @@
 <h3 id="how-long-did-the-assignment-take">7. How long did the assignment take?</h3>
 <p><br></p>
 <div class="fragment">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  0.670   1.500   2.000   2.038   2.750   3.000 </code></pre>
-</div>
-</div>
+<p>Good question!</p>
 </div>
 </section>
 <section id="center-spread-shape" class="slide level2">
@@ -635,7 +635,7 @@
 </section>
 <section id="loading-files" class="slide level2">
 <h2>Loading Files</h2>
-<h3 id="well-use-the-gss_week3.csv-file-on-canvas.-download-this-file-save-it-and-load-it-as-notebook_03_01.rmd.">We’ll use the <code>gss_week3.csv</code> file on Canvas. Download this file, save it, and load it as <code>notebook_03_01.Rmd</code>.</h3>
+<h3 id="well-use-the-notebook_03_01-file-on-canvas.-set-up-a-new-quarto-notebook-with-this-file-and-load-the-packages-and-data.">We’ll use the <code>notebook_03_01</code> file on Canvas. Set up a new Quarto notebook with this file and load the packages and data.</h3>
 </section>
 <section id="describing-spread" class="slide level2">
 <h2>Describing Spread</h2>
@@ -645,7 +645,7 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">summary</span>(gss_week3<span class="sc">$</span>agekdbrn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">summary</span>(gss_week3<span class="sc">$</span>agekdbrn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -659,7 +659,7 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -687,7 +687,7 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="co"># Variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="co"># Variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -697,7 +697,7 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn)) <span class="co"># Square Root of Variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(gss_week3<span class="sc">$</span>agekdbrn)) <span class="co"># Square Root of Variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -708,7 +708,7 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="co"># Standard Deviation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="co"># Standard Deviation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -718,7 +718,7 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="sc">^</span> <span class="dv">2</span> <span class="co"># Standard Deviation Squared</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>agekdbrn) <span class="sc">^</span> <span class="dv">2</span> <span class="co"># Standard Deviation Squared</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -733,11 +733,11 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">var</span>(gss_week3<span class="sc">$</span>educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.563199</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">sd</span>(gss_week3<span class="sc">$</span>educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.092442</code></pre>
 </div>
@@ -787,23 +787,23 @@
 <section id="income-is-often-right-skewed" class="slide level2">
 <h2>Income Is Often Right Skewed</h2>
 
-<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-25-1.png" width="1152" class="r-stretch"></section>
+<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-23-1.png" width="1152" class="r-stretch"></section>
 <section id="median-not-centered" class="slide level2">
 <h2>Median Not Centered</h2>
 
-<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-26-1.png" width="1152" class="r-stretch"></section>
+<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-24-1.png" width="1152" class="r-stretch"></section>
 <section id="mean-pulls-to-tail" class="slide level2">
 <h2>Mean Pulls To Tail</h2>
 
-<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-27-1.png" width="1152" class="r-stretch"></section>
+<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-25-1.png" width="1152" class="r-stretch"></section>
 <section id="and-pulls-to-highest-values" class="slide level2">
 <h2>And Pulls To Highest Values</h2>
 
-<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-28-1.png" width="1152" class="r-stretch"></section>
+<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-26-1.png" width="1152" class="r-stretch"></section>
 <section id="transforming-skewed-distributions" class="slide level2">
 <h2>Transforming Skewed Distributions</h2>
 
-<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-29-1.png" width="1152" class="r-stretch"><div class="footer footer-default">
+<img data-src="slides_03_01_files/figure-revealjs/unnamed-chunk-27-1.png" width="1152" class="r-stretch"><div class="footer footer-default">
 
 </div>
 </section>

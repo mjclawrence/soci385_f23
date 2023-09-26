@@ -1,10 +1,3 @@
----
-title: "Visualizing Descriptives"
-author: "ML"
-date: "September 26, 2023"
-format: html
----
-
 # Setting Up
 
 This week we will continue using the 2012-2021 waves of the General Social Survey. We are still focused on the `agekdbrn` variable and will start looking at how its distribution varies by education and race/ethnicity. Start by loading tidyverse and the data. 
@@ -23,13 +16,6 @@ gss_week3 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label: summary of agekdbrn
-
-summary(gss_week3$agekdbrn)
-```
-
-
 # Variance and Standard Deviation
 
 To find the variance, use `var()`. To find the standard deviation, use `sd()`.
@@ -44,12 +30,7 @@ sd(gss_week3$agekdbrn)
 Would you expect more or less variation in the education distribution?
 
 ### REPLACE THIS LINE WITH YOUR CODE
-```{r}
-#| label: variance and sd of educ
 
-var(gss_week3$educ)
-sd(gss_week3$educ)
-```
 
 # Introducing ggplot2
 
@@ -96,55 +77,17 @@ agekdbrn_plot + geom_density() +
 
 Two other visualizations that are good for looking at distributions are bar plots and histograms. These use `geom_bar` and `geom_histogram` respectively. Try them out by editing the last code chunk we ran to replace `geom_density` with `geom_bar` or `geom_histogram`. Try a histogram first.
 
-### REPLACE THIS LINE WITH YOUR CODE
-
-```{r}
-#| label: agekdbrn histogram
-
-agekdbrn_plot + geom_histogram() +
-       labs (x = "Age at First Birth", y = "Count",
-        title = "Distribution of Age at First Birth",
-        subtitle = "General Social Survey, 2012-2021",
-       caption = "SOCI 385 Fall 2023")
-```
-
-The warning message about binwidth with the histogram is asking you to choose how many buckets you want the data grouped by. See what happens as you increase and decrease the number of bins:
-
-```{r}
-#| label: agekdbrn histogram bins
-
-
-agekdbrn_plot + geom_histogram(bins = 100) + 
-  labs (x = "Age at First Birth", y = "Count",
-        title = "Distribution of Age at First Birth",
-        subtitle = "GSS, 2012-2021")
-```
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 And a bar plot.
 
-```{r agekdbrn barplot}
-agekdbrn_plot + geom_bar() +
-       labs (x = "Age at First Birth", y = "Count",
-        title = "Distribution of Age at First Birth",
-        subtitle = "General Social Survey, 2012-2021")
-```
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
 
 
 Now try a bar plot showing the distribution of the `educ` variable.
 
-### REPLACE THIS LINE WITH YOUR CODE
-
-```{r}
-#| label: education bar plot
-
-educ_barplot <- ggplot(gss_week3, aes(x = educ))
-educ_barplot + geom_bar() + 
-     labs(x = "Years of Education",
-          y = "Count",
-          title = "Distribution of Years of Education",
-          subtitle = "GSS, 2012-2021",
-          caption = "SOCI 385 Fall 2023")
-```
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 # Creating Categories
 
@@ -182,11 +125,6 @@ The mean of a binary variable is the proportion with a 1. Use this new variable 
 
 ### REPLACE THIS LINE WITH YOUR CODE
 
-```{r}
-#| label: mean of a binary variable is the proportion with a 1
-
-summary(gss_week3$college_degree)
-```
 
 Binary variables with 0s and 1s are very helpful. For plotting, though, factor variables are better. We can use `mutate()` again to assert that we want `college_degree` to be a factor variable, and we will add the `labels = c()` option to label 0 "No" and 1 "Yes".
 
@@ -232,7 +170,7 @@ agekdbrn_college_plot + geom_density(alpha = .1) +
           subtitle = "General Social Survey, 2012-2021") 
 ```
 
-Change legends?
+Change legend?
 
 ```{r}
 agekdbrn_college_plot <- ggplot(gss_week3, 
@@ -246,35 +184,4 @@ agekdbrn_college_plot + geom_density(alpha = 0.1) +
           subtitle = "General Social Survey, 2012-2021") +
      scale_color_discrete(name = "College Degree") +
      scale_fill_discrete(guide = "none")
-```
-
-
-Preview of next class with education categories...
-
-```{r}
-#| label: edcat
-gss_week3 <- gss_week3 |> 
-     mutate(edcat = ifelse(educ < 12, "Less Than HS",
-                           ifelse(educ == 12, "HS Diploma",
-                                  ifelse(educ %in% 13:15, "Some College",
-                                         ifelse(educ == 16, "College Degree",
-                                                "Grad Prof Degree")))))
-
-gss_week3 <- gss_week3 |> 
-     mutate(edcat = factor(edcat,
-          levels = c("Less Than HS",
-                     "HS Diploma",
-                     "Some College",
-                     "College Degree",
-                     "Grad Prof Degree")))
-
-agekdbrn_edcat_plot <- ggplot(gss_week3, aes(x = agekdbrn, color = edcat))
-agekdbrn_edcat_plot + geom_density() + 
-  labs(x = "Age at First Birth", 
-       y = "Density", 
-       title = "Distribution of Age at First Birth by Highest Degree", 
-       subtitle = "GSS, 2012-2021") + 
-     scale_color_discrete(name = "Education\nCategory") + 
-     theme(axis.title=element_text(size=14),
-           axis.text=element_text(size=12))
 ```
