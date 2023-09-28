@@ -12,7 +12,7 @@ output: pdf_document
 
 ***Please show all your code and write your responses in complete sentences as appropriate. Submit your rendered pdf and your Quarto notebook (the .qmd file). Remember to include your name in the header.***
 
-This week you will continue practicing with descriptive statistics. This assignment requires the `assignment_02.csv` file which includes data from the 2012-2021 waves of the General Social Survey. Your dataset should have 5,622 observations and 5 variables.
+This week you will continue practicing with descriptive statistics. This assignment requires the `assignment_02.csv` file [**available here**](https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_02.csv) which includes data from the 2012-2021 waves of the General Social Survey. Your dataset should have 5,622 observations and 5 variables.
 
 The variables are:
 
@@ -37,6 +37,6 @@ The variables are:
 
 4. Using the new variable from #3, create a table showing the proportion of respondents in each region who are in each category of hours worked. Which region has the highest proportion of respondents who work more than forty hours a week?
 
-5. Find the standard deviation of hours worked for each race/ethnicity category in the New England region. In a sentence, describe any similarities or differences you notice. You do not have to create a figure for this question.
+5. Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region. In a sentence, describe any similarities or differences you notice. You do not have to create a figure for this question.
 
 6. Approximately how long did it take you to complete this assignment?
