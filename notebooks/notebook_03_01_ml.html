@@ -59,16 +59,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="notesbook_03_01_ml_files/libs/clipboard/clipboard.min.js"></script>
-<script src="notesbook_03_01_ml_files/libs/quarto-html/quarto.js"></script>
-<script src="notesbook_03_01_ml_files/libs/quarto-html/popper.min.js"></script>
-<script src="notesbook_03_01_ml_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="notesbook_03_01_ml_files/libs/quarto-html/anchor.min.js"></script>
-<link href="notesbook_03_01_ml_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="notesbook_03_01_ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="notesbook_03_01_ml_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="notesbook_03_01_ml_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="notesbook_03_01_ml_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="notebook_03_01_ml_files/libs/clipboard/clipboard.min.js"></script>
+<script src="notebook_03_01_ml_files/libs/quarto-html/quarto.js"></script>
+<script src="notebook_03_01_ml_files/libs/quarto-html/popper.min.js"></script>
+<script src="notebook_03_01_ml_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="notebook_03_01_ml_files/libs/quarto-html/anchor.min.js"></script>
+<link href="notebook_03_01_ml_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="notebook_03_01_ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="notebook_03_01_ml_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="notebook_03_01_ml_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="notebook_03_01_ml_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -170,14 +170,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>agekdbrn_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/view%20plot%20background-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/view%20plot%20background-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>So R knows the range of our variable and has used that info to set the backdrop for our plot. The next step is to add a layer on top of this. We use our existing object name and add the geometric feature we want. In this example, we will look at a density plot:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>agekdbrn_plot <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/add%20density%20plot%20layer-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/add%20density%20plot%20layer-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>What is this distribution telling us? How would you define the shape and the skew?</p>
@@ -189,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"General Social Survey, 2012-2021"</span>,</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"SOCI 385 Fall 2023"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/add%20labels-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/add%20labels-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Two other visualizations that are good for looking at distributions are bar plots and histograms. These use <code>geom_bar</code> and <code>geom_histogram</code> respectively. Try them out by editing the last code chunk we ran to replace <code>geom_density</code> with <code>geom_bar</code> or <code>geom_histogram</code>. Try a histogram first.</p>
@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/agekdbrn%20histogram-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/agekdbrn%20histogram-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The warning message about binwidth with the histogram is asking you to choose how many buckets you want the data grouped by. See what happens as you increase and decrease the number of bins:</p>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Distribution of Age at First Birth"</span>,</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"GSS, 2012-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/agekdbrn%20histogram%20bins-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/agekdbrn%20histogram%20bins-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>And a bar plot.</p>
@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Distribution of Age at First Birth"</span>,</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"General Social Survey, 2012-2021"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/agekdbrn%20barplot-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/agekdbrn%20barplot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Now try a bar plot showing the distribution of the <code>educ</code> variable.</p>
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"GSS, 2012-2021"</span>,</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"SOCI 385 Fall 2023"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/education%20bar%20plot-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/education%20bar%20plot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -276,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  0.0000  0.0000  0.0000  0.2917  1.0000  1.0000 </code></pre>
 </div>
 </div>
-<p>Binary variables with 0s and 1s are very helpful. For plotting, though, factor variables are better. We can use mutate() again to assert that we want <code>college_degree</code> to be a factor variable, and we will add the <code>labels = c()</code> option to label 0 “No” and 1 “Yes”.</p>
+<p>Binary variables with 0s and 1s are very helpful. For plotting, though, factor variables are better. We can use <code>mutate()</code> again to assert that we want <code>college_degree</code> to be a factor variable, and we will add the <code>labels = c()</code> option to label 0 “No” and 1 “Yes”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gss_week3 <span class="ot">&lt;-</span> gss_week3 <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">mutate</span>(<span class="at">college_degree =</span> <span class="fu">factor</span>(college_degree,</span>
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>agekdbrn_college_plot <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/density%20plot%20by%20college_degree-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/density%20plot%20by%20college_degree-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>How could we improve this plot? Let’s color in the areas under the curves using the <code>fill =</code> option. Let’s use <code>alpha =</code> to adjust the transparency of the overlapping density curves so they do not completely cover each other. And let’s fix the labels.</p>
@@ -314,10 +314,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Distribution of Age at First Birth by Education"</span>,</span>
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"General Social Survey, 2012-2021"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Change legend?</p>
+<p>Change legends?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>agekdbrn_college_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gss_week3, </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                                <span class="fu">aes</span>(<span class="at">x =</span> agekdbrn,</span>
@@ -327,11 +327,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age at First Birth"</span>,</span>
 <span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> <span class="st">"Density"</span>,</span>
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Distribution of Age at First Birth by Education"</span>,</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"General Social Survey, 2008-2018"</span>) <span class="sc">+</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"General Social Survey, 2012-2021"</span>) <span class="sc">+</span></span>
 <span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"College Degree"</span>) <span class="sc">+</span></span>
 <span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_fill_discrete</span>(<span class="at">guide =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Preview of next class with education categories…</p>
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>),</span>
 <span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="notesbook_03_01_ml_files/figure-html/edcat-1.png" class="img-fluid" width="672"></p>
+<p><img src="notebook_03_01_ml_files/figure-html/edcat-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

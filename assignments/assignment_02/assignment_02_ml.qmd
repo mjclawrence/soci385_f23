@@ -1,0 +1,60 @@
+---
+title: "Assignment 2"
+author: "ML"
+format: html
+---
+
+### Questions
+
+1. Create a histogram showing the distribution of hours worked. Remember to label your axes and provide a title and subtitle. Use your histogram to briefly summarize the center and shape of this distribution. Note: don't waste time adjusting the binwidth; you can use the default of 30 here.
+
+```{r}
+gss |> 
+  ggplot(aes(x = hrs1)) + geom_histogram()
+```
+
+
+
+
+2. Create a figure with overlapping density plots of hours worked for each social class. Use this plot to roughly compare the probabilities that respondents from each class will work 40 hours a week (it's the mode for each class).
+
+```{r}
+gss |> 
+  ggplot(aes(x = hrs1, color = class)) + geom_density()
+```
+
+
+3. Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours.
+
+```{r}
+gss_q3 <- gss |> 
+  mutate(hours = ifelse(hrs1 < 20, "Less than 20",
+                        ifelse(hrs1 %in% 20:39, "20-39",
+                               ifelse(hrs1 == 40, "40",
+                                      "More than 40"))),
+         hours = factor(hours,
+                        levels = c("Less than 20",
+                                   "20-39",
+                                   "40",
+                                   "More than 40")))
+```
+
+
+4. Using the new variable from #3, create a table showing the proportion of respondents in each region who are in each category of hours worked. Which region has the highest proportion of respondents who work more than forty hours a week?
+
+```{r}
+round(prop.table(table(gss_q3$region, gss_q3$hours),1),2)
+```
+
+
+5. Find the standard deviation of hours worked by race/ethnicity in the New England region. In a sentence, describe any similarities or differences you notice. You do not have to create a figure for this question.
+
+```{r}
+gss |> 
+  filter(region == "New England") |> 
+  group_by(racehisp) |> 
+  summarise(sd_hours = sd(hrs1))
+```
+
+
+6. Approximately how long did it take you to complete this assignment?

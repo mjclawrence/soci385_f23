@@ -231,7 +231,7 @@ Last part is finding the number of observations in the new data frame
 
 ## Assignment 1 Recap
 
-### 6. What are the mean and median of `agekdbrn` for respondents in this new data frame?
+### 6. Use tidyverse functions to find the mean of `agekdbrn` for respondents with each year of highest schooling completed in this new data frame.
 
 ::: {.fragment}
 
@@ -239,7 +239,9 @@ Last part is finding the number of observations in the new data frame
 #| echo: true
 #| output-location: fragment
 
-summary(assignment1_q5b$agekdbrn)
+assignment1_q5a |> 
+  group_by(educ) |> 
+  summarise(mean_agekdbrn = mean(agekdbrn))
 ```
 
 :::
