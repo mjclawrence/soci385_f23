@@ -4,6 +4,13 @@ author: "ML"
 format: html
 ---
 
+```{r}
+library(tidyverse)
+
+gss <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_02.csv")
+```
+
+
 ### Questions
 
 1. Create a histogram showing the distribution of hours worked. Remember to label your axes and provide a title and subtitle. Use your histogram to briefly summarize the center and shape of this distribution. Note: don't waste time adjusting the binwidth; you can use the default of 30 here.
@@ -27,7 +34,7 @@ gss |>
 3. Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours.
 
 ```{r}
-gss_q3 <- gss |> 
+gss <- gss |> 
   mutate(hours = ifelse(hrs1 < 20, "Less than 20",
                         ifelse(hrs1 %in% 20:39, "20-39",
                                ifelse(hrs1 == 40, "40",
@@ -43,7 +50,7 @@ gss_q3 <- gss |>
 4. Using the new variable from #3, create a table showing the proportion of respondents in each region who are in each category of hours worked. Which region has the highest proportion of respondents who work more than forty hours a week?
 
 ```{r}
-round(prop.table(table(gss_q3$region, gss_q3$hours),1),2)
+round(prop.table(table(gss$region, gss$hours),1),2)
 ```
 
 
