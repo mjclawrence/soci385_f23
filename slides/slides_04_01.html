@@ -400,11 +400,27 @@
 </section>
 <section id="assignment-2-recap" class="slide level2">
 <h2>Assignment 2 Recap</h2>
-<h3 data-auto-animate="true" id="question-1---create-a-histogram-showing-the-distribution-of-the-hrs1-variable.">Question 1 - Create a histogram showing the distribution of the <code>hrs1</code> variable.</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Create plot as an object</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>hours_histogram <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(assignment_02, <span class="fu">aes</span>(<span class="at">x =</span> hrs1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="general-thoughts">General Thoughts</h3>
+<ul>
+<li class="fragment"><p>Suppress messages with <code>#| message: false</code></p></li>
+<li class="fragment"><p>Headings require a space between hashtags and text</p>
+<ul>
+<li class="fragment">This will not render a heading: <code>##Heading</code></li>
+<li class="fragment">This will render a heading: <code>## Heading</code></li>
+</ul></li>
+<li class="fragment"><p>Answer the question in full sentences (don’t just show the code)</p></li>
+<li class="fragment"><p>Leaving comments for me is helpful</p></li>
+</ul>
 </section>
 <section id="assignment-2-recap-1" class="slide level2">
+<h2>Assignment 2 Recap</h2>
+<h3 data-auto-animate="true" id="question-1---create-a-histogram-showing-the-distribution-of-the-hrs1-variable.">Question 1 - Create a histogram showing the distribution of the <code>hrs1</code> variable.</h3>
+<div class="fragment">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Create plot as an object</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>hours_histogram <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(assignment_02, <span class="fu">aes</span>(<span class="at">x =</span> hrs1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="assignment-2-recap-2" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-1---create-a-histogram-showing-the-distribution-of-the-hrs1-variable.-1">Question 1 - Create a histogram showing the distribution of the <code>hrs1</code> variable.</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Create plot as an object</span></span>
@@ -413,7 +429,7 @@
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Add geom layer</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a>hours_histogram <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-2" class="slide level2">
+<section id="assignment-2-recap-3" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-1---create-a-histogram-showing-the-distribution-of-the-hrs1-variable.-2">Question 1 - Create a histogram showing the distribution of the <code>hrs1</code> variable.</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create plot as an object</span></span>
@@ -426,9 +442,9 @@
 <span id="cb3-8"><a href="#cb3-8"></a>       <span class="at">y =</span> <span class="st">"Number of</span><span class="sc">\n</span><span class="st">Observations"</span>, <span class="co"># \n = new line</span></span>
 <span id="cb3-9"><a href="#cb3-9"></a>       <span class="at">title =</span> <span class="st">"Distribution of Hours Worked"</span>,</span>
 <span id="cb3-10"><a href="#cb3-10"></a>       <span class="at">subtitle =</span> <span class="st">"GSS, 2012 - 2021"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11"></a>       <span class="at">caption =</span> <span class="st">"ML for SOCI 385 Fall 2023)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11"></a>       <span class="at">caption =</span> <span class="st">"ML for SOCI 385 Fall 2023"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-3" class="slide level2">
+<section id="assignment-2-recap-4" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 id="question-1---create-a-histogram-showing-the-distribution-of-the-hrs1-variable.-3">Question 1 - Create a histogram showing the distribution of the <code>hrs1</code> variable.</h3>
 <div class="cell">
@@ -446,40 +462,35 @@
 </div>
 
 </section>
-<section id="assignment-2-recap-3-output" class="slide level2 output-location-slide"><h2>Assignment 2 Recap</h2><div class="cell output-location-slide">
+<section id="assignment-2-recap-4-output" class="slide level2 output-location-slide"><h2>Assignment 2 Recap</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <p><img data-src="slides_04_01_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </div>
-</div></section><section id="assignment-2-recap-4" class="slide level2">
+</div></section><section id="assignment-2-recap-5" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 id="question-1---change-title-fonts">Question 1 - Change title fonts?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Create plot as an object</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>hours_histogram <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(assignment_02, <span class="fu">aes</span>(<span class="at">x =</span> hrs1))</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Add geom layer</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>hours_histogram <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co"># Add title</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Hours Worked"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8"></a>       <span class="at">y =</span> <span class="st">"Number of</span><span class="sc">\n</span><span class="st">Observations"</span>, <span class="co"># \n = new line</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>       <span class="at">title =</span> <span class="st">"Distribution of Hours Worked"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10"></a>       <span class="at">subtitle =</span> <span class="st">"GSS, 2012 - 2021"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11"></a>       <span class="at">caption =</span> <span class="st">"ML for SOCI 385 Fall 2023"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># Add theme to change text size</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a>     <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
-<span id="cb5-14"><a href="#cb5-14"></a>           <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
-<span id="cb5-15"><a href="#cb5-15"></a>           <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
-<span id="cb5-16"><a href="#cb5-16"></a>           <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
-<span id="cb5-17"><a href="#cb5-17"></a>           <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb5-18"><a href="#cb5-18"></a>           <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>hours_histogram <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Hours Worked"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>       <span class="at">y =</span> <span class="st">"Number of</span><span class="sc">\n</span><span class="st">Observations"</span>, <span class="co"># \n = new line</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>       <span class="at">title =</span> <span class="st">"Distribution of Hours Worked"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>       <span class="at">subtitle =</span> <span class="st">"GSS, 2012 - 2021"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>       <span class="at">caption =</span> <span class="st">"ML for SOCI 385 Fall 2023"</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Add theme to change text size</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>     <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
+<span id="cb5-9"><a href="#cb5-9"></a>           <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
+<span id="cb5-10"><a href="#cb5-10"></a>           <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
+<span id="cb5-11"><a href="#cb5-11"></a>           <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">24</span>),</span>
+<span id="cb5-12"><a href="#cb5-12"></a>           <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb5-13"><a href="#cb5-13"></a>           <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
-<section id="assignment-2-recap-4-output" class="slide level2 output-location-slide"><h2>Assignment 2 Recap</h2><div class="cell output-location-slide">
+<section id="assignment-2-recap-5-output" class="slide level2 output-location-slide"><h2>Assignment 2 Recap</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
 <p><img data-src="slides_04_01_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </div>
-</div></section><section id="assignment-2-recap-5" class="slide level2">
+</div></section><section id="assignment-2-recap-6" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-2---create-a-figure-with-overlapping-density-plots-for-each-social-class.">Question 2 - Create a figure with overlapping density plots for each social class.</h3>
 <div class="fragment">
@@ -489,7 +500,7 @@
 <span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Lower"</span>, <span class="st">"Working"</span>, <span class="st">"Middle"</span>, <span class="st">"Upper"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="assignment-2-recap-6" class="slide level2">
+<section id="assignment-2-recap-7" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-2---create-a-figure-with-overlapping-density-plots-for-each-social-class.-1">Question 2 - Create a figure with overlapping density plots for each social class.</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Create factor variable</span></span>
@@ -501,7 +512,7 @@
 <span id="cb7-7"><a href="#cb7-7"></a>hours_class_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(assignment_02, </span>
 <span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">aes</span>(<span class="at">x =</span> hrs1, <span class="at">color =</span> class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-7" class="slide level2">
+<section id="assignment-2-recap-8" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-2---create-a-figure-with-overlapping-density-plots-for-each-social-class.-2">Question 2 - Create a figure with overlapping density plots for each social class.</h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Create factor variable</span></span>
@@ -520,12 +531,12 @@
 <span id="cb8-14"><a href="#cb8-14"></a>          <span class="at">subtitle =</span> <span class="st">"GSS, 2012-2021"</span>,</span>
 <span id="cb8-15"><a href="#cb8-15"></a>          <span class="at">color =</span> <span class="st">"Class"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-8" class="slide level2">
+<section id="assignment-2-recap-9" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 id="question-2---create-a-figure-with-overlapping-density-plots-for-each-social-class.-3">Question 2 - Create a figure with overlapping density plots for each social class.</h3>
 
 <img data-src="slides_04_01_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="assignment-2-recap-9" class="slide level2">
+<section id="assignment-2-recap-10" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto.animate="true" id="question-3---create-a-new-factor-variable-for-hours-worked-with-the-following-categories-less-than-20-20-39-40-more-than-40.-the-levels-should-be-in-order-from-least-to-most-hours.">Question 3 - Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours.</h3>
 <div class="fragment">
@@ -537,7 +548,7 @@
 <span id="cb9-6"><a href="#cb9-6"></a>                                             <span class="st">"More Than 40"</span>))),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="assignment-2-recap-10" class="slide level2">
+<section id="assignment-2-recap-11" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto.animate="true" id="question-3---create-a-new-factor-variable-for-hours-worked-with-the-following-categories-less-than-20-20-39-40-more-than-40.-the-levels-should-be-in-order-from-least-to-most-hours.-1">Question 3 - Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours.</h3>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Create new variable</span></span>
@@ -550,7 +561,7 @@
 <span id="cb10-8"><a href="#cb10-8"></a>            <span class="at">hours_cat =</span> <span class="fu">factor</span>(hours_cat,</span>
 <span id="cb10-9"><a href="#cb10-9"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Less Than 20"</span>, <span class="st">"20-39"</span>, <span class="st">"40"</span>, <span class="st">"More Than 40"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-11" class="slide level2">
+<section id="assignment-2-recap-12" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 id="question-4---create-a-table-showing-the-proportion-of-respondents-in-each-region-who-are-in-each-category-of-hours-worked.-which-region-has-the-highest-proportion-of-respondents-who-work-more-than-forty-hours-a-week">Question 4 - Create a table showing the proportion of respondents in each region who are in each category of hours worked. Which region has the highest proportion of respondents who work more than forty hours a week?</h3>
 <div class="fragment">
@@ -590,6 +601,11 @@
 <span id="cb14-9"><a href="#cb14-9"></a>          <span class="at">align =</span> <span class="fu">rep</span>(<span class="st">'c'</span>, <span class="dv">4</span>)) <span class="co"># For *center* alignment in the *4* columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="using-kable-to-improve-tables-2" class="slide level2">
+<h2>Using Kable To Improve Tables</h2>
+<p><br></p>
+
+<img data-src="385_figures/kable_example.png" class="r-stretch"></section>
+<section id="using-kable-to-improve-tables-3" class="slide level2">
 <h2>Using Kable To Improve Tables</h2>
 <p><br></p>
 <div class="cell">
@@ -647,7 +663,7 @@
 </div>
 </div>
 </section>
-<section id="assignment-2-recap-12" class="slide level2">
+<section id="assignment-2-recap-13" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-5---using-tidyverse-functions-find-the-standard-deviation-of-hours-worked-for-each-raceethnicity-category-in-the-new-england-region.">Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region.</h3>
 <div class="fragment">
@@ -655,14 +671,14 @@
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"New England"</span>) <span class="sc">|&gt;</span> <span class="co"># to choose only specific *rows*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="assignment-2-recap-13" class="slide level2">
+<section id="assignment-2-recap-14" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-5---using-tidyverse-functions-find-the-standard-deviation-of-hours-worked-for-each-raceethnicity-category-in-the-new-england-region.-1">Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region.</h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>assignment_02 <span class="sc">|&gt;</span> </span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"New England"</span>) <span class="sc">|&gt;</span> <span class="co"># to choose only specific *rows*</span></span>
 <span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">group_by</span>(racehisp) <span class="sc">|&gt;</span> <span class="co"># do something for each value of this variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="assignment-2-recap-14" class="slide level2">
+<section id="assignment-2-recap-15" class="slide level2">
 <h2>Assignment 2 Recap</h2>
 <h3 data-auto-animate="true" id="question-5---using-tidyverse-functions-find-the-standard-deviation-of-hours-worked-for-each-raceethnicity-category-in-the-new-england-region.-2">Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region.</h3>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>assignment_02 <span class="sc">|&gt;</span> </span>
@@ -681,6 +697,32 @@
 3 Other     16.5 
 4 White     13.6 </code></pre>
 </div>
+</div>
+</div>
+</section>
+<section id="assignment-2-recap-16" class="slide level2">
+<h2>Assignment 2 Recap</h2>
+</section>
+<section id="assignment-2-recap-17" class="slide level2">
+<h2>Assignment 2 Recap</h2>
+<h3 id="question-5---using-tidyverse-functions-find-the-standard-deviation-of-hours-worked-for-each-raceethnicity-category-in-the-new-england-region.-3">Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region.</h3>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>assignment_02 <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"New England"</span>) <span class="sc">|&gt;</span> <span class="co"># to choose only specific *rows*</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">group_by</span>(racehisp) <span class="sc">|&gt;</span> <span class="co"># do something for each value of this variable</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">summarise</span>(<span class="at">sd_hrs =</span> <span class="fu">sd</span>(hrs1)) <span class="sc">|&gt;</span> <span class="co"># what to do for each group</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">arrange</span>(<span class="at">order_by =</span> sd_hrs) <span class="co"># to sort</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  racehisp sd_hrs
+  &lt;chr&gt;     &lt;dbl&gt;
+1 Black      9.53
+2 White     13.6 
+3 Hispanic  14.7 
+4 Other     16.5 </code></pre>
 </div>
 </div>
 </section>
@@ -728,8 +770,8 @@
 <li class="fragment">But can be affected by outliers</li>
 </ul>
 </section>
-<section id="strength-of-association" class="slide level2">
-<h2>Strength of Association</h2>
+<section id="strength-of-associations" class="slide level2">
+<h2>Strength of Associations</h2>
 <ul>
 <li class="fragment"><p>Positive correlation coefficients look like proportions but they are not</p></li>
 <li class="fragment"><p>Strong association: knowing a value of one variable helps predict a value of the other variable</p></li>
@@ -738,7 +780,7 @@
 <li class="fragment"><p>Keep in mind: <em>strong</em> is not always <em>better</em></p></li>
 </ul>
 </section>
-<section id="strength-of-associations" class="slide level2">
+<section id="strength-of-associations-1" class="slide level2">
 <h2>Strength of Associations</h2>
 <ul>
 <li class="fragment"><p>No association = 0 to .19 or 0 to -.19</p></li>
@@ -802,7 +844,7 @@
 <li class="fragment">Identify CS and parent’s income when child was age 16</li>
 <li class="fragment">Compare to child’s income around age 30</li>
 </ul></li>
-<li class="fragment"><p>Main measure of upward mobility = the average income rank in the children’s income distribution for children growing up at 20th percentile in the parent’s income distribution</p></li>
+<li class="fragment"><p>Main measure of upward mobility = the average income rank in the children’s income distribution for children growing up at the 20th percentile in the parent’s income distribution</p></li>
 </ul>
 </section>
 <section id="an-example-chetty-et-al-2014-1" class="slide level2">

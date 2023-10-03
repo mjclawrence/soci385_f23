@@ -1,9 +1,3 @@
----
-title: "Week Four, Class One"
-author: "ML"
-format: html
----
-
 # Getting Started
 
 Today we will be using data from Chetty et al's 2014 paper "Where Is The Land Of Opportunity?". The `commuting_zones.csv` dataset comes from the Opportunity Insights Project's website which can be accessed [here](http://www.opportunityinsights.org). (Note how to include links in Markdown: the link title should be in brackets followed by the link destination in parentheses. Only the link title will appear in the rendered file, but it will be clickable.)
@@ -69,27 +63,25 @@ What would your hypothesis be for how commuting zones' median household incomes 
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label: income labor force correlation
 
-cor(cz$hh_income, cz$labor_force_participation_rate)
-```
 
-```{r}
-#| label: income labor force scatter
-income_laborforce_scatter <- ggplot(cz, aes(
-     x = labor_force_participation_rate,
-     y = hh_income))
 
-income_laborforce_scatter + geom_point()
-```
+
+
+
+
+
+
+
+
+
 
 Here's a nice little trick using the `scales` package to change all the median income values on the y axis to dollar amounts:
 
 ```{r}
 #| label: scales example
 
-#install.packages("scales") # install the scales package
+install.packages("scales") # hashtag this line when you are done
 
 income_laborforce_scatter <- ggplot(cz, aes(
      x = labor_force_participation_rate,
@@ -102,12 +94,6 @@ income_laborforce_scatter + geom_point() +
 Let's look at one more association. What is your hypothesis for how `commute15min` and `mobility` would be related? Find the correlation coefficient for these two variables using the `cor()` function.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-#| label: mobility commute correlation
-
-cor(cz$commute15min, cz$mobility)
-```
 
 Uh oh. It looks like there is an error somewhere. To investigate, get a summary of all the variables in the dataframe using `summary()` and the data frame name:
 

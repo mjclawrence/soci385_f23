@@ -27,13 +27,32 @@ assignment_02 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385
 ---
 
 ## Assignment 2 Recap
+### General Thoughts
+
+- Suppress messages with `#| message: false`
+
+- Headings require a space between hashtags and text
+  - This will not render a heading: `##Heading`
+  - This will render a heading: `## Heading`
+
+- Answer the question in full sentences (don't just show the code)
+
+- Leaving comments for me is helpful
+
+---
+
+## Assignment 2 Recap
 
 ### Question 1 - Create a histogram showing the distribution of the `hrs1` variable. {auto-animate="true"}
+
+::: {.fragment}
 
 ```r
 # Create plot as an object
 hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
 ```
+
+:::
 
 ---
 
@@ -66,7 +85,7 @@ hours_histogram + geom_histogram() +
        y = "Number of\nObservations", # \n = new line
        title = "Distribution of Hours Worked",
        subtitle = "GSS, 2012 - 2021",
-       caption = "ML for SOCI 385 Fall 2023)
+       caption = "ML for SOCI 385 Fall 2023")
 ```
 
 ---
@@ -103,12 +122,7 @@ hours_histogram + geom_histogram() +
 #| echo: true
 #| output-location: slide
 
-# Create plot as an object
-hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
-
-# Add geom layer
 hours_histogram + geom_histogram() +
-# Add title
   labs(x = "Hours Worked",
        y = "Number of\nObservations", # \n = new line
        title = "Distribution of Hours Worked",
@@ -310,6 +324,14 @@ round(prop.table(table(assignment_02$region,
 
 <br>
 
+![](385_figures/kable_example.png)
+
+---
+
+## Using Kable To Improve Tables
+
+<br>
+
 ```{r}
 library(kableExtra)
 round(prop.table(table(assignment_02$region, 
@@ -373,6 +395,27 @@ assignment_02 |>
 
 ---
 
+## Assignment 2 Recap
+
+## Assignment 2 Recap
+
+### Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region.
+
+<br>
+
+```{r}
+#| echo: true
+#| output-location: fragment
+assignment_02 |> 
+  filter(region == "New England") |> # to choose only specific *rows*
+  group_by(racehisp) |> # do something for each value of this variable
+  summarise(sd_hrs = sd(hrs1)) |> # what to do for each group
+  arrange(order_by = sd_hrs) # to sort
+```
+
+
+---
+
 ## Measures of Association
 
 - Last week: describing two categorical variables
@@ -383,7 +426,7 @@ assignment_02 |>
   - How close or tight are the values? How well do they resemble a straight line?
   - The spread that they tend to share = covariance
   - The change they tend to share = correlation
-  
+
 ---
 
 ## Interpreting Correlations
@@ -415,7 +458,7 @@ assignment_02 |>
 
 ---
 
-## Strength of Association
+## Strength of Associations
 
 - Positive correlation coefficients look like proportions but they are not
 
