@@ -41,7 +41,7 @@ What proportion of respondents is in each education category?
 ### REPLACE THIS LINE WITH YOUR CODE
 
 ```{r}
-sort(round(prop.table(table(gss_week3$edcat)),3),decreasing = TRUE)
+round(prop.table(table(gss_week3$edcat)),3)
 ```
 
 The next step is to tell R we will be using this new variable as a factor variable. We do this using `mutate()` as well. We also need to assert the order of the categories (from lowest to highest), since by default the categories are listed alphabetically. To assert the order, we will add the `levels = c()` option. We don't need to use the `labels = c()` option this time because our values already have character names.
@@ -101,7 +101,7 @@ agekdbrn_edcat_plot + geom_density() +
   labs(x = "Age at First Birth", y = "Density", 
        title = "Distribution of Age at First Birth by Highest Degree", 
        subtitle = "GSS, 2012-2021") +
-facet_grid(edcat~.) + guides(color="none")
+facet_grid(edcat~.)
 ```
 
 # Delete from class notebook
@@ -173,7 +173,7 @@ To get row proportions, add a comma and a 1 (since the first variable in our tab
 ```{r}
 #| label: prop table row proportions
 
-round(prop.table(table(gss_week3$racehisp, gss_week3$edcat),1),3)
+addmargins(round(prop.table(table(gss_week3$racehisp, gss_week3$edcat),1),3))
 ```
 
 Each *row* in the above table sums to 1. To get column proportions, replace the 1 with a 2. In the table below, each *column* should sum to 1. In general, we'll use row proportions more than column proportions.
@@ -232,7 +232,7 @@ agekdbrn_col + geom_col() +
          subtitle = "GSS, 2012-2021",
          fill = "Highest Degree") +
   geom_text(aes(label = median_agekdbrn),
-            vjust = -.5) # Moves the labels above the columns
+            vjust = -.5)
 ```
 
 

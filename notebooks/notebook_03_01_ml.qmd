@@ -223,8 +223,7 @@ How could we improve this plot? Let's color in the areas under the curves using 
 ```{r}
 agekdbrn_college_plot <- ggplot(gss_week3, 
                                 aes(x = agekdbrn,
-                                color = college_degree, 
-                                fill = college_degree))
+                                color = college_degree))
 agekdbrn_college_plot + geom_density(alpha = .1) +
      labs(x = "Age at First Birth",
           y = "Density",
@@ -239,13 +238,13 @@ agekdbrn_college_plot <- ggplot(gss_week3,
                                 aes(x = agekdbrn,
                                 color = college_degree, 
                                 fill = college_degree))
-agekdbrn_college_plot + geom_density(alpha = 0.1) +
+agekdbrn_college_plot + geom_density(alpha = .1) +
      labs(x = "Age at First Birth",
           y = "Density",
           title = "Distribution of Age at First Birth by Education",
           subtitle = "General Social Survey, 2012-2021") +
      scale_color_discrete(name = "College Degree") +
-     scale_fill_discrete(guide = "none")
+     scale_fill_discrete(guide = "none") 
 ```
 
 

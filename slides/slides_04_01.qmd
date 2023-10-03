@@ -1,0 +1,526 @@
+---
+title: "Social Statistics"
+subtitle: "Introducing Association and Correlation"
+date: "October 3, 2023"
+format: 
+  clean-revealjs:
+    incremental: true
+    progress: false
+    slide-number: false
+    controls: auto
+    menu: 
+      side: left
+---
+
+
+
+
+```{r}
+#| include: FALSE
+#| message: FALSE
+
+
+library(tidyverse)
+assignment_02 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_02.csv")
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 1 - Create a histogram showing the distribution of the `hrs1` variable. {auto-animate="true"}
+
+```r
+# Create plot as an object
+hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 1 - Create a histogram showing the distribution of the `hrs1` variable. {auto-animate="true"}
+
+```r
+# Create plot as an object
+hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
+
+# Add geom layer
+hours_histogram + geom_histogram() +
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 1 - Create a histogram showing the distribution of the `hrs1` variable. {auto-animate="true"}
+
+```r
+# Create plot as an object
+hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
+
+# Add geom layer
+hours_histogram + geom_histogram() +
+# Add title
+  labs(x = "Hours Worked",
+       y = "Number of\nObservations", # \n = new line
+       title = "Distribution of Hours Worked",
+       subtitle = "GSS, 2012 - 2021",
+       caption = "ML for SOCI 385 Fall 2023)
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 1 - Create a histogram showing the distribution of the `hrs1` variable. 
+
+```{r}
+#| echo: true
+#| output-location: slide
+
+# Create plot as an object
+hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
+
+# Add geom layer
+hours_histogram + geom_histogram() +
+# Add title
+  labs(x = "Hours Worked",
+       y = "Number of\nObservations", # \n = new line
+       title = "Distribution of Hours Worked",
+       subtitle = "GSS, 2012 - 2021",
+       caption = "ML for SOCI 385 Fall 2023")
+```
+
+
+---
+
+## Assignment 2 Recap
+
+### Question 1 - Change title fonts?
+
+```{r}
+#| echo: true
+#| output-location: slide
+
+# Create plot as an object
+hours_histogram <- ggplot(assignment_02, aes(x = hrs1))
+
+# Add geom layer
+hours_histogram + geom_histogram() +
+# Add title
+  labs(x = "Hours Worked",
+       y = "Number of\nObservations", # \n = new line
+       title = "Distribution of Hours Worked",
+       subtitle = "GSS, 2012 - 2021",
+       caption = "ML for SOCI 385 Fall 2023") +
+# Add theme to change text size
+     theme(axis.text.x = element_text(size = 24),
+           axis.text.y = element_text(size = 24),
+           axis.title = element_text(size = 24),
+           plot.title = element_text(size = 24),
+           plot.subtitle = element_text(size = 20),
+           plot.caption = element_text(size = 16))
+```
+
+---
+
+
+## Assignment 2 Recap
+
+### Question 2 - Create a figure with overlapping density plots for each social class. {auto-animate="true"}
+
+::: {.fragment}
+
+```r
+# Create factor variable
+assignment_02 <- assignment_02 |> 
+  mutate(class = factor(class, 
+    levels = c("Lower", "Working", "Middle", "Upper")))
+```
+
+::: 
+---
+
+## Assignment 2 Recap
+
+### Question 2 - Create a figure with overlapping density plots for each social class. {auto-animate="true"}
+
+```r
+# Create factor variable
+assignment_02 <- assignment_02 |> 
+  mutate(class = factor(class, 
+    levels = c("Lower", "Working", "Middle", "Upper")))
+
+# Create plot as object    
+hours_class_plot <- ggplot(assignment_02, 
+  aes(x = hrs1, color = class))
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 2 - Create a figure with overlapping density plots for each social class. {auto-animate="true"}
+
+```r
+# Create factor variable
+assignment_02 <- assignment_02 |> 
+  mutate(class = factor(class, 
+    levels = c("Lower", "Working", "Middle", "Upper")))
+
+# Create plot as object    
+hours_class_plot <- ggplot(assignment_02, 
+  aes(x = hrs1, color = class))
+
+# Add geom layer and title
+hours_class_plot + geom_density() + 
+     labs(x = "Hours Worked", y = "Density",
+          title = "Distribution of Hours Worked by Class",
+          subtitle = "GSS, 2012-2021",
+          color = "Class")
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 2 - Create a figure with overlapping density plots for each social class.
+
+```{r}
+#| echo: false
+#| output-location: slide
+
+# Create factor variable
+assignment_02 <- assignment_02 |> 
+  mutate(class = factor(class, 
+    levels = c("Lower", "Working", "Middle", "Upper")))
+
+# Create plot as object    
+hours_class_plot <- ggplot(assignment_02, 
+  aes(x = hrs1, color = class))
+
+# Add geom layer and title
+hours_class_plot + geom_density() + 
+     labs(x = "Hours Worked", y = "Density",
+          title = "Distribution of Hours Worked by Class",
+          subtitle = "GSS, 2012-2021",
+          color = "Class")
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 3 - Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours. {auto.animate="true"}
+
+:::{.fragment}
+
+```r
+# Create new variable
+assignment_02 <- assignment_02 |> 
+     mutate(hours_cat = ifelse(hrs1<20, "Less Than 20",
+                               ifelse(hrs1 %in% 20:39, "20-39",
+                                      ifelse(hrs1==40, "40",
+                                             "More Than 40"))),
+```
+
+:::
+
+---
+
+## Assignment 2 Recap
+
+### Question 3 - Create a new factor variable for hours worked with the following categories: less than 20, 20-39, 40, more than 40. The levels should be in order from least to most hours. {auto.animate="true"}
+
+```r
+# Create new variable
+assignment_02 <- assignment_02 |> 
+     mutate(hours_cat = ifelse(hrs1<20, "Less Than 20",
+                               ifelse(hrs1 %in% 20:39, "20-39",
+                                      ifelse(hrs1==40, "40",
+                                             "More Than 40"))),
+# Order levels
+            hours_cat = factor(hours_cat,
+               levels = c("Less Than 20", "20-39", "40", "More Than 40")))
+```
+
+```{r}
+#| echo: false
+
+# Create new variable
+assignment_02 <- assignment_02 |> 
+     mutate(hours_cat = ifelse(hrs1<20, "Less Than 20",
+                               ifelse(hrs1 %in% 20:39, "20-39",
+                                      ifelse(hrs1==40, "40",
+                                             "More Than 40"))),
+# Order levels
+            hours_cat = factor(hours_cat,
+               levels = c("Less Than 20", "20-39", "40", "More Than 40")))
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 4 - Create a table showing the proportion of respondents in each region who are in each category of hours worked. Which region has the highest proportion of respondents who work more than forty hours a week?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+round(prop.table(table(assignment_02$region, 
+                       assignment_02$hours_cat),1),3) # 1 for row proportions!
+```
+
+:::
+
+---
+
+## Using Kable To Improve Tables {auto.animate="true"}
+
+```r
+# install and load package
+install.packages("kableExtra") # hashtag this line after installing
+library(kableExtra)
+```
+
+---
+
+## Using Kable To Improve Tables {auto.animate="true"}
+
+```r
+# install and load package
+install.packages("kableExtra") # hashtag this line after installing
+library(kableExtra)
+
+# Use the table as a dataframe and add the kable functions
+round(prop.table(table(assignment_02$region, 
+                       assignment_02$hours_cat),1),3) |> 
+    kable(booktabs = TRUE, # For basic formating
+          align = rep('c', 4)) # For *center* alignment in the *4* columns
+
+```
+
+---
+
+## Using Kable To Improve Tables
+
+<br>
+
+```{r}
+library(kableExtra)
+round(prop.table(table(assignment_02$region, 
+                       assignment_02$hours_cat),1),3) |> 
+    kable(booktabs = TRUE, # For basic formating
+          align = rep('c', 4))  # For *center* alignment in the *4* columns
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region. {auto-animate="true"}
+
+::: {.fragment}
+
+```r
+assignment_02 |> 
+  filter(region == "New England") |> # to choose only specific *rows*
+```
+
+:::
+
+---
+
+## Assignment 2 Recap
+
+### Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region. {auto-animate="true"}
+
+```r
+assignment_02 |> 
+  filter(region == "New England") |> # to choose only specific *rows*
+  group_by(racehisp) |> # do something for each value of this variable
+```
+
+---
+
+## Assignment 2 Recap
+
+### Question 5 - Using tidyverse functions, find the standard deviation of hours worked for each race/ethnicity category in the New England region. {auto-animate="true"}
+
+```r
+assignment_02 |> 
+  filter(region == "New England") |> # to choose only specific *rows*
+  group_by(racehisp) |> # do something for each value of this variable
+  summarise(sd_hrs = sd(hrs1)) # what to do for each group
+```
+
+<br>
+
+::: {.fragment}
+
+```{r}
+assignment_02 |> 
+  filter(region == "New England") |> # to choose only specific *rows*
+  group_by(racehisp) |> # do something for each value of this variable
+  summarise(sd_hrs = sd(hrs1)) # what to do for each group
+```
+
+:::
+
+---
+
+## Measures of Association
+
+- Last week: describing two categorical variables
+
+- This week: describing relationship between two numerical variables
+
+- Remember a hypothesis: How variables *tend to move together*
+  - How close or tight are the values? How well do they resemble a straight line?
+  - The spread that they tend to share = covariance
+  - The change they tend to share = correlation
+  
+---
+
+## Interpreting Correlations
+
+- Easier to interpret correlations than covariances
+
+- Always bounded by -1, 1
+
+- Association is linear (for now)
+
+- Positive correlation > 0
+  - When X is larger than its mean, likely that Y is larger than its mean
+
+- Negative correlation < 0
+  - When X is larger than its mean, unlikely that Y is larger than its mean
+  
+---
+
+## Interpreting Correlations
+
+- Correlation of X, Y = Correlation of Y, X
+  - But still think of axes
+  
+- Not affected by changes in scale
+  - Can multiply all the values by a constant and the correlation is still the same
+  - Temperature degrees, currencies, etc. 
+  
+- But can be affected by outliers
+
+---
+
+## Strength of Association
+
+- Positive correlation coefficients look like proportions but they are not
+
+- Strong association: knowing a value of one variable helps predict a value of the other variable
+
+- Weak association: too much variability to use the value of one variable to make a good guess about the value of the other variable 
+
+- Remember: Not causal!
+
+- Keep in mind: *strong* is not always *better*
+
+---
+
+## Strength of Associations
+
+- No association = 0 to .19 or 0 to -.19
+
+- Weak association = .20 to .29 or -.20 to -.29
+
+- Moderate association = .30 to .49 or -.30 to -.49
+
+- Strong association = .50 to .69 or -.50 to -.69
+
+- Very strong association = greater than .70 or less than -.70
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_pos2.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_pos4.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_pos6.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_pos8.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_pos9.png){fig-align="center"}
+
+---
+
+
+## Scatterplots
+
+![](385_figures/scatter_neg9.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_neg8.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_neg6.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_neg4.png){fig-align="center"}
+
+---
+
+## Scatterplots
+
+![](385_figures/scatter_neg2.png){fig-align="center"}
+
+---
+
+## An Example: Chetty et al (2014)
+
+- Comparing income mobility rates across regions
+
+- Regional variation across 741 "Commuting Zones"
+  - Cover all counties (not just metropolitan statistical areas)
+  - We are in the Burlington, VT commuting zone
+
+- Tax data from parents of 6.3 million children born in 1980-2
+  - Identify CS and parent's income when child was age 16
+  - Compare to child's income around age 30
+  
+- Main measure of upward mobility = the average income rank in the children's income distribution for children growing up at the 20th percentile in the parent's income distribution
+
+---
+
+## An Example: Chetty et al (2014)
+
+
+![](385_figures/chetty_correlations.png){fig-align="center"}
