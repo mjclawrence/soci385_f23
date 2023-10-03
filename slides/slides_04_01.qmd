@@ -31,11 +31,13 @@ assignment_02 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385
 
 - Suppress messages with `#| message: false`
 
+- Remember to render as a pdf
+
 - Headings require a space between hashtags and text
   - This will not render a heading: `##Heading`
   - This will render a heading: `## Heading`
 
-- Answer the question in full sentences (don't just show the code)
+- Answer the question in full sentences (don't just show the code and output)
 
 - Leaving comments for me is helpful
 

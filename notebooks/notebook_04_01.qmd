@@ -161,7 +161,7 @@ The plots we have been making so far show points for every commuting zone (for w
 #| label: install plotly
 #| message: false
 
-#install.packages("plotly")
+install.packages("plotly") # hashtag this line when you are done
 library(plotly)
 ```
 
