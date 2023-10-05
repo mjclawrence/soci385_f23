@@ -165,13 +165,6 @@ How could you highlight all the Vermont commuting zones?
 You can highlight points that fall within ranges of numerical values as well. For example, try highlighting the commuting zones where more than 80% of residents commute 15 minutes or less, and label them by commuting zone and state.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-```{r}
-#| label: gghighlight exercise with label
-#| warning: false
 
-mobility_commute_scatter + geom_point(color = "blue") +
-     gghighlight(commute15min > .80,
-                 label_key = cz_state)
-```
 
 
