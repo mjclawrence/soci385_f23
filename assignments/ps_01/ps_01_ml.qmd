@@ -1,0 +1,60 @@
+---
+format: pdf
+---
+
+## SOCI 385 - Social Statistics
+## Fall 2021
+## Problem Set 1
+
+***This assignment is due via Canvas by 11:59 PM on Thursday, October 12, 2023.***
+
+  ***Show all your code, order factor variable levels as appropriate, format your tables using Kable, write your responses in complete sentences, and label axes and plots. Submit your knitted pdf and the R Markdown (.Rmd) file for your notebook. Remember to include your name in the header.***
+
+***REMINDER: Problem sets must be completed individually. No collaboration with other students is allowed.***
+
+
+```{r}
+#| message: false
+
+library(tidyverse)
+
+ps1 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps1.csv")
+ps1_long <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps1_long.csv")
+```
+
+1. In a few sentences, describe any gender differences in who uses Facebook vs who uses Twitter. Consider the proportion self-identifying with each gender who report using the sites as well as the proportion of each site's users self-identifying with each gender.
+
+2. In a paragraph, describe the responses to the get digital news question. What strikes you as sociologically interesting about the responses? What would you want to know more about? Your paragraph should include:
+
+- The overall proportion of respondents reporting each answer
+- The proportion of respondents in each age category reporting each answer
+- The proportion of respondents in each education category reporting each answer
+
+3. In a few sentences, describe racial/ethnic differences in responses to the group_trust question. What is an additional variable (not in the dataset for this assignment) you would want to have in order to explain the relationship between these variables? Why might this additional variable be important? How would you phrase a survey question and possible responses to gather data about this additional variable?
+
+4. Collapse the political ideology responses into three categories: any liberal, moderate, any conservative. In a few sentences, compare differences across these three new categories in responses to the misinformation and government question.
+
+5. Use the ps1_long.csv file to create two figures. In the first figure, show the proportion of respondents using each social media site. In the second figure, show the proportion of users of each site who regularly get news from it. In a few sentences, describe the similarities and differences across these two figures. What do these figures suggest to you about social media as a source of news and information?
+
+```{r}
+#| echo: false
+
+ps1_long |> 
+  group_by(site) |> 
+  summarise(prop_use = mean(use)) |> 
+  ggplot(aes(x = site, y = prop_use)) + geom_col() +
+  theme(axis.text.x = element_text(size = 7))
+```
+
+
+```{r}
+#| echo: false
+
+ps1_long |> 
+  filter(use == 1) |> 
+  group_by(site) |> 
+  summarise(prop_news = mean(news)) |> 
+  ggplot(aes(x = site, y = prop_news)) + geom_col() +
+  theme(axis.text.x = element_text(size = 7))
+```
+

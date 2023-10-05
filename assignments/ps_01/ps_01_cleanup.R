@@ -5,34 +5,6 @@ library(haven)
 
 atp <- read_sav("/Users/lawrence/Downloads/W112_Jul22/ATP W112.sav")
 
-prop.table(table(atp$F_RACECMB, atp$GROUP_TRUST_d_W112))
-
-table(atp$SOCIALNEWS2_a_W112)
-
-round(prop.table(table(atp$F_IDEO, atp$MISINFG_W112),1),2)
-round(prop.table(table(atp$F_IDEO, atp$MISINFT_W112),1),2)
-
-table(atp$MISINFT_W112)
-
-table(atp$F_AGECAT)
-table(atp$F_IDEO)
-
-round(prop.table(table(atp$F_AGECAT, atp$F_IDEO),1),3)
-
-# Facebook
-prop.table(table(atp$F_GENDER, atp$SMUSE_a_W112),1)
-prop.table(table(atp$F_GENDER, atp$SMUSE_a_W112),2)
-
-# Reddit
-prop.table(table(atp$SMUSE_j_W112))
-prop.table(table(atp$SOCIALNEWS2_j_W112))
-
-table(atp$SMUSE_j_W112, atp$SOCIALNEWS2_j_W112)
-
-prop.table(table(atp$F_GENDER, atp$SOCIALNEWS2_j_W112),1)
-prop.table(table(atp$F_GENDER, atp$SOCIALNEWS2_j_W112),2)
-
-
 # Create ps1 data frame
 
 ps1 <- atp |> 
@@ -178,4 +150,9 @@ ps1_long |>
   summarise(prop_news = mean(news)) |> 
   ggplot(aes(x = site, y = prop_news)) + geom_col()
 
-write.csv(ps1_long, "data/ps1_long", row.names = FALSE)
+write.csv(ps1_long, "data/ps1_long.csv", row.names = FALSE)
+
+# Test DFs
+
+ps1 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps1.csv")
+ps1_long <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps1_long.csv")
