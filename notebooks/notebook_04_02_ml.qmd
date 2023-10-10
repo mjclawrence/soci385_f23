@@ -14,7 +14,7 @@ Load the data as a data frame called `cz` and load tidyverse.
 
 library(tidyverse)
 
-cz <- read.csv("../data/commuting_zones.csv")
+cz <- read_csv("../data/commuting_zones.csv")
 ```
 
 # Recap
@@ -78,6 +78,18 @@ cor(cz$social_capital_index, cz$mobility,
     use = "complete")
 ```
 
+```{r}
+cor(cz$frac_children_single_mothers, cz$mobility, use = "complete")
+```
+
+```{r}
+cz |> 
+  ggplot(aes(x = frac_children_single_mothers, y = mobility)) +
+  geom_point()
+```
+
+
+
 ### Negative = Gini (-0.578)
 ```{r}
 #| label: negative association
@@ -120,6 +132,18 @@ We'll do so by taking advantage of the fact that a ggplot figure is just a colle
 As an example, let's highlight the point for Burlington, VT's commuting zone in blue. Before we begin, what are the values of the `commute15min` and `mobility` variables for Burlington?
 
 ### REPLACE THIS LINE WITH YOUR CODE
+
+```{r}
+summary(cz$mobility[cz$cz_state=="Burlington, VT"])
+```
+
+```{r}
+cz |> 
+  filter(cz_state=="Burlington, VT") |> 
+  select(cz_state, mobility, commute15min)
+```
+
+
 
 ```{r}
 #| label: burlington measures
@@ -178,7 +202,7 @@ We can use `vjust` and `hjust` to nudge the label. Let's nudge it slightly to th
 
 mobility_commute_scatter + geom_point(color = "gray") +
      geom_point(data = burlington, aes(x = commute15min, y = mobility),
-                color = "blue", size = 2) + 
+                color = "blue", size = 3) + 
      geom_text(data = burlington, aes(label = cz_state) , 
                color = "blue", hjust = 1.1)
 ```
@@ -216,6 +240,13 @@ mobility_commute_scatter + geom_point(color = "blue") +
 
 How could you highlight all the Vermont commuting zones?
 
+```{r}
+mobility_commute_scatter + geom_point(color = "blue") +
+     gghighlight(state == "VT",
+                 label_key = cz_state)
+```
+
+
 You can highlight points that fall within ranges of numerical values as well. For example, try highlighting the commuting zones where more than 80% of residents commute 15 minutes or less, and label them by commuting zone and state.
 
 ### REPLACE THIS LINE WITH YOUR CODE
@@ -224,7 +255,7 @@ You can highlight points that fall within ranges of numerical values as well. Fo
 #| warning: false
 
 mobility_commute_scatter + geom_point(color = "blue") +
-     gghighlight(commute15min > .80,
+     gghighlight(commute15min > .85,
                  label_key = cz_state)
 ```
 
