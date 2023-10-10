@@ -61,6 +61,7 @@ format:
 ## Why Multivariate Explanations Matter
 
 > "So often, when we show the deep logic of what once seemed odd or incomprehensible behavior, bystanders often nod knowingly and say, 'It's obvious.' ...On the other hand, if they don't like your finding...they will announce that your results are either (a) 'spurious' or (b) biased. In either case, what they mean is that *the way you chose the sample influenced the outcome*. This is the thing that we must avoid at all costs."
+
 -- Kristin Luker, *Salsa Dancing into the Social Sciences*, p. 110
 
 

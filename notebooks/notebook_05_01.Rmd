@@ -1,0 +1,161 @@
+# Set up
+
+For our first example, we will continue using data from Chetty et al's 2014 paper "Where Is The Land Of Opportunity?". The `commuting_zones.csv` file on Canvas comes from the Opportunity Insights website which can be accessed [`here`](http://www.opportunityinsights.org).
+
+Load the data as a data frame called `cz` and load tidyverse and datatable.
+
+```{r, warning = FALSE, error = FALSE, message = FALSE}
+library(tidyverse)
+library(DT)
+
+cz <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/commuting_zones.csv")
+```
+
+# Introducing Multivariate Relationships
+
+Last week we identified individual points on a scatterplot to dig deeper into how two variables are associated. Another analytical tool is to examine whether the association differs at specific values of another variable.
+
+Consider the correlation between racial segregation and household income across commuting zones. Would you expect this correlation to be positive or negative? Strong or weak?
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+Would this association be the same in urban and rural commuting zones?
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+
+## Working With Lots Of Correlations
+
+Let's move to a different example. Consider the relationship between Covid vaccination rates and eviction rates across zip codes. Would you expect a positive or negative association? How strong?
+
+Load the data in a dataset called `evictions`:
+
+```{r}
+#| load eviction data
+#| message: false
+
+evictions <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/evictions.csv")
+```
+
+
+The dataset comes from the Eviction Lab and was provided by Olivia Jin, Middlebury alum and lead author of this paper:
+
+Jin, Olivia, Emily Lemmerman, Peter Hepburn, and Matthew Desmond. 2021. "Neighborhoods with the Highest Eviction Filing Rates Have the Lowest Levels of COVID-19 Vaccination." *Socius* 7: 1-3.
+
+What is the overall correlation between eviction rate (`evict_pct`) and vaccination rate (`vax_pct`)?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+Now try using `group_by()` and `summarise()` to find how this association varies across the nine cities the researchers studied. The variable for cities is called `xsite`.
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+What are some different options for how to visualize these associations in each city?
+
+The `facet_wrap()` option is a new way to create separate plots for different categories.
+
+```{r}
+#| label: facet_wrap example
+
+evictions |> 
+  ggplot(aes(x = evict_pct, y = vax_pct,
+             color = xsite)) +
+  geom_point() + 
+  facet_wrap(~xsite) + # just the tilde (~), no period like facet_grid
+  guides(color = "none") # drop the legend since each facet is titled
+``` 
+
+By default, `facet_wrap()` assigns each plot the same x-axis range and the same y-axis range. You can adjust them by adjusting the scales option with "free_x", "free_y" or "free" (for both the x and y axes):
+
+```{r}
+#| label: free scales with facet_wrap
+
+evictions |> 
+  ggplot(aes(x = evict_pct, y = vax_pct,
+             color = xsite)) +
+  geom_point() + facet_wrap(~xsite, scales = "free") +
+  guides(color = "none")
+```
+
+How else to improve this figure?
+
+
+## Adding Another Variable
+
+This dataset also includes the "majority race" in each zip code. We know how to use `group_by()` and `summarise()` to get the correlation for each city. To get the correlation for each city *and* each majority race within that city, simply add both variables to the `group_by()` function:
+
+```{r}
+#| label: grouping by multiple variables
+
+evictions |> 
+  group_by(xsite, majority_race) |> # add variables with comma
+  summarise(cor = cor(evict_pct, vax_pct,
+                      use = "complete"))
+```
+
+This is a good time to use datatable...
+
+```{r}
+#| label: datatable after summarise
+
+evictions |> 
+  group_by(xsite, majority_race) |> # add variables with comma
+  summarise(cor = cor(evict_pct, vax_pct,
+                      use = "complete")) |> 
+  datatable(rownames = FALSE)
+```
+
+Let's combine everything we know about plotting to add different colored points for each majority race. Start by changing the color aesthetic we used earlier...
+
+```{r}
+#| label: facet wrap with cities and majority races
+
+evictions |> 
+  ggplot(aes(x = evict_pct, y = vax_pct,
+             color = majority_race)) +
+  geom_point() + facet_wrap(~xsite, scales = "free") +
+  guides(color = "none") + 
+  geom_smooth(method = "lm")
+```
+
+How to improve this figure?
+
+## Some Additional Thoughts About Color
+
+One popular package to use for adjusting color is the R Color Brewer package. You can install it and load it here:
+
+```{r}
+#| label: install and load RColorBrewer
+
+#install.packages("RColorBrewer") # hashtag this line after installing
+library(RColorBrewer)
+```
+
+There's good information on Brewer's color options at [this site](http://colorbrewer2.org/#type=diverging&scheme=RdYlGn&n=3).
+
+The site previews options for sequential (or continuous) variables and divergent (or factor/categorical/discrete) variables. Once you find a color scheme you like, input the palette name into the `scale_color_brewer()` function or the `scale_fill_brewer()` function.
+
+```{r}
+#| label: RColorBrewer example
+
+evictions |> 
+  ggplot(aes(x = evict_pct, y = vax_pct,
+             color = xsite)) +
+  geom_point() + facet_wrap(~xsite, scales = "free") +
+  guides(color = "none") + 
+  geom_smooth(method = "lm") +
+  scale_color_brewer(palette = "Set1")
+```
+
+Want other colors? I like the [`viridis color palettes`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) which we saw last week.
+
+```{r}
+#| label: Viridis example
+
+evictions |> 
+  ggplot(aes(x = evict_pct, y = vax_pct,
+             color = xsite)) +
+  geom_point() + facet_wrap(~xsite, scales = "free") +
+  guides(color = "none") + geom_smooth(method = "lm") +
+  scale_color_viridis_d(option = "mako") # Palette Name
+```
