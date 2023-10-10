@@ -131,7 +131,8 @@ Now try using `group_by()` and `summarise()` to find how this association varies
 evictions |> 
   group_by(xsite) |> 
   summarise(cor = cor(evict_pct, vax_pct,
-                      use = "complete"))
+                      use = "complete")) |> 
+  arrange(order_by = cor)
 ```
 
 What are some different options for how to visualize these associations in each city?
@@ -148,8 +149,10 @@ evictions |>
   group_by(xsite) |> 
   summarise(cor = cor(evict_pct, vax_pct,
                       use = "complete")) |> 
-  ggplot(aes(x = xsite, y = cor)) +
-  geom_col()
+  ggplot(aes(x = reorder(xsite, cor), y = cor)) +
+  geom_col() +
+  theme(axis.text.x = element_text(size = 5,
+                                   angle = 45))
 ```
 Example of how to reorder columns by the values of a different variable
 
@@ -210,10 +213,14 @@ By default, `facet_wrap()` assigns each plot the same x-axis range and the same 
 #| label: free scales with facet_wrap
 
 evictions |> 
+  mutate(xsite = str_to_title(xsite)) |> 
   ggplot(aes(x = evict_pct, y = vax_pct,
              color = xsite)) +
-  geom_point() + facet_wrap(~xsite, scales = "free") +
-  guides(color = "none")
+  geom_point(size = .5) + facet_wrap(~xsite, scales = "free") +
+  guides(color = "none") +
+  labs(x = "Eviction Rate \n(number of evictions by number of households)",
+       y = "Vaccination Rate") +
+  geom_smooth(method = "lm", se = FALSE)
 ```
 
 How else to improve this figure?
@@ -260,13 +267,15 @@ Let's combine everything we know about plotting to add different colored points 
 
 ```{r}
 #| label: facet wrap with cities and majority races
+#| warning: false
+#| message: false
 
 evictions |> 
   ggplot(aes(x = evict_pct, y = vax_pct,
-             color = majority_race)) +
-  geom_point() + facet_wrap(~xsite, scales = "free") +
-  guides(color = "none") + 
-  geom_smooth(method = "lm")
+             color = majority_race,
+             group = xsite)) +
+  geom_point(size = .75) + facet_wrap(~xsite, scales = "free") +
+  theme(legend.position = "bottom") + geom_smooth(method = "lm", se = FALSE)
 ```
 
 How to improve this figure?
@@ -295,7 +304,7 @@ evictions |>
   geom_point() + facet_wrap(~xsite, scales = "free") +
   guides(color = "none") + 
   geom_smooth(method = "lm") +
-  scale_color_brewer(palette = "Set1")
+  scale_color_brewer(palette = "RdBu")
 ```
 
 Want other colors? I like the [`viridis color palettes`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) which we saw last week.
@@ -307,6 +316,6 @@ evictions |>
   ggplot(aes(x = evict_pct, y = vax_pct,
              color = xsite)) +
   geom_point() + facet_wrap(~xsite, scales = "free") +
-  guides(color = "none") + geom_smooth(method = "lm") +
-  scale_color_viridis_d(option = "mako") # Palette Name
+  guides(color = "none") + geom_smooth(method = "lm", se = FALSE) +
+  scale_color_viridis_d(option = "turbo") # Palette Name
 ```
