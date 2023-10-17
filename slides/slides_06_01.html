@@ -424,15 +424,20 @@
 </ul></li>
 <li class="fragment">From describing precision…
 <ul>
-<li class="fragment">25% of commuting zones spend more than the national average on school expenditures</li>
-</ul></li>
-<li class="fragment">To quantifying likelihood…
-<ul>
-<li class="fragment">2.5% chance that a commuting zone we randomly pull from the data set will spend more than Addison County does on school expenditures</li>
+<li class="fragment">25% of all 741 commuting zones spend more than the national average on school expenditures</li>
 </ul></li>
 </ul>
 </section>
 <section id="thinking-probabilistically-2" class="slide level2">
+<h2>Thinking Probabilistically</h2>
+<ul>
+<li class="fragment">To quantifying likelihood…
+<ul>
+<li class="fragment">In a sample of 300 commuting zones, the average spent on school expenditures is $1000 per student. How likely is it that the average across all 741 commuting zones is higher or lower than that?</li>
+</ul></li>
+</ul>
+</section>
+<section id="thinking-probabilistically-3" class="slide level2">
 <h2>Thinking Probabilistically</h2>
 <ul>
 <li class="fragment">For now, assume variable is normally distributed, and apply what we know about means and standard deviations in normal distributions…</li>
@@ -478,12 +483,11 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">summary</span>(cupid<span class="sc">$</span>height_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(cupid<span class="sc">$</span>height_z),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
--2.92468 -0.86381 -0.09099  0.00000  0.68184  3.00031 </code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 </div>
 </div>
@@ -523,13 +527,13 @@
 <section id="interpreting-z-scores-1" class="slide level2">
 <h2>Interpreting Z-Scores</h2>
 <ul>
-<li class="fragment">When we plot standardized values that are approximately normal, we now know a lot about how many observations fall along different points of the distribution</li>
+<li class="fragment">When we plot standardized values that are approximately normal, we now know a lot about how many observations fall along different points of the distribution…</li>
 </ul>
-<p><br></p>
-<div class="fragment">
-<p><img data-src="385_figures/normal.png"></p>
-</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="385_figures/normal.png" class="r-stretch"></section>
 <section id="interpreting-z-scores-2" class="slide level2">
 <h2>Interpreting Z-Scores</h2>
 
@@ -537,7 +541,7 @@
 <section id="interpreting-z-scores-3" class="slide level2">
 <h2>Interpreting Z-Scores</h2>
 <ul>
-<li class="fragment">To find the probability that a randomly pulled observation will have a height of 71 inches, use <code>dnorm()</code>:</li>
+<li class="fragment">To find the height on the density plot for an observation with a height of 71 inches, use <code>dnorm()</code> with the z-score for that observation’s value:</li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -551,7 +555,7 @@
 </div>
 <div class="fragment">
 <p><br></p>
-<h3 id="more-precisely-thats-the-probability-a-randomly-pulled-observation-will-have-a-height-above-70-inches-and-below-than-72-inches.-looks-pretty-close">More precisely, that’s the probability a randomly pulled observation will have a height above 70 inches and below than 72 inches. Looks pretty close…</h3>
+<h3 id="looks-pretty-close-in-our-example">Looks pretty close in our example…</h3>
 </div>
 </section>
 <section id="interpreting-z-scores-4" class="slide level2">
@@ -600,12 +604,8 @@
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-</section>
-<section>
-<section id="use-what-you-know-1" class="title-slide slide level1 center">
-<h1>Use What You Know</h1>
+<section id="use-what-you-know-1" class="slide level2">
+<h2>Use What You Know</h2>
 
 <img data-src="slides_06_01_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="exercise" class="slide level2">
@@ -620,7 +620,6 @@
 <ul>
 <li class="fragment">What is the z-score for 64 inches?</li>
 </ul>
-<p><br></p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">mean</span>(cupid<span class="sc">$</span>height_z[cupid<span class="sc">$</span>height<span class="sc">==</span><span class="dv">64</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -631,7 +630,6 @@
 </div>
 </div>
 </div>
-<p><br></p>
 <ul>
 <li class="fragment">What is probability that someone in our sample is shorter than 64 inches?</li>
 </ul>
@@ -645,7 +643,6 @@
 </div>
 </div>
 </div>
-<p><br></p>
 <ul>
 <li class="fragment">What is the probability that someone in our sample is taller than 64 inches?</li>
 </ul>
@@ -829,7 +826,9 @@
 </div>
 </div>
 </div>
-<p><br></p>
+</section>
+<section id="from-se-to-confidence-intervals-6" class="slide level2">
+<h2>From SE To Confidence Intervals</h2>
 <ul>
 <li class="fragment">Interpretation?
 <ul>
@@ -919,7 +918,7 @@
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

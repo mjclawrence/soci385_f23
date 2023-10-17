@@ -1,11 +1,3 @@
----
-title: "Sampling Distributions"
-author: "ML"
-date: "10/17/2023"
-output: pdf_document
----
-
-
 # Transitioning to Probabilty
 
 Today we'll move from multivariate descriptions to probability, leading to confidence intervals. Load the `cupid` dataset and the usual packages to get started.
@@ -43,36 +35,17 @@ Z-scores should be normally distributed with a mean of 0 and a standard deviatio
 
 ### REPLACE THIS LINE WITH YOUR CODECHUNK ###
 
-```{r}
-#| label: check distribution of standardized values
-
-round(mean(cupid$height_z),3)
-
-sd(cupid$height_z)
-```
 
 What is the z-score for a height of 71 inches?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label: standardized birthrate for height of 71 inches
-
-mean(cupid$height_z[cupid$height==71])
-```
 
 
 When we plot standardized values that are approximately normal, we now know a lot about the proportion of observations falling along different points of the distribution. To see how, make a density plot showing the distribution of the standardized heights.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label: plot standardized values
-
-height_z_plot <- ggplot(cupid, aes(x = height_z))
-
-height_z_plot + geom_density()
-```
 
 To find the height on the density plot for a z-score, use `dnorm()`. Think about this value as the y axis intersection with the density curve for any specific value on the x axis. For example, the density for a randomly pulled observation in our sample with a height of 71 inches is:
 
@@ -102,33 +75,14 @@ What is the probability of another respondent being taller than 71 inches?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-#| label:  proportion greater than positive z score
-
-1 - pnorm(.682)
-```
-
 
 # Exercise
 
 What is the z-score for 64 inches? What is the probability that someone in our sample is shorter and taller than 64 inches?
 
-### REPLACE THIS LINE. WITHYOUR CODE CHUNK ###
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-# Z score for 64 inches
-mean(cupid$height_z[cupid$height==64])
-```
 
-```{r}
-# Probability that someone in our sample is shorter than 64 inches?
-pnorm(-1.12)
-```
-
-```{r}
-# Probability that someone in our sample is taller than 64 inches?
-1 - pnorm(-1.12)
-```
 
 ## What's the point?
 
@@ -212,21 +166,3 @@ How do you interpret this confidence interval? 95% of the repeated samples we mi
   - Construct the confidence interval
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-qnorm(.995)
-```
-
-
-```{r}
-height_se <- sd(cupid$height) / sqrt(length(cupid$height))
-
-height_se
-```
-
-```{r}
-height_ll <- mean(cupid$height) - 2.58*height_se
-height_ul <- mean(cupid$height) + 2.58*height_se
-height_ci <- c(height_ll, mean(cupid$height), height_ul)
-height_ci
-```

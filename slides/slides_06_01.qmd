@@ -31,10 +31,14 @@ format:
   - The population value exists but we don't observe it. We'll use what we do know to estimate the range of possible values for the population measure.
 
 - From describing precision...
-  - 25% of commuting zones spend more than the national average on school expenditures
+  - 25% of all 741 commuting zones spend more than the national average on school expenditures
+
+---
+
+## Thinking Probabilistically
 
 - To quantifying likelihood...
-  - 2.5% chance that a commuting zone we randomly pull from the data set will spend more than Addison County does on school expenditures
+  - In a sample of 300 commuting zones, the average spent on school expenditures is $1000 per student. How likely is it that the average across all 741 commuting zones is higher or lower than that?
 
 ---
 
@@ -106,7 +110,7 @@ cupid <- cupid |>
 #| echo: TRUE
 #| output-location: fragment
 
-mean(cupid$height_z)
+round(mean(cupid$height_z),3)
 ```
 
 :::
@@ -150,15 +154,11 @@ mean(cupid$height_z[cupid$height==71])
 
 ## Interpreting Z-Scores
 
-- When we plot standardized values that are approximately normal, we now know a lot about how many observations fall along different points of the distribution
+- When we plot standardized values that are approximately normal, we now know a lot about how many observations fall along different points of the distribution...
 
-</br>
-
-::: {.fragment}
+---
 
 ![](385_figures/normal.png)
-
-:::
 
 ---
 
@@ -183,7 +183,7 @@ height_z_plot + geom_density() +
 
 ## Interpreting Z-Scores
 
-- To find the probability that a randomly pulled observation will have a height of 71 inches, use `dnorm()`:
+- To find the height on the density plot for an observation with a height of 71 inches, use `dnorm()` with the z-score for that observation's value:
 
 ::: {.fragment}
 
@@ -200,7 +200,7 @@ dnorm(0.6818372) # d for density
 
 </br>
 
-### More precisely, that's the probability a randomly pulled observation will have a height above 70 inches and below than 72 inches. Looks pretty close...
+### Looks pretty close in our example...
 
 :::
 
@@ -298,7 +298,7 @@ cumulative_density_plot + geom_text(x = -.1, y = .15, label = "75%", size = 15)
 
 ---
 
-# Use What You Know
+## Use What You Know
 
 ```{r}
 #| echo: FALSE
@@ -322,8 +322,6 @@ cumulative_density_plot + geom_text(x = -.1, y = .15, label = "75%", size = 15) 
 
 - What is the z-score for 64 inches?
 
-</br>
-
 ::: {.fragment}
 
 ```{r}
@@ -334,8 +332,6 @@ mean(cupid$height_z[cupid$height==64])
 ```
 
 :::
-
-</br>
 
 - What is probability that someone in our sample is shorter than 64 inches?
 
@@ -348,8 +344,6 @@ pnorm(-1.12)
 ```
 
 :::
-
-</br>
 
 - What is the probability that someone in our sample is taller than 64 inches?
 
@@ -563,7 +557,9 @@ age_ci
 
 :::
 
-</br>
+---
+
+## From SE To Confidence Intervals
 
 - Interpretation?
   - 95% of the repeated samples we might imagine pulling would be expected to have means within this range, giving us 95% confidence that the true population mean falls within this range
