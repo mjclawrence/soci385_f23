@@ -589,6 +589,8 @@ age_ci
 # Find the standard error:
 
 height_se <- sd(cupid$height) / sqrt(length(cupid$height))
+
+height_se
 ```
 
 :::

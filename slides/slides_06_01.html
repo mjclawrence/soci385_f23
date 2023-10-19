@@ -851,18 +851,22 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Find the standard error:</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a></span>
-<span id="cb33-3"><a href="#cb33-3"></a>height_se <span class="ot">&lt;-</span> <span class="fu">sd</span>(cupid<span class="sc">$</span>height) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(cupid<span class="sc">$</span>height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3"></a>height_se <span class="ot">&lt;-</span> <span class="fu">sd</span>(cupid<span class="sc">$</span>height) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(cupid<span class="sc">$</span>height))</span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a>height_se</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0776373</code></pre>
+</div>
 </div>
 </div>
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># For the margin of error, we need .005 on each side of our mean:</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="fu">qnorm</span>(.<span class="dv">995</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># For the margin of error, we need .005 on each side of our mean:</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">qnorm</span>(.<span class="dv">995</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -873,9 +877,9 @@
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Margin of error =</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a></span>
-<span id="cb36-3"><a href="#cb36-3"></a><span class="fl">2.58</span> <span class="sc">*</span> height_se</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Margin of error =</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fl">2.58</span> <span class="sc">*</span> height_se</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -888,12 +892,12 @@
 <h2>Exercise</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Construct the 99% Confidence Interval</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a></span>
-<span id="cb38-3"><a href="#cb38-3"></a>height_ll <span class="ot">&lt;-</span> <span class="fu">mean</span>(cupid<span class="sc">$</span>height) <span class="sc">-</span> <span class="fl">2.58</span><span class="sc">*</span>height_se</span>
-<span id="cb38-4"><a href="#cb38-4"></a>height_ul <span class="ot">&lt;-</span> <span class="fu">mean</span>(cupid<span class="sc">$</span>height) <span class="sc">+</span> <span class="fl">2.58</span><span class="sc">*</span>height_se</span>
-<span id="cb38-5"><a href="#cb38-5"></a></span>
-<span id="cb38-6"><a href="#cb38-6"></a>height_ci <span class="ot">&lt;-</span> <span class="fu">c</span>(height_ll, <span class="fu">mean</span>(cupid<span class="sc">$</span>height), height_ul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Construct the 99% Confidence Interval</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a></span>
+<span id="cb39-3"><a href="#cb39-3"></a>height_ll <span class="ot">&lt;-</span> <span class="fu">mean</span>(cupid<span class="sc">$</span>height) <span class="sc">-</span> <span class="fl">2.58</span><span class="sc">*</span>height_se</span>
+<span id="cb39-4"><a href="#cb39-4"></a>height_ul <span class="ot">&lt;-</span> <span class="fu">mean</span>(cupid<span class="sc">$</span>height) <span class="sc">+</span> <span class="fl">2.58</span><span class="sc">*</span>height_se</span>
+<span id="cb39-5"><a href="#cb39-5"></a></span>
+<span id="cb39-6"><a href="#cb39-6"></a>height_ci <span class="ot">&lt;-</span> <span class="fu">c</span>(height_ll, <span class="fu">mean</span>(cupid<span class="sc">$</span>height), height_ul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -901,9 +905,9 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Display</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a></span>
-<span id="cb39-3"><a href="#cb39-3"></a>height_ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Display</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a></span>
+<span id="cb40-3"><a href="#cb40-3"></a>height_ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
