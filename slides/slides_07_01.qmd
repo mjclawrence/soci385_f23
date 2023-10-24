@@ -85,8 +85,26 @@ format:
 #| output-location: fragment
 
 qnorm(.975)
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
 
 qt(.975, df = 1000)
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
 
 qt(.975, df = 100)
 ```
@@ -106,12 +124,20 @@ qt(.975, df = 100)
 #| output-location: fragment
 
 pt(1.962339, df = 1000)
-
-
-1 - pt(1.983972, df = 100)
-
 ```
 
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+1 - pt(1.983972, df = 100)
+```
+
+:::
 
 ---
 
@@ -155,14 +181,18 @@ pt(1.962339, df = 1000)
 
 - What was the mean for `childs` in 2018?
 
+::: {.fragment}
+
 ```{r}
 #| echo: false
 #| message: false
 
-gss_week7 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f21/main/data/gss_week7.csv")
-
 library(tidyverse)
+
+gss_week7 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/gss_week7.csv")
 ```
+
+:::
 
 ::: {.fragment}
 
@@ -194,7 +224,7 @@ mean(gss_week7$childs[gss_week7$year==2018])
 
 - $\Large{t = \frac{1.998 - 2.2}{0.05951692}}$
 
-- t = -3.389708
+- $\Large{t = -3.389708}$
 
 - In words: sample mean of 1.998 is 3.39 *standard errors* below the null hypothesis value.
 
@@ -217,7 +247,13 @@ qt(.975, df = 572)
 
 :::
 
-- For mean to be significant at .05 level, the test statistic needs to be at least 1.96412 standard errors away. Our test statistic of 3.39 is more extreme than 1.96412, so we can reject the null hypothesis that the mean number of children in 2018 differs from 2.2. 
+---
+
+## Significance Test for Mean - Example
+
+- For mean to be significant at .05 level, the test statistic needs to be at least +/- 1.96412 or standard errors away. Our test statistic of -3.39 is more extreme than -1.96412, so we can reject the null hypothesis that the mean number of children in 2018 does not differ from 2.2. 
+
+- In other words, the average number of ideal children in 2018 is significantly lower than the average number of ideal children in 1984. There has been a statistically significant decline in number of ideal children during that period.
 
 ---
 
@@ -245,6 +281,8 @@ pt(-3.39, df = 572)
 
 2 * 0.0003735504
 ```
+
+:::
 
 - The p-value for our hypothesis test is less than .05, so we can reject the null hypothesis.
 
@@ -282,6 +320,8 @@ idealchilds_ci
 
 ## Big Shortcut: t.test()
 
+::: {.fragment}
+
 ```{r}
 #| echo: true
 #| output-location: fragment
@@ -290,15 +330,14 @@ t.test(gss_week7$childs[gss_week7$year==2018],
       mu = 2.2)
 ```
 
-
+:::
 
 ---
 
-# Significance Test for Mean - Example
-
-- Red box gives the test statistic. Blue box gives the probability of getting a value more extreme than the test statistic. Green box is the 95% confidence interval. Orange box gives the sample mean. 
+## Significance Test for Mean - Example
 
 ![](385_figures/ttest_childs_example.png)
+- Red box gives the test statistic. Blue box gives the probability of getting a value more extreme than the test statistic. Green box is the 95% confidence interval. Orange box gives the sample mean. 
 
 ---
 
@@ -347,6 +386,8 @@ t.test(gss_week7$chldidel[gss_week7$year==2016],
       mu = 2.5, conf.level = .99)
 ```
 
+:::
+
 ---
 
 ## Other t.test() Options
@@ -362,6 +403,8 @@ t.test(gss_week7$chldidel[gss_week7$year==2016],
 t.test(gss_week7$chldidel[gss_week7$year==2016], 
       mu = 2.5, conf.level = .99)
 ```
+
+:::
 
 ---
 
@@ -397,7 +440,7 @@ gss_week7 <- gss_week7 |>
 
 ---
 
-# Inference For Single Proportions
+## Inference For Single Proportions
 
 - For the test, we will need the frequency with a 1 and the total in the sample.
 
@@ -456,6 +499,8 @@ gss_week7 <- gss_week7 |>
 addmargins(table(gss_week7$less_ideal))
 ```
 
+:::
+
 ---
 
 ## Another Example
@@ -468,3 +513,5 @@ addmargins(table(gss_week7$less_ideal))
 
 prop.test(1486, 2923, p = .53, conf.level = .99)
 ```
+
+:::
