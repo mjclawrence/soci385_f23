@@ -93,7 +93,7 @@ Now we recall the name of the function and provide two values: the number of pul
 ```{r}
 #| label: run function
 
-sampling_function(50, 50)
+sampling_function(500, 500)
 ```
 
 What size sample and what number of repeated samples do you need for the means to approximate a normal distribution? 
@@ -106,7 +106,9 @@ Last class we constructed the confidence interval for a mean. We began by findin
 
 $\Large{SE_{mean} = \frac {sd}{\sqrt{n}}}$
 
-```{r calculate standard error of age}
+```{r}
+#| label: calculate standard error of age
+
 age_se <- sd(cupid$age) / sqrt(length(cupid$age))
 ```
 
@@ -176,7 +178,7 @@ cupid <- cupid |>
 ```{r}
 #| label: kids table
 
-table(cupid$kids)
+addmargins(table(cupid$kids, exclude = NULL))
 ```
 
 Use this new variable to find the 99% confidence intervals of age for respondents with and without kids.
@@ -209,8 +211,8 @@ kids_1_ci
 #| label: confidence intervals with group_by and summarise
 
 cupid |> 
-  filter(!is.na(kids)) |> 
-  group_by(kids) |> 
+  filter(!is.na(kids)) |>
+  group_by(kids) |> # for each value of kids variable (0/1)
   summarise(mean = mean(age),
             sd = sd(age),
             se = (sd(age) / sqrt(length(age))),
@@ -236,7 +238,7 @@ Today we'll find the 95% confidence interval for the proportion of OK Cupid user
 ```{r}
 #| label: prop table for orientation
 
-round(prop.table(table(cupid$orientation)),3)
+addmargins(round(prop.table(table(cupid$orientation, exclude = NULL)),3))
 ```
 
 Refresher from problem set: find sex differences in orientation distribution...
