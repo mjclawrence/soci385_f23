@@ -586,7 +586,7 @@
 <li class="fragment"><p><span class="math inline">\(\Large{t = \frac{y - y_{H0}}{SD/ \sqrt{n}}}\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(\Large{t = \frac{1.998 - 2.2}{0.05951692}}\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(\Large{t = -3.389708}\)</span></p></li>
-<li class="fragment"><p>In words: sample mean of 1.998 is 3.39 <em>standard errors</em> below the null hypothesis value.</p></li>
+<li class="fragment"><p>In words: sample mean of 1.998 is 3.39 <em>standard errors</em> away from the null hypothesis value.</p></li>
 </ul>
 </section>
 <section id="significance-test-for-mean---example-3" class="slide level2">
@@ -609,8 +609,8 @@
 <section id="significance-test-for-mean---example-4" class="slide level2">
 <h2>Significance Test for Mean - Example</h2>
 <ul>
-<li class="fragment"><p>For mean to be significant at .05 level, the test statistic needs to be at least +/- 1.96412 or standard errors away. Our test statistic of -3.39 is more extreme than -1.96412, so we can reject the null hypothesis that the mean number of children in 2018 does not differ from 2.2.</p></li>
-<li class="fragment"><p>In other words, the average number of ideal children in 2018 is significantly lower than the average number of ideal children in 1984. There has been a statistically significant decline in number of ideal children during that period.</p></li>
+<li class="fragment"><p>For mean to be significant at .05 level, the test statistic needs to be at least +/- 1.96412 standard errors away. Our test statistic of -3.39 is more extreme than -1.96412, so we can reject the null hypothesis that the mean number of children in 2018 does not differ from 2.2.</p></li>
+<li class="fragment"><p>In other words, the average number of children in 2018 is significantly lower than the average number of children in 1984. There has been a statistically significant decline in number of children during that period.</p></li>
 </ul>
 </section>
 <section id="significance-test-for-mean---example-5" class="slide level2">
@@ -652,13 +652,22 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>idealchilds_ll <span class="ot">&lt;-</span> <span class="fl">1.998255</span> <span class="sc">-</span> <span class="fl">1.96412</span><span class="sc">*</span><span class="fl">0.05951692</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>idealchilds_ul <span class="ot">&lt;-</span> <span class="fl">1.998255</span> <span class="sc">+</span> <span class="fl">1.96412</span><span class="sc">*</span><span class="fl">0.0595169</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>idealchilds_ci <span class="ot">&lt;-</span> <span class="fu">c</span>(idealchilds_ll, <span class="fl">1.998255</span>, idealchilds_ul)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>idealchilds_ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.881357 1.998255 2.115153</code></pre>
+</div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.881356 1.998255 2.115153</code></pre>
+<pre><code>[1] 1.881357 1.998255 2.115153</code></pre>
 </div>
 </div>
 </div>
@@ -670,8 +679,8 @@
 <h2>Big Shortcut: t.test()</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>childs[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
-<span id="cb20-2"><a href="#cb20-2"></a>      <span class="at">mu =</span> <span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>childs[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
+<span id="cb22-2"><a href="#cb22-2"></a>      <span class="at">mu =</span> <span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -702,8 +711,8 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
-<span id="cb22-2"><a href="#cb22-2"></a>      <span class="at">mu =</span> <span class="fl">2.55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
+<span id="cb24-2"><a href="#cb24-2"></a>      <span class="at">mu =</span> <span class="fl">2.55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -738,32 +747,6 @@ mean of x
 <ul>
 <li class="fragment">Can we reject the null hypothesis that the 2016 mean is the same as 2.5 at the .01 alpha level? We can change the default level of .05 to .01 using the conf.level option (which requires the confidence level, so .99 for the .01 alpha level).</li>
 </ul>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># To Change Confidence Level:</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2016</span>], </span>
-<span id="cb24-4"><a href="#cb24-4"></a>      <span class="at">mu =</span> <span class="fl">2.5</span>, <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    One Sample t-test
-
-data:  gss_week7$chldidel[gss_week7$year == 2016]
-t = 1.5082, df = 720, p-value = 0.1319
-alternative hypothesis: true mean is not equal to 2.5
-99 percent confidence interval:
- 2.466898 2.626029
-sample estimates:
-mean of x 
- 2.546463 </code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="other-t.test-options-1" class="slide level2">
-<h2>Other t.test() Options</h2>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># To Change Confidence Level:</span></span>

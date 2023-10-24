@@ -110,6 +110,8 @@ pt(-3.389708, df = 572) * 2
 
 We can reject the null hypothesis because the p-value is less than .05 (the cutoff for a 95% test).
 
+See slides for an example of how confidence intervals would also lead us to the same conclusion.
+
 ## Shortcut!
 
 R has a built-in function called `t.test()` that will calculate all of these test statistics. With one mean, we have to fill in the value of mu ($\mu$) which is the null hypothesis value. If you leave it out, the default is zero.
