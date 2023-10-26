@@ -1,0 +1,82 @@
+---
+output: pdf_document
+geometry: margin=1.0in
+fontsize: 12pt
+header-includes:
+  - \usepackage{setspace}
+  - \singlespacing 
+  - \usepackage{nopageno} 
+---
+
+```{r}
+library(tidyverse)
+library(gssr)
+```
+
+
+```{r}
+gss_get_marginals(varnames = "degree", data = gss_doc, margin = marginals)
+```
+
+
+```{r}
+gss_2018 <- gss_all |> 
+  filter(year == 2018) |> 
+  select(id, mntlhlth, degree) |> 
+  drop_na()
+```
+
+```{r}
+gss_doc %>% filter(id == "degree") %>%
+  select(marginals) %>% 
+  unnest(cols = c(marginals))
+```
+
+
+
+### Questions
+
+1. Does the mean number of days of poor mental health differ from 3 at the 99% confidence level?
+
+```{r}
+t.test(gss_2018$mntlhlth, mu = 3, conf.level = .99)
+```
+
+
+2. Among respondents reporting any days of poor mental health, does the mean number of days differ from 8.5 at the 95% confidence level?
+
+```{r}
+t.test(gss_2018$mntlhlth[gss_2018$mntlhlth>0], 
+       mu = 8.5, conf.level = .95)
+```
+
+3. Consider respondents who have not entered or completed college. Among these respondents, does the proportion with any mental health days differ from .40 at the 99% confidence level?
+
+```{r}
+gss_2018 <- gss_2018 |> 
+  mutate(mntlhlth_any = ifelse(mntlhlth>0, 1, 0))
+```
+
+```{r}
+addmargins(table(gss_2018$degree, gss_2018$mntlhlth_any))
+```
+
+```{r}
+prop.test(45+295, 120+671, p = .4, conf.level = .99)
+```
+
+4. Consider respondents who have completed college or more. Among these respondents, does the proportion with any mental health days differ from .40 at the 95% confidence level?
+
+
+```{r}
+addmargins(table(gss_2018$degree, gss_2018$mntlhlth_any))
+```
+
+```{r}
+prop.test(151+70, 323+168, p = .4, conf.level = .95)
+```
+
+```{r}
+t.test(gss_2018$mntlhlth[gss_2018$degree<=1 & gss_2018$mntlhlth>0], gss_2018$mntlhlth[gss_2018$degree>=3 & gss_2018$mntlhlth>0])
+```
+

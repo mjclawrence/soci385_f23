@@ -1,0 +1,138 @@
+---
+title: "GSS Cleanup"
+author: "ML"
+date: "10/26/2023"
+format: pdf
+---
+
+## Set Up
+
+Install the `gssr` package:
+
+```{r}
+install.packages("remotes")
+remotes::install_github("kjhealy/gssr")
+```
+
+You do not have to reinstall the package so put a hashtag in front of both lines in the chunk above after the package has installed.
+
+You will have to load the package every time you want to use it. You load it just as you load any other package. We'll also load tidyverse to use its helper functions.
+
+```{r}
+library(gssr)
+library(tidyverse)
+```
+
+## GSS Codebook
+
+Loading the package will give you two helpful messages. To attach the entire GSS dataset as a dataframe, use `data(gss_all)`. To attach just the codebook, use `data(gss_doc)`. We'll start with just the codebook.
+
+```{r}
+data(gss_doc)
+```
+
+Open the data spreadsheet view of the `gss_doc` dataframe. The id column lists the variable names. The  description column is a simple summary of the question. The text column is the exact wording of the survey question. The properties and marginals columns will come in handy soon. 
+
+Use the filter option in the spreadsheet view to find the variable with the description related to the `parsol` variable. The question wording should be the same as what the GSS data explorer website showed.
+
+Once you know the variable id, you can also get the value labels and the wording using the `filter` and `select` functions we have seen before.
+
+```{r}
+gss_doc |>  
+  filter(id == "parsol") |> 
+  select(id, description, text)
+```
+
+You can pull multiple values at the same time. This could be helpful if you want to create your own codebook with all the variables in your study. For this exercise we will use the `degree` and `mntlhlth` variables. Let's pull both of them.
+
+```{r}
+gss_doc |>  
+  filter(id == "degree" | id == "mntlhlth") |> 
+  select(id, description, text)
+```
+
+Let's find the values and the distribution for the degree variable across all years.
+
+```{r}
+gss_get_marginals("degree", gss_doc)
+```
+
+You can see in the table above that values of 8 and 9 are all NA. If you just want a quick way to see the values that the GSS identifies with missing responses, access the question's properties.
+
+```{r}
+gss_get_props("degree", gss_doc)
+```
+
+## GSS Dataset
+
+Now let's look at the data. The package automatically named the dataframe `gss_all` but we have to load it. It might take a little while to load since it's a big file.
+
+```{r}
+data(gss_all)
+```
+
+Let's see in which years the `mntlhlth` question was asked.
+
+```{r}
+gss_which_years(gss_all, "mntlhlth")
+```
+
+If the question was not asked in a year, we would see FALSE instead of TRUE. We do not need all the observations from every year between 1972 and 2021 for our example. Let's keep the observations from 2018 in a new dataframe we will call `gss_subset` and select the two variables we need.
+
+```{r}
+gss_subset <- gss_all |> 
+  filter(year == 2018) |> 
+  select(degree, mntlhlth)
+```
+
+Run a summary of this dataframe to see how the values are coded and if there are any missing values.
+
+```{r}
+summary(gss_subset)
+```
+
+For our exercise, we can drop all the missing values.
+
+```{r}
+gss_subset <- gss_subset |> 
+  drop_na()
+```
+
+
+From the summary, it looks like we need to add variable labels for `degree`. Recall that we can find the labels with the `gss_get_marginals()` function and the `gss_doc` dataframe:
+
+```{r}
+gss_get_marginals(c("degree"), gss_doc)
+```
+
+Use these values and labels to clean up the `degree` variable:
+
+```{r}
+gss_subset <- gss_subset |> 
+  mutate(degree = factor(degree,
+                      labels = c("Less than HS",
+                                 "High School",
+                                 "Junior College",
+                                 "Bachelor",
+                                 "Graduate")))
+```
+
+Finally, let's save the cleaned up subset as a csv file to use it again.
+
+```{r}
+write.csv(gss_subset, file = "../data/gss_cleanup_example.csv", row.names = FALSE)
+```
+
+Alternatively, we could save the file as an .RData file rather than as a .csv file. The advantage of .Rdata is that this file type preserves the factor level ordering so you will not have to reassert it every time. 
+
+```{r}
+save(gss_subset, file = "../data/gss_cleanup_example.RData")
+```
+
+To reopen an RData file, use `load()`.
+
+```{r}
+load("../data/gss_cleanup_example.RData")
+```
+
+You will use this file for Assignment 4.

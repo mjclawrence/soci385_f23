@@ -164,6 +164,27 @@ t.test(gss_week7$chldidel[gss_week7$year==2016], mu = 2.5,
        conf.level = .99)
 ```
 
+# Thursday Warm Up Exercise
+
+Descriptions of all the GSS variables are available at: 
+
+https://gssdataexplorer.norc.org/home
+
+Click the "Search Variables" button and find the description for the `parsol` variable.
+
+What could be a sociological research question using responses to the `parsol` question and the average number of ideal children (the `chldidel`)?
+
+
+
+
+
+
+
+Comparse worse to mean for better?
+(If parsol == better, mean chldidel = 2.58)
+(If parsol == worse, mean chldide = 2.49)
+
+
 # Inference For Single Proportions
 
 We have previously seen that proportions and means have different standard errors. As a result, we use different hypothesis tests for them as well. We'll skip to the shortcut this time. 
@@ -220,4 +241,3 @@ addmargins(table(gss_week7$less_ideal))
 
 prop.test(1486, 2923, p = .53, conf.level = .99)
 ```
-

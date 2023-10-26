@@ -664,13 +664,6 @@
 </div>
 </div>
 </div>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.881357 1.998255 2.115153</code></pre>
-</div>
-</div>
-</div>
 <ul>
 <li class="fragment">The null hypothesis value of 2.2 falls outside our confidence interval, so we can reject the null hypothesis.</li>
 </ul>
@@ -679,8 +672,8 @@
 <h2>Big Shortcut: t.test()</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>childs[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
-<span id="cb22-2"><a href="#cb22-2"></a>      <span class="at">mu =</span> <span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>childs[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
+<span id="cb21-2"><a href="#cb21-2"></a>      <span class="at">mu =</span> <span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -711,8 +704,8 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
-<span id="cb24-2"><a href="#cb24-2"></a>      <span class="at">mu =</span> <span class="fl">2.55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2018</span>], </span>
+<span id="cb23-2"><a href="#cb23-2"></a>      <span class="at">mu =</span> <span class="fl">2.55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -736,7 +729,7 @@ mean of x
 <ul>
 <li class="fragment">No, do not reject the null hypothesis:
 <ul>
-<li class="fragment">The test statistic is not more extreme than -1.97</li>
+<li class="fragment">The test statistic is not more extreme than -1.96</li>
 <li class="fragment">The p-value is greater than .05</li>
 <li class="fragment">The confidence interval does include null hypothesis value of 2.55</li>
 </ul></li>
@@ -749,10 +742,10 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># To Change Confidence Level:</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2016</span>], </span>
-<span id="cb26-4"><a href="#cb26-4"></a>      <span class="at">mu =</span> <span class="fl">2.5</span>, <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># To Change Confidence Level:</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">t.test</span>(gss_week7<span class="sc">$</span>chldidel[gss_week7<span class="sc">$</span>year<span class="sc">==</span><span class="dv">2016</span>], </span>
+<span id="cb25-4"><a href="#cb25-4"></a>      <span class="at">mu =</span> <span class="fl">2.5</span>, <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -789,8 +782,8 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>gss_week7 <span class="ot">&lt;-</span> gss_week7 <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">mutate</span>(<span class="at">has_ideal =</span> <span class="fu">ifelse</span>(childs <span class="sc">==</span> chldidel, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>gss_week7 <span class="ot">&lt;-</span> gss_week7 <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">mutate</span>(<span class="at">has_ideal =</span> <span class="fu">ifelse</span>(childs <span class="sc">==</span> chldidel, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -804,7 +797,7 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(gss_week7<span class="sc">$</span>has_ideal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(gss_week7<span class="sc">$</span>has_ideal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -822,7 +815,7 @@ mean of x
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">prop.test</span>(<span class="dv">889</span>, <span class="dv">2923</span>, <span class="at">p =</span> .<span class="dv">33</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">prop.test</span>(<span class="dv">889</span>, <span class="dv">2923</span>, <span class="at">p =</span> .<span class="dv">33</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -846,8 +839,8 @@ sample estimates:
 <p>Does the proportion of respondents with less children than their ideal number differ from .53 at the 99% confidence level?</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>gss_week7 <span class="ot">&lt;-</span> gss_week7 <span class="sc">|&gt;</span> </span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">less_ideal =</span> <span class="fu">ifelse</span>(childs <span class="sc">&lt;</span> chldidel, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>gss_week7 <span class="ot">&lt;-</span> gss_week7 <span class="sc">|&gt;</span> </span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">less_ideal =</span> <span class="fu">ifelse</span>(childs <span class="sc">&lt;</span> chldidel, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -855,7 +848,7 @@ sample estimates:
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(gss_week7<span class="sc">$</span>less_ideal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(gss_week7<span class="sc">$</span>less_ideal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -870,7 +863,7 @@ sample estimates:
 <h2>Another Example</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">prop.test</span>(<span class="dv">1486</span>, <span class="dv">2923</span>, <span class="at">p =</span> .<span class="dv">53</span>, <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">prop.test</span>(<span class="dv">1486</span>, <span class="dv">2923</span>, <span class="at">p =</span> .<span class="dv">53</span>, <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">

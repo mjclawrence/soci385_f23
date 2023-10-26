@@ -357,7 +357,7 @@ t.test(gss_week7$chldidel[gss_week7$year==2018],
 ## Significance Test for Mean - Exercise
 
 - No, do not reject the null hypothesis:
-  - The test statistic is not more extreme than -1.97
+  - The test statistic is not more extreme than -1.96
   - The p-value is greater than .05
   - The confidence interval does include null hypothesis value of 2.55
 

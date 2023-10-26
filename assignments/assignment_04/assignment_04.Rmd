@@ -1,0 +1,33 @@
+---
+output: pdf_document
+geometry: margin=1.0in
+fontsize: 12pt
+header-includes:
+  - \usepackage{setspace}
+  - \singlespacing 
+  - \usepackage{nopageno} 
+---
+
+## SOCI 385 - Social Statistics
+## Fall 2023
+## Assignment 3
+
+\vspace{1.5em}
+
+***This assignment is due via Canvas by 10:00 AM on Tuesday, October 31, 2023.***
+
+***Please show all your code and write your responses in complete sentences as appropriate. Submit your rendered pdf and your Quarto notebook (the .qmd file). Remember to include your name in the header.***
+
+For this assignment, you will use the `degree` and `mntlhlth` variables from the 2018 GSS that we found in class on Thursday. You can use the R shortcuts for the hypothesis tests that we learned this week.
+
+\vspace{1.5em}
+
+### Questions
+
+1. Does the mean number of days of poor mental health differ from 3 at the 99% confidence level?
+
+2. Among respondents reporting any days of poor mental health, does the mean number of days differ from 8.5 at the 95% confidence level?
+
+3. Consider respondents who have not entered or completed college. Among these respondents, does the proportion with any mental health days differ from .40 at the 99% confidence level?
+
+4. Consider respondents who have completed college or more. Among these respondents, does the proportion with any mental health days differ from .40 at the 95% confidence level?
