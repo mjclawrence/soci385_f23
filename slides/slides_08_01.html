@@ -669,6 +669,291 @@ sample estimates:
 <li class="fragment"><p>SE is still the first step, but now want SE <em>of the difference</em>: <span class="math inline">\(se = \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\)</span></p></li>
 <li class="fragment"><p>When coding, easier to replace numerators with variances: <span class="math inline">\(se = \sqrt{ \frac{var_1}{n_1} + \frac{var_2}{n_2}}\)</span></p></li>
 </ul>
+</section>
+<section id="cis-for-comparing-means-1" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+</section>
+<section id="cis-for-comparing-means-2" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment">Example using <code>gss_week8</code> data. We want to only keep observations with non-missing values for the <code>memnum</code> variable:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>gss_week8 <span class="ot">&lt;-</span> gss_week8 <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(memnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li class="fragment">We want to compare mean memberships across two degree categories. Options?</li>
+</ul>
+</section>
+<section id="cis-for-comparing-means-3" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment">Could use binary variables or indexing. For this example, create a binary variable called <code>college</code> where everyone with at least a college degree gets a 1 and everyone else gets a 0. Try using <code>str_detect()</code> here.</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>gss_week8 <span class="ot">&lt;-</span> gss_week8 <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">mutate</span>(<span class="at">college =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(degree, <span class="st">"Degree"</span>), <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-4" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment">For the standard error formula, we’ll need the number of respondents in each category of <code>college</code>:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">table</span>(gss_week8<span class="sc">$</span>college)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   0    1 
+1035  430 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-5" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment">We also need the mean number of memberships for college degree holders and non college degree holders. Options here?</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mean</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.218357</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">mean</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.551163</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-6" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<p>This also works:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>gss_week8 <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">group_by</span>(college) <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_memnum =</span> <span class="fu">mean</span>(memnum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  college mean_memnum
+    &lt;dbl&gt;       &lt;dbl&gt;
+1       0        1.22
+2       1        2.55</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-7" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment"><p>We want to know if the difference between these two means is significant</p></li>
+<li class="fragment"><p>In the language of hypothesis testing, we want to know if we can reject the null hypothesis that the true difference between these two sample means is zero</p></li>
+<li class="fragment"><p>Start with the difference:</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>diff <span class="ot">&lt;-</span> <span class="fl">2.551163</span> <span class="sc">-</span> <span class="fl">1.218357</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.332806</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-8" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment">Then find the standard error of the difference: <span class="math inline">\(se = \sqrt{ \frac{var_{memnum,college=0}}{n_{college=0}} + \frac{var_{memnum,college=1}}{n_{college=1}} }\)</span></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>diffse_college0 <span class="ot">&lt;-</span> <span class="fu">var</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">0</span>]) <span class="sc">/</span> </span>
+<span id="cb27-2"><a href="#cb27-2"></a>                              <span class="dv">1035</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a></span>
+<span id="cb27-4"><a href="#cb27-4"></a>diffse_college1 <span class="ot">&lt;-</span> <span class="fu">var</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">1</span>]) <span class="sc">/</span> </span>
+<span id="cb27-5"><a href="#cb27-5"></a>                              <span class="dv">430</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a></span>
+<span id="cb27-7"><a href="#cb27-7"></a>diffse <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(diffse_college0 <span class="sc">+</span> diffse_college1)</span>
+<span id="cb27-8"><a href="#cb27-8"></a></span>
+<span id="cb27-9"><a href="#cb27-9"></a>diffse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1147038</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-9" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment"><p>Construct the 95% confidence interval for the difference</p></li>
+<li class="fragment"><p>Starting value is the difference, rest of the formula is the same:</p>
+<ul>
+<li class="fragment">difference <span class="math inline">\(\pm\)</span> 1.96*(standard error of difference)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>diff_ll95 <span class="ot">&lt;-</span> diff <span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span>diffse</span>
+<span id="cb29-2"><a href="#cb29-2"></a>diff_ul95 <span class="ot">&lt;-</span> diff <span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span>diffse</span>
+<span id="cb29-3"><a href="#cb29-3"></a>diff_ci95 <span class="ot">&lt;-</span> <span class="fu">c</span>(diff_ll95, diff, diff_ul95)</span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>diff_ci95</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.107987 1.332806 1.557625</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="cis-for-comparing-means-10" class="slide level2">
+<h2>CIs for Comparing Means</h2>
+<ul>
+<li class="fragment"><p>In sampling distribution, 95% of the time the difference in mean memberships between those with college degrees and those without will fall between 1.108 and 1.558</p></li>
+<li class="fragment"><p>We can be 95% confident that the difference in the population will fall within the range</p></li>
+<li class="fragment"><p>We calculated difference as <code>memnum[college==1] - memnum[college==0]</code> so positive value tells us the mean is higher for college degree holders</p></li>
+</ul>
+</section>
+<section id="significance-of-differences-in-means" class="slide level2">
+<h2>Significance of Differences in Means</h2>
+<ul>
+<li class="fragment"><p>At 95% confidence level, can we say that the mean memberships differs between these two groups? <span class="math inline">\(\Large{t = \frac{observed - expected}{se}}\)</span></p></li>
+<li class="fragment"><p>Observed = Difference; Expected = Null Hypothesis Value, Standard Error = standard error <em>of the observed difference</em></p></li>
+<li class="fragment"><p>With means, usually <span class="math inline">\(H_0: \mu = 0\)</span> and <span class="math inline">\(H_A: \mu \neq 0\)</span></p></li>
+</ul>
+</section>
+<section id="significance-of-differences-in-means-1" class="slide level2">
+<h2>Significance of Differences in Means</h2>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Test Statistic:</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>((<span class="fl">2.551163</span> <span class="sc">-</span> <span class="fl">1.218357</span>) <span class="sc">-</span> <span class="dv">0</span>) <span class="sc">/</span> diffse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.61955</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>Test statistic tells us observed difference is 11.62 standard errors away from null hypothesis’ expected difference of 0</p></li>
+<li class="fragment"><p>11.62 &gt; 1.96, so we can reject the null hypothesis</p></li>
+</ul>
+</section>
+<section id="comparing-means---shortcut" class="slide level2">
+<h2>Comparing Means - Shortcut!</h2>
+<ul>
+<li class="fragment">Place the two means you want to compare in the <code>t.test()</code> function:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">1</span>], </span>
+<span id="cb33-2"><a href="#cb33-2"></a>          gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>college<span class="sc">==</span><span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$memnum[gss_week8$college == 1] and gss_week8$memnum[gss_week8$college == 0]
+t = 11.62, df = 639.01, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 1.107563 1.558047
+sample estimates:
+mean of x mean of y 
+ 2.551163  1.218357 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-means---shortcut-1" class="slide level2">
+<h2>Comparing Means - Shortcut</h2>
+
+<img data-src="385_figures/ttest_1.png" class="r-stretch"><ul>
+<li class="fragment">Can reject null hypothesis
+<ul>
+<li class="fragment">Test statistic more extreme than 1.96 (red box)</li>
+<li class="fragment">p-value less than .05 (blue box)</li>
+<li class="fragment">95% confidence interval does not include null hypothesis value of zero (green box)</li>
+</ul></li>
+</ul>
+</section>
+<section id="comparing-means---exercise" class="slide level2">
+<h2>Comparing Means - Exercise</h2>
+<ul>
+<li class="fragment">Is the difference in mean memberships between those in the “Some College” degree category and those in the “HS Diploma” degree category significant at the .01 alpha level?</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>degree <span class="sc">==</span> <span class="st">"Some College"</span>],</span>
+<span id="cb35-2"><a href="#cb35-2"></a>       gss_week8<span class="sc">$</span>memnum[gss_week8<span class="sc">$</span>degree <span class="sc">==</span> <span class="st">"HS Diploma"</span>],</span>
+<span id="cb35-3"><a href="#cb35-3"></a>       <span class="at">conf.level =</span> .<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$memnum[gss_week8$degree == "Some College"] and gss_week8$memnum[gss_week8$degree == "HS Diploma"]
+t = 2.2388, df = 137.46, p-value = 0.02678
+alternative hypothesis: true difference in means is not equal to 0
+99 percent confidence interval:
+ -0.06942738  0.90219305
+sample estimates:
+mean of x mean of y 
+ 1.687500  1.271117 </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-means---exercise-1" class="slide level2">
+<h2>Comparing Means - Exercise</h2>
+
+<img data-src="385_figures/ttest_2.png" class="r-stretch"><ul>
+<li class="fragment">Cannot reject null hypothesis
+<ul>
+<li class="fragment">Test statistic is less extreme than 2.58 (red box)</li>
+<li class="fragment">p-value greater than .01 (blue box)</li>
+<li class="fragment">99% confidence interval includes null hypothesis value of zero (green box)</li>
+</ul></li>
+</ul>
+</section>
+<section id="group-exercises" class="slide level2">
+<h2>Group Exercises</h2>
+<ul>
+<li class="fragment"><p>Some of the differences we have been waiting to test!</p>
+<ul>
+<li class="fragment">Age at first birth (<code>agekdbrn</code>) by race (<code>racehisp</code>)</li>
+<li class="fragment">Age (<code>age</code>) by self employment status (<code>wrkslf</code>)</li>
+<li class="fragment">Number of political actions (<code>polactions</code>) by sex (<code>sex</code>)</li>
+<li class="fragment">Number of political actions (<code>polactions</code>) by class (<code>class</code>)</li>
+</ul></li>
+<li class="fragment"><p>Give a sociological hypothesis for why you expect the difference you are testing will or will not be statistically significant</p></li>
+<li class="fragment"><p>Test the significance of the difference in means between two categories at the 95% confidence level</p></li>
+</ul>
 <div class="footer footer-default">
 
 </div>
