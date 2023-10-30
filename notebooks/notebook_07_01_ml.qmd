@@ -175,6 +175,11 @@ Click the "Search Variables" button and find the description for the `parsol` va
 What could be a sociological research question using responses to the `parsol` question and the average number of ideal children (the `chldidel`)?
 
 
+The population average for number of ideal children is 2.58 for respondents who say their standard of living is "Somewhat Better" or "Much Better" than their parents. Does the average for respondents who say "Somewhat Worse" or "Much Worse" significantly differ from that value at the 95% confidence level?
+
+```{r}
+t.test(gss_week7$chldidel[str_detect(gss_week7$parsol, "Worse")], mu = 2.58, conf.level = .95)
+```
 
 
 

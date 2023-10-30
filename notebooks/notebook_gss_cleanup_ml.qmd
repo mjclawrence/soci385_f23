@@ -10,8 +10,8 @@ format: pdf
 Install the `gssr` package:
 
 ```{r}
-install.packages("remotes")
-remotes::install_github("kjhealy/gssr")
+#install.packages("remotes")
+#remotes::install_github("kjhealy/gssr")
 ```
 
 You do not have to reinstall the package so put a hashtag in front of both lines in the chunk above after the package has installed.

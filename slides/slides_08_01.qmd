@@ -1,0 +1,278 @@
+---
+title: "Social Statistics"
+subtitle: "Differences In Means"
+date: "October 31, 2023"
+format: 
+  clean-revealjs:
+    incremental: true
+    progress: false
+    slide-number: false
+    controls: auto
+    menu: 
+      side: left
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+
+load("../data/gss_cleanup_example.RData")
+```
+
+## Assignment 4 Review - Question 1
+
+Does the mean number of days of poor mental health differ from 3 at the 99% confidence level?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+t.test(gss_subset$mntlhlth, mu = 3, conf.level = .99)
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 1
+
+- Reject the null hypothesis
+  - test statistic of 3.0631 is more extreme than 2.58
+  - p-value is less than .01
+  - 99 percent confidence interval does not include null hypothesis value
+  
+---
+
+## Assignment 4 Review - Question 2
+
+2. Among respondents reporting any days of poor mental health, does the mean number of days differ from 8.5 at the 95% confidence level?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+t.test(gss_subset$mntlhlth[gss_subset$mntlhlth>0], mu = 8.5)
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 2
+
+- Do not reject the null hypothesis
+  - test statistic of -1.2017 is not more extreme than -1.96
+  - p-value is not less than .05
+  - 95 percent confidence interval includes the null hypothesis value
+  
+---
+
+## Assignment 4 Review - Question 3
+
+3. Consider respondents who have not entered or completed college. Among these respondents, does the proportion with any mental health days differ from .40 at the 99% confidence level?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Start with binary variable
+# identifying respondents with any mental health days
+
+gss_subset <- gss_subset |> 
+  mutate(mntlhlth_any = ifelse(mntlhlth > 0, 1, 0))
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 3
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Don't need binary variable for education
+# But having one might be faster and cleaner
+
+gss_subset <- gss_subset |> 
+mutate(college = ifelse(degree == "Bachelor" |
+                                 degree == "Graduate", "4-Year Degree", 
+                        ifelse(degree == "Junior College", "2-Year Degree",
+                               "None"))) |> 
+mutate(college = factor(college,
+                        levels = c("None",
+                                   "2-Year Degree",
+                                   "4-Year Degree")))
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 3
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Find frequencies
+
+addmargins(table(gss_subset$college,
+                 gss_subset$mntlhlth_any))
+
+```
+
+:::
+
+::: {.fragment}
+
+We need the number with a "None" for degree and a 1 for any mental health days. And we need the total number with a "None" for degree.
+
+:::
+
+---
+
+## Assignment 4 Review - Question 3
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+prop.test(340, 791, p = .4, conf.level = .99)
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 3
+
+- Do not reject the null hypothesis
+  - p-value is not less than .01
+  - 99 percent confidence interval includes null hypothesis value
+  - Don't look at the X-squared test statistics for prop.test()
+  
+---
+  
+## Assignment 4 Review - Question 4
+  
+4. Consider respondents who have completed college or more. Among these respondents, does the proportion with any mental health days differ from .40 at the 95% confidence level?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Wording is a little confusing. 
+# Could or could not include respondents with 2-year degree.
+# We will include them here...
+
+addmargins(table(gss_subset$college, gss_subset$mntlhlth_any))
+
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 4
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+prop.test(59 + 221, 126 + 491, p = .4)
+```
+
+:::
+
+---
+
+## Assignment 4 Review - Question 4
+
+- Reject the null hypothesis
+  - p-value is less than .05
+  - 95 percent confidence interval does not include the null hypothesis value
+  - Don't look at the X-squared test statistics for prop.test()
+
+---
+
+## Comparing Samples
+
+- Assignment questions measured the difference between an estimated mean and a null hypothesis value in terms of standard errors
+
+- This week, we will measure the difference between two estimated means, and then measure that distance from a null hypothesis value in terms of standard errors
+
+---
+
+## Comparing Samples
+
+- Basics are the same: we need means, standard errors, and null hypotheses but we estimate them slightly differently
+
+- Assumptions are also the same
+  - Distribution of differences between means is normally distributed
+  - For large sample sizes, t-distribution still approximates z-distribution
+  
+---
+
+## Comparing Samples
+
+- Significance tests define groups (not datasets) as *samples*
+
+- Samples are *independent* if the observations are random
+  - Coin flips are independent of each other.
+  - Across years, cross-sectional surveys (like GSS) are independent
+
+- Samples are *dependent* if observations are matched
+  - Can be the same observations in a long-term panel (PSID, NLSY, etc.) or multiple measures in a short-term study (scores from two exams)
+  - Can be different observations if respondents' answers could be correlated (partners, siblings, etc.)
+
+---
+
+## CIs for Comparing Means
+
+- From CI for mean to CI for difference in means
+
+- CI formula for difference in means is similar to what we used for means: $CI = (\bar{y}_2 - \bar{y}_1) \pm t(se)$
+
+-  SE is still the first step, but now want SE *of the difference*: $se = \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$
+
+- When coding, easier to replace numerators with variances: $se = \sqrt{ \frac{var_1}{n_1} + \frac{var_2}{n_2}}$
+
+---
+
+## CIs for Comparing Means
+
+---
+
+# CIs for Comparing Means
+
+- Example using `week_8_1` data. We want a new data frame called `subset` that only has observations with non-missing values for the `memnum` variable:
+
+--
+
+```{r}
+subset <- filter(week_8_1, !is.na(memnum))
+```
+
+--
+
+### We want to compare mean memberships across two degree categories. Options?
+
