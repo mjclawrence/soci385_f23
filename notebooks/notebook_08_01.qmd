@@ -71,7 +71,7 @@ diffse <- sqrt(diffse_college0 + diffse_college1)
 diffse
 ```
 
-Then use `diff` and `diffse` to construct the 95% of the confidence interval for the difference:
+Then use `diff` and `diffse` to construct the 95% confidence interval for the difference:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
