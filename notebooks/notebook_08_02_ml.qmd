@@ -17,9 +17,13 @@ gss_week8 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23
 
 ## Warm Up
 
-1. Test if there is a significant difference (at the 95% confidence level) in average number of political actions between respondents who self identify as lower class and respondents who self identify as working class. Use the `polactions` variable for political actions and the `class` variable for subjective class identification.
+1. Test if there is a significant difference (at the 95% confidence level) in average number of political actions between respondents who self identify as lower class and respondents who self identify as working class. Use the `polactions` variable for political actions and the `class` variable for subjective class identification. Start with a table of `class` to see the value labels.
 
-### REPLACE THIS LINE WITH YOUR CODE
+### REPLACE THIS. LINE WITH YOURCODE CHUNK ###
+
+```{r}
+table(gss_week8$class)
+```
 
 ```{r}
 # Average number of political actions between lower and working class respondents
@@ -48,10 +52,20 @@ t.test(gss_week8$polactions[gss_week8$class=="Lower"],
        var.equal = TRUE)
 ```
 
+2. Test if there is a significant difference (at the 95% confidence level) in average number of political actions (`polactions`) by sex (`sex`). Get a table of `sex` to see how the values are labeled.
 
-2. Test if there is a significant difference (at the 95% confidence level) in average age between respondents who work for someone else and respondents who are self employed. Use the `age` variable for age and the `wrkslf` variable for work status.
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-### REPLACE THIS LINE WITH YOUR CODE
+```{r}
+t.test(gss_week8$polactions[gss_week8$sex == "Female"],
+       gss_week8$polactions[gss_week8$sex == "Male"])
+```
+
+Cannot reject the null hypothesis; difference is not significant. Test statistic is not more extreme than -1.96, p-value is not less than .05, and the null hypothesis value of 0 is within the confidence interval.
+
+3. Test if there is a significant difference (at the 95% confidence level) in average age between respondents who work for someone else and respondents who are self employed. Use the `age` variable for age and the `wrkslf` variable for work status. Use a table with the `wrkslf` variable to see how the values are labeled.
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 ```{r}
 # Average age between respondents who work for someone else and who are self employed
@@ -60,6 +74,15 @@ t.test(gss_week8$age[gss_week8$wrkslf=="Work For Someone Else"],
 ```
 
 Difference is significant because you can reject the null hypothesis that the true difference is 0. Test statistic of -12.416 is more extreme than -1.96, p-value of 2.2e-16 is less than .05, and confidence interval does not include 0.
+
+4. Age at first birth (`agekdbrn`) by two values of race (`racehisp`). Only use female respondents' age at first birth. Check a table of `sex` and `racehisp` to see how the values are labeled.
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+```{r}
+t.test(gss_week8$agekdbrn[gss_week8$racehisp=="Black" & gss_week8$sex=="Female"],
+       gss_week8$agekdbrn[gss_week8$racehisp=="Hispanic" & gss_week8$sex=="Female"])
+```
 
 
 ## Comparing Proportions
@@ -90,167 +113,128 @@ We'll use data from an audit study examining discrimination by race and sex in t
 Let's load the data:
 
 ```{r}
-
+resume <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/resume.csv")
 ```
 
+Open the spreadsheet view of the data to see how the names vary by race and sex.
 
+What proportion of resumes with white and black names received call backs?
 
-
-Let's look at racial differences in the proportion of female respondents who have their first child when they are teenagers.
-
-What do we need?
-
-Start by cleaning up the data frame so we only have female respondents. You can keep the same data frame name.
-
-### REPLACE THIS LINE WITH YOUR CODE
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 ```{r}
-week_8_1 <- filter(week_8_1, sex == "Female")
+resume |> 
+  group_by(race) |> 
+  summarise(prop_callback = mean(call))
 ```
 
-Let's review a proportion table with `racehisp` in the rows and `agekdbrn` in the columns.
+We want to test if the *difference* between these two proportions is significant. When we wanted to test if one proportion differed from a null hypothesis value, we fed prop.test() the number in our sample with a 1 for a binary variable and the total number in our sample. To test differences in proportions, we will feed prop.test() a cross table (or contingency table).
 
-### REPLACE THIS LINE WITH YOUR CODE
-
-```{r proportion table}
-round(prop.table(table(week_8_1$racehisp, 
-      week_8_1$agekdbrn),1),3)
-```
-
-This is going to be easier if we make a binary variable called `teen_birth` where respondents who were 19 or younger when they had their first birth are coded with a 1 and everyone else gets a 0.
-
-### REPLACE THIS LINE WITH YOUR CODE
+The table we need will have the `race` and `call` variables. Save the table as an object so you can use it later. Note that we do not need to find the sums of each row with addmargins.
 
 ```{r}
-week_8_1 <- week_8_1 |> 
-   mutate(teen_birth = ifelse(agekdbrn<=19, 1, 0))
+race_table <- table(resume$race, resume$call)
 ```
 
-And look at the proportions with a 1 by race.
-
-### REPLACE THIS LINE WITH YOUR CODE
-
+You can see the frequencies by recalling the object name.
 
 ```{r}
-round(prop.table(table(week_8_1$racehisp, week_8_1$teen_birth),1),3)
+race_table
 ```
 
-Is there a significant difference in the Black and Hispanic proportions at the .05 alpha level?
-
-To find out, we'll use `prop.test()` again. The change in how we use `prop.test()` this week compared to last week is that we now need a full frequency table rather than two frequencies. So in this example we need a table of the number of respondents in each `racehisp` category that interests us who have a 0 and 1 for our `teen_birth` variable.
-
-We know how to get a frequency table (not a proportion table) for *all* the racehisp categories. We can filter to only keep respondents with "Black" or "Hispanic" values for racehisp. But the "White" and "Other" values still technically exist so we have to use the `droplevels()` function to get rid of them. Then save the table we need as an object called `racehisp_teenbirth_table`.
+You don't have to redo the table to get proportions. Simply wrap the object name in the `prop.table()` function (with a ",1" for row proportions).
 
 ```{r}
-black_hispanic <- week_8_1 |> 
-   filter(racehisp == "Black" | racehisp == "Hispanic") |> 
-   droplevels() # Add this to drop the factor levels you don't want in the table
+prop.table(race_table, 1)
 ```
 
+The proportions in the 1 column are the same that we calculated earlier showing the proportion of resumes with black and white names that received call backs. Feed the saved table - the one with frequencies, not proportions - into prop.test() to test if the difference in these proportions is significant. More precisely, we are testing if the difference in proportions significantly differs from a null hypothesis value of zero (which would tell us there is no difference in the proportions).
 
 ```{r}
-racehisp_teenbirth_table <- table(black_hispanic$racehisp,
-                                  black_hispanic$teen_birth)
-
-racehisp_teenbirth_table
+prop.test(race_table)
 ```
 
-...and feed that object into `prop.test()`.
+The sample estimates for "prop 1" and "prop 2" refer to the proportions with 0 in our table. Subtracting those proportions from 1 would give you the proportions with 1 in our table.
+
+Can we reject the null hypothesis? Is the difference significant?
+
+Now test if there is a significant difference in the proportion of call backs between resumes with female and male names.
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 ```{r}
-prop.test(racehisp_teenbirth_table)
+sex_table <- table(resume$sex, resume$call)
+prop.table(sex_table,1)
 ```
-
-How do you interpret these results?
-
-What are the `prop 1` and `prop 2` sample estimates?
 
 ```{r}
-prop.table(racehisp_teenbirth_table,1)
+prop.test(sex_table)
 ```
 
+We cannot reject the null hypothesis. The p-value is not less than .05 and the 95 percent confidence interval includes the null hypothesis value of 0.
 
-# Exercises
+How would we get the proportions by race *and* sex?
 
-Let's try a couple examples with a new dataset
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
 ```{r}
-week_8_2 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f21/main/data/week_8_2.csv")
+resume |> 
+  group_by(race, sex) |> 
+  summarise(prop_callback = mean(call)) |> 
+  arrange(-prop_callback)
 ```
 
-We'll start with class differences in how respondents think people "get ahead".
+In groups, let's look at four more differences:
 
-## Exercise 1
+- Differences in the proportions of call backs for resumes with black female names vs resumes with white female names
+- Differences in the proportions of call backs for resumes with white male names vs resumes with black male names
+- Differences in the proportions of call backs for resumes with white female names vs resumes with white male names
+- Differences in the proportions of call backs for resumes with black female names vs resumes with black male names
 
-At the .05 level, test the difference between the proportion of working class respondents who say that hard work is how people get ahead and the proportion of middle class respondents who say that hard work is how people get ahead. Use the variable name `hardwork` when you make the binary variable for "Hard work".
 
-### REPLACE THIS LINE WITH YOUR CODE
 
-Start with a proportion table with `class` in the rows and `getahead` in the columns:
-
-```{r proportion table}
-round(prop.table(table(week_8_2$class, 
-      week_8_2$getahead),1),3)
-```
-Now create a binary variable for "Hard work" (call it `hardwork`) and filter for the observations you want to compare in a table.
-
-### REPLACE THIS LINE WITH YOUR CODE
-
-```{r exercise set up, warning = FALSE, message = FALSE}
-
-# Create Data Frame:
-example1 <- week_8_2  |>
-   mutate(hardwork = ifelse(getahead == "Hard work", 1, 0)) |>
-   filter(class == "Working class" | class == "Middle class") |>
-   droplevels()
-```
-
-This also works if you want to use str_detect with multiple strings!
+### Race for females is significant
 
 ```{r}
-example1 <- week_8_2 |> 
-   mutate(hardwork = ifelse(getahead == "Hard work", 1, 0)) |> 
-   filter(str_detect(class, "Working|Middle")) |> # No space before or after |
-   droplevels()
+race_female_table <- table(resume$race[resume$sex=="female"],
+                           resume$call[resume$sex=="female"])
+prop.test(race_female_table)
 ```
 
-Now save the frequency table and run the test.
+### Race for males is not significant
 
 ```{r}
-# Save Table:
-example1_table <- table(example1$class, example1$hardwork)
-
-# Run Test:
-prop.test(example1_table)
+race_male_table <- table(resume$race[resume$sex=="male"],
+                        resume$call[resume$sex=="male"])
+prop.test(race_male_table)
 ```
 
-
-## Exercise 2
-
-At the .05 level, test the difference between the proportion of Black respondents who say that hard work is how people get ahead and the proportion of white respondents who say that hard work is how people get ahead. Use the variable name `hardwork` when you make the binary variable for "Hard work".
-
-### REPLACE THIS LINE WITH YOUR CODE
+### Sex for whites is not significant
 
 ```{r}
-prop.table(table(week_8_2$racehisp, week_8_2$getahead),1)
+sex_white_table <- table(resume$sex[resume$race=="white"],
+                         resume$call[resume$race=="white"])
+prop.test(sex_white_table)
 ```
 
 
-```{r set up binary variable and filter}
-exercise2 <- week_8_2 |>
-   mutate(hardwork = 
-             ifelse(getahead == "Hard work", 1, 0)) |>
-   filter(str_detect(racehisp, "Black|White")) |> 
-   droplevels()
+### Sex for blacks is not significant
+
+```{r}
+sex_black_table <- table(resume$sex[resume$race=="black"],
+                         resume$call[resume$race=="black"])
+prop.test(sex_black_table)
 ```
 
-```{r proportions exercise frequency table}
-exercise2_table <- table(exercise2$racehisp, exercise2$hardwork)
-exercise2_table
+
+Bonus! What names had the highest and lowest chances of receiving call backs?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+```{r}
+resume |> 
+  group_by(firstname) |> 
+  summarise(prop_callback = mean(call)) |> 
+  arrange(-prop_callback)
 ```
 
-And now feed this saved table into the `prop.test()` function:
-
-```{r prop test with frequency table}
-prop.test(exercise2_table)
-```
