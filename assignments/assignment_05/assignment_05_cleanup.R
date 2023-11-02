@@ -48,6 +48,8 @@ gss_test <- gss_test |>
 
 write.csv(gss_test, "data/assignment_05.csv", row.names = FALSE)
 
+gss_test <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_05.csv")
+
 
 # Difference in proportion of immigrants vs non immigrants 
 # who say hard work is essential

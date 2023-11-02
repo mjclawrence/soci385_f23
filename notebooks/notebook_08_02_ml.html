@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Matt Lawrence">
+<meta name="dcterms.date" content="2023-11-02">
+
+<title>Differences in Proportions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="notebook_08_02_ml_files/libs/clipboard/clipboard.min.js"></script>
+<script src="notebook_08_02_ml_files/libs/quarto-html/quarto.js"></script>
+<script src="notebook_08_02_ml_files/libs/quarto-html/popper.min.js"></script>
+<script src="notebook_08_02_ml_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="notebook_08_02_ml_files/libs/quarto-html/anchor.min.js"></script>
+<link href="notebook_08_02_ml_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="notebook_08_02_ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="notebook_08_02_ml_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="notebook_08_02_ml_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="notebook_08_02_ml_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Differences in Proportions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matt Lawrence </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<p>We’ll start with the <code>gss_week8.csv</code> file again today. Load it with the usual packages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gss_week8 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/gss_week8.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="warm-up" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up">Warm Up</h2>
+<ol type="1">
+<li>Test if there is a significant difference (at the 95% confidence level) in average number of political actions between respondents who self identify as lower class and respondents who self identify as working class. Use the <code>polactions</code> variable for political actions and the <code>class</code> variable for subjective class identification. Start with a table of <code>class</code> to see the value labels.</li>
+</ol>
+<section id="replace-this.-line-with-yourcode-chunk" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this.-line-with-yourcode-chunk">REPLACE THIS. LINE WITH YOURCODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gss_week8<span class="sc">$</span>class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  Lower  Middle   Upper Working 
+   1446    7396     522    7761 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average number of political actions between lower and working class respondents</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>class<span class="sc">==</span><span class="st">"Lower"</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>class<span class="sc">==</span><span class="st">"Working"</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$polactions[gss_week8$class == "Lower"] and gss_week8$polactions[gss_week8$class == "Working"]
+t = -1.5848, df = 268.46, p-value = 0.1142
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.55244202  0.05970903
+sample estimates:
+mean of x mean of y 
+ 2.044118  2.290484 </code></pre>
+</div>
+</div>
+<p>Difference is not significant because you cannot reject the null hypothesis that the true difference is 0. Test statistic of -1.5848 is not more extreme than -1.96, p-value of .1142 is not less than .05, and confidence interval does include 0.</p>
+<p>What is the relationship between the test statistic and the p-value?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="sc">-</span><span class="fl">1.5848</span>, <span class="at">df =</span> <span class="fl">268.46</span>) <span class="co"># probability of a more extreme value to the left of negative t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0570945</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fl">1.5848</span>, <span class="at">df =</span> <span class="fl">268.46</span>) <span class="co"># probability of a more extreme value to the right of positive t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0570945</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="sc">-</span><span class="fl">1.5848</span>, <span class="at">df =</span> <span class="fl">268.46</span>) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fl">1.5848</span>, <span class="at">df =</span> <span class="fl">268.46</span>)) <span class="co"># sum of probabilities = p-value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.114189</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="sc">-</span><span class="fl">1.5848</span>, <span class="at">df =</span> <span class="fl">268.46</span>) <span class="sc">*</span> <span class="dv">2</span> <span class="co"># simplified way to get the sum of probabilities</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.114189</code></pre>
+</div>
+</div>
+<p>These degrees of freedom are different from what we saw before because the t-test adjusts for the samples’ variances not being equal. If we assert that the variances are equal, we get df = n1 + n2 - 2</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>class<span class="sc">==</span><span class="st">"Lower"</span>],</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>class<span class="sc">==</span><span class="st">"Working"</span>],</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  gss_week8$polactions[gss_week8$class == "Lower"] and gss_week8$polactions[gss_week8$class == "Working"]
+t = -1.649, df = 1400, p-value = 0.09938
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.53944867  0.04671568
+sample estimates:
+mean of x mean of y 
+ 2.044118  2.290484 </code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Test if there is a significant difference (at the 95% confidence level) in average number of political actions (<code>polactions</code>) by sex (<code>sex</code>). Get a table of <code>sex</code> to see how the values are labeled.</li>
+</ol>
+</section>
+<section id="replace-this-line-with-your-code-chunk" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gss_week8<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Female   Male 
+ 10362   8406 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>],</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>polactions[gss_week8<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$polactions[gss_week8$sex == "Female"] and gss_week8$polactions[gss_week8$sex == "Male"]
+t = -1.2102, df = 2528.6, p-value = 0.2263
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.26425408  0.06255507
+sample estimates:
+mean of x mean of y 
+ 2.642528  2.743377 </code></pre>
+</div>
+</div>
+<p>Cannot reject the null hypothesis; difference is not significant. Test statistic is not more extreme than -1.96, p-value is not less than .05, and the null hypothesis value of 0 is within the confidence interval.</p>
+<ol start="3" type="1">
+<li>Test if there is a significant difference (at the 95% confidence level) in average age between respondents who work for someone else and respondents who are self employed. Use the <code>age</code> variable for age and the <code>wrkslf</code> variable for work status. Use a table with the <code>wrkslf</code> variable to see how the values are labeled.</li>
+</ol>
+</section>
+<section id="replace-this-line-with-your-code-chunk-1" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-1">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gss_week8<span class="sc">$</span>wrkslf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+        Self Employed Work For Someone Else 
+                 2096                 15907 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average age between respondents who work for someone else and who are self employed</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>age[gss_week8<span class="sc">$</span>wrkslf<span class="sc">==</span><span class="st">"Work For Someone Else"</span>],</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>age[gss_week8<span class="sc">$</span>wrkslf<span class="sc">==</span><span class="st">"Self Employed"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$age[gss_week8$wrkslf == "Work For Someone Else"] and gss_week8$age[gss_week8$wrkslf == "Self Employed"]
+t = -12.416, df = 2814, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -5.248590 -3.816895
+sample estimates:
+mean of x mean of y 
+ 47.60882  52.14156 </code></pre>
+</div>
+</div>
+<p>Difference is significant because you can reject the null hypothesis that the true difference is 0. Test statistic of -12.416 is more extreme than -1.96, p-value of 2.2e-16 is less than .05, and confidence interval does not include 0.</p>
+<ol start="4" type="1">
+<li>Test if there is a significant difference in the average age at first birth (<code>agekdbrn</code>) by two values of race (<code>racehisp</code>). Only use female respondents’ age at first birth. Check tables of <code>sex</code> and <code>racehisp</code> to see how the values are labeled.</li>
+</ol>
+</section>
+<section id="replace-this-line-with-your-code-chunk-2" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-2">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gss_week8<span class="sc">$</span>sex, gss_week8<span class="sc">$</span>racehisp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        
+         Black Hispanic Other White
+  Female  1650     1257   427  7028
+  Male    1042     1075   366  5923</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"Black"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span>],</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"Hispanic"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  gss_week8$agekdbrn[gss_week8$racehisp == "Black" &amp; gss_week8$sex == "Female"] and gss_week8$agekdbrn[gss_week8$racehisp == "Hispanic" &amp; gss_week8$sex == "Female"]
+t = -3.9774, df = 1926, p-value = 7.224e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.2871457 -0.4370007
+sample estimates:
+mean of x mean of y 
+ 20.97780  21.83987 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="comparing-proportions" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-proportions">Comparing Proportions</h2>
+<p>We have seen over the last couple weeks that proportions and means have different standard errors. That is still true when we are comparing differences in proportions. Also, when working with differences in proportions, we will use different SEs for confidence intervals and for significance tests.</p>
+<p>The SE for a CI of a difference in proportions is very similar to what we used last week as the SE for a CI of a proportion:</p>
+<p><span class="math inline">\(\Large{se = \sqrt{ \frac {\hat{\pi}_1 (1 - \hat{\pi}_1)} {n_1} + \frac {\hat{\pi}_2 (1 - \hat{\pi}_2)} {n_2} }}\)</span></p>
+<p>The SE for difference uses a pooled estimate of the proportion and the n’s for each sample:</p>
+<p><span class="math inline">\(\Large{se = \sqrt{ \hat{\pi}(1-\hat{\pi}) (\frac {1} {n_1} + \frac{1}{n_2}) }}\)</span></p>
+<p>The null hypothesis is that proportions are the same in each sample. Formally, this is written as:</p>
+<p><span class="math inline">\(\Large{\pi_2 - \pi_1 = 0}\)</span></p>
+<p>The test statistic is calculated as:</p>
+<p><span class="math inline">\(\Large{\frac{\hat{\pi}_1 - {\hat{\pi}_2}}{se}}\)</span></p>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>We’ll use data from an audit study examining discrimination by race and sex in the labor market. The researchers - Marianne Bertrand and Sendhil Mullainathan - described their study this way: “We [responded] to over 1300 employment ads in the sales, administrative support, clerical and customer services job categories and [sent] nearly 5000 resumes. The ads we [responded] to cover a large spectrum of job quality, from cashier work at retail establishments and clerical work in a mailroom to office and sales management positions.”</p>
+<p>They responded to ads by submitting fictitious resumes with similar educational backgrounds and job experiences, but they varied the race (black/white) and sex (female/male) of the applicants’ names. They then recorded which resumes received call backs. What is your hypothesis for which race-sex combination received the highest and lowest proportions of call backs?</p>
+<p>Let’s load the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>resume <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/resume.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 4870 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): firstname, sex, race
+dbl (1): call
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>Open the spreadsheet view of the data to see how the names vary by race and sex.</p>
+<p>What proportions of resumes with white and black names received call backs?</p>
+<section id="replace-this-line-with-your-code-chunk-3" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-3">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>resume <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(race) <span class="sc">|&gt;</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prop_callback =</span> <span class="fu">mean</span>(call))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  race  prop_callback
+  &lt;chr&gt;         &lt;dbl&gt;
+1 black        0.0645
+2 white        0.0965</code></pre>
+</div>
+</div>
+<p>We want to test if the <em>difference</em> between these two proportions is significant. When we wanted to test if one proportion differed from a null hypothesis value, we fed prop.test() the number in our sample with a 1 for a binary variable and the total number in our sample. To test differences in proportions, we will feed prop.test() a cross table (or contingency table).</p>
+<p>The table we need will have the <code>race</code> and <code>call</code> variables. Save the table as an object so you can use it later. Note that we do not need to find the sums of each row with addmargins().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>race_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>race, resume<span class="sc">$</span>call)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can see the frequencies by recalling the object name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>race_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       
+           0    1
+  black 2278  157
+  white 2200  235</code></pre>
+</div>
+</div>
+<p>You don’t have to redo the table to get proportions. Simply wrap the object name in the <code>prop.table()</code> function (with a “,1” for row proportions).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(race_table, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       
+                 0          1
+  black 0.93552361 0.06447639
+  white 0.90349076 0.09650924</code></pre>
+</div>
+</div>
+<p>The proportions in the 1 column are the same that we calculated earlier showing the proportion of resumes with black and white names that received call backs. Feed the saved table - the one with frequencies, not proportions - into prop.test() to test if the difference in these proportions is significant. More precisely, we are testing if the difference in proportions significantly differs from a null hypothesis value of zero (which would tell us there is no difference in the proportions).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(race_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  race_table
+X-squared = 16.449, df = 1, p-value = 4.998e-05
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ 0.01636705 0.04769866
+sample estimates:
+   prop 1    prop 2 
+0.9355236 0.9034908 </code></pre>
+</div>
+</div>
+<p>The sample estimates for “prop 1” and “prop 2” refer to the proportions with 0 in our table. Subtracting those proportions from 1 would give you the proportions with 1 in our table. Prop 1 is for the first sample you listed in your t.test() function and Prop 2 is for the second sample in your t.test() function.</p>
+<p>Can we reject the null hypothesis? Is the difference significant?</p>
+<p>Here is an example from the paper<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of how to write up the results:</p>
+<blockquote class="blockquote">
+<p>“We find large racial differences in callback rates. Applicants with White names need to send about 10 resumes to get one callback whereas applicants with African American names need to send around 15 resumes to get one callback. This 50 percent gap in callback rates in statistically very significant. Based on our estimates, a White name yields as many more callbacks as an additional eight years of experience. Since applicants’ names are randomly assigned, this gap can only be attributed to the name manipulation.”</p>
+</blockquote>
+<p>Now test if there is a significant difference in the proportion of call backs between resumes with female and male names.</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-4" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-4">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sex_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>sex, resume<span class="sc">$</span>call)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(sex_table,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        
+                  0          1
+  female 0.91751201 0.08248799
+  male   0.92615658 0.07384342</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(sex_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  sex_table
+X-squared = 0.76004, df = 1, p-value = 0.3833
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.026867960  0.009578818
+sample estimates:
+   prop 1    prop 2 
+0.9175120 0.9261566 </code></pre>
+</div>
+</div>
+<p>We cannot reject the null hypothesis. The p-value is not less than .05 and the 95 percent confidence interval includes the null hypothesis value of 0.</p>
+<p>How would we get the proportions by race <em>and</em> sex?</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-5" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-5">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>resume <span class="sc">|&gt;</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(race, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prop_callback =</span> <span class="fu">mean</span>(call)) <span class="sc">|&gt;</span> </span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>prop_callback)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'race'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+# Groups:   race [2]
+  race  sex    prop_callback
+  &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt;
+1 white female        0.0989
+2 white male          0.0887
+3 black female        0.0663
+4 black male          0.0583</code></pre>
+</div>
+</div>
+<p>In groups, let’s look at four more differences:</p>
+<ul>
+<li>Differences in the proportions of call backs for resumes with black female names vs resumes with white female names</li>
+<li>Differences in the proportions of call backs for resumes with white male names vs resumes with black male names</li>
+<li>Differences in the proportions of call backs for resumes with white female names vs resumes with white male names</li>
+<li>Differences in the proportions of call backs for resumes with black female names vs resumes with black male names</li>
+</ul>
+</section>
+<section id="race-for-females-is-significant" class="level3">
+<h3 class="anchored" data-anchor-id="race-for-females-is-significant">Race for females is significant</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>race_female_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>race[resume<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"female"</span>],</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>                           resume<span class="sc">$</span>call[resume<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"female"</span>])</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(race_female_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  race_female_table
+X-squared = 12.76, df = 1, p-value = 0.0003541
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ 0.01450196 0.05079182
+sample estimates:
+   prop 1    prop 2 
+0.9337222 0.9010753 </code></pre>
+</div>
+</div>
+</section>
+<section id="race-for-males-is-not-significant" class="level3">
+<h3 class="anchored" data-anchor-id="race-for-males-is-not-significant">Race for males is not significant</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>race_male_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>race[resume<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"male"</span>],</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>                        resume<span class="sc">$</span>call[resume<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"male"</span>])</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(race_male_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  race_male_table
+X-squared = 3.3655, df = 1, p-value = 0.06658
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.001771118  0.062586830
+sample estimates:
+   prop 1    prop 2 
+0.9417122 0.9113043 </code></pre>
+</div>
+</div>
+</section>
+<section id="sex-for-whites-is-not-significant" class="level3">
+<h3 class="anchored" data-anchor-id="sex-for-whites-is-not-significant">Sex for whites is not significant</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sex_white_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>sex[resume<span class="sc">$</span>race<span class="sc">==</span><span class="st">"white"</span>],</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>                         resume<span class="sc">$</span>call[resume<span class="sc">$</span>race<span class="sc">==</span><span class="st">"white"</span>])</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(sex_white_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  sex_white_table
+X-squared = 0.41628, df = 1, p-value = 0.5188
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.03827654  0.01781838
+sample estimates:
+   prop 1    prop 2 
+0.9010753 0.9113043 </code></pre>
+</div>
+</div>
+</section>
+<section id="sex-for-blacks-is-not-significant" class="level3">
+<h3 class="anchored" data-anchor-id="sex-for-blacks-is-not-significant">Sex for blacks is not significant</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>sex_black_table <span class="ot">&lt;-</span> <span class="fu">table</span>(resume<span class="sc">$</span>sex[resume<span class="sc">$</span>race<span class="sc">==</span><span class="st">"black"</span>],</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>                         resume<span class="sc">$</span>call[resume<span class="sc">$</span>race<span class="sc">==</span><span class="st">"black"</span>])</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(sex_black_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions with continuity correction
+
+data:  sex_black_table
+X-squared = 0.32733, df = 1, p-value = 0.5672
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.03175190  0.01577182
+sample estimates:
+   prop 1    prop 2 
+0.9337222 0.9417122 </code></pre>
+</div>
+</div>
+<p>Bonus! What names had the highest and lowest chances of receiving call backs?</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-6" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-6">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>resume <span class="sc">|&gt;</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(firstname) <span class="sc">|&gt;</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">prop_callback =</span> <span class="fu">mean</span>(call)) <span class="sc">|&gt;</span> </span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>prop_callback)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 36 × 2
+   firstname prop_callback
+   &lt;chr&gt;             &lt;dbl&gt;
+ 1 Brad             0.159 
+ 2 Jay              0.134 
+ 3 Kristen          0.131 
+ 4 Carrie           0.131 
+ 5 Meredith         0.102 
+ 6 Sarah            0.0984
+ 7 Laurie           0.0974
+ 8 Ebony            0.0962
+ 9 Jermaine         0.0962
+10 Allison          0.0948
+# ℹ 26 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Bertrand, Marianne and Sendhil Mullainathan. 2004. “Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination.” <em>American Economic Review</em> 94(4): 991-1013.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

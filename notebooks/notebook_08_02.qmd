@@ -1,10 +1,3 @@
----
-title: "Differences in Proportions"
-author: "Matt Lawrence"
-date: "11/2/2023"
-format: html
----
-
 ## Setting Up
 
 We'll start with the `gss_week8.csv` file again today. Load it with the usual packages.
@@ -23,82 +16,18 @@ gss_week8 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23
 
 ### REPLACE THIS. LINE WITH YOURCODE CHUNK ###
 
-```{r}
-table(gss_week8$class)
-```
-
-```{r}
-# Average number of political actions between lower and working class respondents
-t.test(gss_week8$polactions[gss_week8$class=="Lower"],
-       gss_week8$polactions[gss_week8$class=="Working"],
-       conf.level = .95)
-```
-
-Difference is not significant because you cannot reject the null hypothesis that the true difference is 0. Test statistic of -1.5848 is not more extreme than -1.96, p-value of .1142 is not less than .05, and confidence interval does include 0.
-
-What is the relationship between the test statistic and the p-value?
-
-```{r}
-pt(-1.5848, df = 268.46) # probability of a more extreme value to the left of negative t
-1 - pt(1.5848, df = 268.46) # probability of a more extreme value to the right of positive t
-pt(-1.5848, df = 268.46) + (1 - pt(1.5848, df = 268.46)) # sum of probabilities = p-value
-pt(-1.5848, df = 268.46) * 2 # simplified way to get the sum of probabilities
-```
-
-These degrees of freedom are different from what we saw before because the t-test adjusts for the samples' variances not being equal. If we assert that the variances are equal, we get df = n1 + n2 - 2
-
-```{r}
-t.test(gss_week8$polactions[gss_week8$class=="Lower"],
-       gss_week8$polactions[gss_week8$class=="Working"],
-       conf.level = .95,
-       var.equal = TRUE)
-```
-
 2. Test if there is a significant difference (at the 95% confidence level) in average number of political actions (`polactions`) by sex (`sex`). Get a table of `sex` to see how the values are labeled.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-table(gss_week8$sex)
-```
-
-```{r}
-t.test(gss_week8$polactions[gss_week8$sex == "Female"],
-       gss_week8$polactions[gss_week8$sex == "Male"])
-```
-
-Cannot reject the null hypothesis; difference is not significant. Test statistic is not more extreme than -1.96, p-value is not less than .05, and the null hypothesis value of 0 is within the confidence interval.
 
 3. Test if there is a significant difference (at the 95% confidence level) in average age between respondents who work for someone else and respondents who are self employed. Use the `age` variable for age and the `wrkslf` variable for work status. Use a table with the `wrkslf` variable to see how the values are labeled.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-table(gss_week8$wrkslf)
-```
-
-
-```{r}
-# Average age between respondents who work for someone else and who are self employed
-t.test(gss_week8$age[gss_week8$wrkslf=="Work For Someone Else"],
-       gss_week8$age[gss_week8$wrkslf=="Self Employed"])
-```
-
-Difference is significant because you can reject the null hypothesis that the true difference is 0. Test statistic of -12.416 is more extreme than -1.96, p-value of 2.2e-16 is less than .05, and confidence interval does not include 0.
-
 4. Test if there is a significant difference in the average age at first birth (`agekdbrn`) by two values of race (`racehisp`). Only use female respondents' age at first birth. Check tables of `sex` and `racehisp` to see how the values are labeled.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-table(gss_week8$sex, gss_week8$racehisp)
-```
-
-
-```{r}
-t.test(gss_week8$agekdbrn[gss_week8$racehisp=="Black" & gss_week8$sex=="Female"],
-       gss_week8$agekdbrn[gss_week8$racehisp=="Hispanic" & gss_week8$sex=="Female"])
-```
 
 
 ## Comparing Proportions
@@ -140,12 +69,6 @@ What proportions of resumes with white and black names received call backs?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-resume |> 
-  group_by(race) |> 
-  summarise(prop_callback = mean(call))
-```
-
 We want to test if the *difference* between these two proportions is significant. When we wanted to test if one proportion differed from a null hypothesis value, we fed prop.test() the number in our sample with a 1 for a binary variable and the total number in our sample. To test differences in proportions, we will feed prop.test() a cross table (or contingency table).
 
 The table we need will have the `race` and `call` variables. Save the table as an object so you can use it later. Note that we do not need to find the sums of each row with addmargins().
@@ -186,27 +109,11 @@ Now test if there is a significant difference in the proportion of call backs be
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-sex_table <- table(resume$sex, resume$call)
-prop.table(sex_table,1)
-```
-
-```{r}
-prop.test(sex_table)
-```
-
-We cannot reject the null hypothesis. The p-value is not less than .05 and the 95 percent confidence interval includes the null hypothesis value of 0.
 
 How would we get the proportions of call backs by race *and* sex?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-resume |> 
-  group_by(race, sex) |> 
-  summarise(prop_callback = mean(call)) |> 
-  arrange(-prop_callback)
-```
 
 In groups, let's look at four more differences:
 
@@ -215,50 +122,12 @@ In groups, let's look at four more differences:
 - Differences in the proportions of call backs for resumes with white female names vs resumes with white male names
 - Differences in the proportions of call backs for resumes with black female names vs resumes with black male names
 
-
-
-### Race for females is significant
-
-```{r}
-race_female_table <- table(resume$race[resume$sex=="female"],
-                           resume$call[resume$sex=="female"])
-prop.test(race_female_table)
-```
-
-### Race for males is not significant
-
-```{r}
-race_male_table <- table(resume$race[resume$sex=="male"],
-                        resume$call[resume$sex=="male"])
-prop.test(race_male_table)
-```
-
-### Sex for whites is not significant
-
-```{r}
-sex_white_table <- table(resume$sex[resume$race=="white"],
-                         resume$call[resume$race=="white"])
-prop.test(sex_white_table)
-```
-
-
-### Sex for blacks is not significant
-
-```{r}
-sex_black_table <- table(resume$sex[resume$race=="black"],
-                         resume$call[resume$race=="black"])
-prop.test(sex_black_table)
-```
-
-
-Bonus! What names had the highest and lowest chances of receiving call backs?
-
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-resume |> 
-  group_by(firstname) |> 
-  summarise(prop_callback = mean(call)) |> 
-  arrange(-prop_callback)
-```
+
+## Bonus! 
+
+What names had the highest and lowest chances of receiving call backs?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
