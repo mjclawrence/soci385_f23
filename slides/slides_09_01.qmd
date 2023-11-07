@@ -1,0 +1,752 @@
+---
+title: "Social Statistics"
+subtitle: "Categorical Associations"
+date: "November 7, 2023"
+format: 
+  clean-revealjs:
+    incremental: true
+    progress: false
+    slide-number: false
+    controls: auto
+    menu: 
+      side: left
+---
+
+## Assignment 5 Review - Q1
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(kableExtra)
+
+assignment_05 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/assignment_05.csv")
+
+```
+
+Test if there is a significant difference at the 95% confidence level in the proportion of immigrants vs native born respondents who say hard work is essential.
+
+::: fragment
+```{r}
+#| echo: true
+#| output-location: fragment
+
+q1_table <- table(assignment_05$born,
+                  assignment_05$ophrdwrk_essential)
+prop.test(q1_table)
+```
+:::
+
+---
+
+## Assignment 5 Review - Q1
+
+- Do not reject the null hypothesis:
+  - The p-value is not less than .05
+  - The confidence interval includes the null hypothesis value of zero
+  - Ignore the X-squared test statistic for prop tests
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q2
+
+Test if there is a significant difference at the 95% confidence level in the average age between immigrants and native born respondents.
+
+::: fragment
+```{r}
+#| echo: true
+#| output-location: fragment
+
+t.test(assignment_05$age[assignment_05$born=="Native"],
+       assignment_05$age[assignment_05$born=="Immigrant"])
+```
+:::
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q2
+
+-   Reject the null hypothesis
+    -   test statistic is more extreme than 1.96
+    -   p-value is less than .05
+    -   confidence interval does not include null hypothesis value of zero
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q3
+
+Consider immigrants only, and test if there is a significant difference at the 95% confidence level in average years in the US between immigrants who say hard work is essential and immigrants who do not say hard work is essential.
+
+::: fragment
+```{r}
+#| echo: true
+#| output: false
+
+t.test(assignment_05$yearsusa[assignment_05$born=="Immigrant" &
+                                assignment_05$ophrdwrk_essential==1],
+       assignment_05$yearsusa[assignment_05$born=="Immigrant" &
+                                assignment_05$ophrdwrk_essential==0])
+```
+:::
+
+---
+
+## Assignment 5 Review - Q3
+
+```{r}
+#| echo: false
+
+t.test(assignment_05$yearsusa[assignment_05$born=="Immigrant" &
+                                assignment_05$ophrdwrk_essential==1],
+       assignment_05$yearsusa[assignment_05$born=="Immigrant" &
+                                assignment_05$ophrdwrk_essential==0])
+```
+
+-   Do not reject the null hypothesis
+    -   test statistic is not more extreme than -1.96
+    -   p-value is greater than .05
+    -   confidence interval includes null hypothesis value of zero
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q4
+
+Consider immigrants only, and create a binary variable distinguishing those who have been in the US less than fifteen years from those who have been in the US fifteen years or more. Test if there is a significant difference between these groups at the 95% confidence level in the proportion saying knowing the right people is essential for getting ahead. 
+
+::: fragment
+```{r}
+#| echo: true
+#| output-location: fragment
+
+imm <- assignment_05 |> 
+  filter(born == "Immigrant") |> 
+  mutate(imm_years = ifelse(yearsusa<15, # condition
+                            0, # value if true
+                            1)) # value if false
+```
+:::
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q4
+
+::: fragment
+```{r}
+#| echo: true
+#| output-location: fragment
+
+q4_table <- table(imm$imm_years,
+                  imm$opknow_essential)
+
+prop.test(q4_table)
+```
+:::
+
+---
+
+## Assignment 5 Review - Q4
+
+-   Reject the null hypothesis
+    -   p-value is less than .05
+    -   confidence interval does not include null hypothesis value of zero
+    -   do not consider X-squared test statistic for prop.test
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q5
+
+From your chosen variable, create one new binary variable distinguishing responses of "Essential" or "Very Important" from all other responses. Then use this new variable to test if there is a significant difference at the 99% confidence level in the proportion responding "Essential" or "Very Important" (rather than a different response) between immigrants and native born respondents.
+
+::: fragment
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# One option...
+assignment_05 <- assignment_05 |> 
+  mutate(opwlth_essential = ifelse(opwlth=="Essential" |
+                                     opwlth=="Very Important", 1, 0))
+
+# Another option...
+assignment_05 <- assignment_05 |> 
+  mutate(opwlth_essential = ifelse(opwlth %in% c("Essential",
+                                                 "Very Important"), 1, 0))
+```
+:::
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q5
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+opwlth_table <- table(assignment_05$born,
+                      assignment_05$opwlth_essential)
+
+prop.test(opwlth_table, conf.level = .99)
+```
+
+------------------------------------------------------------------------
+
+## Assignment 5 Review - Q5
+
+| Variable   | p-value | ci_lower | ci_upper | Reject? |
+|------------|:-------:|:--------:|:--------:|:-------:|
+| opwlth     |  0.002  |  0.820   |  0.875   |   Yes   |
+| oppared    |  0.004  |  -0.117  |  -0.002  |   Yes   |
+| opeduc     |  0.596  |  -0.079  |  0.503   |   No    |
+| opclout    |  0.003  |  -0.081  |  0.00023   |   ?   |
+| oprace     |  0.493  |  -0.042  |  0.024   |   No    |
+| opreligion |  0.091  |  -0.046  |  0.012   |   No    |
+
+------------------------------------------------------------------------
+
+## Significance and Association
+
+-   Testing significance of *differences* of proportions works when we only have two levels
+
+-   Today: statistical significance of *distributions* of categorical variables with two or more levels
+
+::: fragment
+```{r}
+#| echo: false
+
+assignment_05 <- assignment_05 |> 
+  mutate(opwlth = factor(opwlth,
+                         levels = c("Not Important At All",
+                                    "Not Very Important",
+                                    "Fairly Important",
+                                    "Very Important", "Essential")))
+round(prop.table(table(assignment_05$born,
+      assignment_05$opwlth),1),3) |> 
+  kbl(booktabs = TRUE,
+      align = rep("c", 5)) |> 
+  kable_paper()
+```
+:::
+
+------------------------------------------------------------------------
+
+## Significance and Association
+
+- Are variables dependent or independent?
+  - Dependent = Association. Knowing value of one variable helps predict value of the other variable
+  - Independent = No association. Knowing value of one variable does not help predict value of the other variable
+
+- Will also want to know if association is strong or weak
+  - Often more important than only knowing about statistical significance
+  
+---
+
+## Association and Chi-Squared Test
+
+- With means and proportions, used t- and z-distributions
+
+- Difference based on sample size and degrees of freedom
+
+- Assumed a normal distribution
+  - CLT says distribution of sample means or sample proportions are normally distributed
+
+---
+
+## Association and Chi-Squared Test
+
+- Not the same when variables have more than two options
+  - Political Party = Democrat, Independent, Republican
+  - Race, Class, Religion, Region, Marital Status, Labor Force Status, etc.
+
+- For today's tests, should use at least one non-ordered variable
+
+- If we do not use a mean or create a binary variable, how do we measure significance of distribution?
+
+---
+
+## Chi-Squared Test
+
+- Like previous tests, we will calculate a test statistic and convert it to a probability of getting a more extreme value
+
+- Also like previous tests, we will see if that probability allows us to reject a null hypothesis
+
+- $\large{H_0:}$ X and Y are independent (no association)
+
+- $\large{H_A:}$ X and Y are dependent (association)
+
+- Test Statistic Formula: $\Large{x^2 = \sum {\frac {(f_o- f_e)^2} {f_e}}}$
+
+---
+
+## Chi-Squared Test
+
+- Two key points:
+  - Use frequencies (counts) rather than proportions
+  - Compare *observed* frequencies to *expected* frequencies
+
+- Distribution is not normally distributed
+  - No negative test statistics, so only consider the "right-tail"
+  - Shape changes based on DF (but always skewed right)
+  - DF = (rows - 1) * (columns - 1)
+
+- Test-statistic not like z-score or t-score, but p-value similar to what we have seen
+
+- Still need big sample size (expected>5 *in each cell*)
+
+---
+
+## Chi-Squared Test - Example
+
+![](385_figures/nyt_poll_headline.png)
+
+---
+
+## Chi-Squared Test - Example
+
+![](385_figures/nyt_poll_states.png)
+
+---
+
+## Chi-Squared Test - Example
+
+![](385_figures/nyt_poll_candidate.png)
+
+---
+
+## Chi-Squared Test - Example
+
+![](385_figures/nyt_poll_age.png)
+
+---
+
+## Chi-Squared Test - Example
+
+
+| Age   | Biden | Trump | Other/DK |
+|-------|:-----:|:-----:|:--------:|
+| 18-29 |  47%  |  46%  |    7%    |
+| 30-44 |  43%  |  47%  |   10%    |
+| 45-64 |  42%  |  52%  |    6%    |
+| 65+   |  46%  |  46%  |    7%    |
+
+---
+
+## Chi-Squared Test - Example
+
+We need a table of frequencies. We'll build it with separate rows for each age group. Here's the first row...
+
+::: {.fragment}
+```{r}
+#| echo: true
+#| output-location: fragment
+age_18_29 <- c(.47, .46, .07)*646
+```
+:::
+
+- Build the rest!
+
+::: {.fragment}
+```{r}
+#| echo: true
+#| output-location: fragment
+age_18_29 <- c(.47, .46, .07)*646
+age_30_44 <- c(.43, .47, .10)*868
+age_45_64 <- c(.42, .52, .06)*1234
+age_65_plus <- c(.46, .46, .07)*793
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+::: {.fragment}
+```{r}
+#| echo: true
+#| output-location: fragment
+
+observed_table <- rbind(age_18_29,
+                       age_30_44,
+                       age_45_64,
+                       age_65_plus)
+
+observed_table
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+observed_table <- round(observed_table, 0)
+
+observed_table
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+colnames(observed_table) <- c("biden", "trump", "other")
+
+addmargins(observed_table)
+```
+
+:::
+
+
+
+- If distribution of age is equal across candidate, expected value of each cell should be: 
+  - (total in row * total in column) / (total in table)
+
+- What is the expected value for the "age_18_29, Biden" cell?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+(646*1560) / 3534
+```
+
+:::
+
+
+---
+
+## Chi-Squared Test - Example
+
+- For the test statistic, we need the expected values in every cell. For now, calculate them for the other two columns in the first row...
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# For age_18_29, Trump
+
+(646*1712) / 3534
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# For age_18_29, Other
+
+(646*262) / 3534
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+- Make a table of all the expected frequencies
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output: false
+
+expected_age_18_29 <- c(285.1613, 312.9462, 47.8925)
+expected_age_30_44 <- c(383.1579, 420.4912, 64.3509)
+expected_age_45_64 <- c(544.7199, 597.7951, 91.4850)
+expected_age_65_plus <- c(346.9610, 380.7674, 58.2717)
+
+expected_table <- rbind(expected_age_18_29,
+                        expected_age_30_44,
+                        expected_age_45_64,
+                        expected_age_65_plus)
+
+colnames(expected_table) <- c("biden", "trump", "other")
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+::: {.fragment}
+```{r}
+#| echo: false
+
+expected_table |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 3)) |> 
+  kable_paper()
+```
+
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+- The difference between each observed and expected value is the *residual*
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+residual_table <- observed_table - expected_table
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: false
+
+residual_table |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 3)) |> 
+  kable_paper()
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+- Formula: $\large{x^2 = \sum {\frac {(f_o - f_e)^2} {f_e}}}$
+
+- For each cell, square the residual and divide it by the expected frequency
+
+- Squaring the difference always gives a positive value, which is why we are only working with the right-tail probabilities
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+chi2_table <- (residual_table^2)/expected_table
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+```{r}
+#| echo: false
+
+chi2_table |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 3)) |> 
+  kable_paper()
+```
+
+
+---
+
+## Chi-Squared Test - Example
+
+- Test statistic is the sum of all the values of $\large{\frac {(f_0 - f_e)^2} {f_e}}$
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+sum(chi2_table)
+```
+
+:::
+
+- Degrees of Freedom = (#rows - 1)*(#columns - 1)
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+(4 - 1)*(3 - 1)
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+- If test statistic is greater than our cutoff, we can reject the null hypothesis that the variables are independent
+
+- To find the cutoff, use `qchisq()` with the degrees of freedom. Note that in the chi-squared test, we only use the area to the right, so for .05 we use .95 (not .975 like the two-tailed t-test):
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+qchisq(.95, df = 6)
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Example
+
+- With DF=6, need a chi-squared test statistic at least as big as 12.59159 to reject the null hypothesis.
+
+- With our test statistic of 20.444, we can reject the null
+
+- Can also convert to a p-value...
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+1 - pchisq(20.444, df = 6)
+```
+
+:::
+
+- There is a .002307 chance of getting a test statistic more extreme than our test statistic. That is less than .05 so we can reject the null hypothesis that the variables are independent.
+
+---
+
+## Chi-Squared Test - Example
+
+- Shortcut in `R`:
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output: false
+
+chisq.test(observed_table)
+```
+
+:::
+
+::: {.fragment}
+
+![](385_figures/chisq_test_output.png)
+
+:::
+
+- Test statistic in red, degrees of freedom in blue, p-value in green
+
+---
+
+## Chi-Squared Test - Exercise
+
+- Try one more: "Regardless of who you support for president, tell me whether you strongly agree, somewhat agree, somewhat disagree or strongly disagree with the statement that Joe Biden is just too old to be an effective president."
+
+- Are state and belief in Biden being too old dependent at the 99% confidence level?
+
+---
+
+![](385_figures/nyt_poll_too_old.png){width=60%;fig-align="center"}
+
+---
+
+## Chi-Squared Test - Exercise
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+az <- c(.47, .23, .13, .15, .03)*603
+ga <- c(.45, .24, .13, .14, .04)*629
+mi <- c(.46, .25, .13, .14, .03)*616
+pa <- c(.45, .24, .16, .13, .01)*600
+wi <- c(.45, .27, .15, .12, .01)*603
+
+states <- rbind(az, ga, mi, pa, wi)
+
+colnames(states) <- c("Strongly Agree",
+                      "Somewhat Agree",
+                      "Somewhat Disagree",
+                      "Strongly Disagree",
+                      "DK/Refused")
+
+states <- round(states, 0)
+```
+
+:::
+
+---
+
+## Chi-Squared Test - Exercise
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+chisq.test(states)
+```
+
+::: 
+
+- Remove "Don't Know/Refused" responses?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+states[,1:4] # include all rows, columns 1:4
+
+```
+
+::: 
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+chisq.test(states[,1:4])
+```
+
+:::
+
+---
+
+## More Real World Relevance
+
+::: {.fragment}
+
+![](385_figures/spouses.png)
+
+:::
+

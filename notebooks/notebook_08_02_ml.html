@@ -273,20 +273,20 @@ mean of x mean of y
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"Black"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span>],</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"Hispanic"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"Black"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span> <span class="sc">&amp;</span> <span class="fu">str_detect</span>(gss_week8<span class="sc">$</span>degree, <span class="st">"Degree"</span>)],</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>       gss_week8<span class="sc">$</span>agekdbrn[gss_week8<span class="sc">$</span>racehisp<span class="sc">==</span><span class="st">"White"</span> <span class="sc">&amp;</span> gss_week8<span class="sc">$</span>sex<span class="sc">==</span><span class="st">"Female"</span> <span class="sc">&amp;</span> <span class="fu">str_detect</span>(gss_week8<span class="sc">$</span>degree, <span class="st">"Degree"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
-data:  gss_week8$agekdbrn[gss_week8$racehisp == "Black" &amp; gss_week8$sex == "Female"] and gss_week8$agekdbrn[gss_week8$racehisp == "Hispanic" &amp; gss_week8$sex == "Female"]
-t = -3.9774, df = 1926, p-value = 7.224e-05
+data:  gss_week8$agekdbrn[gss_week8$racehisp == "Black" &amp; gss_week8$sex == "Female" &amp; str_detect(gss_week8$degree, "Degree")] and gss_week8$agekdbrn[gss_week8$racehisp == "White" &amp; gss_week8$sex == "Female" &amp; str_detect(gss_week8$degree, "Degree")]
+t = -5.8074, df = 247.48, p-value = 1.94e-08
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -1.2871457 -0.4370007
+ -3.250065 -1.603845
 sample estimates:
 mean of x mean of y 
- 20.97780  21.83987 </code></pre>
+ 24.86458  27.29154 </code></pre>
 </div>
 </div>
 </section>
@@ -416,7 +416,7 @@ sample estimates:
 </div>
 </div>
 <p>We cannot reject the null hypothesis. The p-value is not less than .05 and the 95 percent confidence interval includes the null hypothesis value of 0.</p>
-<p>How would we get the proportions by race <em>and</em> sex?</p>
+<p>How would we get the proportions of call backs by race <em>and</em> sex?</p>
 </section>
 <section id="replace-this-line-with-your-code-chunk-5" class="level3">
 <h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-5">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>

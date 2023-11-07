@@ -96,8 +96,8 @@ table(gss_week8$sex, gss_week8$racehisp)
 
 
 ```{r}
-t.test(gss_week8$agekdbrn[gss_week8$racehisp=="Black" & gss_week8$sex=="Female"],
-       gss_week8$agekdbrn[gss_week8$racehisp=="Hispanic" & gss_week8$sex=="Female"])
+t.test(gss_week8$agekdbrn[gss_week8$racehisp=="Black" & gss_week8$sex=="Female" & str_detect(gss_week8$degree, "Degree")],
+       gss_week8$agekdbrn[gss_week8$racehisp=="White" & gss_week8$sex=="Female" & str_detect(gss_week8$degree, "Degree")])
 ```
 
 
@@ -211,6 +211,18 @@ resume |>
 In groups, let's look at four more differences:
 
 - Differences in the proportions of call backs for resumes with black female names vs resumes with white female names
+
+```{r}
+mytable <- table(resume$race[resume$sex=="female"],
+                 resume$call[resume$sex=="female"])
+mytable
+```
+
+```{r}
+prop.test(mytable)
+```
+
+
 - Differences in the proportions of call backs for resumes with white male names vs resumes with black male names
 - Differences in the proportions of call backs for resumes with white female names vs resumes with white male names
 - Differences in the proportions of call backs for resumes with black female names vs resumes with black male names

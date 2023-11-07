@@ -1,0 +1,207 @@
+## Setting Up
+
+We'll make our own data today so there's not a file to load. Still load the usual packages though.
+
+```{r}
+#| message: false
+
+library(tidyverse)
+```
+
+Our data will come from the crosstabs released by *The New York Times* for [this article](https://www.nytimes.com/2023/11/05/us/politics/biden-trump-2024-poll.html). The data can be accessed [here](https://www.nytimes.com/interactive/2023/11/07/us/elections/times-siena-battlegrounds-registered-voters.html). We'll use the "Battleground All Registered Voters" numbers.
+
+## Introducing Association
+
+Two variables have a *dependent association* if knowing value of one variable helps predict value of the other variable. Two variables have an *independent association* if knowing value of one variable does not help predict value of the other variable.
+
+In our first example, we want to know if there is a statistically significant dependent association between age category and candidate preference. Here is the distribution using the percentages in the crosstabs:
+
+| Age   | Biden | Trump | Other/DK |
+|-------|:-----:|:-----:|:--------:|
+| 18-29 |  47%  |  46%  |    7%    |
+| 30-44 |  43%  |  47%  |   10%    |
+| 45-64 |  42%  |  52%  |    6%    |
+| 65+   |  46%  |  46%  |    7%    |
+
+We need to get this data into R. And we need frequencies rather than percentages.
+
+We'll set this up by creating a row for each age group (so we'll be "transposing" the format of the original table).
+
+Here's the first row. Note we use proportions, collapse all the "other" responses, and multiply the proportions by the number of respondents to get the frequencies:
+
+```{r}
+age_18_29 <- c(.47, .46, .07)*646
+```
+
+Fill in the rest of the rows:
+
+```{r}
+age_30_44 <- c()
+age_45_64 <- c()
+age_65_plus <- c()
+```
+
+The next step is to "bind the rows" together in a table. We will use the `rbind` function - r for rows - for this task. We can name the table anything. Calling it "observed_table" here will be helpful for explaining how these tests work.
+
+```{r}
+observed_table <- rbind(age_18_29,
+                       age_30_44,
+                       age_45_64,
+                       age_65_plus)
+
+observed_table
+```
+
+There is some rounding going on here. We should use whole numbers. Round to 0 decimal places to get them.
+
+```{r}
+observed_table <- round(observed_table, 0)
+observed_table
+```
+
+It would be good to add column names as well. We can do that with the `colnames = c()` function.
+
+```{r}
+colnames(observed_table) <- c("biden", "trump", "other")
+```
+
+Finally, get the sums of the rows, columns, and full table with `addmargins()`:
+
+```{r}
+addmargins(observed_table)
+```
+
+We will use the chi-squared test of independence to test whether or not we can reject the null hypothesis that there is no association between the two variables. The test statistic is:
+
+$\Large{x^2 = \sum {\frac {(f_o - f_e)^2} {f_e}}}$
+
+To calculate the test statistic, we need the observed frequencies and the expected frequencies. We just saw the observed frequencies.
+
+The expected value of each cell is defined as:
+(total in row * total in column) / (total in table)
+
+What is the expected value for the "age_18_29, Biden" cell?
+
+```{r}
+(646 * 1560) / 3534
+```
+
+For the test statistic, we need the expected values in every cell. For now, calculate them for the other two columns in the first row...
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+
+To do the chi-squared test by hand, we will need a table with all the expected frequencies. We just did the age_18_29 row; here are those frequencies saved as a vector, a separate vector for each additional age, and the code to make the table:
+
+```{r}
+expected_age_18_29 <- c(285.1613, 312.9462, 47.8925)
+expected_age_30_44 <- c(383.1579, 420.4912, 64.3509)
+expected_age_45_64 <- c(544.7199, 597.7951, 91.4850)
+expected_age_65_plus <- c(346.9610, 380.7674, 58.2717)
+
+expected_table <- rbind(expected_age_18_29,
+                        expected_age_30_44,
+                        expected_age_45_64,
+                        expected_age_65_plus)
+
+colnames(expected_table) <- c("biden", "trump", "other")
+```
+
+Take a look at the table of expected values:
+
+```{r}
+expected_table
+```
+
+The difference between each observed and expected value is the *residual*. Save all the residuals in a table called `residual_table`:
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+For each cell, square the residual and divide it by its expected frequency:
+
+```{r}
+chi2_table <- (residual_table^2)/expected_table
+round(chi2_table, 3)
+```
+
+The test statistic is the sum of all the cells' chi-squared values:
+
+```{r}
+sum(chi2_table)
+
+```
+
+For this test, the degrees of freedom are calculated as:
+(# of rows - 1)(# of columns - 1)
+
+So in the ageXcandidate table, the degrees of freedom are...
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+
+To find the cutoff for the critical region, use `qchisq()` with the degrees of freedom:
+
+```{r}
+qchisq(.95, df = 6)
+```
+
+With df=6, need a chi-square test statistic at least as big as 12.59159 to reject the null hypothesis. With our test statistic of 20.444, we can reject the null hypothesis that the two variables are independent. That means there is a significant association between them.
+
+To convert the test statistic to a p-value, use 1 - pchisq() with the degrees of freedom:
+
+```{r}
+1 - pchisq(20.444, df = 6)
+```
+
+
+## Shortut in R
+
+R can do all of this with the built-in `chisq.test()` function, which requires either a table of frequencies or the two variable names (like `born` and `opclout` from Assignment 5). In this example, we can use our saved table of frequencies:
+
+```{r}
+chisq.test(observed_table)
+```
+
+We now know how the X-squared test statistic relates to the df value and the p-value. For a 95% confidence test, compare the p-value to .05. In this example, we can reject the null hypothesis that age and candidate preference are independent. Age is significantly associated with candidate preference.
+
+## Another example
+
+Is there a significant association at the 99% confidence level between state and belief that "Joe Biden is just too old to be an effective president"? We'll leave out Nevada for this exercise.
+
+### REPLACE THIS LINE WITH YOUR CODE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Extra
+
+```{r}
+az <- c(.47, .23, .13, .15, .03)*603
+ga <- c(.45, .24, .13, .14, .04)*629
+mi <- c(.46, .25, .13, .14, .03)*616
+pa <- c(.45, .24, .16, .13, .01)*600
+wi <- c(.45, .27, .15, .12, .01)*603
+
+states <- rbind(az, ga, mi, pa, wi)
+
+colnames(states) <- c("Strongly Agree",
+                      "Somewhat Agree",
+                      "Somewhat Disagree",
+                      "Strongly Disagree",
+                      "DK/Refused")
+
+states <- round(states, 0)
+```

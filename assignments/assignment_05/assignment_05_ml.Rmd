@@ -60,10 +60,10 @@ gss <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/
 
 ```{r}
 
-mytable <- table(gss$born, gss$ophrdwrk_essential)
-mytable
-prop.table(mytable,1)
-prop.test(mytable)
+q1_table <- table(gss$born, gss$ophrdwrk_essential)
+q1_table
+prop.table(q1_table,1)
+prop.test(q1_table)
 
 ```
 
@@ -99,7 +99,7 @@ prop.test(q4_table)
 
 5. From the following variables, choose one where you would hypothesize immigrants and native born respondents would have significantly different responses: `opwlth`, `oppared`, `opeduc`, `opclout`, `oprace`, `oprelig`, or `opsex`. In a sentence, describe why you have this hypothesis. From your chosen variable, create one new binary variable distinguishing responses of "Essential" or "Very Important" from all other responses. Then use this new variable to test if there is a significant difference at the 99% confidence level in the proportion responding "Essential" or "Very Important" (rather than a different response) between immigrants and native born respondents. Interpret your results in a sentence.
 
-# Difference in proportion of immigrants vs non immigrants who say wealth is essential or very important (opwlth)
+## Difference in proportion of immigrants vs non immigrants who say wealth is essential or very important (opwlth)
 
 ```{r}
 gss <- gss |> 
@@ -109,57 +109,66 @@ opwlth_table <- table(gss$born, gss$opwlth_essential)
 prop.test(opwlth_table, conf.level = .99)
 ```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say parent's education is essential (oppared)
+## Difference in proportion of immigrants vs non immigrants who say parent's education is essential or very important (oppared)
 
-gss_test <- gss_test |> 
+```{r}
+gss <- gss |> 
   mutate(oppared_essential = ifelse(oppared %in% c("Essential", "Very Important"), 1, 0))
 
-oppared_table <- table(gss_test$born, gss_test$oppared_essential)
+oppared_table <- table(gss$born, gss$oppared_essential)
 prop.test(oppared_table, conf.level = .99)
+```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say education is essential (opeduc)
+## Difference in proportion of immigrants vs non immigrants who say education is essential or very important (opeduc)
 
-gss_test <- gss_test |> 
+```{r}
+gss <- gss |> 
   mutate(opeduc_essential = ifelse(opeduc %in% c("Essential", "Very Important"), 1, 0))
 
-opeduc_table <- table(gss_test$born, gss_test$opeduc_essential)
+opeduc_table <- table(gss$born, gss$opeduc_essential)
 prop.test(opeduc_table, conf.level = .99)
+```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say political connections is essential (opclout)
 
-gss_test <- gss_test |> 
+## Difference in proportion of immigrants vs non immigrants who say political connections are essential or very important (opclout)
+
+```{r}
+gss <- gss |> 
   mutate(opclout_essential = ifelse(opclout %in% c("Essential", "Very Important"), 1, 0))
 
-opclout_table <- table(gss_test$born, gss_test$opclout_essential)
+opclout_table <- table(gss$born, gss$opclout_essential)
 prop.test(opclout_table, conf.level = .99)
+```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say being the right race is essential (oprace)
 
-gss_test <- gss_test |> 
+# Difference in proportion of immigrants vs non immigrants who say being the right race is essential or very important (oprace)
+
+```{r}
+gss <- gss |> 
   mutate(oprace_essential = ifelse(oprace %in% c("Essential", "Very Important"), 1, 0))
 
-oprace_table <- table(gss_test$born, gss_test$oprace_essential)
+oprace_table <- table(gss$born, gss$oprace_essential)
 prop.test(oprace_table, conf.level = .99)
+```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say being the right religion is essential (oprelig)
 
-gss_test <- gss_test |> 
+# Difference in proportion of immigrants vs non immigrantswho say being the right religion is essential (oprelig)
+
+```{r}
+gss <- gss |> 
   mutate(oprelig_essential = ifelse(oprelig %in% c("Essential", "Very Important"), 1, 0))
 
-oprelig_table <- table(gss_test$born, gss_test$oprelig_essential)
+oprelig_table <- table(gss$born, gss$oprelig_essential)
 prop.test(oprelig_table, conf.level = .99)
+```
 
-# Difference in proportion of immigrants vs non immigrants 
-# who say being the right sex is essential (opsex)
 
-gss_test <- gss_test |> 
+# Difference in proportion of immigrants vs non immigrants who say being the right sex is essential (opsex)
+
+```{r}
+gss <- gss |> 
   mutate(opsex_essential = ifelse(opsex %in% c("Essential", "Very Important"), 1, 0))
 
-opsex_table <- table(gss_test$born, gss_test$opsex_essential)
+opsex_table <- table(gss$born, gss$opsex_essential)
 prop.test(opsex_table, conf.level = .99)
-
+```
