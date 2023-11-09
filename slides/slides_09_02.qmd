@@ -111,7 +111,8 @@ chisq.test(week9$class, week9$marital)$expected
 ::: {.fragment}
 
 ```{r}
-#| echo: false
+#| echo: true
+#| output: false
 chisq.test(week9$class[week9$born=="No"], 
            week9$marital[week9$born=="No"])
 ```
@@ -334,6 +335,7 @@ chisq.test(week9$class, week9$abany)
   - Across the table, compare *concordant pairs* (higher and higher) and *discordant pairs* (higher and lower)
 
 - We'll skip to the shortcut, but first let's look at the cross-table of `year` and `courts`
+  - "In general, do you think courts in this area deal too harshly or not harshly enough with criminals?"
 
 ::: {.fragment}
 
@@ -375,6 +377,9 @@ week9 <- mutate(week9, courts = factor(courts,
 ::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 year_courts_table <- table(week9$year, week9$courts)
 
 year_courts_table |> 

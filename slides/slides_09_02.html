@@ -511,13 +511,8 @@ week9$class       Div/Sep   Married Never Married   Widowed
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test
-
-data:  week9$class[week9$born == "No"] and week9$marital[week9$born == "No"]
-X-squared = 27.222, df = 9, p-value = 0.001285</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">chisq.test</span>(week9<span class="sc">$</span>class[week9<span class="sc">$</span>born<span class="sc">==</span><span class="st">"No"</span>], </span>
+<span id="cb13-2"><a href="#cb13-2"></a>           week9<span class="sc">$</span>marital[week9<span class="sc">$</span>born<span class="sc">==</span><span class="st">"No"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -603,7 +598,7 @@ X-squared = 27.222, df = 9, p-value = 0.001285</code></pre>
     2000 replicates)
 
 data:  week9$class[week9$born == "No"] and week9$marital[week9$born == "No"]
-p-value = 0.0009995
+p-value = 0.0004998
 alternative hypothesis: two.sided</code></pre>
 </div>
 </div>
@@ -773,7 +768,10 @@ X-squared = 63.199, df = 3, p-value = 1.217e-13</code></pre>
 <ul>
 <li class="fragment">Across the table, compare <em>concordant pairs</em> (higher and higher) and <em>discordant pairs</em> (higher and lower)</li>
 </ul></li>
-<li class="fragment">We’ll skip to the shortcut, but first let’s look at the cross-table of <code>year</code> and <code>courts</code></li>
+<li class="fragment">We’ll skip to the shortcut, but first let’s look at the cross-table of <code>year</code> and <code>courts</code>
+<ul>
+<li class="fragment">“In general, do you think courts in this area deal too harshly or not harshly enough with criminals?”</li>
+</ul></li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -815,6 +813,15 @@ X-squared = 63.199, df = 3, p-value = 1.217e-13</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>year_courts_table <span class="ot">&lt;-</span> <span class="fu">table</span>(week9<span class="sc">$</span>year, week9<span class="sc">$</span>courts)</span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>year_courts_table <span class="sc">|&gt;</span> </span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">kable</span>(<span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb32-5"><a href="#cb32-5"></a>        <span class="at">align =</span> <span class="fu">rep</span>(<span class="st">'c'</span>, <span class="dv">3</span>),</span>
+<span id="cb32-6"><a href="#cb32-6"></a>        <span class="at">caption =</span> <span class="st">"Frequency table of belief in courts by year"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">kable_paper</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
 <div class="cell-output-display">
 <table class="lightable-paper" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>Frequency table of belief in courts by year</caption>
@@ -917,8 +924,8 @@ X-squared = 63.199, df = 3, p-value = 1.217e-13</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co">#install.packages("vcdExtra")</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">library</span>(vcdExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">#install.packages("vcdExtra")</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">library</span>(vcdExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -929,7 +936,7 @@ X-squared = 63.199, df = 3, p-value = 1.217e-13</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">GKgamma</span>(year_courts_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">GKgamma</span>(year_courts_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -945,7 +952,7 @@ CI           : 0.039 0.099 </code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>.<span class="dv">069</span> <span class="sc">/</span> .<span class="dv">015</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>.<span class="dv">069</span> <span class="sc">/</span> .<span class="dv">015</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -964,13 +971,13 @@ CI           : 0.039 0.099 </code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Order the levels of class:</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">class =</span> <span class="fu">factor</span>(class, </span>
-<span id="cb37-3"><a href="#cb37-3"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Lower class"</span>, <span class="st">"Working class"</span>, </span>
-<span id="cb37-4"><a href="#cb37-4"></a>                          <span class="st">"Middle class"</span>, <span class="st">"Upper class"</span>)))</span>
-<span id="cb37-5"><a href="#cb37-5"></a></span>
-<span id="cb37-6"><a href="#cb37-6"></a><span class="co"># Save the table as an object:</span></span>
-<span id="cb37-7"><a href="#cb37-7"></a>class_courts_table <span class="ot">&lt;-</span> <span class="fu">table</span>(week9<span class="sc">$</span>class, week9<span class="sc">$</span>courts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Order the levels of class:</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">class =</span> <span class="fu">factor</span>(class, </span>
+<span id="cb38-3"><a href="#cb38-3"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Lower class"</span>, <span class="st">"Working class"</span>, </span>
+<span id="cb38-4"><a href="#cb38-4"></a>                          <span class="st">"Middle class"</span>, <span class="st">"Upper class"</span>)))</span>
+<span id="cb38-5"><a href="#cb38-5"></a></span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="co"># Save the table as an object:</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a>class_courts_table <span class="ot">&lt;-</span> <span class="fu">table</span>(week9<span class="sc">$</span>class, week9<span class="sc">$</span>courts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -981,7 +988,7 @@ CI           : 0.039 0.099 </code></pre>
 <h2>Ordinal Variables - Exercise</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">GKgamma</span>(class_courts_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">GKgamma</span>(class_courts_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -996,7 +1003,7 @@ CI           : 0 0.071 </code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>.<span class="dv">035</span> <span class="sc">/</span> .<span class="dv">018</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>.<span class="dv">035</span> <span class="sc">/</span> .<span class="dv">018</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1015,17 +1022,17 @@ CI           : 0 0.071 </code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Order the levels of degree:</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">degree =</span> <span class="fu">factor</span>(degree, </span>
-<span id="cb42-3"><a href="#cb42-3"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Lt high school"</span>, <span class="st">"High school"</span>, </span>
-<span id="cb42-4"><a href="#cb42-4"></a>                          <span class="st">"Junior college"</span>, <span class="st">"Bachelor"</span>, <span class="st">"Graduate"</span>)))</span>
-<span id="cb42-5"><a href="#cb42-5"></a></span>
-<span id="cb42-6"><a href="#cb42-6"></a><span class="co"># Order the levels of nateduc:</span></span>
-<span id="cb42-7"><a href="#cb42-7"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">nateduc =</span> <span class="fu">factor</span>(nateduc, </span>
-<span id="cb42-8"><a href="#cb42-8"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Too little"</span>, <span class="st">"About right"</span>, <span class="st">"Too much"</span>)))</span>
-<span id="cb42-9"><a href="#cb42-9"></a></span>
-<span id="cb42-10"><a href="#cb42-10"></a><span class="co"># Save the table as an object:</span></span>
-<span id="cb42-11"><a href="#cb42-11"></a>degree_nateduc_table <span class="ot">&lt;-</span> <span class="fu">table</span>(week9<span class="sc">$</span>degree, week9<span class="sc">$</span>nateduc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Order the levels of degree:</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">degree =</span> <span class="fu">factor</span>(degree, </span>
+<span id="cb43-3"><a href="#cb43-3"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Lt high school"</span>, <span class="st">"High school"</span>, </span>
+<span id="cb43-4"><a href="#cb43-4"></a>                          <span class="st">"Junior college"</span>, <span class="st">"Bachelor"</span>, <span class="st">"Graduate"</span>)))</span>
+<span id="cb43-5"><a href="#cb43-5"></a></span>
+<span id="cb43-6"><a href="#cb43-6"></a><span class="co"># Order the levels of nateduc:</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a>week9 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(week9, <span class="at">nateduc =</span> <span class="fu">factor</span>(nateduc, </span>
+<span id="cb43-8"><a href="#cb43-8"></a>               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Too little"</span>, <span class="st">"About right"</span>, <span class="st">"Too much"</span>)))</span>
+<span id="cb43-9"><a href="#cb43-9"></a></span>
+<span id="cb43-10"><a href="#cb43-10"></a><span class="co"># Save the table as an object:</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a>degree_nateduc_table <span class="ot">&lt;-</span> <span class="fu">table</span>(week9<span class="sc">$</span>degree, week9<span class="sc">$</span>nateduc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -1036,7 +1043,7 @@ CI           : 0 0.071 </code></pre>
 <h2>Ordinal Variables - Exercise</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">GKgamma</span>(degree_nateduc_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">GKgamma</span>(degree_nateduc_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -1051,7 +1058,7 @@ CI           : -0.195 -0.098 </code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="sc">-</span>.<span class="dv">147</span> <span class="sc">/</span> .<span class="dv">025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="sc">-</span>.<span class="dv">147</span> <span class="sc">/</span> .<span class="dv">025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
