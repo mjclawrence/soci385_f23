@@ -1,0 +1,580 @@
+---
+title: "Social Statistics"
+subtitle: "More Tests Of Association"
+date: "November 9, 2023"
+format: 
+  clean-revealjs:
+    incremental: true
+    progress: false
+    slide-number: false
+    controls: auto
+    menu: 
+      side: left
+---
+
+```{r, include = FALSE}
+library(tidyverse)
+library(kableExtra)
+week9 <- read_csv("../data/week_9.csv")
+```
+
+## Quick Review
+
+- On Tuesday, we were looking at associations between non-ordered categorical variables
+
+- As a refresher, use the `week_9.csv` file and test if there is a significant association between class and marital status. Let's first look at the frequency table or proportion table.
+
+---
+
+## Quick Review
+
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+class_marital_table <- table(week9$class, week9$marital)
+prop.table(class_marital_table,1)
+```
+
+::: 
+
+---
+
+## Quick Review
+
+- Now let's test if we can reject the null hypothesis that the two variables are independent
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+chisq.test(class_marital_table) # For test statistic and p value
+qchisq(.95, df = 9) # For cutoff
+```
+
+:::
+
+- Or...
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+chisq.test(week9$class, week9$marital) # For test statistic and p value
+qchisq(.95, df = 9) # For cutoff
+```
+
+:::
+
+---
+
+## Quick Review
+
+- To reject the null, we need a test statistic greater than 16.92 and a p-value less than .05. 
+
+- In this example, we can reject the null hypothesis that the two variables are not associated (or that they are independent). 
+
+---
+
+## Adapting The Chi-Squared Test
+
+- Recall that to use the chi-squared test, the expected frequency in each cell must be at least five.
+
+- To see the expected frequencies for each cell:
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+chisq.test(week9$class, week9$marital)$expected
+```
+
+:::
+
+- All our cells have more than five expected frequencies, so it is fine to use the chi-squared test
+
+---
+
+## Adapting The Chi-Squared Test
+
+- What if we want to test this association only for respondents who were not born in this country (`born == "No"`)?
+
+::: {.fragment}
+
+```{r}
+#| echo: false
+chisq.test(week9$class[week9$born=="No"], 
+           week9$marital[week9$born=="No"])
+```
+
+::: 
+
+::: {.fragment}
+
+![](385_figures/chisquared_warning.png)
+:::
+
+- The warning is because we do not have at least five expected frequencies in each cell...
+
+## Adapting The Chi-Squared Test
+
+::: {.fragment}
+```{r}
+#| echo: true
+#| output: false
+
+chisq.test(week9$class[week9$born=="No"], 
+           week9$marital[week9$born=="No"])$expected
+
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+chisq.test(week9$class[week9$born=="No"], 
+           week9$marital[week9$born=="No"])$expected |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 4)) |> 
+  kable_paper()
+```
+
+:::
+
+
+---
+
+## Adapting The Chi-Squared Test
+
+- If expected frequency in any cell is less than 5, use Fisher's Exact Test
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+fisher.test(week9$class[week9$born=="No"], 
+            week9$marital[week9$born=="No"],
+      simulate.p.value = TRUE)
+```
+
+:::
+
+- Fisher Test output provides a p-value but not a test statistic
+
+- In this case, we can reject the null because the p-value is less than .05
+
+---
+
+## Interpreting And Writing About Tests of Association
+
+- Test statistic tells us if we can reject the null; i.e., if there is dependence between rows and columns
+
+- Does not tell us about *strength* of association
+
+- Let's think about the relationship between class and beliefs about abortion (the `abany` variable). 
+
+- How would you describe the proportion table? Are the variables dependent or independent?
+
+---
+
+## Measuring Association
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+round(prop.table(table(week9$class ,week9$abany),1),3)
+
+chisq.test(week9$class, week9$abany)
+```
+
+:::
+
+---
+
+## Measuring Association
+
+- Want to know about *strength* of association between class and abortion beliefs
+  - Big test statistic does not necessarily mean stronger association!
+
+- Interpreting association through odds is more intuitive and based on probability
+
+- We'll build back to proportion of upper class respondents who believe abortion should be possible for any reason  = .605
+
+---
+
+## Measuring Association
+
+- Odds of supporting abortion rather than not supporting = probability of success / probability of failure
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# For Upper Class:
+.605 / (1-.605)
+```
+
+:::
+
+- Upper class respondents are 1.532 times as likely to support abortion in any case than to not do so. That's the same as saying they are 53.2% more likely to support than not support abortion in any case.
+
+---
+
+## Measuring Association
+
+- Probability of supporting abortion = odds / odds + 1
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+1.532 / (1 + 1.532)
+```
+
+:::
+
+---
+
+## Another Example
+
+- What are the odds of supporting abortion for working class respondents?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+.410/ (1-.410)
+```
+
+:::
+
+
+- This time the result is less than 1. So working class respondents are .695 times as likely to support abortion as they are to not support abortion. That's the same as saying they are 30.5% less likely to support rather than not support abortion.
+
+- Takeaway: When odds are less than 1, percentage is 1 - odds. When odds are greater than 1, percentage is odds - 1.
+
+---
+
+## Measuring Association - Odds Ratio
+
+- Odds Ratio: Odds of support for upper class / Odds of support for working class
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+1.532 / .695
+```
+
+:::
+
+- In words: Odds that an upper class respondent supports abortion are 2.2 times the odds that a working class respondent supports abortion
+
+- Unlike $x^2$, higher values do mean stronger association
+
+---
+
+## Association Between Ordered Variables
+
+- Chi-squared and Fisher's Exact tests work when at least one of your categorical variables is not ordered
+
+- Using two ordinal variables require different tests for association
+  - Ordinal variables: education, income, age
+  - Ordinal scales: poor, fair, good, excellent; disagree - agree
+
+---
+
+## Association Between Ordered Variables
+
+- For ordinal variables, association works somewhat likes correlation
+  - Positive association means higher values of one variable tend to be paired with higher values of the other variable, and lower values of one variable tend to be paired with lower values of the other variable
+  - Negative association means higher values of one variable tend to be paired with lower values of the other variables, and lower values of one variable tend to be paired with higher values of the other variable
+  -  No association means no clear relationship between the variables
+
+---
+
+## Association Between Ordinal Variables
+
+- Several different methods, but they are very similar. We'll focus on the Goodman Kruskal gamma test.
+
+- gamma always between -1 and 1 (like a correlation)
+
+- Positive gamma means positive association (high with high, low with low)
+
+- Negative gamma means negative association (high with low, low with high)
+
+---
+
+## Association Between Ordinal Variables
+
+- Calculations by hand are messy
+  - Across the table, compare *concordant pairs* (higher and higher) and *discordant pairs* (higher and lower)
+
+- We'll skip to the shortcut, but first let's look at the cross-table of `year` and `courts`
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+table(week9$year, week9$courts)
+```
+
+:::
+
+---
+
+## Association Between Ordinal Variables
+
+- The `courts` values are not in the right order, so we have to do that before continuing:
+
+:::{.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+week9 <- mutate(week9, courts = factor(courts,
+                       levels = c("Not harsh enough",
+                                  "About right",
+                                  "Too harsh")))
+```
+
+:::
+
+---
+
+## Association Between Ordinal Variables
+
+- Check the table again with the re-ordered variables, and save the table as an object
+
+::: {.fragment}
+
+```{r}
+year_courts_table <- table(week9$year, week9$courts)
+
+year_courts_table |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 3),
+        caption = "Frequency table of belief in courts by year") |> 
+  kable_paper()
+```
+
+:::
+
+---
+
+## Association Between Ordinal Variables
+
+- Check the proportion table as well:
+
+
+::: {.fragment}
+
+```{r}
+round(prop.table(year_courts_table, 1),3) |> 
+  kable(booktabs = TRUE,
+        align = rep('c', 3),
+        caption = "Proportion table of belief in courts by year") |> 
+  kable_paper()
+```
+
+:::
+
+---
+
+## Association Between Ordinal Variables
+
+- The `GKgamma()` function (for the Goodman Kruskal test) is in the `vcdExtra` package. Install and load the package.
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| message: false
+#| warning: false
+
+#install.packages("vcdExtra")
+library(vcdExtra)
+```
+
+::: 
+
+- Like `prop.test()`, all `GKgamma()` needs is a table:
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+GKgamma(year_courts_table)
+```
+
+:::
+
+- Gamma statistics run from -1 to 1. First thing to note is that there is a positive association between year and courts.
+
+- To test if the association is significant, divide gamma by its standard error and compare to 1.96 (for 95% significance level):
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+.069 / .015
+```
+
+:::
+
+- In this case, we can reject the null hypothesis since 4.6 is more extreme than 1.96. There is a significant positive association between year and courts.
+
+---
+
+## Ordinal Variables - Exercise
+
+- What about `class` and `courts`?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Order the levels of class:
+week9 <- mutate(week9, class = factor(class, 
+               levels = c("Lower class", "Working class", 
+                          "Middle class", "Upper class")))
+
+# Save the table as an object:
+class_courts_table <- table(week9$class, week9$courts)
+```
+
+:::
+
+---
+
+## Ordinal Variables - Exercise
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+GKgamma(class_courts_table)
+```
+
+:::
+
+- Small positive association
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+.035 / .018
+```
+
+:::
+
+- But association is not significant because test statistic (1.944) is not greater than 1.96
+
+---
+
+## Ordinal Variables - Exercise
+
+- What about `degree` and `nateduc`?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Order the levels of degree:
+week9 <- mutate(week9, degree = factor(degree, 
+               levels = c("Lt high school", "High school", 
+                          "Junior college", "Bachelor", "Graduate")))
+
+# Order the levels of nateduc:
+week9 <- mutate(week9, nateduc = factor(nateduc, 
+               levels = c("Too little", "About right", "Too much")))
+
+# Save the table as an object:
+degree_nateduc_table <- table(week9$degree, week9$nateduc)
+```
+
+:::
+
+---
+
+## Ordinal Variables - Exercise
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+GKgamma(degree_nateduc_table)
+```
+
+:::
+
+- Negative association means higher degree categories tend to be associated with responses that are lower on the `nateduc` scale
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+-.147 / .025
+```
+
+:::
+
+
+- And it is significant because -5.88 is more extreme than -1.96
+
+---
+
+## Association Cheat Sheet
+
+- Two categorical variables (both nominal, or one nominal and one ordered) with at least five expected counts in each cell:
+  - `chisq.test()` with two variable names
+
+- Two categorical variables (both nominal, or one nominal and one ordered) with less than five expected counts in any cell:
+  - `fisher.test()` with two variable names. Remember to add `simulate.p.value=TRUE`
+
+- Two ordered categorical variables:
+  - `GKgamma()` with name of saved table, after loading the `vcdExtra` package and ordering variables if necessary
