@@ -381,6 +381,19 @@ week9 <- mutate(week9, courts = factor(courts,
 #| output-location: fragment
 
 year_courts_table <- table(week9$year, week9$courts)
+```
+
+:::
+
+---
+
+## Association Between Ordinal Variables
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
 
 year_courts_table |> 
   kable(booktabs = TRUE,
@@ -444,6 +457,10 @@ GKgamma(year_courts_table)
 :::
 
 - Gamma statistics run from -1 to 1. First thing to note is that there is a positive association between year and courts.
+
+---
+
+## Association
 
 - To test if the association is significant, divide gamma by its standard error and compare to 1.96 (for 95% significance level):
 

@@ -22,7 +22,7 @@ ps2 |>
             ul = mean_eqwlth + 1.96*se) |> 
   ggplot(aes(x = as.factor(year), y = mean_eqwlth,
              ymin = ll, ymax = ul)) +
-  geom_col() + geom_errorbar()
+  geom_point() + geom_errorbar()
 
 # Q2
 ps2 <- ps2 |> 
@@ -35,24 +35,24 @@ ps2 <- ps2 |>
 
 table(ps2$age, ps2$age_cat)
 
-t.test(ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2016],
+t.test(ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2018],
        ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2021])
 
-t.test(ps2$eqwlth[ps2$age_cat=="25-39" & ps2$year==2016],
+t.test(ps2$eqwlth[ps2$age_cat=="25-39" & ps2$year==2018],
        ps2$eqwlth[ps2$age_cat=="25-39" & ps2$year==2021])
 
-t.test(ps2$eqwlth[ps2$age_cat=="40-54" & ps2$year==2016],
+t.test(ps2$eqwlth[ps2$age_cat=="40-54" & ps2$year==2018],
        ps2$eqwlth[ps2$age_cat=="40-54" & ps2$year==2021])
 
-t.test(ps2$eqwlth[ps2$age_cat=="55-64" & ps2$year==2016],
+t.test(ps2$eqwlth[ps2$age_cat=="55-64" & ps2$year==2018],
        ps2$eqwlth[ps2$age_cat=="55-64" & ps2$year==2021])
 
-t.test(ps2$eqwlth[ps2$age_cat=="65+" & ps2$year==2016],
+t.test(ps2$eqwlth[ps2$age_cat=="65+" & ps2$year==2018],
        ps2$eqwlth[ps2$age_cat=="65+" & ps2$year==2021])
 
 # Q3
 ps2 <- ps2 |> 
-  mutate(hardly_any = ifelse(conlegis == 3, 1, 0))
+  mutate(hardly_any = ifelse(conlegis == "Hardly Any", 1, 0))
 
 q3 <- ps2 |> 
   filter(eqwlth == 1 | eqwlth == 7)
