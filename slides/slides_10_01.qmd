@@ -64,18 +64,36 @@ hdi_gender <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f2
 #  filter(!is.na(gni_per_capita_female)) |> 
 #  filter(!is.na(gni_per_capita_male))
 
-summary(hdi_gender)
+#summary(hdi_gender)
 
 #write.csv(hdi_gender, "../data/hdi/hdi_gender.csv", row.names = FALSE)
 ```
 
+## Merging Datasets
+
+- I usually use `left_join()`. It keeps all observations in the first variable and keeps those observations in the second variable that have a match based on the `by` values:
+
+::: {.fragment}
+
 ```{r}
-hdi <- left_join(gender_index, hdi_gender, by = "country")
-hdi <- left_join(hdi, human_development_index, by = "country")
-hdi <- hdi |> 
-  mutate(std_schooling_expected = scale(schooling_expected))
+#| echo: true
+gender_datasets <- left_join(gender_index, hdi_gender, 
+                            by = "country")
 ```
 
+:::
+
+- Now repeat the process using the new `gender_datasets` dataframe and the `human_development_index` data set:
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+hdi <- left_join(gender_datasets, human_development_index, 
+                 by = "country")
+```
+
+:::
 
 ## Where We've Been
 
@@ -110,15 +128,15 @@ hdi <- hdi |>
   - HS Flashback: y = mx + b, where m is the slope and b is the intercept
 
 - Linear relationship is regression equation: 
-  - $\large{\hat{y_i} = \alpha + \beta X_i + \epsilon_i}$
+  - $\large{\widehat{y_i} = \alpha + \beta X_i + \epsilon_i}$
   - Read as: *regress y on x*
 
 ---
 
 ## Start With Regression Basics
 
-- $\large{\hat{y_i} = \alpha + \beta X_i + \epsilon_i}$
-  - $\hat{y_i}$ = predicted outcome, the best guess
+- $\large{\widehat{y_i} = \alpha + \beta X_i + \epsilon_i}$
+  - $\widehat{y_i}$ = predicted outcome, the best guess
   - $\alpha$ = intercept or constant, where the line hits the y-axis when x is 0
   - $\beta$ = the slope, the multiplier for every X, known as the coefficient
   - $X_i$ = the observed value of X
@@ -128,9 +146,39 @@ hdi <- hdi |>
 
 ## Example from UN Human Development Project
 
-### Schooling & Life Expectancy
+- Before moving forward, we need to standardize the schooling values.
+
+- Use the `scale()` function for this...
 
 ::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+hdi <- hdi |> 
+  mutate(std_schooling_expected = scale(schooling_expected))
+```
+
+:::
+
+- Mean of standardized variable should be 0. SD should be 1.
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+mean(hdi$std_schooling_expected)
+sd(hdi$std_schooling_expected)
+```
+
+:::
+
+---
+
+## Example from UN Human Development Project
 
 ```{r}
 #| echo: false
@@ -146,13 +194,29 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
       plot.title=element_text(size=18), plot.subtitle=element_text(size=16))
 ```
 
-:::
+---
+
+## Example from UN Human Development Project
+
+```{r}
+#| echo: false
+#| output-location: slide
+
+schooling_life_plot1 <- ggplot(hdi, aes(
+     x = std_schooling_expected, y = life_expectancy))
+schooling_life_plot1 + geom_point(color = "Dark Gray") + geom_smooth(method = "lm") +
+     labs(x = "Standardized Schooling Expectancy", y = "Life Expectancy",
+      title = "Schooling and Life Expectancies",
+      subtitle = "(UNHDP, 2021)") +
+     theme(axis.title=element_text(size=18), axis.text=element_text(size=16),
+      plot.title=element_text(size=18), plot.subtitle=element_text(size=16))
+```
 
 ---
 
 ## Fitting The Regression Line
 
-- Recall that a *residual* is the difference between the observed value, $y$, and the predicted value on the line, $\hat{y}$
+- Recall that a *residual* is the difference between the observed value, $y$, and the predicted value on the line, $\widehat{y}$
 
 - We want a line that makes every residual as small as possible
 
@@ -165,7 +229,7 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
 ## Fitting The Regression Line
 
 - Sum of the squared residuals gets us closest
-  - $SSE = \sum{(y - \hat{y})^2}$
+  - $SSE = \sum{(y - \widehat{y})^2}$
   - Line with the smallest sum has the *least squares*: why basic regression is called *Ordinary Least Squares*
 
 - Squaring gives extra weight to biggest residuals (the observations that a given line does a particularly bad job at including)
@@ -176,11 +240,10 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
 
 ## Fitting Beta and Alpha
 
-- Let's try the example of regressing life expectancy in years on the standardized schooling expectancy
-
+- Let's try the example of regressing life expectancy in years on the standardized values of expected years of schooling
 - Start with basic descriptives
   - What's the correlation between the two variables?
-  - What are the mean and standard deviation of `std_schooling_expectancy`?
+  - What are the mean and standard deviation of `std_schooling_expected`?
   - What are the mean and standard deviation of `life_expectancy`?
 
 ---
@@ -243,7 +306,7 @@ sd(hdi$life_expectancy)
 
 ---
 
-# Finding Beta
+## Finding Beta
 
 - $\large{\beta = cor_{xy} \frac {s_{y}}{s_{x}}}$
 
@@ -282,6 +345,9 @@ beta
 ::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 alpha <- mean(hdi$life_expectancy) - 
       beta*(mean(hdi$std_schooling_expected))
 
@@ -298,7 +364,7 @@ alpha
 
 ## Fitting The Regression Line
 
-- Now we have our line: y = 71.29941 + 6.188267
+- Now we have our line: y = 71.29941 + 6.188267 $X$
 
 - Let's add it to our plot using `geom_abline()`:
 
@@ -341,7 +407,7 @@ geom_abline(intercept = 71.29941, slope = 6.188267) +
 
 ## Predicting Values of Y
 
-- If the line is correct, there should be a point on the line where X = 0 and Y = 71.29941
+- If the line is correct, there should be a point on the line where X=0 and Y=71.29941
 
 ::: {.fragment}
 
@@ -382,9 +448,9 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
 
 ## Predicting Values of Y
 
-- Digging Deeper: when $\large{x}$ increases by 1, $\large{\hat{y}}$ is expected to increase by 6.188267
+- Digging Deeper: when $\large{x}$ increases by 1, $\large{\widehat{y}}$ is expected to increase by 6.188267
 
-- So if $\large{x}$ is 1 standard deviation above the mean, what is $\large{\hat{y}}$? And if $\large{x}$ is 1 standard deviation below the mean, what is $\large{\hat{y}}$?
+- So if $\large{x}$ is 1 standard deviation above the mean, what is $\large{\widehat{y}}$? And if $\large{x}$ is 1 standard deviation below the mean, what is $\large{\widehat{y}}$?
 
 - Prediction always has to start with value of $\large{\alpha}$!
 
@@ -396,6 +462,15 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
 
 predicted_y_plus1sd <- alpha + beta*1
 predicted_y_plus1sd
+```
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
 
 predicted_y_minus1sd <- alpha + beta*-1
 predicted_y_minus1sd
@@ -471,11 +546,13 @@ schooling_life_model1 <-
 
 :::
 
+</br>
+
 ::: {.fragment}
 
 ```{r}
 #| echo: true
-#| output-location: fragment
+#| output: false
 
 # Then look at the summary of the saved model:
 
@@ -489,6 +566,7 @@ summary(schooling_life_model1)
 ## Regression in R
 
 ![](385_figures/lm_model_1.png)
+
 - Should look familiar: standard errors, t-stats, p-values!
 
 ---
@@ -497,51 +575,52 @@ summary(schooling_life_model1)
 
 ![](385_figures/lm_model_2.png)
 
-- Red Box = Alpha; Blue Box = Beta
+- Blue Box = Alpha; Red Box = Beta
 
 ---
 
-# R's Regression Output - Std Error
-### Std. Error = SE of the coefficient
+## R's Regression Output - Std Error
 
 ![](385_figures/lm_model_3.png)
 
----
-
-# R's Regression Output - Std Error
-
-$\Large{se = \frac{s} {\sqrt{\sum{ (x - \bar{x})^2}}}}$
-
-#### and
-
-$\Large{s = \sqrt {\frac {\sum{(y - \hat{y})^2}}{n-2}}}$
+- Std. Error = SE of the coefficient
 
 ---
 
-# R's Regression Output - Std Error
+## R's Regression Output - Std Error
 
-### The standard error formula uses the predicted values of y to calculate the residuals
+- $\Large{se = \frac{s} {\sqrt{\sum{ (x - \bar{x})^2}}}}$
 
---
+- $\Large{s = \sqrt {\frac {\sum{(y - \widehat{y})^2}}{n-2}}}$
 
-### R makes it easy to save all the predicted values from a model:
+- The standard error formula uses the predicted values of y to calculate the residuals
 
---
+- R makes it easy to save all the predicted values from a model:
+
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 hdi$predicted_life_expectancy <- 
     schooling_life_model1$fitted.values
 ```
 
+:::
+
 ---
 
-# R's Regression Output - Std Error
+## R's Regression Output - Std Error
 
-### Now you can plug in the predicted values to the rest of the standard error equation:
+- Now you can plug in the predicted values to the rest of the standard error equation:
 
---
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 se_numerator <- sqrt(sum((hdi$life_expectancy - 
   hdi$predicted_life_expectancy)^2) / 
     (length(hdi$life_expectancy) - 2))
@@ -554,53 +633,65 @@ se <- se_numerator / se_denominator
 se
 ```
 
+:::
+
 ---
 
-# R's Regression Output - Std Error
+## R's Regression Output - Std Error
 
 ![](385_figures/lm_model_3.png)
 
 ---
 
-# R's Regression Output - T Value
+## R's Regression Output - T Value
 
-### t = test statistic for a t-test that coefficient differs from zero
+![](385_figures/lm_model_4.png)
 
+- t = test statistic for a t-test that coefficient differs from zero
 
-![:scale 90%](385_figures/lm_model_4.png)
 
 ---
 
-# R's Regression Output - T Value
+## R's Regression Output - T Value
 
-### t = coefficient estimate / standard error
+- t = coefficient estimate / standard error
 
---
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 6.1883 / .3579
 ```
 
----
-
-# R's Regression Output - T Value
-
-![:scale 90%](385_figures/lm_model_4.png)
+:::
 
 ---
 
-# R's Regression Output - P Value
+## R's Regression Output - T Value
 
-### P>|t| = p-value for two-tailed test
+![](385_figures/lm_model_4.png)
 
+---
+
+## R's Regression Output - P Value
 
 ![](385_figures/lm_model_5.png)
 
+- P>|t| = p-value for two-tailed test
+
+
 ---
 
-# R's Regression Output - P Value
+## R's Regression Output - P Value
+
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 # Area in right tail:
 pr_tail <- 1 - pt(17.29, df = 168)
 
@@ -608,33 +699,30 @@ pr_tail <- 1 - pt(17.29, df = 168)
 2 * pr_tail
 ```
 
---
+:::
 
-### Can we reject the null hypothesis that the coefficient for `std_schooling_expectancy` is different from 0?
+- Can we reject the null hypothesis that the coefficient for `std_schooling_expected` is different from 0?
+  - Yes, because `Pr(>|t|)` is less than .05
 
---
-
-### Yes, because `Pr(>|t|)` is less than .05
-
---
-
-### Note the stars!
+- Note the stars!
 
 ---
 
-# R's Regression Output - P Value
+## R's Regression Output - P Value
 
-![:scale 90%](385_figures/lm_model_5.png)
+![](385_figures/lm_model_5.png)
 
 ---
 
-# Plotting Regressions
+## Plotting Regressions
 
-### More common to use `geom_smooth(method = lm)` than `geom_abline()`:
+- More common to use `geom_smooth(method = lm)` than `geom_abline()`:
 
---
+::: {.fragment}
+```{r}
+#| echo: true
+#| output: false
 
-```{r, eval = FALSE, fig.width = 12, fig.height = 8}
 schooling_life_plot1 + geom_point(color = "Dark Gray") +
      labs(x = "Standardized Schooling Expectancy", 
           y = "Life Expectancy",
@@ -643,11 +731,15 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
       geom_smooth(method = lm)
 ```
 
+:::
+
 ---
 
-# Plotting Regressions
+## Plotting Regressions
 
-```{r, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.width = 12, fig.height = 8}
+```{r}
+#| echo: false
+
 schooling_life_plot1 + geom_point(color = "Dark Gray") +
      labs(x = "Standardized Schooling Expectancy", 
           y = "Life Expectancy",
@@ -660,71 +752,97 @@ schooling_life_plot1 + geom_point(color = "Dark Gray") +
 
 ---
 
-# Exercise 1
+## Exercise 1
 
-### Regress the gender inequality index (`gender_inequality_index`) on the average years of schooling completed by female residents (`schooling_mean_female`).
+- Regress the gender inequality index (`gender_inequality_index`) on the average years of schooling completed by female residents (`schooling_mean_female`).
 
---
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output: false
 female_inequality_schooling_model <- 
       lm(gender_inequality_index ~ schooling_mean_female,
             data = hdi)
 ```
 
---
+:::
 
-```{r, eval = FALSE}
-summary(female_inequality_schooling_model)
-```
+</br>
 
----
-
-# Exercise 1
-
-```{r, echo = FALSE}
-summary(female_inequality_schooling_model)
-```
-
----
-
-
-# Exercise 1
-### Gender Inequality Index = 
-### 75.7103 + (-4.7189 $\times$ Schooling Mean Female)
-
---
-
-### An increase of one year in the average years of schooling completed by female residents is associated with a decrease in the gender inequality index of 4.72, on average.
-
---
-
-### In the US, the average years of schooling for female residents is 13.7. What is the US' predicted value on the gender inequality index?
-
---
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output: false
+summary(female_inequality_schooling_model)
+```
+
+:::
+
+---
+
+## Exercise 1
+
+```{r}
+#| echo: false
+
+summary(female_inequality_schooling_model)
+```
+
+---
+
+
+## Exercise 1
+
+- Inequality Index = 75.7103 + (-4.7189 $\times$ Schooling Mean Female)
+
+- An increase of one year in the average years of schooling completed by female residents is associated with a decrease in the gender inequality index of 4.72, on average.
+
+- In the US, the average years of schooling for females residents is 13.7. What is the US' predicted value on the gender inequality index?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
 75.7103 + (-4.7189*13.7)
 ```
 
-How does the predicted value of the gender inequality index compared to the observed value?
+:::
+
+
+## Exercise 1
+
+- How does the predicted value of the gender inequality index compared to the observed value?
+
+::: {.fragment}
 
 ```{r}
+#| echo: true
+#| output-location: fragment
+
 hdi |> 
   filter(country == "United States") |> 
   select(gender_inequality_index)
 ```
 
+:::
+
 
 ---
 
-# Exercise 2
+## Exercise 2
 
-### What would you expect about the relationship between `gni_per_capita` and `life_expectancy`?
+- What would you expect about the relationship between `gni_per_capita` and `life_expectancy`?
 
---
+::: {.fragment}
 
-```{r, eval = FALSE}
+```{r}
+#| echo: true
+#| output: false
+
 income_life_expectancy_plot <- ggplot(hdi, aes(x = gni_per_capita,
                                  y = life_expectancy)) + geom_point() +
   geom_smooth(method = lm)
@@ -732,11 +850,15 @@ income_life_expectancy_plot <- ggplot(hdi, aes(x = gni_per_capita,
 income_life_expectancy_plot
 ```
 
+:::
+
 ---
 
-# Exercise 2
+## Exercise 2
 
-```{r, echo = FALSE, message = FALSE, fig.width = 12, fig.height = 8}
+```{r}
+#| echo: false
+
 income_life_expectancy_plot <- ggplot(hdi, 
                                 aes(x = gni_per_capita,
                                  y = life_expectancy)) + geom_point() +
@@ -749,66 +871,110 @@ income_life_expectancy_plot
 
 ---
 
-# Exercise 2
+## Exercise 2
 
-```{r, eval = FALSE}
-income_life_expectancy_plot <- ggplot(hdi, 
+```{r}
+#| echo: true
+#| output: false
+
+income_log_life_expectancy_plot <- ggplot(hdi, 
                                 aes(x = log(gni_per_capita),
                                  y = life_expectancy)) + geom_point() +
   geom_smooth(method = lm)
 
-income_life_expectancy_plot
+income_log_life_expectancy_plot
 ```
 
 ---
 
-# Exercise 2
+## Exercise 2
 
-```{r, echo = FALSE, message = FALSE, fig.width = 12, fig.height = 8}
-income_life_expectancy_plot <- ggplot(hdi, 
+```{r}
+#| echo: false
+
+income_log_life_expectancy_plot <- ggplot(hdi, 
                                 aes(x = log(gni_per_capita),
                                  y = life_expectancy)) + geom_point() +
   geom_smooth(method = lm) +
      theme(axis.title=element_text(size=18), axis.text=element_text(size=16),
       plot.title=element_text(size=18), plot.subtitle=element_text(size=16))
 
-income_life_expectancy_plot
+income_log_life_expectancy_plot
 ```
 
 ---
 
-# Exercise 2
+## Exercise 2
 
-### Try the regression model using `life_expectancy` and `log_gross_national_income`...
+- Try the regression model using `life_expectancy` and `log(gni_per_capita)`...
 
---
+::: {.fragment}
 
-```{r, eval = FALSE}
+```{r}
+#| echo: true
+#| output-location: fragment
 income_life_expectancy_model <- 
       lm(life_expectancy ~ log(gni_per_capita),
             data = hdi)
+```
+
+:::
+
+
+---
+
+## Exercise 2
+
+```{r}
+#| echo: true
+#| output-location: fragment
 
 summary(income_life_expectancy_model)
 ```
 
 ---
 
-# Exercise 2
+## Exercise 2
 
-```{r, echo = FALSE}
-income_life_expectancy_model <- 
-      lm(life_expectancy ~ log(gni_per_capita),
-            data = hdi)
+- An increase in one unit of log gross national income is associated with an increase of 5.6612 years in life expectancy, on average. This increase is significant.
 
-summary(income_life_expectancy_model)
+- A ten percent increase in gross national income is associated with a significant increase of 5.6612 years in life expectancy, on average.
+
+- What is the predicted life expectancy for the United States?
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+log(hdi$gni_per_capita[hdi$country=="United States"])
 ```
 
----
+:::
 
-# Exercise 2
+- To "exponentiate" logs...
 
-### An increase in one unit of log gross national income is associated with an increase of 5.6612 years in life expectancy, on average. 
+::: {.fragment}
 
---
+```{r}
+#| echo: true
+#| output-location: fragment
 
-### A ten percent increase in gross national income is associated with an increase of 5.6612 years in life expectancy, on average. 
+exp(11.07852)
+```
+
+:::
+
+## Exercise 2
+
+::: {.fragment}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+18.4541 + (5.6612*11.07852)
+```
+
+:::
