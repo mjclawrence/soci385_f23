@@ -1,0 +1,286 @@
+## Setting Up
+
+Load the usual packages:
+
+```{r}
+#| message: false
+
+library(tidyverse)
+```
+
+
+We'll use three different datasets from the United Nations Human Development Program. Load each separately:
+
+```{r}
+#| message: false
+
+human_development_index <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/hdi/human_development_index.csv")
+
+gender_index <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/hdi/gender_index.csv")
+
+hdi_gender <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/hdi/hdi_gender.csv")
+
+```
+
+How do we combine these three datasets into one? Take a look at the variables in each. Is there a common variable we could "match" across them? If so, we could use a `join()` function to merge them.
+
+Let's join the two gender-related datasets first (though which order you do this doesn't really matter). The `country` variable is in both so we'll combine columns based on the values of that variable.
+
+
+
+```{r}
+gender_datasets <- left_join(gender_index, hdi_gender, by = "country")
+```
+
+Now we'll repeat to combine the `human_development_index` dataset with the new `gender_datasets` data frame we just created. We'll name our newest merged dataset `hdi`:
+
+```{r}
+hdi <- left_join(gender_datasets, human_development_index, by = "country")
+```
+
+---
+
+## Introduction
+
+For two continuous variables, regression is based on fitting a line that has an *alpha* and a *beta*. This linear relationship is represented formally as:
+
+$\Large{\hat{y_i} = \alpha + \beta X_i + \epsilon_i}$
+
+- Read as: *regress y on x*
+- $\hat{y_i}$ = predicted outcome, the best guess
+- $\alpha$ = intercept or constant, where the line hits the y-axis when x is 0
+- $\beta$ = the slope, the multiplier for every X, known as the coefficient
+- $X_i$ = the observed value of X
+- $\epsilon_i$ = error (or residual), difference between observed and predicted values
+
+## Example from UN HDP
+
+Our first example will regress `life_expectancy` on the standardized values of schooling. Before moving forward, we need to standardize the schooling values, which we can do with the `scale()` function:
+
+```{r}
+hdi <- hdi |> 
+  mutate(std_schooling_expected = scale(schooling_expected))
+```
+
+## Finding Alpha and Beta
+
+Lots of lines could pass through a scatterplot. The line we want to find is the one that makes *the sum of the squared residuals* as small as possible.
+
+
+To find alpha and beta, we need a few basic statistics: the mean and standard deviation of both variables and the correlation between them.
+
+```{r}
+# Correlation
+cor(hdi$std_schooling_expected, hdi$life_expectancy)
+```
+
+```{r}
+# Mean and Standard Deviation of X
+mean(hdi$std_schooling_expected)
+sd(hdi$std_schooling_expected)
+```
+
+```{r}
+# Mean and Standard Deviation of Y
+mean(hdi$life_expectancy)
+sd(hdi$life_expectancy)
+```
+
+To find beta, we need the correlation and the two standard deviations:
+$\Large{\beta = cor_{xy} \frac {s_{y}}{s_{x}}}$
+
+```{r}
+# Finding Beta
+beta <- cor(hdi$std_schooling_expected,
+            hdi$life_expectancy) *
+     (sd(hdi$life_expectancy) / sd(hdi$std_schooling_expected))
+
+beta
+```
+
+
+To find alpha, we need beta and the two means:
+$\Large{\alpha = \bar{y} - \beta \bar{x}}$
+
+```{r}
+# Finding alpha
+alpha <- mean(hdi$life_expectancy) - 
+            beta*(mean(hdi$std_schooling_expected))
+
+alpha
+```
+
+
+## Plotting Regressions, Part One
+
+Once we have alpha (the intercept) and beta (the slope), we can add the line to a plot using `geom_abline()`:
+
+```{r}
+schooling_life_plot1 <- ggplot(hdi, aes(
+     x = std_schooling_expected, y = life_expectancy))
+
+schooling_life_plot1 + geom_point(color = "Dark Gray") +
+     labs(x = "Standardized Schooling Expectancy", 
+      y = "Life Expectancy",
+      title = "Schooling and Life Expectancies", 
+      subtitle = "UNHDP, 2021") +
+     geom_abline(intercept = 71.29941, slope = 6.188267)
+```
+
+If this line is correct, there should be a point on the line where x = 0 and y = 71.29941:
+
+```{r}
+schooling_life_plot1 + geom_point(color = "Dark Gray") +
+     labs(x = "Standardized Schooling Expectancy", 
+      y = "Life Expectancy",
+      title = "Schooling and Life Expectancies", 
+      subtitle = "UNHDP, 2021") +
+     geom_abline(intercept = 71.29941, slope = 6.188267) +
+     geom_point(x = 0, y = 71.29941, color = "Red", size = 3)
+```
+
+
+## Predicting Values of Y
+
+Knowing alpha and beta will allow us to predict the value of Y for any value of X. And all of these predicted values will fall on our line.
+
+If x is 1 standard deviation above the mean, what is the predicted value of y?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+If x is 1 standard deviation below the mean, what is the predicted value of y?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+
+Now add these two points to the plot:
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+
+## Regression in R
+
+To find the estimates for a `linear model`, R uses the `lm()` function. The syntax here is to list the dependent (y) variable first, followed by a tilde (~) and the independent (x) variable, and then the name of the data frame where those variables are located. And it will be much more convenient if you save the output of this function as an object:
+
+```{r}
+schooling_life_model1 <- 
+     lm(life_expectancy ~ std_schooling_expected, data = hdi)
+```
+
+Now review the saved model using `summary()`:
+
+```{r}
+summary(schooling_life_model1)
+```
+
+You should see the numbers we just calculated and lots of test statistics (standard errors, t-values, p-values) that look familiar.
+
+For now, focus on the "Estimate" column in the center section. The estimate for the intercept is the value of alpha. The estimate for `std_schooling_expected` is the value of beta.
+
+In words, this model says that when x = 0, the predicted value of y is 71.29941 And for every one unit increase in x (in this example, our unit is standard deviations of expected schooling), the predicted value of y increases by 6.188267, on average.
+
+The `std.error` column reports the standard error of each coefficient. That standard error is calculated as:
+
+$\Large{se = \frac{s} {\sqrt{\sum{ (x - \bar{x})^2}}}}$
+
+with 
+
+$\Large{s = \sqrt {\frac {\sum{(y - \hat{y})^2}}{n-2}}}$
+
+The part of this equation that is important to learn is how to save predicted values of y based on the model. You do so by thinking of the model as a data frame and `fitted.values` as the variable:
+
+```{r}
+hdi$predicted_life_expectancy <- schooling_life_model1$fitted.values
+```
+
+And now you can use these predicted values of y just as you would any other variable. In this example, they are used to calculate the standard error of the coefficient:
+
+```{r}
+se_numerator <- sqrt(sum((hdi$life_expectancy - 
+          hdi$predicted_life_expectancy)^2) / 
+               (length(hdi$life_expectancy) - 2))
+
+se_denominator <- sqrt(sum((hdi$std_schooling_expected - 
+          mean(hdi$std_schooling_expected))^2))
+
+se <- se_numerator / se_denominator
+
+se
+```
+
+That value is the same as what the model provides as the standard error for the `std_schooling_expected` coefficient:
+
+```{r}
+summary(schooling_life_model1)
+```
+
+
+The `t value` column is the test statistic for a t-test that the coefficient is different from zero. It is calculated as the estimate divided by the standard error:
+
+```{r}
+6.1883 / 0.3579
+```
+
+The `Pr(>|t|)` column is the p value for a two-tailed test of the test statistic. It is calculated using tools we know:
+
+```{r}
+# Area in right tail:
+pr_tail <- 1 - pt(17.29, df = 168)
+
+# Area in both tails (what output gives):
+2 * pr_tail
+```
+
+## Plotting Regressions, Part Two
+
+The `geom_abline()` is more helpful for teaching than analyzing. It will be more common to use `geom_smooth(method = lm)` to add a line to a scatterplot:
+
+```{r}
+schooling_life_plot1 + geom_point(color = "Dark Gray") +
+     labs(x = "Standardized Schooling Expectancy", 
+          y = "Life Expectancy",
+          title = "Schooling and Life Expectancies", 
+          subtitle = "UNHDP, 2021") +
+      geom_smooth(method = lm)
+```
+
+
+## Exercises
+
+1. Regress the gender inequality index (`gender_inequality_index`) on the average years of schooling completed by female residents (`schooling_mean_female`).
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+In the US, the average years of schooling for females residents is 13.7. What is the US’ predicted value on the gender inequality index?
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+
+2. What would you expect about the relationship between income and life expectancy in countries? Try a plot first (with `gni_per_capita` as the x and `life_expectancy` as the y. 
+
+```{r}
+income_life_expectancy_plot <- ggplot(hdi, aes(x = gni_per_capita,
+                                 y = life_expectancy)) + geom_point() +
+  geom_smooth(method = lm)
+
+income_life_expectancy_plot
+```
+
+For OLS regression to work, we need a reasonably straight line. In this case, we can get that if we use the log of income rather than income in dollars:
+
+```{r}
+income_log_life_expectancy_plot <- ggplot(hdi, aes(x = log(gni_per_capita),
+                                 y = life_expectancy)) + geom_point() +
+  geom_smooth(method = lm)
+
+income_log_life_expectancy_plot
+```
+
+Now run the regression model on the logged income variable.
+
+### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
+
+
+What is the predicted life expectancy for the United States?
+
+### REPLACE THIS LINE WITH YOUR CODE ###
