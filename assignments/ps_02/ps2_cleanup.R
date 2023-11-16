@@ -6,9 +6,13 @@ data(gss_all)
 
 years <- gss_which_years(gss_all, "eqwlth")
 
+
 ps2 <- gss_all |> 
   filter(year >= 2010) |> 
   select(id, year, age, race, hispanic, degree, eqwlth, conlegis)
+
+
+ps2 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps2.csv")
 
 # Q1
 ps2 |> 

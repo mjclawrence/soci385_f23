@@ -284,3 +284,4 @@ Now run the regression model on the logged income variable.
 What is the predicted life expectancy for the United States?
 
 ### REPLACE THIS LINE WITH YOUR CODE ###
+d
