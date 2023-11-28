@@ -118,7 +118,8 @@ Use regression to test the significance of the difference in the maternal mortal
 
 Create the education variable:
 ```{r, warning = FALSE}
-hdi <- mutate(hdi, female_more_schl = ifelse(secondary_educ_female>secondary_educ_male,1,0))
+hdi <- hdi |> 
+  mutate(female_more_schl = ifelse(secondary_educ_female>secondary_educ_male,1,0))
 ```
 
 Use the new `female_more_schl` variable in the regression model:

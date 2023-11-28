@@ -1,0 +1,1926 @@
+"id","childs","age","agekdbrn","educ","class","memnum","racehisp","geography","religion","place","female","degree","agekdbrn_30plus"
+1,1,52,34,9,"Working class",1,"Other","Big city","Catholic","Northeast","Yes","Less Than HS",1
+2,3,59,NA,12,"Working class",1,"Black","Big city","Catholic","Northeast","No","HS Diploma",NA
+2,3,43,35,14,"Upper class",0,"Hispanic","Big city","Catholic","Northeast","Yes","Some College",1
+3,4,52,23,14,"Middle class",2,"Black","Big city","Protestant","Northeast","No","Some College",0
+5,0,21,NA,13,"Lower class",3,"Black","Big city","Protestant","Northeast","Yes","Some College",NA
+5,0,34,NA,17,"Working class",4,"Hispanic","Big city","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+8,0,22,NA,14,"Working class",0,"Other","Big city","Eastern","Northeast","No","Some College",NA
+10,0,26,NA,14,"Working class",0,"Black","Big city","Protestant","Northeast","No","Some College",NA
+11,7,74,19,12,"Lower class",1,"Black","Big city","Protestant","Northeast","No","HS Diploma",0
+12,3,58,21,12,"Working class",2,"Black","Big city","None","Northeast","Yes","HS Diploma",0
+13,1,32,28,10,"Working class",2,"Black","Big city","Catholic","Northeast","No","Less Than HS",0
+16,2,48,25,11,"Middle class",0,"Black","Big city","Protestant","Northeast","No","Less Than HS",0
+17,2,52,NA,18,"Upper class",3,"White","Big city","Jewish","Northeast","Yes","Grad/Prof Degree",NA
+20,2,29,25,11,"Working class",2,"Other","Big city","None","Northeast","No","Less Than HS",0
+22,2,67,21,14,"Middle class",4,"White","Big city","Catholic","Northeast","Yes","Some College",0
+23,2,57,31,12,"Lower class",0,"White","Big city","Eastern","Northeast","No","HS Diploma",1
+24,0,65,NA,16,"Upper class",0,"White","Big city","Protestant","Northeast","No","College Degree",NA
+25,0,53,NA,16,"Middle class",0,"White","Big city","Catholic","Northeast","No","College Degree",NA
+26,1,55,37,16,"Working class",0,"Other","Big city","Protestant","Northeast","Yes","College Degree",1
+27,2,35,26,13,"Working class",0,"White","Big city","Jewish","Northeast","Yes","Some College",0
+30,0,73,NA,16,"Middle class",1,"White","Big city","Jewish","Northeast","No","College Degree",NA
+32,1,68,50,12,"Middle class",0,"Black","Big city","Catholic","Northeast","No","HS Diploma",1
+34,1,55,NA,16,"Middle class",1,"Black","Big city","Catholic","Northeast","Yes","College Degree",NA
+35,2,47,32,17,"Upper class",8,"White","Big city",NA,"Northeast","Yes","Grad/Prof Degree",1
+36,1,58,32,16,"Middle class",1,"White","Big city","Jewish","Northeast","Yes","College Degree",1
+38,0,29,NA,19,"Middle class",2,"White","Big city","Jewish","Northeast","No","Grad/Prof Degree",NA
+39,1,82,NA,19,"Upper class",8,"White","Big city","None","Northeast","Yes","Grad/Prof Degree",NA
+40,0,34,NA,18,"Middle class",3,"White","Big city","Protestant","Northeast","No","Grad/Prof Degree",NA
+46,3,55,31,16,"Middle class",0,"Other","Big city","Other","Northeast","No","College Degree",1
+48,0,33,NA,18,"Working class",0,"White","Big city","None","Northeast","No","Grad/Prof Degree",NA
+49,0,26,NA,13,"Working class",2,"White","Big city","None","Northeast","Yes","Some College",NA
+52,0,30,NA,17,"Middle class",5,"Other","Big city","None","Northeast","No","Grad/Prof Degree",NA
+52,0,31,NA,15,"Working class",2,"Black","Big city","Protestant","Northeast","No","Some College",NA
+53,0,37,NA,12,"Middle class",0,"Hispanic","Big city","Catholic","Northeast","Yes","HS Diploma",NA
+54,2,49,37,12,"Middle class",0,"White","Smaller city","Catholic","Northeast","No","HS Diploma",1
+55,0,23,NA,12,"Working class",7,"White","Smaller city","Catholic","Northeast","No","HS Diploma",NA
+57,0,47,NA,16,"Middle class",1,"White","Smaller city","None","Northeast","No","College Degree",NA
+59,3,33,NA,19,"Middle class",3,"White","Big city","Protestant","Northeast","Yes","Grad/Prof Degree",NA
+59,2,55,27,16,"Middle class",2,"White","Smaller city","None","Northeast","Yes","College Degree",0
+60,2,74,36,16,"Middle class",1,"White","Smaller city","Jewish","Northeast","No","College Degree",1
+61,2,49,30,16,"Upper class",2,"White","Smaller city","Protestant","Northeast","No","College Degree",1
+62,3,40,31,16,"Middle class",4,"White","Smaller city","Catholic","Northeast","No","College Degree",1
+63,3,40,35,20,"Middle class",3,"Other","Smaller city","Eastern","Northeast","Yes","Grad/Prof Degree",1
+65,0,22,NA,15,"Middle class",1,"Black","Big city","Catholic","Northeast","No","Some College",NA
+65,2,55,31,20,"Upper class",2,"Other","Suburb","Eastern","Northeast","No","Grad/Prof Degree",1
+66,3,48,30,18,"Upper class",4,"White","Suburb","Jewish","Northeast","Yes","Grad/Prof Degree",1
+69,0,23,NA,16,"Middle class",3,"Black","Big city","Catholic","Northeast","Yes","College Degree",NA
+69,2,57,30,18,"Upper class",0,"White","Suburb","None","Northeast","Yes","Grad/Prof Degree",1
+70,0,59,NA,18,"Working class",3,"White","Suburb","Protestant","Northeast","Yes","Grad/Prof Degree",NA
+71,0,38,NA,16,"Middle class",1,"Black","Suburb","Catholic","Northeast","Yes","College Degree",NA
+72,1,33,24,17,"Working class",1,"Black","Suburb","Protestant","Northeast","Yes","Grad/Prof Degree",0
+74,5,45,24,15,"Middle class",4,"Black","Suburb","Protestant","Northeast","Yes","Some College",0
+75,5,46,NA,12,"Working class",2,"Black","Big city","Other","Northeast","Yes","HS Diploma",NA
+75,1,41,27,16,"Working class",0,"Black","Suburb","Protestant","Northeast","Yes","College Degree",0
+76,4,36,NA,12,"Middle class",0,"Black","Big city","Protestant","Northeast","Yes","HS Diploma",NA
+79,2,57,38,10,"Working class",0,"Hispanic","Suburb","Catholic","Northeast","Yes","Less Than HS",1
+80,0,66,NA,18,"Middle class",1,"White","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+83,1,30,28,17,"Middle class",2,"Hispanic","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",0
+84,0,24,NA,16,"Working class",3,"White","Suburb","Protestant","Northeast","No","College Degree",NA
+84,2,48,27,16,"Middle class",6,"White","Suburb","Catholic","Northeast","No","College Degree",0
+85,2,34,NA,16,"Middle class",5,"White","Suburb","Catholic","Northeast","No","College Degree",NA
+87,0,32,NA,16,"Middle class",0,"Other","Suburb","None","Northeast","No","College Degree",NA
+89,1,33,32,15,"Middle class",5,"Other","Suburb","Eastern","Northeast","No","Some College",1
+90,2,69,25,12,"Middle class",4,"White","Suburb","Protestant","Northeast","Yes","HS Diploma",0
+92,1,31,30,15,"Middle class",0,"Other","Suburb","Eastern","Northeast","No","Some College",1
+93,0,21,NA,14,"Middle class",1,"White","Suburb","Protestant","Northeast","No","Some College",NA
+93,1,31,30,14,"Middle class",0,"Other","Suburb","Eastern","Northeast","No","Some College",1
+94,2,45,33,13,"Middle class",0,"White","Suburb","Catholic","Northeast","Yes","Some College",1
+95,3,79,22,12,"Working class",1,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",0
+95,2,63,NA,20,"Upper class",7,"White","Suburb","Jewish","Northeast","Yes","Grad/Prof Degree",NA
+97,4,60,NA,12,"Middle class",1,"White","Suburb","Other","Northeast","Yes","HS Diploma",NA
+99,4,63,22,12,"Working class",2,"White","Suburb","Protestant","Northeast","No","HS Diploma",0
+100,2,57,NA,12,"Working class",3,"Black","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+103,2,37,30,16,"Working class",1,"White","Suburb","Catholic","Northeast","Yes","College Degree",1
+105,4,33,19,14,"Working class",2,"Other","Suburb","Eastern","Northeast","Yes","Some College",0
+106,1,50,31,17,"Middle class",3,"White","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",1
+108,6,59,NA,12,"Working class",0,"Black","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+110,2,57,18,15,"Working class",1,"Hispanic","Suburb","Catholic","Northeast","Yes","Some College",0
+112,1,60,40,9,"Working class",3,"White","Suburb","Catholic","Northeast","No","Less Than HS",1
+113,2,74,20,14,"Middle class",0,"White","Suburb","Catholic","Northeast","Yes","Some College",0
+116,0,34,NA,18,"Middle class",3,"White","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+117,2,60,27,20,"Middle class",1,"White","Suburb","Catholic","Northeast","No","Grad/Prof Degree",0
+120,0,35,NA,16,"Working class",0,"White","Suburb","None","Northeast","No","College Degree",NA
+122,1,35,33,20,"Upper class",0,"White","Suburb","Catholic","Northeast","No","Grad/Prof Degree",1
+125,1,47,31,12,"Middle class",3,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",1
+129,3,62,25,12,"Middle class",4,"White","Suburb","Catholic","Northeast","No","HS Diploma",0
+130,3,40,NA,13,"Working class",2,"Black","Smaller city","Protestant","Northeast","Yes","Some College",NA
+130,1,61,28,15,"Middle class",0,"White","Suburb","Catholic","Northeast","No","Some College",0
+131,1,56,22,6,"Working class",1,"White","Suburb","Other","Northeast","Yes","Less Than HS",0
+133,0,19,NA,11,"Working class",0,"White","Suburb","None","Northeast","No","Less Than HS",NA
+135,3,55,31,14,"Middle class",5,"White","Suburb","Catholic","Northeast","No","Some College",1
+136,3,32,25,18,"Middle class",3,"White","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",0
+137,2,28,NA,11,"Working class",2,"White","Smaller city","Protestant","Northeast","Yes","Less Than HS",NA
+139,0,50,NA,14,"Working class",0,"Hispanic","Suburb","None","Northeast","No","Some College",NA
+140,2,24,19,12,"Working class",2,"Hispanic","Suburb","Protestant","Northeast","Yes","HS Diploma",0
+142,4,78,NA,12,"Middle class",0,"White","Suburb","Protestant","Northeast","Yes","HS Diploma",NA
+143,0,50,NA,12,"Middle class",0,"White","Suburb","None","Northeast","Yes","HS Diploma",NA
+144,0,55,NA,16,"Working class",4,"White","Suburb","None","Northeast","Yes","College Degree",NA
+146,5,75,NA,12,"Working class",6,"Black","Suburb","Protestant","Northeast","Yes","HS Diploma",NA
+146,2,49,35,15,"Middle class",0,"White","Suburb","Catholic","Northeast","No","Some College",1
+149,0,28,NA,14,"Working class",0,"White","Suburb","Catholic","Northeast","No","Some College",NA
+151,4,61,30,9,"Middle class",2,"Hispanic","Suburb","Catholic","Northeast","No","Less Than HS",1
+152,0,35,NA,12,"Working class",1,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",NA
+155,0,32,NA,16,"Middle class",1,"White","Suburb","Catholic","Northeast","No","College Degree",NA
+156,4,58,28,12,"Middle class",1,"White","Smaller city","Catholic","Northeast","No","HS Diploma",0
+159,0,31,NA,16,"Middle class",2,"White","Suburb","Catholic","Northeast","No","College Degree",NA
+159,2,33,27,19,"Middle class",2,"White","Smaller city","Protestant","Northeast","No","Grad/Prof Degree",0
+160,1,58,31,12,"Working class",3,"White","Smaller city","Protestant","Northeast","No","HS Diploma",1
+162,2,41,NA,17,"Working class",3,"Other","Suburb","Catholic","Northeast","No","Grad/Prof Degree",NA
+163,1,33,32,16,"Middle class",1,"Hispanic","Suburb","Catholic","West","No","College Degree",1
+166,1,25,19,11,"Working class",1,"Hispanic","Suburb","Other","West","No","Less Than HS",0
+169,3,63,22,16,"Middle class",3,"White","Suburb","Protestant","West","No","College Degree",0
+171,3,67,25,16,"Upper class",3,"White","Suburb","Protestant","West","No","College Degree",0
+172,2,45,NA,12,"Middle class",2,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",NA
+176,0,31,NA,16,"Middle class",1,"White","Suburb","Protestant","West","Yes","College Degree",NA
+177,2,74,25,18,"Middle class",0,"White","Suburb","None","West","No","Grad/Prof Degree",0
+178,2,62,33,17,"Upper class",4,"White","Suburb","Catholic","West","No","Grad/Prof Degree",1
+179,1,39,NA,17,"Middle class",3,"White","Suburb","Protestant","Northeast","No","Grad/Prof Degree",NA
+181,1,38,20,13,"Working class",1,"Black","Suburb","Protestant","West","Yes","Some College",0
+182,3,69,22,12,"Middle class",0,"White","Suburb","Protestant","West","No","HS Diploma",0
+183,5,35,20,6,"Working class",0,"Hispanic","Suburb","Protestant","West","No","Less Than HS",0
+184,4,59,20,13,"Lower class",0,"Hispanic","Suburb","Protestant","West","Yes","Some College",0
+185,3,76,26,14,"Middle class",0,"White","Suburb","Protestant","West","No","Some College",0
+191,4,29,NA,11,"Working class",3,"White","Suburb","None","West","Yes","Less Than HS",NA
+191,5,79,19,12,"Working class",0,"White","Suburb","Protestant","West","Yes","HS Diploma",0
+192,2,41,NA,13,"Middle class",2,"White","Suburb","Catholic","West","Yes","Some College",NA
+193,3,47,29,15,"Middle class",0,"White","Suburb","Other","West","No","Some College",0
+198,0,30,NA,12,"Middle class",0,"White","Suburb","None","West","No","HS Diploma",NA
+199,0,38,NA,14,"Middle class",1,"White","Suburb","None","West","No","Some College",NA
+199,0,64,NA,15,"Middle class",3,"White","Suburb","Protestant","West","Yes","Some College",NA
+201,1,28,NA,13,"Working class",3,"White","Suburb","None","West","Yes","Some College",NA
+203,2,64,21,14,"Middle class",0,"White","Suburb","Protestant","West","No","Some College",0
+204,3,38,21,15,"Working class",1,"Hispanic","Suburb","Catholic","West","Yes","Some College",0
+205,3,49,22,12,"Middle class",0,"White","Suburb","Protestant","West","No","HS Diploma",0
+206,0,28,NA,14,"Working class",0,"White","Suburb","Protestant","West","No","Some College",NA
+207,1,24,22,11,"Working class",0,"Hispanic","Big city","None","West","No","Less Than HS",0
+210,0,24,NA,15,"Working class",2,"Hispanic","Suburb","Catholic","West","No","Some College",NA
+211,2,74,NA,13,"Middle class",5,"White","Suburb","Protestant","West","Yes","Some College",NA
+211,0,28,NA,14,"Working class",2,"Other","Suburb","Protestant","West","No","Some College",NA
+212,1,51,25,6,"Working class",0,"Other","Suburb","Eastern","West","No","Less Than HS",0
+214,0,30,NA,14,"Working class",0,"Hispanic","Suburb","Catholic","West","Yes","Some College",NA
+216,6,44,16,14,"Working class",3,"Hispanic","Suburb","Catholic","West","Yes","Some College",0
+217,3,73,NA,16,"Middle class",5,"White","Big city","Protestant","West","No","College Degree",NA
+218,0,34,NA,16,"Middle class",2,"White","Big city","None","West","Yes","College Degree",NA
+220,1,31,27,13,"Middle class",2,"White","Suburb","Other","West","No","Some College",0
+223,3,55,23,16,"Middle class",3,"Hispanic","Suburb",NA,"West","No","College Degree",0
+224,2,32,NA,16,"Middle class",1,"Other","Big city","Other","West","Yes","College Degree",NA
+225,0,23,NA,12,"Working class",2,"Black","Suburb","Protestant","West","No","HS Diploma",NA
+227,5,36,17,11,"Middle class",1,"Hispanic","Suburb","Catholic","West","No","Less Than HS",0
+228,0,28,NA,17,"Working class",0,"White","Big city","Catholic","West","Yes","Grad/Prof Degree",NA
+229,3,26,20,12,"Working class",5,"Hispanic","Suburb","Catholic","West","Yes","HS Diploma",0
+230,5,33,18,13,"Lower class",0,"Hispanic","Suburb","Catholic","West","Yes","Some College",0
+230,0,29,NA,16,"Working class",0,"Other","Big city","Catholic","West","Yes","College Degree",NA
+232,0,40,NA,15,"Upper class",1,"White","Big city","Protestant","West","No","Some College",NA
+233,0,57,NA,17,"Middle class",2,"White","Big city","Protestant","West","No","Grad/Prof Degree",NA
+235,1,64,16,10,"Middle class",4,"White","Big city","Protestant","West","Yes","Less Than HS",0
+237,0,26,NA,14,"Middle class",1,"Hispanic","Big city","Catholic","West","Yes","Some College",NA
+238,0,28,NA,16,"Middle class",3,"Hispanic","Suburb","Catholic","West","Yes","College Degree",NA
+239,2,41,29,13,"Middle class",2,"White","Suburb","Protestant","West","Yes","Some College",0
+240,5,70,24,14,"Middle class",0,"White","Suburb","Catholic","West","No","Some College",0
+242,2,35,NA,13,"Working class",1,"White","Suburb","Catholic","West","Yes","Some College",NA
+243,1,40,40,18,"Middle class",6,"Black","Suburb","Protestant","West","No","Grad/Prof Degree",1
+246,1,71,NA,12,"Middle class",2,"White","Suburb","Catholic","West","Yes","HS Diploma",NA
+248,4,62,20,12,"Lower class",0,"White","Suburb","Other","West","Yes","HS Diploma",0
+248,2,42,NA,16,"Working class",1,"Other","Suburb","None","West","No","College Degree",NA
+250,1,59,30,18,"Middle class",1,"White","Big city","Jewish","West","Yes","Grad/Prof Degree",1
+252,4,62,19,11,"Middle class",0,"White","Suburb","None","West","No","Less Than HS",0
+253,3,49,27,17,"Middle class",4,"White","Suburb","Protestant","West","Yes","Grad/Prof Degree",0
+254,5,67,NA,12,"Working class",1,"White","Suburb","Catholic","West","No","HS Diploma",NA
+255,0,44,NA,14,"Lower class",1,"Hispanic","Suburb","Other","West","No","Some College",NA
+258,0,50,NA,12,"Middle class",3,"White","Suburb","Jewish","West","No","HS Diploma",NA
+259,2,44,37,20,"Upper class",3,"White","Suburb","Jewish","West","Yes","Grad/Prof Degree",1
+260,0,28,NA,17,"Middle class",0,"White","Suburb","Jewish","West","No","Grad/Prof Degree",NA
+261,2,62,NA,19,"Middle class",2,"White","Suburb","Catholic","West","Yes","Grad/Prof Degree",NA
+261,0,24,NA,17,"Working class",4,"Hispanic","Big city","Catholic","Midwest","Yes","Grad/Prof Degree",NA
+262,0,20,NA,14,"Middle class",4,"Hispanic","Big city","Catholic","Midwest","No","Some College",NA
+264,0,38,NA,12,"Middle class",0,"Hispanic","Big city","None","Midwest","No","HS Diploma",NA
+265,0,20,NA,12,"Working class",0,"White","Suburb","Catholic","West","Yes","HS Diploma",NA
+266,1,24,23,11,"Working class",0,"Black","Big city","None","Midwest","Yes","Less Than HS",0
+267,1,54,17,14,"Working class",1,"Black","Big city","Protestant","Midwest","Yes","Some College",0
+267,2,71,NA,14,"Working class",1,"White","Suburb","Other","West","No","Some College",NA
+268,0,49,NA,20,"Middle class",8,"White","Big city","Catholic","Midwest","No","Grad/Prof Degree",NA
+269,1,32,29,16,"Working class",0,"White","Big city","Other","Midwest","Yes","College Degree",0
+270,0,27,NA,16,"Middle class",0,"White","Big city","Catholic","Midwest","Yes","College Degree",NA
+271,0,25,NA,15,"Working class",0,"Hispanic","Big city","Catholic","Midwest","No","Some College",NA
+276,2,64,NA,14,"Middle class",1,"White","Smaller city","Catholic","West","Yes","Some College",NA
+276,3,36,21,12,"Middle class",0,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+277,0,19,NA,13,"Working class",2,"White","Suburb","Other","Midwest","No","Some College",NA
+278,0,60,NA,16,"Middle class",1,"White","Big city","Protestant","Midwest","Yes","College Degree",NA
+279,1,32,NA,13,"Middle class",1,"White","Smaller city","None","West","Yes","Some College",NA
+280,0,39,NA,18,"Middle class",2,"White","Big city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+281,0,28,NA,16,"Middle class",2,"White","Big city","Protestant","Midwest","No","College Degree",NA
+284,4,42,27,19,"Middle class",3,"White","Suburb","Catholic","Midwest","Yes","Grad/Prof Degree",0
+285,2,46,28,16,"Middle class",6,"White","Suburb","Catholic","Midwest","No","College Degree",0
+285,0,30,NA,10,"Working class",1,"White","Suburb","None","West","No","Less Than HS",NA
+287,2,42,NA,12,"Working class",4,"Black","Suburb","Other","West","No","HS Diploma",NA
+287,2,35,27,16,"Working class",0,"White","Big city","Catholic","Midwest","Yes","College Degree",0
+289,3,53,22,16,"Working class",0,"White","Big city","Catholic","Midwest","Yes","College Degree",0
+290,1,50,39,14,"Middle class",1,"White","Big city","Catholic","Midwest","Yes","Some College",1
+292,5,45,22,12,"Middle class",3,"White","Big city","Catholic","Midwest","Yes","HS Diploma",0
+293,2,40,NA,14,"Working class",1,"Black","Big city","Protestant","West","Yes","Some College",NA
+294,1,22,NA,12,"Lower class",1,"White","Big city","Protestant","West","Yes","HS Diploma",NA
+294,3,49,33,14,"Middle class",2,"White","Big city","Other","Midwest","No","Some College",1
+296,0,25,NA,16,"Middle class",2,"White","Suburb","Catholic","Midwest","Yes","College Degree",NA
+298,4,37,NA,11,"Working class",0,"White","Big city","Catholic","West","No","Less Than HS",NA
+299,3,75,NA,12,"Middle class",2,"White","Big city","Protestant","West","No","HS Diploma",NA
+299,0,46,NA,16,"Middle class",0,"White","Suburb","Catholic","Midwest","No","College Degree",NA
+300,0,23,NA,14,"Middle class",1,"White","Suburb","Catholic","Midwest","No","Some College",NA
+301,2,39,28,16,"Middle class",4,"White","Suburb","Catholic","Midwest","Yes","College Degree",0
+302,0,22,NA,14,"Middle class",0,"Other","Suburb","Catholic","Midwest","Yes","Some College",NA
+305,2,46,40,13,"Middle class",0,"Hispanic","Suburb","Catholic","Midwest","No","Some College",1
+309,2,41,35,12,"Working class",0,"White","Suburb","Protestant","Midwest","No","HS Diploma",1
+310,0,20,NA,12,"Middle class",0,"White","Suburb","Protestant","West","No","HS Diploma",NA
+313,0,34,NA,18,"Middle class",0,"Other","Suburb","Other","West","No","Grad/Prof Degree",NA
+313,2,56,24,12,"Middle class",0,"White","Suburb","Catholic","Midwest","No","HS Diploma",0
+314,1,42,NA,16,"Middle class",0,"White","Suburb","Protestant","West","Yes","College Degree",NA
+316,3,50,24,16,"Middle class",3,"White","Suburb","Protestant","Midwest","Yes","College Degree",0
+317,2,48,28,12,"Middle class",0,"White","Suburb","Catholic","Midwest","No","HS Diploma",0
+320,3,60,25,12,"Middle class",0,"White","Suburb","Catholic","Midwest","No","HS Diploma",0
+322,1,43,37,12,"Middle class",0,"White","Suburb","Catholic","Midwest","No","HS Diploma",1
+323,3,52,19,15,"Middle class",4,"White","Suburb","Catholic","Midwest","Yes","Some College",0
+324,2,54,NA,12,"Middle class",1,"White","Big city","Catholic","Midwest","No","HS Diploma",NA
+324,1,24,22,15,"Working class",0,"Black","Suburb","Protestant","Midwest","Yes","Some College",0
+325,2,28,NA,12,"Working class",0,"White","Big city","Catholic","Midwest","Yes","HS Diploma",NA
+326,2,62,20,15,"Middle class",0,"Black","Suburb","Protestant","Midwest","No","Some College",0
+327,1,49,NA,8,"Working class",2,"White","Big city","Catholic","Midwest","No","Less Than HS",NA
+328,1,37,35,16,"Working class",0,"White","Suburb","None","Midwest","Yes","College Degree",1
+330,3,54,22,15,"Lower class",8,"Black","Suburb","Protestant","Midwest","No","Some College",0
+331,1,24,21,13,"Lower class",0,"Black","Suburb","Catholic","Midwest","Yes","Some College",0
+333,2,35,18,12,"Middle class",0,"Black","Smaller city","None","West","No","HS Diploma",0
+335,1,49,17,13,"Working class",0,"Other","Smaller city","Catholic","West","Yes","Some College",0
+336,0,24,NA,16,"Middle class",7,"White","Smaller city","None","West","No","College Degree",NA
+337,0,50,NA,16,"Middle class",0,"White","Smaller city","None","West","Yes","College Degree",NA
+339,1,41,30,17,"Middle class",2,"White","Smaller city","Catholic","West","No","Grad/Prof Degree",1
+340,5,82,21,16,"Middle class",7,"White","Smaller city","Catholic","West","Yes","College Degree",0
+342,1,44,34,20,"Middle class",2,"Other","Smaller city","None","West","No","Grad/Prof Degree",1
+344,2,28,24,12,"Middle class",0,"Hispanic","Suburb","Protestant","West","Yes","HS Diploma",0
+345,2,45,NA,11,"Lower class",0,"Black","Big city","Protestant","Midwest","Yes","Less Than HS",NA
+345,5,33,18,14,"Middle class",0,"White","Suburb","None","West","Yes","Some College",0
+346,0,40,NA,12,"Working class",0,"White","Suburb","None","West","No","HS Diploma",NA
+349,5,41,19,14,"Lower class",0,"Hispanic","Suburb","Catholic","West","Yes","Some College",0
+350,2,58,32,16,"Middle class",4,"White","Suburb","Catholic","West","No","College Degree",1
+351,2,53,NA,14,"Middle class",0,"Black","Big city","Protestant","Midwest","Yes","Some College",NA
+353,3,37,28,16,"Middle class",4,"White","Suburb","Catholic","West","Yes","College Degree",0
+354,3,67,22,14,"Middle class",2,"White","Suburb","Protestant","West","No","Some College",0
+355,2,46,24,14,"Working class",0,"Other","Suburb","Protestant","West","Yes","Some College",0
+356,4,57,NA,14,"Working class",1,"Black","Suburb","None","Midwest","No","Some College",NA
+356,0,35,NA,12,"Middle class",2,"White","Suburb","None","West","No","HS Diploma",NA
+358,1,81,22,12,"Middle class",1,"White","Suburb","Jewish","West","No","HS Diploma",0
+359,2,57,27,16,"Working class",0,"Other","Suburb","Catholic","West","Yes","College Degree",0
+360,4,32,19,12,"Working class",4,"White","Suburb","Catholic","West","Yes","HS Diploma",0
+360,1,34,NA,16,"Middle class",0,"White","Suburb","Catholic","Midwest","No","College Degree",NA
+361,3,42,23,12,"Middle class",3,"Other","Suburb","Catholic","West","Yes","HS Diploma",0
+363,1,48,32,15,"Middle class",5,"White","Suburb","Jewish","West","Yes","Some College",1
+365,3,51,37,18,"Middle class",2,"White","Suburb","Catholic","West","No","Grad/Prof Degree",1
+366,5,89,25,16,"Middle class",2,"White","Suburb","Catholic","West","No","College Degree",0
+367,1,33,NA,15,"Working class",0,"White","Suburb","Catholic","Midwest","Yes","Some College",NA
+369,0,47,NA,10,"Middle class",0,"Other","Smaller city","Eastern","West","No","Less Than HS",NA
+370,2,53,39,17,"Middle class",2,"White","Smaller city","None","West","Yes","Grad/Prof Degree",1
+372,3,66,19,13,"Middle class",0,"White","Smaller city","None","West","Yes","Some College",0
+373,3,68,26,18,"Middle class",4,"White","Suburb","Catholic","West","Yes","Grad/Prof Degree",0
+374,2,55,20,12,"Working class",0,"White","Suburb","Catholic","West","No","HS Diploma",0
+375,1,32,32,19,"Middle class",2,"White","Suburb","None","West","Yes","Grad/Prof Degree",1
+377,1,44,33,16,"Middle class",2,"White","Smaller city","Catholic","West","No","College Degree",1
+378,4,67,20,12,"Lower class",0,"White","Smaller city","Catholic","West","Yes","HS Diploma",0
+381,1,38,35,16,"Middle class",4,"White","Smaller city","Protestant","West","Yes","College Degree",1
+382,1,69,24,16,"Middle class",2,"White","Smaller city","None","West","No","College Degree",0
+385,2,40,22,16,"Middle class",2,"White","Smaller city","None","West","Yes","College Degree",0
+385,3,29,NA,9,"Working class",0,"White","Smaller city","None","Midwest","Yes","Less Than HS",NA
+386,2,47,NA,16,"Middle class",2,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+386,0,32,NA,16,"Working class",0,"Other","Smaller city","None","West","No","College Degree",NA
+387,0,37,NA,18,"Upper class",1,"White","Smaller city","None","West","Yes","Grad/Prof Degree",NA
+388,2,29,20,10,"Middle class",0,"Other","Smaller city","None","West","Yes","Less Than HS",0
+390,0,23,NA,12,"Middle class",0,"Black","Suburb","Protestant","West","No","HS Diploma",NA
+391,0,50,NA,20,"Lower class",2,"Hispanic","Suburb","Catholic","West","Yes","Grad/Prof Degree",NA
+392,1,29,26,20,"Working class",0,"White","Suburb","Protestant","West","No","Grad/Prof Degree",0
+393,2,48,22,12,"Middle class",3,"Black","Suburb","Other","West","No","HS Diploma",0
+394,4,86,24,18,"Middle class",5,"White","Suburb","Protestant","West","No","Grad/Prof Degree",0
+395,1,83,NA,12,"Middle class",1,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",NA
+396,0,48,NA,13,"Middle class",1,"Hispanic","Smaller city","Protestant","West","Yes","Some College",NA
+397,2,62,23,14,"Middle class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+398,3,33,NA,16,"Middle class",6,"White","Smaller city","Catholic","Midwest","No","College Degree",NA
+401,2,64,NA,12,"Working class",1,"Black","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+401,3,43,29,14,"Working class",1,"Hispanic","Smaller city","Catholic","West","Yes","Some College",0
+402,0,56,NA,16,"Upper class",6,"White","Smaller city","Catholic","West","No","College Degree",NA
+403,0,38,NA,16,"Middle class",3,"White","Smaller city","Eastern","West","Yes","College Degree",NA
+407,4,72,24,16,"Middle class",1,"White","Smaller city","Other","West","No","College Degree",0
+409,3,59,28,20,"Middle class",3,"White","Big city","Protestant","Northeast","Yes","Grad/Prof Degree",0
+410,2,84,28,16,"Middle class",4,"White","Big city","Jewish","Northeast","No","College Degree",0
+412,0,21,NA,15,"Middle class",2,"White","Big city","Jewish","Northeast","Yes","Some College",NA
+413,0,23,NA,16,"Middle class",4,"White","Big city","None","Northeast","Yes","College Degree",NA
+414,0,34,NA,16,"Middle class",0,"White","Smaller city","Protestant","West","Yes","College Degree",NA
+414,0,24,NA,18,"Middle class",7,"White","Big city","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+417,0,29,NA,5,"Lower class",0,"Other","Big city","Eastern","Northeast","No","Less Than HS",NA
+418,5,35,17,12,"Working class",1,"Black","Big city","None","Northeast","Yes","HS Diploma",0
+419,2,35,24,14,"Working class",0,"White","Big city","Protestant","Northeast","Yes","Some College",0
+420,1,23,NA,11,"Lower class",0,"Black","Smaller city","Protestant","West","Yes","Less Than HS",NA
+420,1,34,27,12,"Middle class",1,"Black","Big city","Protestant","Northeast","No","HS Diploma",0
+422,0,57,NA,16,"Middle class",8,"Black","Suburb","Protestant","Northeast","Yes","College Degree",NA
+424,1,42,33,16,"Middle class",6,"Black","Suburb","Protestant","Northeast","No","College Degree",1
+424,1,20,NA,11,"Lower class",0,"Black","Smaller city","None","West","Yes","Less Than HS",NA
+425,1,53,27,12,"Middle class",0,"Black","Suburb","Protestant","Northeast","No","HS Diploma",0
+427,0,28,NA,12,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",NA
+431,1,68,NA,15,"Upper class",8,"White","Suburb","Protestant","West","Yes","Some College",NA
+431,1,28,28,17,"Middle class",4,"White","Suburb","Catholic","Northeast","Yes","Grad/Prof Degree",0
+432,0,65,NA,20,"Middle class",1,"White","Suburb","None","West","No","Grad/Prof Degree",NA
+433,2,57,42,16,"Middle class",1,"White","Suburb","Jewish","Northeast","No","College Degree",1
+434,1,38,36,18,"Middle class",4,"White","Suburb","Catholic","Northeast","No","Grad/Prof Degree",1
+435,3,45,24,16,"Middle class",5,"White","Suburb","Protestant","Northeast","Yes","College Degree",0
+436,1,88,35,12,"Middle class",0,"White","Suburb","Catholic","Northeast","No","HS Diploma",1
+441,2,44,26,13,"Middle class",1,"White","Suburb","Protestant","Northeast","No","Some College",0
+442,4,81,23,16,"Middle class",5,"White","Suburb","Protestant","Northeast","Yes","College Degree",0
+443,4,66,26,17,"Middle class",4,"White","Suburb","Catholic","Northeast","No","Grad/Prof Degree",0
+445,4,67,22,14,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","Some College",0
+446,1,46,32,14,"Middle class",3,"White","Suburb","Catholic","Northeast","Yes","Some College",1
+446,6,60,NA,12,"Lower class",4,"White","Suburb","Catholic","West","No","HS Diploma",NA
+447,3,56,26,11,"Middle class",1,"White","Suburb","Catholic","Northeast","No","Less Than HS",0
+448,0,25,NA,12,"Middle class",1,"White","Suburb","None","Northeast","No","HS Diploma",NA
+449,1,41,26,14,"Middle class",9,"White","Suburb","Eastern","Northeast","Yes","Some College",0
+452,2,54,NA,14,"Lower class",2,"White","Suburb","Protestant","West","No","Some College",NA
+453,0,25,NA,14,"Working class",1,"Black","Suburb","Protestant","Northeast","No","Some College",NA
+455,3,80,NA,14,"Middle class",1,"White","Suburb","Protestant","West","Yes","Some College",NA
+457,3,38,19,14,"Lower class",4,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+460,4,66,31,16,"Middle class",0,"White","Suburb","Protestant","Southeast","No","College Degree",1
+462,0,28,NA,19,"Upper class",2,"White","Suburb","Catholic","Southeast","No","Grad/Prof Degree",NA
+464,2,68,NA,12,"Working class",3,"White","Suburb","Catholic","West","No","HS Diploma",NA
+466,4,45,20,16,"Working class",2,"Black","Suburb","Protestant","Southeast","Yes","College Degree",0
+467,2,40,25,14,"Working class",1,"Black","Suburb","None","Southeast","No","Some College",0
+468,1,36,20,14,"Working class",0,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+468,2,62,NA,12,"Working class",1,"White","Suburb","Protestant","West","Yes","HS Diploma",NA
+470,2,61,20,14,"Working class",1,"White","Suburb","Other","Southeast","Yes","Some College",0
+471,3,73,21,13,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","Some College",0
+471,4,76,NA,10,"Middle class",1,"White","Suburb","Protestant","West","Yes","Less Than HS",NA
+472,2,59,21,20,"Middle class",2,"White","Suburb","Jewish","Southeast","Yes","Grad/Prof Degree",0
+474,2,30,22,14,"Working class",1,"Other","Suburb","Eastern","Southeast","Yes","Some College",0
+475,0,56,NA,14,"Working class",0,"White","Suburb","Jewish","Southeast","No","Some College",NA
+475,2,74,NA,16,"Middle class",1,"White","Suburb","Protestant","West","Yes","College Degree",NA
+476,4,80,25,13,"Middle class",2,"White","Suburb","Jewish","Southeast","Yes","Some College",0
+477,4,45,19,13,"Upper class",1,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+478,0,19,NA,12,"Working class",0,"Hispanic","Suburb","Catholic","Southeast","Yes","HS Diploma",NA
+478,0,31,NA,12,"Working class",2,"White","Smaller city","None","West","No","HS Diploma",NA
+481,0,19,NA,11,"Working class",2,"Other","Smaller city","Other","West","No","Less Than HS",NA
+485,0,19,NA,15,"Working class",0,"Hispanic","Suburb","Catholic","Southeast","Yes","Some College",NA
+485,1,35,NA,14,"Working class",0,"White","Suburb","Catholic","West","No","Some College",NA
+486,1,40,34,12,"Working class",1,"White","Suburb","Catholic","Southeast","No","HS Diploma",1
+487,1,34,26,15,"Lower class",1,"Hispanic","Suburb","Catholic","Southeast","Yes","Some College",0
+487,5,66,NA,12,"Middle class",2,"White","Suburb","Protestant","West","No","HS Diploma",NA
+488,1,56,NA,13,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Some College",NA
+489,8,45,19,11,"Middle class",2,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+490,2,33,27,13,"Middle class",2,"Black","Smaller city","None","Southeast","Yes","Some College",0
+492,2,69,17,7,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+499,6,63,20,10,"Lower class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+501,1,21,20,12,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+502,4,30,19,11,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+504,0,43,NA,12,"Working class",1,"White","Suburb",NA,"Midwest","No","HS Diploma",NA
+507,1,35,NA,12,"Working class",0,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",NA
+509,0,22,NA,14,"Middle class",8,"Other","Suburb","Eastern","Midwest","Yes","Some College",NA
+511,2,27,24,14,"Middle class",0,"White","Suburb","Protestant","Midwest","No","Some College",0
+512,0,46,NA,12,"Working class",0,"White","Suburb","Catholic","Northeast","No","HS Diploma",NA
+512,0,19,NA,11,"Middle class",2,"Black","Big city","Protestant","Midwest","No","Less Than HS",NA
+514,2,44,18,14,"Lower class",0,"Black","Big city","Protestant","Midwest","Yes","Some College",0
+514,0,34,NA,16,"Upper class",1,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+515,3,33,18,14,"Lower class",1,"Black","Big city","Catholic","Midwest","Yes","Some College",0
+516,2,40,17,12,"Middle class",0,"Black","Big city","Protestant","Midwest","Yes","HS Diploma",0
+518,8,74,NA,9,"Working class",0,"White","Suburb","Protestant","Northeast","Yes","Less Than HS",NA
+519,5,76,14,8,"Middle class",4,"Black","Big city","Protestant","Midwest","Yes","Less Than HS",0
+522,1,33,29,16,"Middle class",0,"Black","Big city","Other","Midwest","Yes","College Degree",0
+523,0,24,NA,15,"Working class",0,"Black","Big city","Protestant","Midwest","Yes","Some College",NA
+524,3,39,NA,14,"Working class",2,"White","Suburb","Protestant","Northeast","No","Some College",NA
+525,4,47,25,18,"Working class",1,"White","Suburb","Jewish","Midwest","Yes","Grad/Prof Degree",0
+530,3,40,21,14,"Working class",1,"White","Suburb","Catholic","Midwest","Yes","Some College",0
+532,1,30,NA,12,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",NA
+534,0,47,NA,18,"Middle class",3,"White","Suburb","Catholic","Midwest","No","Grad/Prof Degree",NA
+535,2,48,NA,16,"Middle class",3,"White","Suburb","Protestant","Northeast","No","College Degree",NA
+537,1,22,20,9,"Working class",0,"White","Big city","Protestant","Midwest","No","Less Than HS",0
+539,1,34,33,16,"Middle class",0,"White","Suburb","Catholic","Southeast","No","College Degree",1
+540,0,38,NA,13,"Working class",3,"White","Suburb","Protestant","Southeast","Yes","Some College",NA
+542,2,47,22,16,"Middle class",5,"White","Suburb","Other","Southeast","Yes","College Degree",0
+543,2,51,NA,16,"Middle class",6,"White","Suburb","Protestant","Northeast","No","College Degree",NA
+544,1,31,23,12,"Middle class",2,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+545,2,34,32,16,"Working class",4,"White","Suburb","Protestant","Southeast","No","College Degree",1
+546,0,25,NA,17,"Middle class",2,"Hispanic","Suburb","Protestant","Southeast","No","Grad/Prof Degree",NA
+552,2,49,30,16,"Middle class",3,"White","Smaller city","None","Southeast","No","College Degree",1
+552,8,67,NA,10,"Working class",3,"Black","Big city","Protestant","Midwest","Yes","Less Than HS",NA
+553,2,31,NA,13,"Lower class",4,"Other","Big city","Protestant","Midwest","Yes","Some College",NA
+554,2,34,33,15,"Middle class",1,"White","Suburb","Protestant","Southeast","No","Some College",1
+555,3,36,NA,12,"Working class",1,"Black","Big city","Protestant","Midwest","No","HS Diploma",NA
+555,0,31,NA,16,"Working class",4,"Hispanic","Suburb","None","Southeast","No","College Degree",NA
+556,3,45,20,14,"Working class",1,"White","Suburb","Protestant","Southeast","Yes","Some College",0
+559,1,34,27,14,"Middle class",0,"Black","Suburb","None","Southeast","No","Some College",0
+560,2,30,22,15,"Working class",1,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+561,0,19,NA,13,"Working class",1,"Black","Suburb","Protestant","Southeast","Yes","Some College",NA
+563,1,33,33,16,"Working class",0,"White","Suburb","Protestant","Southeast","No","College Degree",1
+564,1,31,17,12,"Middle class",1,"White","Suburb","None","Southeast","No","HS Diploma",0
+566,3,38,25,13,"Working class",4,"Black","Suburb","Protestant","Southeast","No","Some College",0
+567,2,30,28,16,"Upper class",8,"Black","Suburb","Protestant","Southeast","Yes","College Degree",0
+567,0,19,NA,11,"Middle class",0,"White","Suburb","Protestant","Midwest","No","Less Than HS",NA
+568,0,23,NA,15,"Working class",0,"White","Suburb","Catholic","Midwest","No","Some College",NA
+568,0,50,NA,20,"Middle class",3,"White","Big city","Protestant","Southeast","No","Grad/Prof Degree",NA
+569,0,24,NA,16,"Middle class",1,"White","Big city","Protestant","Southeast","No","College Degree",NA
+572,2,44,21,14,"Middle class",6,"White","Big city","Protestant","Southeast","No","Some College",0
+577,2,33,17,7,"Working class",0,"Hispanic","Big city","Catholic","Southeast","Yes","Less Than HS",0
+579,3,27,18,9,"Working class",0,"Hispanic","Big city","Catholic","Southeast","No","Less Than HS",0
+580,0,45,NA,11,"Middle class",0,"Hispanic","Big city","None","Southeast","No","Less Than HS",NA
+580,3,57,NA,12,"Middle class",3,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",NA
+582,1,49,24,16,"Working class",2,"White","Big city","Protestant","Southeast","No","College Degree",0
+587,3,44,15,12,"Working class",5,"Black","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+588,1,25,NA,12,"Working class",0,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",NA
+589,0,28,NA,12,"Working class",1,"White","Suburb","None","Southeast","No","HS Diploma",NA
+590,2,50,32,12,"Working class",0,"White","Suburb","Eastern","Southeast","No","HS Diploma",1
+590,0,27,NA,10,"Working class",2,"White","Suburb","Protestant","Midwest","Yes","Less Than HS",NA
+593,0,26,NA,16,"Working class",0,"Hispanic","Big city","Catholic","Southeast","No","College Degree",NA
+593,0,23,NA,14,"Working class",5,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+595,0,24,NA,16,"Middle class",1,"White","Big city","None","Southeast","No","College Degree",NA
+598,0,26,NA,16,"Middle class",5,"White","Suburb","Other","Southeast","No","College Degree",NA
+599,0,64,NA,9,"Middle class",1,"Black","Suburb","Protestant","Southeast","No","Less Than HS",NA
+603,0,57,NA,16,"Middle class",3,"Black","Suburb","Protestant","Southeast","Yes","College Degree",NA
+604,0,59,NA,16,"Middle class",1,"Black","Suburb","Protestant","Southeast","Yes","College Degree",NA
+608,2,66,18,14,"Middle class",2,"White","Suburb","Protestant","Southeast","No","Some College",0
+610,3,42,27,16,"Middle class",0,"Other","Suburb","Protestant","Southeast","Yes","College Degree",0
+611,2,49,NA,12,"Middle class",0,"Black","Big city","Protestant","Southeast","Yes","HS Diploma",NA
+611,0,41,NA,16,"Middle class",0,"White","Suburb","Protestant","Southeast","No","College Degree",NA
+612,6,61,NA,9,"Working class",0,"White","Big city","Protestant","Southeast","Yes","Less Than HS",NA
+615,1,37,32,16,"Middle class",3,"White","Suburb","Protestant","Southeast","No","College Degree",1
+616,0,27,NA,16,"Working class",4,"Black","Big city","Protestant","Southeast","Yes","College Degree",NA
+617,3,44,21,13,"Working class",0,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+618,3,58,22,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+620,4,57,NA,14,"Middle class",8,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+624,4,48,18,12,"Working class",2,"Hispanic","Big city","Catholic","Southeast","Yes","HS Diploma",0
+625,0,32,NA,16,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+627,2,50,18,12,"Working class",0,"White","Suburb","Other","Southeast","Yes","HS Diploma",0
+628,2,43,NA,14,"Working class",1,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+629,2,54,27,16,"Middle class",7,"White","Suburb","Protestant","Southeast","Yes","College Degree",0
+630,3,35,20,13,"Middle class",1,"Hispanic","Suburb","Catholic","Southeast","Yes","Some College",0
+631,1,38,30,14,"Middle class",0,"White","Suburb","None","Southeast","Yes","Some College",1
+635,0,45,NA,16,"Middle class",1,"White","Suburb","Catholic","Southeast","Yes","College Degree",NA
+635,0,32,NA,12,"Working class",2,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+636,2,43,26,18,"Working class",0,"Black","Big city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+637,2,51,32,16,"Middle class",2,"White","Big city","Protestant","Southeast","No","College Degree",1
+638,0,45,NA,16,"Working class",0,"White","Big city","Other","Southeast","No","College Degree",NA
+639,2,40,31,18,"Middle class",5,"Black","Big city","Protestant","Southeast","Yes","Grad/Prof Degree",1
+642,1,57,22,19,"Middle class",2,"White","Big city","Protestant","Southeast","No","Grad/Prof Degree",0
+642,0,44,NA,18,"Working class",7,"White","Suburb","Catholic","Southeast","Yes","Grad/Prof Degree",NA
+643,3,48,18,12,"Working class",1,"Hispanic","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+645,3,31,21,7,"Working class",0,"Hispanic","Suburb","Catholic","Southeast","Yes","Less Than HS",0
+647,5,36,NA,12,"Working class",2,"Black","Big city","Protestant","Southeast","No","HS Diploma",NA
+651,3,53,16,10,"Middle class",0,"White","Suburb","Catholic","Southeast","Yes","Less Than HS",0
+651,1,43,NA,16,"Working class",3,"Black","Big city","Protestant","Southeast","Yes","College Degree",NA
+653,2,56,24,15,"Working class",1,"Black","Big city","Protestant","Southeast","No","Some College",0
+654,2,40,39,16,"Working class",0,"Hispanic","Big city","Catholic","Southeast","Yes","College Degree",1
+655,3,74,26,12,"Middle class",2,"White","Big city","Protestant","Southeast","Yes","HS Diploma",0
+656,4,61,20,12,"Middle class",1,"White","Big city","Protestant","Southeast","Yes","HS Diploma",0
+658,1,23,NA,14,"Middle class",6,"Black","Suburb","Other","Southeast","No","Some College",NA
+658,5,29,21,12,"Lower class",1,"Black","Big city","Other","Southeast","Yes","HS Diploma",0
+659,2,52,25,13,"Working class",3,"Black","Big city","Protestant","Southeast","Yes","Some College",0
+660,0,24,NA,18,"Working class",0,"Black","Big city","None","Southeast","Yes","Grad/Prof Degree",NA
+662,3,36,23,14,"Working class",0,"Black","Big city","Protestant","Southeast","No","Some College",0
+664,0,27,NA,16,"Lower class",0,"Black","Big city","Protestant","Southeast","Yes","College Degree",NA
+666,2,38,23,16,"Middle class",8,"White","Big city","Catholic","Southeast","No","College Degree",0
+669,2,50,24,18,"Middle class",3,"White","Big city","Catholic","Southeast","Yes","Grad/Prof Degree",0
+671,0,28,NA,15,"Middle class",0,"White","Big city","None","Southeast","Yes","Some College",NA
+672,0,24,NA,17,"Working class",0,"Hispanic","Big city","None","Northeast","No","Grad/Prof Degree",NA
+676,3,48,21,12,"Working class",2,"White","Suburb","Catholic","Northeast","No","HS Diploma",0
+676,0,34,NA,19,"Middle class",1,"White","Suburb","None","Southeast","No","Grad/Prof Degree",NA
+677,0,44,NA,20,"Upper class",3,"White","Suburb","None","Southeast","No","Grad/Prof Degree",NA
+678,3,41,33,14,"Middle class",2,"White","Suburb","Catholic","Northeast","No","Some College",1
+679,2,46,31,12,"Middle class",0,"White","Suburb","Protestant","Northeast","Yes","HS Diploma",1
+682,3,35,NA,11,"Lower class",0,"Black","Suburb","Other","Southeast","Yes","Less Than HS",NA
+682,2,67,29,14,"Working class",0,"White","Suburb","Jewish","Northeast","No","Some College",0
+683,0,26,NA,11,"Lower class",1,"White","Suburb","Catholic","Northeast","No","Less Than HS",NA
+683,0,25,NA,14,"Working class",1,"Other","Suburb","Other","Southeast","No","Some College",NA
+684,4,63,24,15,"Upper class",2,"White","Suburb","Catholic","Northeast","Yes","Some College",0
+686,2,47,26,15,"Middle class",0,"White","Big city","Catholic","Northeast","Yes","Some College",0
+687,0,26,NA,15,"Middle class",0,"Other","Big city","Other","Northeast","No","Some College",NA
+688,2,67,26,17,"Middle class",2,"White","Big city","Catholic","Northeast","Yes","Grad/Prof Degree",0
+690,0,26,NA,16,"Middle class",3,"Other","Suburb","Protestant","Northeast","Yes","College Degree",NA
+691,2,57,32,16,"Middle class",3,"White","Smaller city","Catholic","Northeast","No","College Degree",1
+692,4,54,21,15,"Lower class",0,"White","Smaller city","Catholic","Northeast","Yes","Some College",0
+694,2,30,27,12,"Working class",2,"Black","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+694,0,72,NA,6,"Middle class",1,"White","Suburb","Protestant","Southeast","No","Less Than HS",NA
+697,1,45,NA,14,"Middle class",3,"White","Big city","Catholic","Southeast","No","Some College",NA
+698,4,32,16,11,"Lower class",0,"Hispanic","Suburb","Catholic","Southeast","Yes","Less Than HS",0
+699,3,40,24,12,"Middle class",2,"Black","Suburb","Other","Southeast","Yes","HS Diploma",0
+700,0,29,NA,14,"Working class",0,"Black","Suburb","Protestant","Southeast","No","Some College",NA
+701,3,38,16,14,"Middle class",1,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+705,3,56,19,12,"Lower class",0,"Black","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+706,0,20,NA,12,"Working class",0,"Black","Suburb","Protestant","Southeast","No","HS Diploma",NA
+708,0,29,NA,12,"Working class",3,"Black","Suburb","Protestant","Southeast","No","HS Diploma",NA
+709,2,26,NA,12,"Middle class",5,"White","Big city","Catholic","Southeast","No","HS Diploma",NA
+710,1,22,20,11,"Working class",1,"White","Suburb","Protestant","Southeast","Yes","Less Than HS",0
+712,3,53,NA,12,"Middle class",1,"White","Big city","Catholic","Southeast","No","HS Diploma",NA
+713,2,65,25,12,"Middle class",0,"White","Suburb","None","Southeast","No","HS Diploma",0
+714,2,51,23,13,"Working class",0,"White","Suburb","Protestant","Southeast","Yes","Some College",0
+715,2,47,16,9,"Working class",0,"White","Suburb","Protestant","Southeast","Yes","Less Than HS",0
+717,0,26,NA,16,"Middle class",1,"White","Suburb","Catholic","Southeast","Yes","College Degree",NA
+718,2,39,25,18,"Working class",3,"Black","Suburb","Protestant","Southeast","Yes","Grad/Prof Degree",0
+719,3,47,NA,16,"Middle class",4,"White","Suburb","Catholic","Southeast","No","College Degree",NA
+719,3,52,22,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+723,0,65,NA,16,"Middle class",0,"White","Suburb","None","Southeast","Yes","College Degree",NA
+724,2,50,33,10,"Working class",0,"White","Suburb","Other","Southeast","Yes","Less Than HS",1
+726,3,57,26,16,"Middle class",2,"White","Suburb","Protestant","Southeast","Yes","College Degree",0
+729,0,43,NA,13,"Upper class",5,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+730,2,42,30,14,"Working class",0,"White","Smaller city","Catholic","Southeast","No","Some College",1
+730,2,79,NA,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+733,3,50,17,12,"Working class",0,"White","Suburb","Protestant","West","No","HS Diploma",0
+734,0,19,NA,14,"Middle class",7,"White","Suburb","Catholic","West","Yes","Some College",NA
+735,3,57,32,14,"Working class",1,"Black","Suburb","Protestant","West","No","Some College",1
+738,0,36,NA,16,"Middle class",4,"White","Big city","Catholic","Northeast","No","College Degree",NA
+742,3,45,28,13,"Middle class",0,"White","Big city","Protestant","West","Yes","Some College",0
+744,1,51,NA,14,"Middle class",4,"White","Smaller city","Catholic","Northeast","No","Some College",NA
+744,3,68,27,16,"Middle class",1,"White","Suburb","Protestant","West","No","College Degree",0
+746,2,35,30,13,"Middle class",2,"White","Suburb","Protestant","West","Yes","Some College",1
+748,4,75,NA,17,"Middle class",8,"White","Smaller city","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+748,0,34,NA,15,"Middle class",1,"White","Suburb","Protestant","West","No","Some College",NA
+750,2,56,NA,16,"Middle class",2,"White","Smaller city","Catholic","Northeast","Yes","College Degree",NA
+751,2,60,20,14,"Middle class",0,"White","Big city","None","West","Yes","Some College",0
+752,1,72,NA,12,"Middle class",0,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+755,3,61,NA,13,"Middle class",0,"White","Suburb","Catholic","Southeast","No","Some College",NA
+756,2,30,18,12,"Working class",4,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+758,2,62,29,12,"Middle class",1,"White","Suburb","Protestant","Southeast","No","HS Diploma",0
+759,0,33,NA,16,"Middle class",5,"White","Suburb","Protestant","Southeast","No","College Degree",NA
+761,0,37,NA,13,"Working class",2,"White","Suburb","Catholic","Northeast","No","Some College",NA
+763,0,46,NA,15,"Working class",6,"White","Smaller city","Other","Southeast","Yes","Some College",NA
+763,0,70,NA,14,"Lower class",1,"White","Suburb","Other","Northeast","No","Some College",NA
+764,5,45,18,10,"Lower class",0,"Black","Smaller city","Other","Southeast","No","Less Than HS",0
+764,4,55,NA,16,"Working class",5,"White","Suburb","Protestant","Northeast","Yes","College Degree",NA
+767,0,23,NA,16,"Working class",7,"Black","Suburb","Protestant","Southeast","Yes","College Degree",NA
+768,2,56,27,17,"Working class",5,"Hispanic","Suburb","None","Southeast","Yes","Grad/Prof Degree",0
+769,2,34,22,11,"Working class",1,"Black","Smaller city","Other","Midwest","Yes","Less Than HS",0
+770,1,41,24,16,"Middle class",6,"Black","Smaller city","Protestant","Midwest","No","College Degree",0
+773,0,44,NA,16,"Upper class",1,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+777,2,55,21,14,"Middle class",0,"White","Smaller city","Catholic","Midwest","No","Some College",0
+780,2,32,25,16,"Working class",6,"White","Suburb","Catholic","Midwest","Yes","College Degree",0
+781,1,42,41,16,"Middle class",0,"White","Suburb","Protestant","Midwest","No","College Degree",1
+782,1,32,NA,17,"Working class",1,"White","Suburb","Protestant","Southeast","No","Grad/Prof Degree",NA
+783,1,46,34,14,"Working class",3,"White","Suburb","Catholic","Midwest","No","Some College",1
+784,2,48,NA,16,"Upper class",2,"White","Suburb","Protestant","Southeast","Yes","College Degree",NA
+784,2,53,19,12,"Middle class",1,"White","Suburb","Protestant","Midwest","Yes","HS Diploma",0
+788,2,52,23,18,"Middle class",1,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",0
+789,0,29,NA,17,"Middle class",1,"White","Suburb","Jewish","Midwest","No","Grad/Prof Degree",NA
+790,2,40,30,20,"Middle class",5,"White","Suburb","Protestant","Midwest","No","Grad/Prof Degree",1
+794,0,57,NA,16,"Middle class",2,"White","Suburb","Protestant","Midwest","No","College Degree",NA
+795,1,28,22,12,"Working class",3,"Hispanic","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+795,2,39,NA,13,"Upper class",2,"White","Suburb","Catholic","Southeast","Yes","Some College",NA
+797,0,39,NA,20,"Upper class",3,"White","Suburb","Protestant","Southeast","No","Grad/Prof Degree",NA
+797,0,48,NA,17,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+798,4,59,22,14,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+798,3,36,NA,16,"Upper class",3,"White","Suburb","Protestant","Southeast","No","College Degree",NA
+799,4,78,26,12,"Lower class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+800,3,44,NA,15,"Upper class",4,"White","Suburb","Catholic","Southeast","Yes","Some College",NA
+800,4,66,23,15,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Some College",0
+801,2,36,26,18,"Middle class",6,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",0
+803,4,60,19,17,"Middle class",4,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+805,2,33,NA,16,"Middle class",2,"Other","Suburb","Other","Southeast","Yes","College Degree",NA
+805,2,44,19,14,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+808,3,41,24,14,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+811,0,28,NA,18,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+813,2,51,32,16,"Middle class",5,"White","Smaller city","Protestant","Southeast","No","College Degree",1
+816,0,47,NA,17,"Middle class",6,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+818,1,25,NA,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+820,0,37,NA,12,"Working class",0,"Black","Suburb","Protestant","Southeast","No","HS Diploma",NA
+821,1,25,21,14,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","Some College",0
+824,0,19,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+825,0,38,NA,17,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+828,3,55,26,16,"Middle class",2,"White","Suburb","Protestant","Southeast","Yes","College Degree",0
+829,2,32,30,16,"Middle class",1,"White","Suburb","Protestant","Southeast","No","College Degree",1
+831,2,48,30,12,"Working class",0,"White","Suburb","Protestant","Southeast","No","HS Diploma",1
+835,0,43,NA,20,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+835,3,71,NA,16,"Middle class",4,"White","Smaller city","Protestant","Southeast","No","College Degree",NA
+836,0,23,NA,15,"Middle class",1,"White","Smaller city","Catholic","Midwest","Yes","Some College",NA
+841,0,19,NA,11,"Working class",7,"White","Suburb","Other","Southeast","No","Less Than HS",NA
+841,1,62,20,17,"Middle class",1,"White","Suburb","Protestant","Midwest","No","Grad/Prof Degree",0
+842,3,65,NA,11,"Working class",1,"White","Suburb","None","Southeast","Yes","Less Than HS",NA
+843,3,46,28,16,"Middle class",5,"White","Suburb","Catholic","Midwest","No","College Degree",0
+844,2,45,32,18,"Upper class",2,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",1
+846,0,26,NA,15,"Middle class",0,"White","Suburb","Jewish","Midwest","Yes","Some College",NA
+847,1,62,25,14,"Middle class",1,"White","Suburb","Jewish","Midwest","Yes","Some College",0
+848,1,52,32,15,"Middle class",3,"White","Smaller city","Catholic","Southeast","No","Some College",1
+850,2,64,25,14,"Middle class",1,"White","Smaller city","Protestant","Southeast","No","Some College",0
+855,1,50,28,16,"Working class",3,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+856,3,72,21,16,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+858,2,63,23,16,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+860,0,46,NA,16,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+862,0,33,NA,12,"Middle class",0,"White","Smaller city","Catholic","Southeast","No","HS Diploma",NA
+862,0,52,NA,15,"Middle class",0,"White","Smaller city","None","Southeast","No","Some College",NA
+863,0,39,NA,9,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+864,1,27,26,16,"Working class",0,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+865,3,34,NA,13,"Working class",3,"Black","Smaller city","Protestant","Midwest","Yes","Some College",NA
+865,8,64,18,8,"Lower class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+868,0,35,NA,12,"Working class",0,"Hispanic","Smaller city","None","Southeast","Yes","HS Diploma",NA
+869,5,35,13,12,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","No","HS Diploma",0
+869,1,33,NA,14,"Working class",4,"Black","Suburb","Protestant","Midwest","Yes","Some College",NA
+870,4,60,19,14,"Middle class",1,"White","Suburb","Protestant","Southeast","Yes","Some College",0
+871,4,36,27,17,"Middle class",6,"White","Suburb","Catholic","Southeast","Yes","Grad/Prof Degree",0
+873,2,38,24,14,"Working class",3,"Hispanic","Suburb","Other","Southeast","Yes","Some College",0
+873,2,26,NA,14,"Working class",3,"White","Suburb","Protestant","Midwest","No","Some College",NA
+874,4,41,30,18,"Middle class",3,"White","Suburb","Jewish","Southeast","No","Grad/Prof Degree",1
+874,2,35,NA,12,"Working class",0,"White","Suburb","Protestant","Midwest","Yes","HS Diploma",NA
+875,0,69,NA,12,"Middle class",0,"White","Suburb","Jewish","Southeast","Yes","HS Diploma",NA
+876,2,52,33,18,"Middle class",3,"White","Suburb","Jewish","Southeast","Yes","Grad/Prof Degree",1
+877,2,31,24,16,"Middle class",4,"White","Suburb","Jewish","Southeast","Yes","College Degree",0
+878,2,55,35,17,"Middle class",1,"White","Suburb","None","Southeast","No","Grad/Prof Degree",1
+881,2,86,24,13,"Middle class",2,"White","Suburb","Jewish","Southeast","Yes","Some College",0
+884,4,79,23,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+885,3,33,26,12,"Middle class",1,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",0
+887,0,26,NA,16,"Working class",0,"White","Suburb","Catholic","Southeast","Yes","College Degree",NA
+889,1,39,NA,16,"Middle class",1,"White","Suburb","Protestant","Midwest","Yes","College Degree",NA
+889,2,46,23,13,"Middle class",4,"Black","Suburb","Protestant","Southeast","No","Some College",0
+890,4,44,NA,17,"Middle class",0,"White","Suburb","Protestant","Midwest","No","Grad/Prof Degree",NA
+891,0,68,NA,12,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+892,0,66,NA,14,"Lower class",6,"Black","Smaller city","Protestant","Southeast","Yes","Some College",NA
+893,6,66,16,12,"Working class",2,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+895,1,75,17,11,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+897,2,25,19,14,"Working class",1,"Black","Smaller city","Other","Southeast","Yes","Some College",0
+897,0,35,NA,19,"Middle class",6,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+898,1,29,24,12,"Working class",0,"Hispanic","Smaller city","Catholic","West","Yes","HS Diploma",0
+899,1,44,34,14,"Middle class",0,"Hispanic","Smaller city","Catholic","West","No","Some College",1
+900,0,28,NA,16,"Working class",1,"Hispanic","Smaller city","Catholic","West","Yes","College Degree",NA
+902,3,78,24,12,"Working class",1,"White","Smaller city","Catholic","West","No","HS Diploma",0
+903,0,27,NA,12,"Working class",1,"White","Suburb","None","Midwest","Yes","HS Diploma",NA
+905,6,69,23,18,"Working class",1,"Other","Smaller city","Catholic","West","No","Grad/Prof Degree",0
+906,2,49,27,16,"Middle class",0,"White","Smaller city","Other","West","No","College Degree",0
+908,0,35,NA,18,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+912,0,22,NA,16,"Middle class",0,"White","Smaller city","None","West","Yes","College Degree",NA
+914,2,28,19,14,"Working class",1,"Black","Smaller city","Other","West","No","Some College",0
+915,3,60,30,20,"Upper class",3,"White","Suburb","Protestant","West","No","Grad/Prof Degree",1
+919,3,64,31,18,"Upper class",0,"White","Suburb","Catholic","West","Yes","Grad/Prof Degree",1
+920,2,48,34,16,"Middle class",4,"White","Smaller city","None","West","Yes","College Degree",1
+921,2,63,27,13,"Working class",2,"White","Smaller city","Catholic","West","No","Some College",0
+923,4,65,NA,12,"Middle class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+924,0,35,NA,18,"Middle class",1,"White","Suburb","Protestant","Midwest","No","Grad/Prof Degree",NA
+925,0,64,NA,20,"Middle class",2,"White","Smaller city","Catholic","West","No","Grad/Prof Degree",NA
+927,4,50,26,18,"Middle class",5,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",0
+928,1,36,23,16,"Middle class",0,"White","Suburb","Other","West","No","College Degree",0
+930,1,40,NA,14,"Working class",2,"White","Suburb","Protestant","Midwest","Yes","Some College",NA
+932,3,48,19,13,"Working class",0,"White","Suburb","Eastern","West","No","Some College",0
+933,4,58,20,14,"Middle class",8,"White","Suburb","Catholic","West","No","Some College",0
+934,2,35,28,17,"Middle class",0,"Other","Suburb","Eastern","West","Yes","Grad/Prof Degree",0
+935,0,26,NA,12,"Working class",0,"Other","Suburb","Catholic","West","No","HS Diploma",NA
+936,0,23,NA,15,"Working class",1,"White","Suburb","None","West","No","Some College",NA
+938,2,46,NA,15,"Working class",3,"Other","Suburb","Protestant","West","Yes","Some College",NA
+939,0,51,NA,15,"Working class",1,"White","Suburb","None","West","No","Some College",NA
+940,1,23,NA,12,"Middle class",0,"Other","Suburb","Protestant","West","No","HS Diploma",NA
+941,0,29,NA,14,"Working class",2,"White","Suburb","None","West","Yes","Some College",NA
+942,3,56,18,13,"Working class",0,"White","Suburb","Protestant","West","Yes","Some College",0
+943,0,40,NA,12,"Middle class",1,"White","Suburb","None","West","Yes","HS Diploma",NA
+944,3,50,24,12,"Working class",0,"White","Suburb","Protestant","West","Yes","HS Diploma",0
+945,5,48,17,14,"Working class",1,"White","Suburb","Protestant","West","Yes","Some College",0
+947,4,35,19,12,"Lower class",0,"White","Suburb","Catholic","West","No","HS Diploma",0
+950,3,47,21,12,"Lower class",0,"White","Suburb","Protestant","West","Yes","HS Diploma",0
+952,3,44,24,18,"Working class",1,"White","Smaller city","Catholic","Northeast","No","Grad/Prof Degree",0
+954,0,67,NA,12,"Working class",0,"White","Smaller city","Catholic","Northeast","No","HS Diploma",NA
+955,3,73,21,11,"Middle class",1,"White","Suburb","Protestant","Northeast","Yes","Less Than HS",0
+957,1,30,24,10,"Working class",1,"White","Suburb","Other","Northeast","No","Less Than HS",0
+958,1,27,25,17,"Working class",0,"White","Suburb","Other","Northeast","Yes","Grad/Prof Degree",0
+960,0,23,NA,16,"Middle class",2,"White","Smaller city","None","West","No","College Degree",NA
+961,0,36,NA,12,"Middle class",0,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+961,0,25,NA,16,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+965,0,25,NA,16,"Working class",3,"White","Smaller city","Protestant","Northeast","Yes","College Degree",NA
+966,4,55,21,12,"Working class",0,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",0
+967,0,23,NA,12,"Working class",2,"White","Smaller city","Protestant","Northeast","No","HS Diploma",NA
+968,2,39,27,12,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",0
+970,7,70,21,12,"Working class",0,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",0
+975,3,74,28,16,"Upper class",3,"White","Smaller city","Catholic","West","Yes","College Degree",0
+976,4,64,20,18,"Middle class",4,"White","Smaller city","Catholic","West","Yes","Grad/Prof Degree",0
+976,2,28,NA,10,"Lower class",0,"White","Smaller city","Catholic","West","Yes","Less Than HS",NA
+978,0,26,NA,16,"Middle class",2,"White","Smaller city","Protestant","West","No","College Degree",NA
+981,0,52,NA,17,"Middle class",1,"White","Smaller city","None","West","No","Grad/Prof Degree",NA
+983,0,38,NA,16,"Middle class",1,"White","Suburb","None","West","Yes","College Degree",NA
+984,0,31,NA,14,"Working class",1,"Other","Smaller city","Catholic","West","Yes","Some College",NA
+985,3,73,18,14,"Middle class",1,"White","Suburb","Protestant","West","Yes","Some College",0
+986,2,34,26,18,"Middle class",5,"White","Suburb","Protestant","West","No","Grad/Prof Degree",0
+986,2,32,NA,15,"Working class",0,"White","Smaller city","Protestant","West","No","Some College",NA
+987,2,32,25,14,"Middle class",0,"White","Suburb","Protestant","Midwest","Yes","Some College",0
+988,3,37,22,12,"Working class",3,"White","Suburb","Catholic","Midwest","No","HS Diploma",0
+994,3,34,18,14,"Working class",0,"Black","Suburb","Protestant","Midwest","Yes","Some College",0
+994,2,36,NA,14,"Upper class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",NA
+995,0,25,NA,12,"Working class",2,"Black","Suburb","Protestant","Midwest","Yes","HS Diploma",NA
+997,4,32,21,14,"Working class",4,"Black","Suburb","Protestant","Midwest","Yes","Some College",0
+998,2,59,16,6,"Middle class",0,"Black","Suburb","Protestant","Midwest","No","Less Than HS",0
+999,0,19,NA,11,"Working class",2,"Black","Suburb","Protestant","Midwest","Yes","Less Than HS",NA
+1000,1,36,31,19,"Middle class",3,"White","Suburb","Jewish","Midwest","No","Grad/Prof Degree",1
+1001,4,65,23,20,"Upper class",3,"White","Suburb","Jewish","Midwest","Yes","Grad/Prof Degree",0
+1002,1,34,NA,14,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1003,2,72,NA,8,"Middle class",0,"White","Suburb","Catholic","Southeast","No","Less Than HS",NA
+1005,2,56,49,20,"Working class",4,"Black","Smaller city","Catholic","Northeast","No","Grad/Prof Degree",1
+1007,2,51,36,15,"Working class",1,"White","Smaller city","Catholic","Northeast","No","Some College",1
+1008,3,57,22,13,"Working class",6,"Black","Smaller city","Protestant","Northeast","No","Some College",0
+1008,2,82,NA,5,"Middle class",0,"White","Suburb","Catholic","Southeast","Yes","Less Than HS",NA
+1009,2,32,19,13,"Working class",0,"Hispanic","Smaller city","Catholic","Northeast","No","Some College",0
+1012,1,85,21,8,"Middle class",3,"White","Smaller city","Catholic","Northeast","Yes","Less Than HS",0
+1015,2,28,25,12,"Working class",0,"White","Smaller city","None","Northeast","Yes","HS Diploma",0
+1017,3,78,21,13,"Working class",0,"White","Smaller city","Catholic","Northeast","Yes","Some College",0
+1018,0,20,NA,13,"Middle class",0,"White","Smaller city","None","Northeast","No","Some College",NA
+1021,2,54,NA,16,"Middle class",0,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+1023,1,34,33,12,"Working class",0,"White","Smaller city","Catholic","Northeast","No","HS Diploma",1
+1026,0,23,NA,16,"Middle class",0,"White","Smaller city","Catholic","Northeast","No","College Degree",NA
+1027,0,19,NA,12,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+1028,1,43,NA,17,"Middle class",2,"White","Suburb","Protestant","Northeast","No","Grad/Prof Degree",NA
+1031,3,70,22,12,"Middle class",3,"White","Smaller city","Catholic","Northeast","No","HS Diploma",0
+1034,1,52,32,16,"Middle class",4,"White","Smaller city","Jewish","Northeast","Yes","College Degree",1
+1035,1,46,28,13,"Working class",2,"White","Smaller city","Protestant","Northeast","No","Some College",0
+1036,2,69,31,20,"Middle class",3,"White","Smaller city","Catholic","Northeast","No","Grad/Prof Degree",1
+1036,0,38,NA,16,"Middle class",0,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+1037,1,32,27,18,"Working class",1,"White","Smaller city","Catholic","Northeast","Yes","Grad/Prof Degree",0
+1039,0,38,NA,14,"Middle class",0,"Black","Smaller city","Protestant","Northeast","Yes","Some College",NA
+1039,0,67,NA,12,"Middle class",1,"White","Suburb","Catholic","Northeast","No","HS Diploma",NA
+1040,2,46,NA,18,"Working class",6,"White","Suburb","Catholic","Northeast","No","Grad/Prof Degree",NA
+1041,2,77,35,19,"Middle class",0,"White","Smaller city","Protestant","Northeast","No","Grad/Prof Degree",1
+1042,0,44,NA,13,"Working class",1,"White","Smaller city","Catholic","Northeast","No","Some College",NA
+1043,3,41,20,15,"Middle class",2,"White","Smaller city","Catholic","Northeast","Yes","Some College",0
+1048,1,79,NA,12,"Middle class",1,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+1049,1,48,NA,12,"Working class",1,"White","Smaller city","Protestant","Northeast","No","HS Diploma",NA
+1049,2,38,23,12,"Middle class",0,"White","Smaller city","Other","Northeast","No","HS Diploma",0
+1050,0,32,NA,20,"Middle class",1,"Black","Smaller city","Protestant","Northeast","Yes","Grad/Prof Degree",NA
+1051,0,47,NA,20,"Middle class",3,"White","Suburb","Protestant","West","No","Grad/Prof Degree",NA
+1054,1,34,28,14,"Middle class",2,"White","Smaller city","Catholic","Northeast","Yes","Some College",0
+1055,2,38,30,16,"Middle class",6,"White","Smaller city","Catholic","Northeast","Yes","College Degree",1
+1057,2,46,NA,16,"Middle class",2,"White","Suburb","Other","West","No","College Degree",NA
+1061,2,60,20,16,"Middle class",2,"White","Smaller city","Protestant","Northeast","No","College Degree",0
+1062,0,31,NA,16,"Working class",1,"White","Smaller city","None","West","Yes","College Degree",NA
+1063,4,83,27,12,"Middle class",0,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",0
+1065,0,49,NA,14,"Middle class",2,"White","Smaller city",NA,"Northeast","Yes","Some College",NA
+1066,0,32,NA,16,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","College Degree",NA
+1067,2,81,28,16,"Upper class",6,"White","Smaller city","None","Northeast","No","College Degree",0
+1068,2,52,23,14,"Middle class",0,"White","Smaller city","Protestant","Northeast","Yes","Some College",0
+1070,1,62,30,17,"Upper class",5,"White","Smaller city","Protestant","Northeast","No","Grad/Prof Degree",1
+1071,2,34,NA,16,"Middle class",0,"Other","Suburb","None","West","No","College Degree",NA
+1072,0,26,NA,15,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","Some College",NA
+1073,0,42,NA,14,"Middle class",2,"White","Smaller city","Protestant","Northeast","No","Some College",NA
+1077,2,42,37,16,"Middle class",3,"White","Suburb","Protestant","Northeast","Yes","College Degree",1
+1080,0,24,NA,16,"Middle class",2,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+1080,2,47,NA,14,"Middle class",4,"White","Suburb","Catholic","West","Yes","Some College",NA
+1081,0,27,NA,18,"Working class",1,"White","Suburb","Protestant","Northeast","No","Grad/Prof Degree",NA
+1084,1,52,27,16,"Middle class",1,"White","Rural","Protestant","Northeast","Yes","College Degree",0
+1086,3,44,NA,10,"Middle class",1,"White","Smaller city","Other","Northeast","Yes","Less Than HS",NA
+1087,2,41,28,16,"Middle class",2,"White","Rural","None","Northeast","Yes","College Degree",0
+1091,6,89,22,12,"Working class",2,"White","Rural","Protestant","Northeast","Yes","HS Diploma",0
+1091,0,32,NA,19,"Middle class",1,"White","Smaller city","None","Northeast","Yes","Grad/Prof Degree",NA
+1092,2,40,32,16,"Middle class",2,"White","Rural","Catholic","Northeast","Yes","College Degree",1
+1093,2,52,28,17,"Middle class",1,"White","Rural","Catholic","Northeast","Yes","Grad/Prof Degree",0
+1093,2,45,NA,18,"Middle class",3,"White","Smaller city","Catholic","Northeast","No","Grad/Prof Degree",NA
+1095,2,37,26,12,"Working class",1,"White","Rural","Other","Northeast","Yes","HS Diploma",0
+1098,2,56,20,12,"Middle class",2,"White","Rural","Protestant","Northeast","Yes","HS Diploma",0
+1100,2,44,27,14,"Middle class",2,"White","Rural","Catholic","Northeast","No","Some College",0
+1103,3,68,21,12,"Middle class",0,"White","Rural","Protestant","Northeast","Yes","HS Diploma",0
+1103,4,89,NA,12,"Middle class",0,"White","Smaller city","None","Northeast","Yes","HS Diploma",NA
+1107,1,44,33,16,"Working class",8,"Black","Suburb","Protestant","Northeast","Yes","College Degree",1
+1108,0,50,NA,15,"Working class",4,"Black","Suburb","Protestant","Northeast","No","Some College",NA
+1109,2,49,24,13,"Middle class",2,"White","Suburb","Catholic","Northeast","No","Some College",0
+1110,0,55,NA,12,"Working class",1,"White","Suburb","Protestant","Northeast","No","HS Diploma",NA
+1111,4,33,19,13,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","Some College",0
+1113,1,55,30,14,"Working class",0,"White","Suburb","Protestant","Northeast","Yes","Some College",1
+1114,0,46,NA,9,"Lower class",0,"White","Suburb","Other","Northeast","No","Less Than HS",NA
+1116,1,45,32,12,"Middle class",0,"White","Suburb","Protestant","Northeast","Yes","HS Diploma",1
+1117,1,58,28,14,"Lower class",3,"Black","Suburb","Protestant","Northeast","No","Some College",0
+1119,0,56,NA,13,"Working class",0,"White","Suburb","Protestant","Northeast","Yes","Some College",NA
+1120,2,48,21,12,"Middle class",1,"White","Suburb","Catholic","Northeast","No","HS Diploma",0
+1121,2,57,30,16,"Working class",1,"White","Suburb","Catholic","Northeast","No","College Degree",1
+1121,0,27,NA,12,"Middle class",1,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+1122,0,51,NA,14,"Working class",4,"White","Suburb","Protestant","Northeast","No","Some College",NA
+1123,1,36,30,11,"Working class",0,"White","Suburb","Protestant","Northeast","Yes","Less Than HS",1
+1128,1,35,NA,19,"Middle class",1,"White","Smaller city","None","Northeast","Yes","Grad/Prof Degree",NA
+1129,1,22,18,11,"Working class",0,"White","Suburb","Other","Northeast","Yes","Less Than HS",0
+1130,0,58,NA,12,"Middle class",3,"White","Suburb","Other","Northeast","Yes","HS Diploma",NA
+1133,0,21,NA,14,"Middle class",0,"White","Smaller city","Catholic","Northeast","Yes","Some College",NA
+1134,4,38,NA,7,"Lower class",0,"Other","Smaller city","Protestant","Northeast","Yes","Less Than HS",NA
+1134,1,43,27,12,"Working class",0,"White","Suburb","Other","Northeast","Yes","HS Diploma",0
+1136,1,31,21,14,"Lower class",2,"White","Suburb","Protestant","Northeast","Yes","Some College",0
+1137,0,54,NA,13,"Working class",1,"White","Suburb","Protestant","Northeast","No","Some College",NA
+1141,3,72,33,11,"Working class",3,"White","Smaller city","None","Midwest","No","Less Than HS",1
+1142,1,25,23,13,"Middle class",0,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1143,0,67,NA,17,"Middle class",4,"White","Smaller city","None","Midwest","No","Grad/Prof Degree",NA
+1144,0,41,NA,12,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","HS Diploma",NA
+1144,0,21,NA,14,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",NA
+1145,0,38,NA,16,"Middle class",4,"White","Suburb","Catholic","Northeast","Yes","College Degree",NA
+1146,2,27,25,17,"Middle class",3,"White","Smaller city","Catholic","Midwest","Yes","Grad/Prof Degree",0
+1147,0,36,NA,12,"Working class",1,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+1148,0,35,NA,16,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","College Degree",NA
+1149,0,89,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1150,0,62,NA,9,"Working class",0,"White","Smaller city","None","Midwest","No","Less Than HS",NA
+1151,6,81,26,13,"Middle class",2,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1152,3,80,26,12,"Working class",1,"White","Smaller city","Catholic","Midwest","No","HS Diploma",0
+1153,2,36,NA,14,"Working class",0,"White","Smaller city","Catholic","Northeast","Yes","Some College",NA
+1153,2,53,17,18,"Working class",3,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",0
+1155,1,27,26,16,"Middle class",0,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1158,1,40,NA,14,"Working class",1,"White","Suburb","Protestant","Northeast","No","Some College",NA
+1160,0,22,NA,16,"Working class",1,"Hispanic","Smaller city","None","Midwest","Yes","College Degree",NA
+1161,1,32,NA,14,"Working class",0,"White","Suburb","Protestant","Northeast","Yes","Some College",NA
+1162,3,74,30,12,"Working class",3,"White","Smaller city","Protestant","Midwest","No","HS Diploma",1
+1163,2,25,NA,15,"Working class",3,"White","Suburb","Protestant","Northeast","No","Some College",NA
+1167,4,47,20,15,"Working class",4,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+1169,3,65,28,18,"Middle class",4,"White","Smaller city","Catholic","Midwest","No","Grad/Prof Degree",0
+1171,2,40,NA,14,"Middle class",3,"White","Suburb","Protestant","Northeast","No","Some College",NA
+1172,1,74,31,12,"Middle class",6,"White","Smaller city","Catholic","Midwest","No","HS Diploma",1
+1173,3,51,20,15,"Working class",4,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1174,2,28,21,11,"Working class",0,"Hispanic","Smaller city","Catholic","Midwest","No","Less Than HS",0
+1175,3,52,NA,16,"Middle class",1,"White","Suburb","Protestant","Northeast","Yes","College Degree",NA
+1176,2,73,27,12,"Middle class",1,"Black","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1177,4,60,37,13,"Middle class",2,"Black","Smaller city","Protestant","Midwest","No","Some College",1
+1179,0,31,NA,8,"Lower class",0,"Black","Smaller city","Protestant","Northeast","Yes","Less Than HS",NA
+1180,1,57,17,12,"Working class",2,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",0
+1184,2,57,20,16,"Middle class",0,"White","Smaller city","None","Midwest","Yes","College Degree",0
+1184,2,43,NA,13,"Working class",4,"White","Smaller city","Protestant","Northeast","Yes","Some College",NA
+1185,0,32,NA,16,"Middle class",7,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+1188,0,22,NA,14,"Middle class",0,"Hispanic","Smaller city","None","Midwest","No","Some College",NA
+1191,0,46,NA,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1194,1,37,28,13,"Lower class",0,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+1195,0,37,NA,18,"Middle class",1,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+1195,3,43,NA,16,"Middle class",2,"White","Smaller city","None","Northeast","No","College Degree",NA
+1196,8,38,14,12,"Middle class",0,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1198,1,33,28,14,"Working class",1,"White","Smaller city","None","Midwest","Yes","Some College",0
+1201,3,47,32,14,"Middle class",2,"White","Smaller city","Protestant","Midwest","Yes","Some College",1
+1202,1,34,26,14,"Working class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+1202,0,24,NA,17,"Working class",0,"White","Smaller city","Catholic","Northeast","Yes","Grad/Prof Degree",NA
+1204,2,62,23,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1205,5,58,19,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1207,1,44,NA,12,"Middle class",4,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",NA
+1208,0,27,NA,13,"Working class",2,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+1209,0,41,NA,16,"Working class",5,"White","Smaller city","Catholic","Northeast","Yes","College Degree",NA
+1213,1,27,NA,14,"Working class",1,"White","Smaller city","Catholic","Northeast","No","Some College",NA
+1217,0,24,NA,16,"Middle class",0,"White","Smaller city","None","Midwest","Yes","College Degree",NA
+1218,3,81,NA,6,"Lower class",0,"White","Smaller city","Catholic","Northeast","No","Less Than HS",NA
+1220,5,74,20,12,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1221,1,36,24,14,"Middle class",0,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1221,0,66,NA,12,"Middle class",0,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",NA
+1222,2,29,24,14,"Working class",2,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1224,2,32,26,12,"Working class",1,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1225,1,44,24,12,"Working class",0,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",0
+1227,0,27,NA,17,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1228,3,55,18,12,"Middle class",0,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",0
+1230,1,63,NA,12,"Middle class",2,"White","Suburb","Protestant","Northeast","No","HS Diploma",NA
+1230,0,59,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+1232,0,40,NA,12,"Working class",3,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1234,2,44,22,16,"Middle class",2,"White","Smaller city","None","Midwest","Yes","College Degree",0
+1235,3,46,25,16,"Middle class",1,"White","Smaller city","None","Midwest","No","College Degree",0
+1237,1,20,17,13,"Lower class",0,"White","Smaller city","None","Midwest","Yes","Some College",0
+1238,2,31,22,15,"Lower class",4,"White","Smaller city","Catholic","Midwest","Yes","Some College",0
+1240,3,60,NA,8,"Working class",3,"White","Rural","Protestant","Northeast","No","Less Than HS",NA
+1241,2,25,19,12,"Working class",0,"Black","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1241,3,36,NA,12,"Working class",2,"White","Rural","Protestant","Northeast","Yes","HS Diploma",NA
+1244,6,41,20,16,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1246,3,48,29,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1247,2,46,32,16,"Middle class",4,"White","Smaller city","Protestant","Midwest","Yes","College Degree",1
+1251,0,45,NA,12,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+1252,2,32,25,16,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1253,0,26,NA,12,"Working class",3,"White","Smaller city","Protestant","Northeast","No","HS Diploma",NA
+1253,0,22,NA,12,"Working class",0,"White","Smaller city","None","Midwest","No","HS Diploma",NA
+1256,4,36,28,18,"Middle class",6,"White","Smaller city","Catholic","Midwest","No","Grad/Prof Degree",0
+1258,1,55,35,16,"Middle class",4,"White","Smaller city","None","Midwest","No","College Degree",1
+1259,0,46,NA,14,"Middle class",0,"Black","Smaller city","None","Midwest","Yes","Some College",NA
+1260,1,41,NA,14,"Working class",2,"White","Smaller city","None","Midwest","No","Some College",NA
+1261,1,31,30,15,"Middle class",1,"White","Smaller city","None","Midwest","Yes","Some College",1
+1262,2,78,30,17,"Middle class",2,"White","Smaller city","Jewish","Midwest","No","Grad/Prof Degree",1
+1262,8,89,NA,8,"Working class",0,"White","Smaller city","Catholic","Midwest","Yes","Less Than HS",NA
+1264,2,62,20,12,"Middle class",4,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1265,2,76,NA,11,"Lower class",1,"White","Smaller city","Protestant","Midwest","No","Less Than HS",NA
+1266,1,36,NA,12,"Working class",1,"White","Smaller city","Catholic","Midwest","No","HS Diploma",NA
+1268,2,38,22,12,"Working class",1,"White","Smaller city","None","Midwest","Yes","HS Diploma",0
+1272,3,60,23,16,"Middle class",2,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1273,0,38,NA,13,"Working class",0,"White","Smaller city","Catholic","Midwest","Yes","Some College",NA
+1274,2,43,18,12,"Working class",0,"Black","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1275,3,70,18,9,"Lower class",0,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1277,3,38,21,12,"Working class",0,"White","Smaller city","Catholic","Midwest","No","HS Diploma",0
+1278,2,53,NA,12,"Working class",1,"White","Smaller city","Catholic","Midwest","No","HS Diploma",NA
+1278,1,52,38,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",1
+1280,2,40,28,19,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",0
+1281,0,25,NA,14,"Working class",1,"White","Smaller city","None","Midwest","Yes","Some College",NA
+1283,2,43,27,16,"Middle class",1,"White","Smaller city","None","Midwest","Yes","College Degree",0
+1284,3,52,NA,16,"Working class",3,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+1285,3,33,NA,13,"Working class",0,"White","Rural","Protestant","Midwest","No","Some College",NA
+1286,4,73,21,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1292,1,42,37,17,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",1
+1293,2,44,32,14,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",1
+1294,2,45,26,16,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1296,2,29,NA,10,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1296,4,70,27,14,"Middle class",2,"Black","Smaller city","Protestant","Midwest","No","Some College",0
+1299,0,32,NA,14,"Working class",0,"Black","Smaller city","Eastern","Midwest","No","Some College",NA
+1300,0,26,NA,16,"Middle class",5,"White","Smaller city","None","Midwest","No","College Degree",NA
+1302,8,79,22,12,"Middle class",0,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",0
+1304,3,34,NA,14,"Lower class",2,"White","Smaller city","Other","Midwest","No","Some College",NA
+1305,1,60,28,12,"Middle class",2,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1307,2,62,18,11,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1308,0,21,NA,15,"Working class",3,"White","Smaller city","Other","Midwest","No","Some College",NA
+1309,5,74,NA,17,"Working class",2,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+1310,1,23,21,11,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1311,4,63,NA,8,"Working class",0,"White","Smaller city","Protestant","Midwest","No","Less Than HS",NA
+1312,3,65,26,12,"Middle class",0,"White","Suburb","Protestant","Midwest","Yes","HS Diploma",0
+1313,3,41,23,13,"Middle class",3,"White","Suburb","Protestant","Midwest","Yes","Some College",0
+1316,3,42,27,12,"Middle class",2,"Hispanic","Suburb","Protestant","Midwest","No","HS Diploma",0
+1318,2,45,26,14,"Middle class",0,"White","Suburb","Protestant","Midwest","No","Some College",0
+1321,3,35,29,20,"Middle class",4,"White","Suburb","Catholic","Midwest","No","Grad/Prof Degree",0
+1323,2,25,19,12,"Working class",2,"White","Suburb","Protestant","Midwest","No","HS Diploma",0
+1323,3,33,NA,9,"Working class",1,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",NA
+1324,3,27,22,12,"Working class",0,"Hispanic","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+1325,2,20,16,9,"Middle class",0,"Hispanic","Suburb","None","Midwest","Yes","Less Than HS",0
+1326,1,48,18,12,"Working class",1,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+1327,3,47,19,13,"Middle class",0,"White","Suburb","Catholic","Midwest","Yes","Some College",0
+1328,5,72,21,12,"Working class",1,"White","Suburb","Protestant","Midwest","No","HS Diploma",0
+1332,4,75,NA,12,"Middle class",0,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+1332,2,33,28,12,"Middle class",1,"White","Suburb","Protestant","Midwest","No","HS Diploma",0
+1333,4,62,21,16,"Middle class",2,"White","Suburb","Protestant","Midwest","Yes","College Degree",0
+1333,5,89,NA,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1336,3,51,19,12,"Middle class",0,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+1337,3,35,26,20,"Middle class",1,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",0
+1338,3,51,21,13,"Middle class",3,"White","Smaller city","Other","Midwest","No","Some College",0
+1339,4,41,30,16,"Middle class",1,"White","Smaller city","None","Midwest","No","College Degree",1
+1341,2,55,26,16,"Middle class",4,"White","Smaller city","Protestant","Midwest","No","College Degree",0
+1343,0,47,NA,18,"Middle class",5,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1344,0,19,NA,13,"Working class",0,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+1345,0,27,NA,20,"Middle class",0,"Other","Smaller city","Eastern","Midwest","No","Grad/Prof Degree",NA
+1347,0,67,NA,8,"Lower class",0,"Black","Smaller city","None","Midwest","No","Less Than HS",NA
+1348,1,24,22,7,"Working class",0,"White","Smaller city","Catholic","Midwest","Yes","Less Than HS",0
+1349,0,24,NA,16,"Middle class",0,"White","Smaller city","Catholic","Midwest","No","College Degree",NA
+1350,0,71,NA,16,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","College Degree",NA
+1351,2,42,18,12,"Middle class",0,"Black","Suburb","Protestant","Midwest","Yes","HS Diploma",0
+1352,1,25,NA,12,"Middle class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1353,3,48,21,13,"Working class",3,"White","Suburb","Protestant","Midwest","Yes","Some College",0
+1354,0,42,NA,16,"Middle class",4,"White","Suburb","Other","Midwest","No","College Degree",NA
+1359,0,31,NA,12,"Working class",0,"White","Suburb","Catholic","Midwest","No","HS Diploma",NA
+1360,5,64,NA,20,"Upper class",2,"White","Smaller city","None","Midwest","Yes","Grad/Prof Degree",NA
+1362,1,67,25,12,"Working class",4,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",0
+1363,5,67,19,8,"Lower class",0,"White","Suburb","Protestant","Midwest","No","Less Than HS",0
+1364,1,44,NA,13,"Middle class",0,"White","Smaller city","Protestant","Midwest","Yes","Some College",NA
+1364,2,58,30,14,"Middle class",1,"White","Suburb","Protestant","Southeast","Yes","Some College",1
+1365,3,38,20,16,"Middle class",4,"White","Suburb","Catholic","Southeast","No","College Degree",0
+1368,1,41,NA,20,"Middle class",5,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1370,0,24,NA,16,"Middle class",2,"White","Suburb","Protestant","Southeast","Yes","College Degree",NA
+1373,1,30,29,17,"Working class",0,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",0
+1374,2,35,28,17,"Middle class",2,"Other","Suburb","None","Midwest","Yes","Grad/Prof Degree",0
+1377,2,54,32,12,"Middle class",7,"White","Suburb","Protestant","Midwest","No","HS Diploma",1
+1378,2,49,NA,12,"Working class",3,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1379,0,24,NA,16,"Middle class",1,"White","Suburb","Catholic","Midwest","No","College Degree",NA
+1380,0,33,NA,16,"Middle class",0,"White","Suburb","Protestant","Midwest","Yes","College Degree",NA
+1382,3,38,NA,12,"Working class",0,"Other","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1382,4,70,28,11,"Middle class",1,"Black","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1383,4,27,18,6,"Lower class",0,"Hispanic","Smaller city","None","Midwest","No","Less Than HS",0
+1383,0,32,NA,12,"Working class",2,"Black","Suburb","None","Midwest","No","HS Diploma",NA
+1385,4,49,21,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1386,0,33,NA,11,"Working class",0,"White","Smaller city","None","Midwest","No","Less Than HS",NA
+1386,1,37,NA,12,"Working class",3,"White","Suburb","Catholic","Midwest","No","HS Diploma",NA
+1387,4,29,17,11,"Lower class",1,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1388,3,37,21,12,"Working class",0,"Black","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1390,5,44,24,15,"Working class",0,"Black","Smaller city","Protestant","Midwest","No","Some College",0
+1394,3,36,NA,14,"Middle class",2,"White","Suburb","Protestant","Midwest","Yes","Some College",NA
+1398,1,24,23,14,"Working class",0,"White","Smaller city","None","Midwest","Yes","Some College",0
+1399,5,54,24,14,"Middle class",5,"Black","Smaller city","Protestant","Midwest","No","Some College",0
+1401,2,58,33,16,"Middle class",6,"White","Smaller city","Protestant","Midwest","No","College Degree",1
+1401,1,48,NA,13,"Middle class",2,"White","Smaller city","Other","Midwest","Yes","Some College",NA
+1403,2,40,35,16,"Middle class",3,"White","Smaller city","Catholic","Midwest","Yes","College Degree",1
+1405,0,45,NA,19,"Middle class",4,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1406,1,28,27,16,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","College Degree",0
+1407,0,75,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1407,0,25,NA,17,"Middle class",6,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1408,2,64,38,20,"Middle class",5,"White","Smaller city","Jewish","Midwest","Yes","Grad/Prof Degree",1
+1409,0,31,NA,16,"Middle class",0,"White","Smaller city","Other","Midwest","Yes","College Degree",NA
+1412,3,66,23,12,"Working class",1,"White","Smaller city","Catholic","Midwest","No","HS Diploma",0
+1413,1,24,NA,12,"Lower class",0,"White","Suburb","Protestant","Midwest","Yes","HS Diploma",NA
+1413,1,30,29,16,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","College Degree",0
+1416,0,29,NA,19,"Middle class",4,"White","Smaller city","Eastern","Midwest","No","Grad/Prof Degree",NA
+1417,1,19,17,11,"Middle class",0,"Black","Smaller city","None","Midwest","Yes","Less Than HS",0
+1418,4,60,20,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1421,5,34,16,9,"Lower class",5,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1421,0,48,NA,12,"Middle class",4,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+1423,3,72,19,10,"Lower class",2,"White","Smaller city","Catholic","Midwest","No","Less Than HS",0
+1425,0,39,NA,16,"Middle class",2,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+1425,0,55,NA,12,"Middle class",0,"White","Smaller city","None","Midwest","No","HS Diploma",NA
+1427,3,40,NA,20,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+1428,3,49,22,12,"Middle class",0,"White","Smaller city","None","Midwest","No","HS Diploma",0
+1429,1,27,26,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1430,2,63,29,15,"Working class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+1431,2,50,30,20,"Upper class",3,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",1
+1432,2,35,22,12,"Working class",2,"White","Smaller city","Other","Midwest","Yes","HS Diploma",0
+1434,5,70,21,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1437,3,43,17,12,"Working class",3,"White","Smaller city","None","Midwest","Yes","HS Diploma",0
+1438,3,30,22,16,"Working class",1,"White","Smaller city","Protestant","Midwest","No","College Degree",0
+1439,2,65,17,11,"Working class",0,"White","Smaller city","None","Midwest","Yes","Less Than HS",0
+1440,0,39,NA,16,"Working class",4,"White","Suburb","Jewish","Midwest","Yes","College Degree",NA
+1441,3,52,20,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1442,3,65,22,12,"Middle class",2,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+1442,5,50,NA,12,"Working class",0,"White","Suburb","Protestant","Midwest","Yes","HS Diploma",NA
+1443,3,81,19,11,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+1445,2,28,20,11,"Working class",0,"White","Smaller city","None","Midwest","Yes","Less Than HS",0
+1446,0,41,NA,13,"Lower class",0,"White","Smaller city","None","Midwest","Yes","Some College",NA
+1448,3,28,22,12,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",0
+1448,2,35,NA,16,"Middle class",6,"White","Suburb","Jewish","Midwest","Yes","College Degree",NA
+1451,0,23,NA,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","No","College Degree",NA
+1452,0,24,NA,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1453,3,72,18,15,"Upper class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1457,6,61,19,11,"Working class",1,"White","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1458,0,21,NA,15,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1459,0,42,NA,12,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1463,3,49,25,16,"Middle class",2,"Other","Smaller city","Eastern","Southeast","No","College Degree",0
+1464,3,38,27,18,"Middle class",6,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+1464,4,64,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1465,1,19,19,9,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1466,1,32,26,17,"Middle class",6,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",0
+1468,1,54,20,17,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+1470,2,25,19,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1473,4,56,NA,13,"Working class",2,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+1475,0,23,NA,16,"Middle class",8,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1476,4,74,24,12,"Middle class",0,"Black","Smaller city","Protestant","Southeast","No","HS Diploma",0
+1476,1,32,NA,13,"Working class",4,"White","Smaller city","Protestant","Midwest","Yes","Some College",NA
+1477,2,39,20,9,"Working class",0,"White","Smaller city","None","Southeast","No","Less Than HS",0
+1479,1,24,23,12,"Lower class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1480,1,46,26,14,"Lower class",1,"Black","Smaller city","Protestant","Southeast","No","Some College",0
+1481,4,57,20,12,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1483,2,34,21,15,"Working class",2,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+1485,2,29,NA,14,"Working class",1,"White","Smaller city","None","Midwest","Yes","Some College",NA
+1486,3,50,21,11,"Lower class",0,"Black","Suburb","Protestant","Southeast","Yes","Less Than HS",0
+1492,2,60,20,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1492,2,33,NA,16,"Middle class",3,"White","Suburb","Protestant","Midwest","No","College Degree",NA
+1493,0,43,NA,14,"Working class",1,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1494,0,62,NA,12,"Middle class",8,"White","Suburb","Catholic","Midwest","Yes","HS Diploma",NA
+1494,3,40,19,16,"Middle class",2,"White","Smaller city","None","Southeast","No","College Degree",0
+1495,5,70,NA,12,"Working class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+1496,1,79,22,11,"Middle class",1,"White","Smaller city","None","Southeast","Yes","Less Than HS",0
+1500,3,48,20,13,"Working class",1,"White","Smaller city","Protestant","Southeast","No","Some College",0
+1503,6,67,NA,12,"Middle class",2,"Black","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1505,0,21,NA,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1506,0,60,NA,16,"Middle class",1,"White","Smaller city","Catholic","Southeast","No","College Degree",NA
+1507,7,75,NA,8,"Middle class",2,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",NA
+1507,0,21,NA,12,"Working class",0,"White","Smaller city","None","Southeast","Yes","HS Diploma",NA
+1509,3,68,18,11,"Middle class",0,"White","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1510,1,39,24,12,"Middle class",2,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+1511,2,44,34,14,"Working class",7,"White","Smaller city","Protestant","Southeast","No","Some College",1
+1516,2,89,21,8,"Working class",0,"White","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1517,2,55,21,13,"Working class",1,"White","Smaller city","None","Southeast","Yes","Some College",0
+1518,2,64,24,13,"Middle class",0,"White","Smaller city","Other","Southeast","Yes","Some College",0
+1519,2,80,NA,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1523,2,32,18,12,"Working class",2,"White","Smaller city","Other","Southeast","Yes","HS Diploma",0
+1524,2,36,18,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1525,3,80,25,15,"Middle class",1,"White","Smaller city","Catholic","Southeast","No","Some College",0
+1526,3,87,29,14,"Middle class",2,"White","Smaller city","Protestant","Southeast","No","Some College",0
+1528,4,66,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1528,2,71,22,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1529,1,57,24,14,"Upper class",0,"White","Smaller city","None","Southeast","Yes","Some College",0
+1530,2,36,NA,12,"Working class",4,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+1531,0,21,NA,14,"Middle class",0,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1535,0,57,NA,17,"Middle class",5,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+1537,3,38,17,9,"Lower class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1539,1,25,22,14,"Working class",0,"Hispanic","Smaller city","Protestant","Southeast","No","Some College",0
+1540,2,30,21,13,"Working class",0,"White","Smaller city","Catholic","Southeast","Yes","Some College",0
+1541,5,73,18,10,"Middle class",0,"Other","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1542,0,44,NA,9,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1543,3,59,18,14,"Middle class",1,"White","Smaller city","None","Southeast","No","Some College",0
+1547,1,32,18,20,"Middle class",5,"Black","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",0
+1548,3,52,24,13,"Working class",3,"Black","Smaller city","Protestant","Southeast","No","Some College",0
+1550,0,39,NA,18,"Working class",0,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+1551,2,47,23,11,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1554,0,45,NA,10,"Lower class",2,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1557,2,23,21,12,"Working class",2,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1558,5,43,19,9,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1559,3,30,20,16,"Working class",1,"Black","Smaller city","None","Southeast","Yes","College Degree",0
+1561,2,30,NA,7,"Working class",0,"White","Rural","Protestant","Southeast","No","Less Than HS",NA
+1561,0,50,NA,8,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1562,1,29,NA,14,"Lower class",2,"White","Rural","Protestant","Southeast","No","Some College",NA
+1562,4,75,31,20,"Middle class",1,"Hispanic","Smaller city","None","Southeast","No","Grad/Prof Degree",1
+1565,1,36,30,14,"Working class",5,"Black","Smaller city","Protestant","Southeast","Yes","Some College",1
+1566,5,43,15,11,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1567,2,26,18,13,"Middle class",2,"Black","Smaller city","None","Southeast","Yes","Some College",0
+1568,3,71,NA,11,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1569,0,34,NA,16,"Working class",0,"White","Smaller city","Catholic","Southeast","No","College Degree",NA
+1570,0,64,NA,12,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1573,2,28,23,12,"Working class",1,"Black","Smaller city","Eastern","Southeast","No","HS Diploma",0
+1574,1,50,25,14,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1575,2,70,NA,17,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1575,0,20,NA,11,"Working class",0,"White","Smaller city","None","Southeast","No","Less Than HS",NA
+1578,0,26,NA,12,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1581,1,51,33,12,"Working class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",1
+1583,0,64,NA,12,"Working class",0,"White","Smaller city","Other","Southeast","Yes","HS Diploma",NA
+1583,1,58,NA,15,"Middle class",2,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1585,2,48,NA,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1585,0,26,NA,16,"Middle class",1,"Other","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1587,8,81,19,11,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1588,0,83,NA,14,"Working class",0,"White","Smaller city","Jewish","Southeast","No","Some College",NA
+1590,0,25,NA,12,"Working class",0,"White","Suburb","Catholic","Southeast","Yes","HS Diploma",NA
+1591,3,45,29,14,"Working class",0,"White","Suburb","None","Southeast","Yes","Some College",0
+1592,0,48,NA,14,"Working class",0,"White","Suburb","None","Southeast","No","Some College",NA
+1596,2,23,17,15,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+1597,7,71,17,14,"Lower class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+1598,0,21,NA,12,"Middle class",0,"Other","Smaller city","Catholic","Southeast","No","HS Diploma",NA
+1600,2,50,17,16,"Lower class",0,"Black","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1601,2,31,17,9,"Middle class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1601,4,33,NA,9,"Lower class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1602,0,47,NA,14,"Lower class",0,"Black","Smaller city","None","Southeast","No","Some College",NA
+1605,0,36,NA,20,"Working class",2,"White","Smaller city","Catholic","Southeast","Yes","Grad/Prof Degree",NA
+1606,2,47,21,14,"Lower class",0,"Black","Smaller city","None","Southeast","No","Some College",0
+1608,4,29,NA,10,"Working class",3,"White","Suburb","Protestant","Southeast","Yes","Less Than HS",NA
+1611,2,67,29,16,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1612,0,77,NA,16,"Working class",4,"White","Smaller city","Protestant","Southeast","No","College Degree",NA
+1614,3,47,NA,14,"Working class",1,"Black","Suburb","Protestant","Southeast","Yes","Some College",NA
+1616,3,35,NA,17,"Middle class",1,"White","Suburb","Other","Southeast","Yes","Grad/Prof Degree",NA
+1617,1,38,32,16,"Working class",0,"White","Smaller city","Protestant","Southeast","No","College Degree",1
+1618,1,32,31,14,"Middle class",4,"Black","Smaller city","Protestant","Southeast","Yes","Some College",1
+1622,3,78,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1623,0,44,NA,19,"Middle class",6,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+1627,1,62,27,19,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+1628,1,49,NA,9,"Lower class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1630,2,58,30,17,"Middle class",0,"White","Smaller city","Catholic","Southeast","No","Grad/Prof Degree",1
+1630,2,31,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+1632,1,27,17,12,"Working class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+1633,6,35,NA,16,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1634,2,53,20,12,"Working class",1,"Hispanic","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+1635,2,78,NA,12,"Upper class",2,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1636,4,60,NA,16,"Working class",0,"White","Smaller city","None","Southeast","No","College Degree",NA
+1637,2,58,30,20,"Middle class",4,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",1
+1639,0,26,NA,12,"Working class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+1639,2,45,39,20,"Upper class",1,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",1
+1640,4,43,28,20,"Middle class",2,"Black","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",0
+1641,0,42,NA,17,"Middle class",2,"White","Smaller city","Other","Southeast","Yes","Grad/Prof Degree",NA
+1644,0,26,NA,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","No","College Degree",NA
+1645,4,40,19,15,"Working class",2,"Other","Suburb","Catholic","Southeast","Yes","Some College",0
+1650,0,21,NA,13,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","Some College",NA
+1651,1,44,40,19,"Working class",10,"Black","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",1
+1654,1,28,21,18,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+1655,1,46,NA,18,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1656,3,75,25,14,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1657,2,30,26,20,"Middle class",6,"Other","Smaller city","Catholic","Southeast","No","Grad/Prof Degree",0
+1660,3,40,26,11,"Upper class",2,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+1661,0,48,NA,14,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1663,0,28,NA,16,"Middle class",3,"White","Smaller city","None","Southeast","Yes","College Degree",NA
+1664,0,28,NA,15,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1665,3,56,21,13,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1666,1,51,41,16,"Middle class",8,"White","Smaller city","Protestant","Southeast","No","College Degree",1
+1667,1,33,NA,14,"Lower class",7,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1667,2,63,23,16,"Upper class",6,"White","Smaller city","Jewish","Southeast","Yes","College Degree",0
+1670,0,26,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1670,2,71,21,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+1672,0,28,NA,11,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1672,1,27,24,15,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1673,1,27,20,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1674,2,31,NA,10,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1675,1,39,38,14,"Working class",1,"Hispanic","Smaller city","Other","Southeast","Yes","Some College",1
+1680,2,43,28,14,"Middle class",3,"White","Smaller city","Catholic","Southeast","No","Some College",0
+1682,2,50,22,16,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1684,0,23,NA,16,"Middle class",4,"Hispanic","Smaller city","Catholic","Southeast","No","College Degree",NA
+1685,2,76,33,12,"Middle class",2,"White","Smaller city","Protestant","Southeast","No","HS Diploma",1
+1686,3,54,NA,16,"Middle class",3,"White","Rural","Protestant","Southeast","Yes","College Degree",NA
+1686,2,49,28,20,"Middle class",4,"White","Smaller city","Catholic","Southeast","Yes","Grad/Prof Degree",0
+1687,2,54,NA,4,"Lower class",2,"Black","Rural","Protestant","Southeast","No","Less Than HS",NA
+1687,3,31,25,13,"Working class",5,"White","Smaller city","Protestant","Southeast","No","Some College",0
+1688,3,51,30,12,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","HS Diploma",1
+1689,0,23,NA,16,"Working class",7,"Black","Smaller city","Protestant","Southeast","No","College Degree",NA
+1694,0,27,NA,17,"Middle class",0,"White","Smaller city","Other","Southeast","No","Grad/Prof Degree",NA
+1695,2,30,28,16,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1698,2,55,25,14,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1699,1,58,NA,17,"Working class",3,"Black","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+1700,2,40,19,10,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1703,1,34,NA,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+1703,1,49,26,15,"Lower class",0,"White","Smaller city","Other","Southeast","Yes","Some College",0
+1705,2,31,NA,12,"Middle class",0,"Black","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+1705,2,38,30,16,"Middle class",4,"White","Smaller city","Protestant","Southeast","Yes","College Degree",1
+1706,2,33,25,12,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1707,3,60,18,11,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1708,0,33,NA,12,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1711,2,48,18,10,"Middle class",0,"Black","Smaller city","None","Southeast","No","Less Than HS",0
+1713,1,51,NA,13,"Middle class",3,"White","Suburb","Protestant","Southeast","No","Some College",NA
+1715,1,28,NA,12,"Working class",2,"White","Suburb","Catholic","Southeast","No","HS Diploma",NA
+1716,1,36,30,15,"Lower class",4,"White","Smaller city","None","Southeast","Yes","Some College",1
+1717,1,36,25,12,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+1719,2,47,25,14,"Middle class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Some College",0
+1722,2,27,21,12,"Working class",1,"Hispanic","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+1722,0,38,NA,17,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+1724,2,85,NA,13,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1725,1,27,24,11,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1726,6,62,19,9,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1729,0,36,NA,14,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+1731,0,52,NA,12,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","No","HS Diploma",NA
+1733,5,61,19,8,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","Yes","Less Than HS",0
+1737,3,75,NA,12,"Middle class",0,"White","Suburb","Catholic","Southeast","Yes","HS Diploma",NA
+1739,0,35,NA,14,"Working class",1,"Hispanic","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1742,2,29,23,12,"Working class",0,"White","Rural","None","Southeast","No","HS Diploma",0
+1745,2,57,23,17,"Middle class",5,"White","Rural","Protestant","Southeast","Yes","Grad/Prof Degree",0
+1748,7,57,NA,7,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1748,1,23,20,12,"Working class",0,"Black","Rural","Protestant","Southeast","No","HS Diploma",0
+1751,3,68,20,14,"Working class",5,"White","Rural","Protestant","Southeast","Yes","Some College",0
+1752,1,43,NA,16,"Middle class",1,"White","Suburb","Catholic","Southeast","No","College Degree",NA
+1753,2,43,25,11,"Working class",3,"Other","Rural","Protestant","Southeast","No","Less Than HS",0
+1755,0,30,NA,12,"Middle class",1,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+1756,2,74,23,12,"Middle class",1,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+1757,4,59,20,5,"Working class",0,"White","Rural","Protestant","Southeast","No","Less Than HS",0
+1758,3,56,23,12,"Lower class",2,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+1760,3,51,20,12,"Working class",1,"White","Rural","Protestant","Southeast","No","HS Diploma",0
+1765,2,46,19,12,"Working class",0,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+1766,2,26,NA,14,"Working class",0,"Black","Suburb","Catholic","Southeast","Yes","Some College",NA
+1766,2,59,26,16,"Middle class",1,"White","Rural","Protestant","Southeast","No","College Degree",0
+1767,3,36,31,14,"Working class",1,"White","Rural","Protestant","Southeast","No","Some College",1
+1769,0,21,NA,15,"Working class",0,"White","Smaller city","None","Southeast","No","Some College",NA
+1769,4,40,NA,11,"Working class",0,"Black","Suburb","Catholic","Southeast","Yes","Less Than HS",NA
+1770,2,24,20,12,"Middle class",0,"White","Smaller city","Other","Southeast","Yes","HS Diploma",0
+1771,0,27,NA,15,"Working class",2,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1772,0,34,NA,18,"Middle class",6,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1773,0,43,NA,14,"Middle class",1,"Black","Smaller city","Protestant","Southeast","No","Some College",NA
+1775,0,30,NA,16,"Working class",4,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1777,3,50,19,9,"Lower class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1781,1,57,27,16,"Upper class",6,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1783,2,35,21,13,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+1784,1,21,19,10,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+1784,3,49,NA,10,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1787,1,84,NA,11,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1788,3,79,21,12,"Middle class",1,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+1790,2,68,NA,17,"Middle class",2,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1790,2,63,27,13,"Middle class",4,"White","Smaller city","Catholic","Southeast","No","Some College",0
+1793,2,32,27,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+1795,1,30,25,15,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Some College",0
+1796,0,23,NA,17,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1796,1,58,NA,12,"Working class",2,"White","Smaller city","Catholic","Southeast","No","HS Diploma",NA
+1798,0,30,NA,16,"Middle class",4,"Black","Smaller city","Protestant","Southeast","No","College Degree",NA
+1799,4,42,17,12,"Middle class",0,"Black","Smaller city","None","Southeast","Yes","HS Diploma",0
+1800,3,43,NA,14,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+1800,2,47,18,12,"Lower class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+1801,1,56,31,13,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",1
+1804,3,52,27,12,"Middle class",1,"Black","Smaller city","Protestant","Southeast","No","HS Diploma",0
+1807,1,53,22,14,"Middle class",1,"White","Smaller city","Protestant","West","Yes","Some College",0
+1808,2,66,20,15,"Working class",1,"White","Smaller city","None","West","Yes","Some College",0
+1811,0,62,NA,17,"Upper class",6,"White","Smaller city","Catholic","Southeast","Yes","Grad/Prof Degree",NA
+1811,0,48,NA,12,"Working class",0,"White","Smaller city","None","West","Yes","HS Diploma",NA
+1812,4,55,19,12,"Working class",0,"White","Smaller city",NA,"West","Yes","HS Diploma",0
+1813,2,72,19,12,"Working class",1,"White","Smaller city","Catholic","West","Yes","HS Diploma",0
+1814,0,21,NA,15,"Middle class",1,"White","Smaller city","None","West","No","Some College",NA
+1817,3,57,19,12,"Working class",2,"White","Smaller city","Protestant","West","Yes","HS Diploma",0
+1818,0,35,NA,14,"Upper class",1,"White","Suburb","None","Southeast","Yes","Some College",NA
+1820,1,24,24,15,"Middle class",1,"White","Smaller city","Protestant","West","Yes","Some College",0
+1823,2,64,28,18,"Middle class",0,"White","Smaller city","Catholic","West","No","Grad/Prof Degree",0
+1824,2,42,19,12,"Middle class",1,"White","Smaller city","Protestant","West","Yes","HS Diploma",0
+1825,1,19,NA,11,"Lower class",0,"White","Smaller city","None","Southeast","Yes","Less Than HS",NA
+1826,4,36,27,14,"Working class",4,"White","Smaller city","Protestant","West","Yes","Some College",0
+1827,3,61,25,12,"Working class",1,"White","Smaller city","Protestant","West","No","HS Diploma",0
+1831,2,82,NA,12,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1832,0,29,NA,20,"Middle class",2,"White","Smaller city","Other","West","No","Grad/Prof Degree",NA
+1833,0,20,NA,13,"Working class",3,"White","Smaller city","Other","West","No","Some College",NA
+1834,0,30,NA,16,"Working class",2,"White","Smaller city","Protestant","West","No","College Degree",NA
+1837,1,63,17,13,"Upper class",2,"White","Smaller city","Protestant","West","Yes","Some College",0
+1838,1,38,32,12,"Middle class",1,"White","Smaller city","Other","West","No","HS Diploma",1
+1839,1,70,26,14,"Working class",0,"White","Smaller city","Protestant","West","No","Some College",0
+1840,2,75,30,16,"Middle class",0,"White","Smaller city","Protestant","West","No","College Degree",1
+1842,1,52,NA,16,"Upper class",5,"White","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+1843,3,47,24,14,"Working class",1,"White","Smaller city","Protestant","West","No","Some College",0
+1844,2,44,21,12,"Middle class",1,"White","Smaller city","Protestant","West","Yes","HS Diploma",0
+1846,5,58,20,13,"Middle class",2,"White","Smaller city","Protestant","West","Yes","Some College",0
+1847,0,32,NA,14,"Working class",2,"White","Smaller city","None","West","Yes","Some College",NA
+1848,0,34,NA,15,"Middle class",2,"White","Suburb","Catholic","Southeast","No","Some College",NA
+1848,2,48,39,20,"Middle class",3,"White","Smaller city","None","West","No","Grad/Prof Degree",1
+1849,2,26,21,12,"Working class",0,"White","Smaller city","Catholic","West","Yes","HS Diploma",0
+1850,1,23,18,11,"Middle class",0,"Hispanic","Smaller city","Protestant","West","Yes","Less Than HS",0
+1851,1,36,25,14,"Working class",7,"White","Smaller city","Catholic","West","No","Some College",0
+1852,0,47,NA,10,"Working class",1,"White","Smaller city","Protestant","West","No","Less Than HS",NA
+1855,0,49,NA,13,"Middle class",3,"White","Smaller city","Protestant","West","No","Some College",NA
+1856,0,23,NA,12,"Working class",0,"White","Smaller city","Other","West","No","HS Diploma",NA
+1857,1,75,23,15,"Middle class",2,"White","Smaller city","Protestant","West","Yes","Some College",0
+1859,0,28,NA,18,"Middle class",5,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1859,3,71,19,12,"Middle class",2,"White","Smaller city","Protestant","West","Yes","HS Diploma",0
+1860,0,31,NA,13,"Middle class",1,"Hispanic","Smaller city","Other","West","No","Some College",NA
+1864,0,48,NA,8,"Middle class",0,"White","Smaller city","Protestant","West","No","Less Than HS",NA
+1865,2,39,NA,8,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1865,1,40,31,16,"Middle class",4,"White","Smaller city","Protestant","West","Yes","College Degree",1
+1869,0,31,NA,15,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+1869,0,28,NA,16,"Middle class",3,"White","Smaller city","Protestant","West","No","College Degree",NA
+1871,2,51,22,14,"Middle class",2,"White","Suburb","Protestant","West","Yes","Some College",0
+1874,0,45,NA,14,"Middle class",0,"White","Suburb","Catholic","West","No","Some College",NA
+1875,2,30,28,13,"Working class",1,"White","Suburb","Other","West","No","Some College",0
+1877,3,71,22,15,"Middle class",5,"White","Suburb","Protestant","West","Yes","Some College",0
+1878,1,44,30,20,"Middle class",4,"Other","Suburb","None","West","No","Grad/Prof Degree",1
+1880,0,19,NA,9,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1881,2,47,26,19,"Middle class",7,"White","Suburb","None","West","Yes","Grad/Prof Degree",0
+1882,3,86,24,12,"Middle class",0,"White","Suburb","Protestant","West","Yes","HS Diploma",0
+1883,0,25,NA,16,"Working class",1,"Other","Suburb","None","West","No","College Degree",NA
+1884,4,82,25,12,"Middle class",1,"White","Suburb","Catholic","West","No","HS Diploma",0
+1885,2,58,NA,9,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1886,2,49,39,18,"Middle class",1,"White","Suburb","Other","West","No","Grad/Prof Degree",1
+1889,1,34,NA,15,"Working class",5,"Black","Smaller city","Protestant","Southeast","No","Some College",NA
+1890,0,46,NA,16,"Middle class",4,"White","Smaller city","Protestant","West","Yes","College Degree",NA
+1892,0,24,NA,18,"Middle class",3,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",NA
+1894,2,58,18,20,"Middle class",7,"White","Smaller city","Protestant","West","Yes","Grad/Prof Degree",0
+1894,2,55,NA,15,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1897,3,64,19,14,"Working class",1,"White","Smaller city","Protestant","West","No","Some College",0
+1899,4,36,NA,13,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+1902,2,48,30,18,"Middle class",5,"Hispanic","Smaller city","Protestant","West","Yes","Grad/Prof Degree",1
+1903,6,61,25,14,"Middle class",3,"White","Smaller city","Catholic","West","No","Some College",0
+1905,0,49,NA,20,"Middle class",2,"White","Smaller city","None","West","Yes","Grad/Prof Degree",NA
+1906,4,89,24,17,"Middle class",4,"White","Smaller city","Protestant","West","Yes","Grad/Prof Degree",0
+1906,2,40,NA,20,"Middle class",2,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+1908,0,24,NA,16,"Middle class",1,"White","Smaller city","None","West","No","College Degree",NA
+1910,0,29,NA,16,"Middle class",0,"White","Smaller city","None","West","Yes","College Degree",NA
+1911,2,39,23,12,"Working class",1,"White","Smaller city","Protestant","West","No","HS Diploma",0
+1912,1,28,23,15,"Working class",5,"White","Smaller city","Catholic","West","Yes","Some College",0
+1919,1,45,NA,15,"Middle class",5,"White","Smaller city","None","Southeast","No","Some College",NA
+1921,2,67,18,13,"Working class",1,"White","Smaller city","Protestant","West","Yes","Some College",0
+1923,1,70,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1925,1,39,23,12,"Working class",5,"Hispanic","Smaller city","Other","West","Yes","HS Diploma",0
+1926,0,43,NA,18,"Lower class",1,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",NA
+1928,0,34,NA,12,"Working class",0,"White","Smaller city","None","West","No","HS Diploma",NA
+1929,0,20,NA,12,"Working class",1,"Hispanic","Smaller city","Other","West","No","HS Diploma",NA
+1930,2,41,27,16,"Middle class",4,"White","Smaller city","Other","West","No","College Degree",0
+1932,0,34,NA,20,"Working class",3,"White","Smaller city","None","West","No","Grad/Prof Degree",NA
+1933,2,76,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1934,2,46,31,13,"Middle class",1,"Black","Smaller city","Protestant","West","Yes","Some College",1
+1936,2,26,24,13,"Middle class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+1937,2,75,20,18,"Middle class",2,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",0
+1940,3,31,19,12,"Middle class",1,"Hispanic","Smaller city","Protestant","West","No","HS Diploma",0
+1942,2,59,NA,12,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1945,1,21,17,12,"Middle class",1,"Hispanic","Smaller city","Catholic","West","Yes","HS Diploma",0
+1946,3,36,NA,10,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1949,4,66,21,13,"Middle class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+1949,2,48,NA,8,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+1954,0,23,NA,15,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1955,4,85,21,10,"Middle class",1,"White","Smaller city","Catholic","West","No","Less Than HS",0
+1956,2,51,25,14,"Middle class",3,"White","Smaller city","Protestant","West","No","Some College",0
+1957,0,21,NA,13,"Lower class",0,"Hispanic","Smaller city","Protestant","West","Yes","Some College",NA
+1958,1,76,20,14,"Middle class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+1960,8,70,16,11,"Working class",0,"White","Smaller city","Protestant","West","Yes","Less Than HS",0
+1961,0,36,NA,12,"Middle class",2,"White","Smaller city","Protestant","West","No","HS Diploma",NA
+1965,2,83,28,13,"Working class",3,"White","Smaller city","Protestant","West","Yes","Some College",0
+1965,4,80,NA,8,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+1967,1,34,26,13,"Working class",2,"Other","Smaller city","Catholic","West","Yes","Some College",0
+1968,8,63,NA,13,"Middle class",5,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1969,1,43,34,16,"Working class",2,"Other","Smaller city","Protestant","West","No","College Degree",1
+1970,1,24,16,11,"Lower class",2,"Other","Smaller city","Protestant","West","Yes","Less Than HS",0
+1972,0,40,NA,14,"Working class",1,"Other","Smaller city","Protestant","West","Yes","Some College",NA
+1973,2,33,27,13,"Working class",0,"Hispanic","Smaller city","Catholic","West","Yes","Some College",0
+1973,2,37,NA,13,"Working class",0,"Other","Smaller city","Catholic","Southeast","Yes","Some College",NA
+1975,4,76,19,10,"Working class",0,"Other","Smaller city","Eastern","West","Yes","Less Than HS",0
+1976,4,75,22,12,"Middle class",3,"Other","Smaller city","Catholic","West","Yes","HS Diploma",0
+1977,2,39,NA,13,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+1978,0,45,NA,18,"Middle class",7,"White","Smaller city","None","West","Yes","Grad/Prof Degree",NA
+1979,2,51,28,16,"Middle class",0,"Other","Smaller city","Eastern","West","Yes","College Degree",0
+1981,0,42,NA,20,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+1982,6,40,26,14,"Working class",3,"White","Smaller city","Catholic","Northeast","Yes","Some College",0
+1986,3,54,27,12,"Middle class",0,"White","Smaller city","Other","Northeast","No","HS Diploma",0
+1988,6,80,32,7,"Middle class",0,"White","Smaller city","Catholic","Northeast","No","Less Than HS",1
+1989,2,40,34,12,"Middle class",1,"White","Smaller city","Eastern","Northeast","Yes","HS Diploma",1
+1990,3,60,25,12,"Working class",3,"White","Smaller city","Protestant","Northeast","No","HS Diploma",0
+1991,3,83,27,16,"Middle class",1,"White","Smaller city","Protestant","Northeast","Yes","College Degree",0
+1996,1,26,NA,12,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+1997,2,44,36,16,"Middle class",2,"White","Smaller city","Catholic","Northeast","No","College Degree",1
+1998,3,43,24,13,"Middle class",0,"White","Smaller city","Catholic","Northeast","No","Some College",0
+1999,0,69,NA,18,"Middle class",1,"White","Smaller city","Catholic","Northeast","No","Grad/Prof Degree",NA
+2001,3,50,NA,16,"Middle class",6,"White","Smaller city","Protestant","Southeast","No","College Degree",NA
+2001,3,26,19,12,"Working class",0,"White","Rural","None","Northeast","Yes","HS Diploma",0
+2004,0,34,NA,18,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",NA
+2004,0,23,NA,11,"Working class",0,"White","Rural","None","Northeast","No","Less Than HS",NA
+2008,2,26,21,12,"Lower class",0,"White","Rural","Protestant","Northeast","No","HS Diploma",0
+2008,0,40,NA,14,"Working class",0,"White","Smaller city","None","Southeast","No","Some College",NA
+2009,2,56,NA,12,"Working class",5,"Black","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2012,2,42,26,17,"Working class",1,"White","Rural","Catholic","Northeast","Yes","Grad/Prof Degree",0
+2015,0,89,NA,12,"Middle class",1,"White","Rural","Protestant","Northeast","Yes","HS Diploma",NA
+2019,2,29,NA,16,"Middle class",4,"White","Suburb","Catholic","Southeast","Yes","College Degree",NA
+2020,3,65,18,15,"Working class",5,"White","Rural","Protestant","Northeast","Yes","Some College",0
+2020,2,44,NA,12,"Working class",1,"White","Suburb","None","Southeast","No","HS Diploma",NA
+2021,1,47,26,19,"Middle class",2,"White","Rural","Eastern","Northeast","Yes","Grad/Prof Degree",0
+2023,1,39,NA,16,"Middle class",4,"White","Smaller city","Catholic","Southeast","Yes","College Degree",NA
+2024,0,66,NA,18,"Middle class",6,"White","Rural","Protestant","Northeast","Yes","Grad/Prof Degree",NA
+2025,4,58,27,20,"Middle class",7,"White","Smaller city","Protestant","Northeast","No","Grad/Prof Degree",0
+2028,3,63,18,12,"Middle class",2,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",0
+2028,1,85,NA,8,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2029,0,40,NA,12,"Working class",2,"White","Smaller city","Catholic","Northeast","No","HS Diploma",NA
+2031,0,46,NA,12,"Middle class",3,"White","Smaller city","Protestant","Northeast","No","HS Diploma",NA
+2032,2,54,19,12,"Middle class",2,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",0
+2033,2,47,32,16,"Middle class",3,"White","Smaller city","Catholic","Midwest","No","College Degree",1
+2036,3,32,20,13,"Working class",0,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+2036,1,27,NA,12,"Working class",1,"Other","Suburb","Catholic","Southeast","No","HS Diploma",NA
+2037,0,28,NA,18,"Middle class",2,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+2038,4,68,NA,12,"Middle class",0,"White","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+2042,0,50,NA,14,"Middle class",0,"White","Smaller city","Catholic","Midwest","No","Some College",NA
+2045,0,26,NA,16,"Middle class",1,"White","Smaller city","Protestant","Midwest","No","College Degree",NA
+2046,0,25,NA,15,"Working class",2,"Black","Smaller city","Protestant","Midwest","Yes","Some College",NA
+2046,0,28,NA,14,"Working class",0,"Black","Suburb","Protestant","Southeast","No","Some College",NA
+2047,0,26,NA,13,"Working class",1,"White","Smaller city","Protestant","Midwest","Yes","Some College",NA
+2050,0,23,NA,16,"Middle class",2,"White","Smaller city","Protestant","Midwest","Yes","College Degree",NA
+2051,2,75,22,12,"Working class",4,"White","Smaller city","Protestant","Midwest","No","HS Diploma",0
+2052,2,74,NA,15,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2052,0,33,NA,20,"Middle class",0,"White","Smaller city","None","Midwest","No","Grad/Prof Degree",NA
+2056,0,27,NA,14,"Middle class",1,"Black","Smaller city","Catholic","Midwest","Yes","Some College",NA
+2057,2,26,18,13,"Working class",0,"White","Smaller city","None","Midwest","Yes","Some College",0
+2058,0,26,NA,15,"Working class",0,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+2058,2,23,NA,11,"Working class",1,"White","Smaller city","Catholic","Southeast","No","Less Than HS",NA
+2061,3,47,24,14,"Middle class",5,"White","Smaller city","None","Midwest","No","Some College",0
+2063,2,48,19,10,"Middle class",1,"White","Smaller city","None","Midwest","No","Less Than HS",0
+2066,2,65,23,20,"Middle class",6,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",0
+2069,2,40,23,14,"Middle class",3,"White","Smaller city","Other","Midwest","Yes","Some College",0
+2072,2,54,25,12,"Middle class",0,"White","Smaller city","None","Midwest","No","HS Diploma",0
+2073,1,59,NA,12,"Middle class",0,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2080,2,68,47,15,"Working class",0,"White","Smaller city","Protestant","West","No","Some College",1
+2081,4,65,NA,12,"Middle class",3,"White","Smaller city","Protestant","West","No","HS Diploma",NA
+2083,4,52,18,6,"Working class",0,"Hispanic","Smaller city","None","West","No","Less Than HS",0
+2083,2,33,NA,12,"Working class",0,"White","Smaller city","None","West","No","HS Diploma",NA
+2084,0,42,NA,11,"Middle class",1,"White","Smaller city","Protestant","West","Yes","Less Than HS",NA
+2087,4,43,26,14,"Working class",5,"White","Smaller city","Catholic","West","No","Some College",0
+2088,1,28,NA,12,"Working class",0,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2088,3,55,22,12,"Middle class",1,"White","Smaller city","Protestant","West","Yes","HS Diploma",0
+2089,0,19,NA,14,"Working class",4,"White","Smaller city","None","West","No","Some College",NA
+2090,0,34,NA,14,"Working class",2,"Black","Smaller city","Protestant","West","No","Some College",NA
+2090,1,27,24,16,"Middle class",1,"White","Smaller city","Other","West","Yes","College Degree",0
+2095,3,45,24,14,"Working class",2,"White","Smaller city","Catholic","West","No","Some College",0
+2096,2,74,NA,11,"Middle class",4,"White","Smaller city","Jewish","West","No","Less Than HS",NA
+2096,1,41,31,14,"Middle class",4,"White","Smaller city","Other","West","Yes","Some College",1
+2100,2,59,NA,12,"Middle class",1,"White","Smaller city","Protestant","West","Yes","HS Diploma",NA
+2101,4,46,23,15,"Working class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+2102,3,49,25,12,"Working class",0,"White","Smaller city","None","West","No","HS Diploma",0
+2104,0,30,NA,13,"Working class",1,"White","Smaller city","Other","West","No","Some College",NA
+2104,2,32,27,16,"Working class",4,"White","Smaller city","Protestant","West","Yes","College Degree",0
+2105,3,46,30,12,"Middle class",4,"White","Smaller city","Protestant","West","No","HS Diploma",1
+2106,0,35,NA,16,"Middle class",3,"White","Smaller city","Other","West","Yes","College Degree",NA
+2111,1,56,NA,8,"Working class",1,"White","Suburb","Protestant","West","No","Less Than HS",NA
+2111,2,63,20,12,"Middle class",5,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2114,3,29,18,13,"Working class",3,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2115,2,33,20,12,"Working class",2,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2116,3,89,19,8,"Middle class",1,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2118,7,70,25,12,"Middle class",1,"White","Rural","Catholic","Midwest","No","HS Diploma",0
+2119,0,23,NA,16,"Working class",7,"White","Suburb","Catholic","West","No","College Degree",NA
+2119,3,60,21,12,"Working class",0,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2120,4,60,25,12,"Working class",1,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2121,3,65,NA,16,"Middle class",2,"White","Suburb","None","West","Yes","College Degree",NA
+2122,0,85,NA,8,"Lower class",2,"White","Rural","Catholic","Midwest","No","Less Than HS",NA
+2124,2,63,33,12,"Working class",2,"White","Rural","Protestant","Midwest","No","HS Diploma",1
+2125,3,34,14,12,"Middle class",1,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2125,3,52,NA,12,"Working class",1,"White","Smaller city","Protestant","West","No","HS Diploma",NA
+2126,4,56,21,12,"Working class",2,"White","Rural","Catholic","Midwest","Yes","HS Diploma",0
+2130,0,53,NA,12,"Working class",0,"White","Rural","Protestant","Midwest","No","HS Diploma",NA
+2134,3,73,NA,19,"Upper class",7,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",NA
+2137,2,76,NA,10,"Middle class",2,"White","Smaller city","Protestant","West","No","Less Than HS",NA
+2138,0,45,NA,12,"Middle class",0,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2139,2,70,19,12,"Working class",0,"White","Rural","Protestant","Midwest","No","HS Diploma",0
+2141,2,59,24,13,"Middle class",3,"White","Rural","Catholic","Midwest","No","Some College",0
+2142,2,82,19,18,"Middle class",0,"White","Rural","None","Midwest","Yes","Grad/Prof Degree",0
+2143,0,60,NA,12,"Working class",6,"White","Smaller city","Catholic","West","No","HS Diploma",NA
+2147,4,61,19,10,"Middle class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2149,4,62,21,10,"Working class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2150,2,59,20,16,"Middle class",0,"White","Rural","Protestant","Midwest","Yes","College Degree",0
+2151,0,28,NA,13,"Working class",1,"White","Rural","Other","Midwest","Yes","Some College",NA
+2152,3,32,22,13,"Working class",0,"White","Rural","Protestant","Midwest","No","Some College",0
+2154,0,49,NA,12,"Middle class",0,"White","Rural","Other","Midwest","Yes","HS Diploma",NA
+2154,2,48,NA,19,"Middle class",5,"White","Smaller city","Protestant","West","Yes","Grad/Prof Degree",NA
+2155,1,27,NA,15,"Working class",6,"White","Smaller city","Catholic","West","No","Some College",NA
+2158,5,82,22,12,"Working class",0,"White","Rural","Protestant","Midwest","No","HS Diploma",0
+2159,1,22,17,11,"Working class",0,"White","Rural","None","Midwest","No","Less Than HS",0
+2161,0,41,NA,17,"Middle class",0,"White","Smaller city","None","West","No","Grad/Prof Degree",NA
+2161,3,50,20,14,"Working class",0,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2163,2,67,18,12,"Working class",2,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2168,0,36,NA,12,"Lower class",0,"White","Rural","Catholic","Midwest","Yes","HS Diploma",NA
+2171,2,59,18,8,"Lower class",2,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2171,0,33,NA,20,"Middle class",7,"White","Smaller city","Other","West","No","Grad/Prof Degree",NA
+2172,3,79,19,8,"Working class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2173,2,84,20,13,"Working class",2,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2174,3,55,20,15,"Working class",4,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2179,2,37,NA,12,"Working class",3,"White","Smaller city","Protestant","West","Yes","HS Diploma",NA
+2179,3,58,14,12,"Working class",0,"Other","Rural","Other","Midwest","Yes","HS Diploma",0
+2181,3,78,27,8,"Working class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2183,3,38,20,16,"Working class",5,"White","Rural","Protestant","Midwest","No","College Degree",0
+2186,1,59,23,13,"Middle class",0,"White","Rural","Protestant","Midwest","No","Some College",0
+2188,1,80,22,13,"Middle class",4,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2189,0,49,NA,16,"Upper class",1,"White","Rural","Catholic","Midwest","Yes","College Degree",NA
+2190,4,65,15,9,"Working class",3,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2193,0,24,NA,12,"Working class",0,"White","Rural","None","Midwest","No","HS Diploma",NA
+2194,3,55,NA,8,"Working class",1,"White","Smaller city","Protestant","West","Yes","Less Than HS",NA
+2194,2,31,16,12,"Working class",0,"White","Rural","None","Midwest","Yes","HS Diploma",0
+2195,1,52,38,12,"Middle class",4,"White","Rural","Protestant","Midwest","No","HS Diploma",1
+2196,3,60,NA,12,"Lower class",1,"White","Smaller city","Protestant","West","Yes","HS Diploma",NA
+2197,2,42,34,16,"Middle class",1,"White","Rural","Protestant","Midwest","No","College Degree",1
+2200,5,54,17,10,"Working class",1,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2202,1,50,27,17,"Working class",4,"White","Rural","Protestant","Midwest","Yes","Grad/Prof Degree",0
+2203,8,35,18,9,"Working class",0,"White","Rural","None","Midwest","Yes","Less Than HS",0
+2204,2,35,24,16,"Middle class",2,"White","Rural","Protestant","Midwest","No","College Degree",0
+2208,0,28,NA,12,"Working class",0,"White","Rural","None","Midwest","No","HS Diploma",NA
+2209,4,70,27,16,"Working class",0,"White","Rural","Protestant","Midwest","No","College Degree",0
+2210,5,70,16,9,"Working class",0,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2210,4,43,NA,9,"Working class",1,"White","Smaller city","Protestant","West","Yes","Less Than HS",NA
+2211,2,39,26,16,"Middle class",7,"White","Rural","Protestant","Midwest","Yes","College Degree",0
+2212,1,83,35,13,"Middle class",4,"White","Rural","Protestant","Midwest","No","Some College",1
+2213,2,54,19,11,"Working class",1,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2213,3,72,NA,12,"Middle class",5,"White","Suburb","Protestant","West","No","HS Diploma",NA
+2217,5,25,16,13,"Working class",1,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2218,1,39,NA,12,"Middle class",1,"White","Suburb","Protestant","West","Yes","HS Diploma",NA
+2220,4,54,NA,12,"Working class",3,"White","Suburb","Catholic","West","No","HS Diploma",NA
+2220,1,55,28,9,"Lower class",0,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2223,2,59,24,12,"Working class",2,"White","Rural","Protestant","Midwest","No","HS Diploma",0
+2224,3,54,22,12,"Working class",1,"White","Rural","None","Midwest","Yes","HS Diploma",0
+2226,3,74,21,12,"Working class",0,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2227,0,43,NA,6,"Lower class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",NA
+2228,2,62,18,12,"Working class",0,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2233,2,58,24,16,"Working class",2,"White","Rural","Protestant","Midwest","Yes","College Degree",0
+2235,0,32,NA,17,"Working class",2,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",NA
+2236,4,54,28,12,"Working class",6,"White","Rural","Protestant","Midwest","No","HS Diploma",0
+2236,2,42,NA,16,"Middle class",9,"White","Smaller city","Protestant","West","No","College Degree",NA
+2237,5,41,21,11,"Middle class",0,"White","Rural","Protestant","Midwest","Yes","Less Than HS",0
+2238,3,49,41,14,"Working class",3,"White","Rural","Protestant","Midwest","No","Some College",1
+2239,4,30,17,12,"Working class",0,"White","Rural","Other","Midwest","Yes","HS Diploma",0
+2240,2,60,25,12,"Middle class",2,"White","Rural","Protestant","Midwest","No","HS Diploma",0
+2241,2,26,23,8,"Working class",0,"White","Rural","Protestant","Midwest","No","Less Than HS",0
+2242,1,31,19,13,"Working class",4,"White","Rural","Protestant","Midwest","Yes","Some College",0
+2251,0,45,NA,11,"Working class",0,"White","Rural","Catholic","Midwest","No","Less Than HS",NA
+2252,4,75,18,20,"Working class",5,"White","Rural","Protestant","Midwest","Yes","Grad/Prof Degree",0
+2256,3,62,19,12,"Middle class",2,"White","Rural","Protestant","Midwest","Yes","HS Diploma",0
+2257,2,43,NA,16,"Lower class",3,"Other","Smaller city","Protestant","West","Yes","College Degree",NA
+2257,6,71,21,12,"Middle class",1,"White","Rural","Catholic","Midwest","No","HS Diploma",0
+2259,1,51,31,15,"Working class",3,"White","Rural","Other","Midwest","Yes","Some College",1
+2259,4,62,NA,16,"Middle class",1,"White","Smaller city","Catholic","West","Yes","College Degree",NA
+2260,3,52,24,15,"Middle class",4,"White","Rural","Catholic","Midwest","Yes","Some College",0
+2261,8,71,20,4,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2263,3,65,21,7,"Lower class",1,"White","Smaller city","None","Southeast","No","Less Than HS",0
+2265,1,52,22,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2267,1,61,32,9,"Lower class",0,"White","Smaller city","Eastern","Southeast","No","Less Than HS",1
+2268,4,57,17,10,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2269,1,44,27,15,"Middle class",6,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2271,1,25,21,14,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2272,5,37,20,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2275,1,48,32,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",1
+2276,0,45,NA,12,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2277,1,35,NA,12,"Working class",0,"White","Smaller city","Other","West","Yes","HS Diploma",NA
+2277,2,47,20,18,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2278,0,32,NA,12,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2279,1,19,19,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2279,0,48,NA,18,"Middle class",0,"White","Smaller city","Protestant","West","Yes","Grad/Prof Degree",NA
+2283,0,28,NA,14,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+2284,4,81,NA,8,"Working class",1,"White","Smaller city","Catholic","Northeast","Yes","Less Than HS",NA
+2284,2,67,33,14,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Some College",1
+2285,0,21,NA,12,"Lower class",0,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",NA
+2285,2,66,21,12,"Middle class",4,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2286,0,40,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2290,1,40,29,14,"Working class",6,"Black","Suburb","Protestant","Southeast","Yes","Some College",0
+2291,1,28,27,15,"Working class",0,"White","Suburb","None","Southeast","Yes","Some College",0
+2292,1,34,31,14,"Working class",0,"White","Suburb","Protestant","Southeast","Yes","Some College",1
+2294,2,53,NA,10,"Middle class",1,"White","Smaller city","Catholic","Northeast","No","Less Than HS",NA
+2295,0,37,NA,20,"Middle class",4,"White","Rural","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+2296,2,46,25,13,"Middle class",1,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2298,1,55,23,10,"Working class",0,"White","Rural","Protestant","Southeast","No","Less Than HS",0
+2299,4,57,NA,14,"Middle class",3,"White","Smaller city","Protestant","Northeast","Yes","Some College",NA
+2300,2,34,23,12,"Working class",1,"White","Rural","Protestant","Southeast","No","HS Diploma",0
+2302,2,33,28,18,"Middle class",4,"White","Rural","Protestant","Southeast","No","Grad/Prof Degree",0
+2303,2,35,30,17,"Middle class",5,"White","Rural","Protestant","Southeast","Yes","Grad/Prof Degree",1
+2306,2,60,31,19,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",1
+2310,2,53,26,16,"Working class",5,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+2310,3,39,NA,12,"Working class",3,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",NA
+2312,1,50,34,12,"Working class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",1
+2313,2,45,16,9,"Lower class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2316,0,51,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2316,2,44,NA,13,"Working class",2,"White","Smaller city","Catholic","Northeast","No","Some College",NA
+2320,0,25,NA,13,"Middle class",2,"Hispanic","Smaller city","Protestant","Southeast","No","Some College",NA
+2323,1,73,23,8,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2324,4,40,NA,12,"Working class",4,"White","Smaller city","Protestant","Northeast","No","HS Diploma",NA
+2326,2,28,22,16,"Working class",0,"White","Suburb","Protestant","Southeast","No","College Degree",0
+2327,2,41,31,12,"Working class",0,"White","Suburb","Protestant","Southeast","No","HS Diploma",1
+2329,0,27,NA,12,"Working class",0,"White","Smaller city","Protestant","Northeast","Yes","HS Diploma",NA
+2331,2,61,26,14,"Working class",0,"White","Suburb","Protestant","Southeast","No","Some College",0
+2332,4,57,22,12,"Lower class",0,"White","Suburb","Other","Southeast","Yes","HS Diploma",0
+2334,3,47,27,14,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2335,4,44,28,14,"Working class",0,"White","Smaller city","Catholic","Southeast","No","Some College",0
+2338,2,65,NA,8,"Middle class",1,"White","Smaller city","Protestant","Northeast","No","Less Than HS",NA
+2338,2,21,19,14,"Working class",1,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2339,2,51,26,16,"Upper class",1,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+2341,3,42,21,16,"Working class",3,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+2342,1,41,25,12,"Working class",3,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2343,1,48,25,12,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2343,3,69,NA,10,"Middle class",3,"White","Smaller city","Protestant","Northeast","No","Less Than HS",NA
+2344,2,69,25,20,"Middle class",7,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2346,3,60,21,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2347,0,76,NA,16,"Middle class",4,"White","Smaller city","Protestant","Northeast","No","College Degree",NA
+2348,2,56,27,17,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2349,0,46,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2352,2,33,21,11,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2353,5,63,NA,12,"Middle class",3,"White","Smaller city","Catholic","Northeast","Yes","HS Diploma",NA
+2355,2,56,NA,12,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+2355,3,65,20,8,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2359,4,54,18,8,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2361,3,38,23,7,"Working class",0,"Hispanic","Rural","Catholic","Southeast","No","Less Than HS",0
+2363,0,31,NA,18,"Middle class",7,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+2364,1,45,30,12,"Working class",0,"White","Rural","Protestant","Southeast","Yes","HS Diploma",1
+2365,3,71,19,12,"Working class",1,"White","Rural","Catholic","Southeast","Yes","HS Diploma",0
+2368,2,36,NA,12,"Middle class",1,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+2369,0,27,NA,14,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+2369,1,42,38,16,"Middle class",5,"White","Rural","Protestant","Southeast","Yes","College Degree",1
+2371,2,30,23,16,"Middle class",4,"Hispanic","Rural","Catholic","Southeast","Yes","College Degree",0
+2373,4,63,NA,12,"Middle class",0,"White","Smaller city","Protestant","Midwest","Yes","HS Diploma",NA
+2374,5,59,18,12,"Middle class",0,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2375,2,43,28,16,"Working class",0,"White","Rural","Protestant","Southeast","No","College Degree",0
+2376,2,40,30,15,"Middle class",3,"White","Rural","Protestant","Southeast","No","Some College",1
+2377,0,37,NA,13,"Working class",0,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+2378,3,48,17,14,"Middle class",1,"Black","Rural","Protestant","Southeast","Yes","Some College",0
+2379,2,51,29,12,"Middle class",0,"White","Rural","Catholic","Southeast","Yes","HS Diploma",0
+2382,2,25,19,13,"Working class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2384,4,57,NA,11,"Working class",2,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",NA
+2384,4,28,18,11,"Lower class",0,"White","Rural","Protestant","Southeast","Yes","Less Than HS",0
+2385,6,60,24,12,"Working class",0,"White","Rural","Protestant","Southeast","No","HS Diploma",0
+2385,0,59,NA,12,"Working class",1,"White","Smaller city","Jewish","Midwest","No","HS Diploma",NA
+2386,3,74,20,12,"Working class",0,"White","Rural","Protestant","Southeast","No","HS Diploma",0
+2392,3,86,26,12,"Working class",0,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2393,0,25,NA,12,"Working class",0,"White","Rural","Protestant","Southeast","No","HS Diploma",NA
+2396,4,71,NA,12,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+2397,3,56,21,13,"Working class",1,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2398,2,43,22,16,"Working class",0,"White","Rural","Protestant","Southeast","Yes","College Degree",0
+2400,0,29,NA,18,"Middle class",2,"White","Smaller city","None","Midwest","Yes","Grad/Prof Degree",NA
+2400,3,31,20,13,"Working class",0,"Black","Rural","Protestant","Southeast","Yes","Some College",0
+2402,0,60,NA,12,"Working class",1,"Black","Rural","None","Southeast","No","HS Diploma",NA
+2403,0,24,NA,13,"Working class",0,"Black","Rural","Protestant","Southeast","No","Some College",NA
+2404,2,42,NA,16,"Working class",1,"White","Smaller city","None","Midwest","Yes","College Degree",NA
+2407,3,40,23,16,"Middle class",0,"White","Rural","Protestant","Southeast","No","College Degree",0
+2409,2,69,26,16,"Middle class",7,"White","Rural","Protestant","Southeast","No","College Degree",0
+2410,4,83,29,9,"Working class",2,"White","Rural","Protestant","Southeast","No","Less Than HS",0
+2412,2,33,28,13,"Middle class",0,"White","Rural","Protestant","Southeast","No","Some College",0
+2413,1,41,18,8,"Working class",0,"White","Rural","Protestant","Southeast","Yes","Less Than HS",0
+2414,2,34,NA,12,"Working class",0,"White","Smaller city","None","Midwest","Yes","HS Diploma",NA
+2415,4,42,22,13,"Middle class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2417,3,32,19,12,"Working class",2,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2418,1,22,19,14,"Middle class",2,"Black","Rural","Protestant","Southeast","Yes","Some College",0
+2420,0,25,NA,16,"Working class",2,"White","Smaller city","Catholic","Midwest","No","College Degree",NA
+2423,2,67,21,14,"Middle class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2424,1,54,27,12,"Working class",0,"White","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2427,2,60,25,15,"Working class",1,"White","Rural","Protestant","Southeast","No","Some College",0
+2429,1,42,NA,13,"Middle class",5,"White","Rural","Protestant","Midwest","Yes","Some College",NA
+2431,1,49,12,12,"Lower class",1,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2432,1,21,18,15,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2433,0,56,NA,6,"Lower class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2434,0,24,NA,12,"Working class",0,"White","Rural","Catholic","Midwest","No","HS Diploma",NA
+2435,3,46,21,15,"Middle class",1,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+2436,2,34,NA,15,"Working class",1,"White","Rural","None","Midwest","No","Some College",NA
+2437,2,42,29,13,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","Some College",0
+2439,1,35,23,14,"Lower class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+2441,5,56,20,6,"Working class",1,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+2442,3,28,20,12,"Working class",13,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2443,2,28,20,20,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2444,0,35,NA,14,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2445,2,24,NA,13,"Working class",1,"White","Rural","Protestant","Midwest","Yes","Some College",NA
+2445,1,40,22,12,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2449,2,46,20,10,"Working class",0,"Black","Smaller city","None","Southeast","No","Less Than HS",0
+2449,3,30,NA,14,"Working class",1,"White","Rural","Catholic","Midwest","Yes","Some College",NA
+2451,2,47,19,9,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2452,3,48,17,13,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","Some College",0
+2454,3,65,25,18,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Grad/Prof Degree",0
+2455,3,56,27,16,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+2455,2,73,NA,9,"Working class",3,"White","Smaller city","Protestant","Midwest","No","Less Than HS",NA
+2457,1,35,25,14,"Working class",0,"Black","Smaller city","Protestant","Southeast","No","Some College",0
+2458,4,33,15,11,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2460,2,23,16,10,"Lower class",0,"Black","Smaller city","None","Southeast","Yes","Less Than HS",0
+2461,3,49,16,19,"Middle class",0,"Black","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2462,4,54,26,17,"Middle class",0,"White","Smaller city","Catholic","Southeast","No","Grad/Prof Degree",0
+2463,1,50,30,20,"Middle class",0,"White","Smaller city","Catholic","Southeast","Yes","Grad/Prof Degree",1
+2466,0,33,NA,14,"Middle class",0,"White","Smaller city","Catholic","Southeast","Yes","Some College",NA
+2466,2,44,NA,10,"Middle class",2,"White","Smaller city","Protestant","Midwest","No","Less Than HS",NA
+2467,3,64,28,14,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2470,2,26,21,14,"Working class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2472,2,62,NA,12,"Middle class",1,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2475,2,48,NA,12,"Working class",2,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2477,2,64,16,10,"Working class",1,"Black","Rural","Protestant","Southeast","Yes","Less Than HS",0
+2478,3,63,NA,12,"Middle class",1,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2478,1,50,46,12,"Middle class",1,"Black","Rural","Protestant","Southeast","No","HS Diploma",1
+2479,3,37,18,11,"Working class",1,"Black","Rural","None","Southeast","No","Less Than HS",0
+2481,0,52,NA,12,"Working class",3,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",NA
+2483,3,24,20,12,"Working class",0,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2486,0,39,NA,12,"Lower class",1,"White","Rural","Catholic","Southeast","Yes","HS Diploma",NA
+2487,3,60,21,13,"Middle class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2487,4,68,NA,12,"Middle class",4,"White","Rural","Catholic","Midwest","No","HS Diploma",NA
+2490,3,32,NA,9,"Working class",0,"White","Rural","Protestant","Midwest","Yes","Less Than HS",NA
+2490,2,47,21,15,"Middle class",0,"White","Rural","Protestant","Southeast","Yes","Some College",0
+2491,1,71,18,9,"Working class",0,"White","Rural","Protestant","Southeast","Yes","Less Than HS",0
+2493,2,88,21,9,"Working class",0,"White","Rural","Protestant","Southeast","No","Less Than HS",0
+2494,1,25,NA,12,"Working class",0,"White","Smaller city","Catholic","Midwest","No","HS Diploma",NA
+2497,1,37,28,14,"Working class",1,"White","Rural","None","Southeast","No","Some College",0
+2498,5,61,21,12,"Lower class",0,"Black","Rural","Other","Southeast","Yes","HS Diploma",0
+2499,2,69,21,12,"Working class",3,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",0
+2500,1,30,NA,18,"Middle class",1,"White","Smaller city","Protestant","Midwest","Yes","Grad/Prof Degree",NA
+2500,1,65,33,12,"Middle class",5,"Black","Rural","Protestant","Southeast","No","HS Diploma",1
+2503,0,21,NA,11,"Working class",2,"White","Smaller city","None","Southeast","No","Less Than HS",NA
+2504,1,22,NA,12,"Lower class",0,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",NA
+2505,3,47,21,12,"Working class",1,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+2506,0,58,NA,6,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2509,8,48,16,19,"Lower class",0,"White","Smaller city","Catholic","Southeast","No","Grad/Prof Degree",0
+2510,2,84,27,13,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2511,3,55,19,14,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2512,2,46,19,16,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+2513,3,46,NA,19,"Middle class",2,"White","Smaller city","Catholic","Midwest","No","Grad/Prof Degree",NA
+2514,2,43,NA,10,"Working class",3,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",NA
+2515,2,43,21,9,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2517,0,25,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2520,4,39,19,13,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2522,3,38,NA,12,"Working class",0,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+2522,1,25,21,13,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2524,4,31,21,14,"Working class",3,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2527,2,39,NA,12,"Middle class",4,"White","Smaller city","Protestant","Midwest","No","HS Diploma",NA
+2528,2,44,29,15,"Middle class",4,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2529,0,41,NA,12,"Working class",2,"White","Smaller city","Catholic","Southeast","No","HS Diploma",NA
+2530,1,39,NA,18,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Grad/Prof Degree",NA
+2531,1,33,24,12,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2535,3,39,22,16,"Working class",0,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+2536,0,75,NA,6,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+2537,2,27,17,12,"Working class",2,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2538,2,61,27,12,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2539,0,37,NA,10,"Lower class",0,"White","Smaller city","None","Southeast","No","Less Than HS",NA
+2541,0,63,NA,14,"Middle class",3,"White","Smaller city","Protestant","Midwest","No","Some College",NA
+2543,3,53,21,11,"Lower class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",0
+2544,0,19,NA,11,"Middle class",6,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2547,2,50,NA,12,"Working class",0,"White","Rural","Catholic","Midwest","Yes","HS Diploma",NA
+2547,2,51,22,12,"Middle class",2,"White","Smaller city","None","Southeast","No","HS Diploma",0
+2548,2,46,19,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2549,1,56,28,14,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2551,3,40,20,12,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2553,1,35,19,12,"Working class",2,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2553,2,36,NA,12,"Working class",1,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2555,2,47,23,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2555,0,67,NA,12,"Lower class",0,"White","Rural","Protestant","Midwest","Yes","HS Diploma",NA
+2556,4,63,18,14,"Middle class",2,"White","Smaller city",NA,"Southeast","Yes","Some College",0
+2557,0,25,NA,14,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2558,2,75,18,12,"Middle class",5,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2559,0,57,NA,9,"Lower class",2,"White","Rural","Protestant","Midwest","No","Less Than HS",NA
+2559,3,49,24,16,"Middle class",3,"White","Smaller city","Catholic","Southeast","Yes","College Degree",0
+2563,1,48,NA,12,"Working class",0,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",NA
+2563,2,73,31,10,"Middle class",0,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",1
+2564,2,57,20,12,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2565,2,72,21,11,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2566,3,58,15,8,"Middle class",0,"White","Smaller city","Other","Southeast","Yes","Less Than HS",0
+2568,0,26,NA,12,"Working class",0,"Hispanic","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2572,0,76,NA,18,"Working class",7,"Black","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+2574,2,62,20,18,"Middle class",2,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2574,2,48,NA,14,"Working class",0,"White","Rural","Protestant","Southeast","Yes","Some College",NA
+2576,2,53,27,18,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",0
+2578,0,28,NA,16,"Working class",1,"Hispanic","Smaller city","Catholic","Southeast","Yes","College Degree",NA
+2579,6,69,19,8,"Lower class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",0
+2581,1,74,39,8,"Working class",1,"White","Smaller city","Other","Southeast","No","Less Than HS",1
+2582,2,54,23,11,"Working class",0,"White","Smaller city","Protestant","Southeast","No","Less Than HS",0
+2583,0,67,NA,7,"Lower class",0,"White","Smaller city","Catholic","Southeast","No","Less Than HS",NA
+2585,2,52,19,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","No","HS Diploma",0
+2585,3,63,NA,12,"Middle class",1,"White","Rural","Protestant","Southeast","Yes","HS Diploma",NA
+2588,1,52,30,15,"Middle class",3,"White","Smaller city","Protestant","Southeast","No","Some College",1
+2589,5,72,25,14,"Middle class",4,"White","Smaller city","Catholic","Southeast","No","Some College",0
+2590,2,72,NA,10,"Middle class",1,"White","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2593,0,19,NA,11,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+2593,3,24,NA,9,"Working class",1,"White","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2594,2,79,33,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",1
+2596,1,29,NA,14,"Middle class",1,"White","Rural","Catholic","Southeast","Yes","Some College",NA
+2598,0,37,NA,14,"Working class",2,"White","Smaller city","Catholic","Southeast","No","Some College",NA
+2600,3,34,19,13,"Working class",0,"White","Smaller city","None","Southeast","Yes","Some College",0
+2605,2,39,18,14,"Working class",0,"White","Smaller city","None","Southeast","No","Some College",0
+2606,0,51,NA,10,"Middle class",2,"Other","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2607,0,21,NA,9,"Lower class",3,"White","Smaller city","Other","Southeast","Yes","Less Than HS",NA
+2608,2,35,20,15,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2609,0,28,NA,13,"Working class",1,"Hispanic","Smaller city","Protestant","Southeast","No","Some College",NA
+2610,3,49,21,14,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2611,2,49,27,14,"Middle class",6,"White","Smaller city","None","Southeast","No","Some College",0
+2613,2,42,23,14,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2614,0,20,NA,9,"Working class",0,"White","Rural","Protestant","Southeast","No","Less Than HS",NA
+2615,0,24,NA,13,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2616,2,40,27,13,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2621,3,49,21,10,"Working class",1,"White","Smaller city","Protestant","Southeast","No","Less Than HS",0
+2623,4,30,NA,13,"Working class",2,"White","Rural","Protestant","Southeast","Yes","Some College",NA
+2623,4,54,21,13,"Working class",1,"White","Smaller city","None","Southeast","No","Some College",0
+2624,3,40,18,12,"Lower class",1,"White","Smaller city","None","Southeast","Yes","HS Diploma",0
+2626,0,41,NA,12,"Lower class",2,"White","Rural","None","Southeast","No","HS Diploma",NA
+2627,1,67,26,12,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2634,1,48,30,14,"Working class",0,"Black","Smaller city","Protestant","West","No","Some College",1
+2635,1,34,20,12,"Working class",0,"Hispanic","Smaller city","Catholic","West","Yes","HS Diploma",0
+2636,0,65,NA,12,"Working class",3,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2637,6,56,21,16,"Lower class",1,"Black","Smaller city","Protestant","West","No","College Degree",0
+2639,5,63,NA,16,"Upper class",2,"White","Smaller city","Catholic","Southeast","Yes","College Degree",NA
+2640,4,36,15,13,"Working class",0,"White","Smaller city","Protestant","West","Yes","Some College",0
+2642,2,61,21,20,"Middle class",3,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",0
+2643,2,42,NA,19,"Upper class",4,"White","Smaller city","Catholic","Southeast","No","Grad/Prof Degree",NA
+2644,1,32,30,17,"Middle class",0,"White","Smaller city","Eastern","West","No","Grad/Prof Degree",1
+2645,1,25,21,14,"Working class",2,"White","Smaller city","Protestant","West","Yes","Some College",0
+2646,3,60,27,15,"Working class",0,"White","Smaller city","None","West","Yes","Some College",0
+2648,5,50,NA,12,"Middle class",2,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",NA
+2652,4,47,19,12,"Working class",4,"Hispanic","Smaller city","Protestant","West","No","HS Diploma",0
+2654,0,19,NA,12,"Working class",5,"Hispanic","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2655,3,61,20,18,"Working class",4,"White","Smaller city","Other","West","Yes","Grad/Prof Degree",0
+2655,0,50,NA,13,"Working class",4,"White","Rural","Protestant","Southeast","No","Some College",NA
+2656,0,42,NA,12,"Middle class",1,"Hispanic","Smaller city","Catholic","West","No","HS Diploma",NA
+2657,8,63,NA,7,"Upper class",1,"Black","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2659,1,62,20,12,"Middle class",3,"White","Smaller city","Catholic","West","No","HS Diploma",0
+2662,2,42,25,17,"Middle class",3,"Hispanic","Smaller city","Catholic","West","No","Grad/Prof Degree",0
+2664,8,71,NA,8,"Working class",1,"White","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2664,2,35,25,12,"Working class",1,"Hispanic","Smaller city","Catholic","West","No","HS Diploma",0
+2665,2,42,NA,12,"Middle class",3,"White","Rural","Protestant","Southeast","No","HS Diploma",NA
+2665,5,46,22,15,"Working class",5,"White","Rural","Protestant","West","No","Some College",0
+2666,5,51,23,12,"Working class",6,"White","Rural","Protestant","West","No","HS Diploma",0
+2667,3,39,29,16,"Working class",4,"White","Rural","Protestant","West","Yes","College Degree",0
+2667,2,35,NA,13,"Middle class",8,"White","Rural","Protestant","Southeast","Yes","Some College",NA
+2669,3,52,20,12,"Middle class",1,"White","Rural","Protestant","West","Yes","HS Diploma",0
+2673,1,64,NA,17,"Middle class",3,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+2675,5,34,23,19,"Middle class",4,"White","Rural","Protestant","West","No","Grad/Prof Degree",0
+2676,4,31,16,11,"Working class",2,"White","Rural","Protestant","West","Yes","Less Than HS",0
+2681,3,30,19,14,"Middle class",5,"White","Rural","Protestant","West","Yes","Some College",0
+2682,0,25,NA,15,"Working class",2,"White","Rural","Protestant","West","No","Some College",NA
+2683,4,41,19,15,"Working class",0,"White","Rural","None","West","No","Some College",0
+2684,4,52,25,13,"Working class",4,"White","Rural","None","West","No","Some College",0
+2685,2,49,32,16,"Middle class",6,"White","Rural","Protestant","West","No","College Degree",1
+2686,1,32,NA,12,"Working class",5,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2686,1,65,26,10,"Working class",4,"Other","Smaller city","Eastern","West","No","Less Than HS",0
+2689,2,49,NA,14,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2689,4,81,17,12,"Middle class",3,"White","Smaller city","Catholic","West","Yes","HS Diploma",0
+2691,2,26,22,12,"Working class",2,"Black","Smaller city","Catholic","West","Yes","HS Diploma",0
+2692,4,88,25,8,"Middle class",0,"White","Smaller city","Catholic","West","Yes","Less Than HS",0
+2693,0,70,NA,12,"Middle class",3,"White","Smaller city","Catholic","West","No","HS Diploma",NA
+2694,0,28,NA,15,"Working class",0,"White","Smaller city","None","Southeast","No","Some College",NA
+2695,1,50,35,17,"Working class",2,"White","Smaller city","Catholic","West","No","Grad/Prof Degree",1
+2696,0,32,NA,12,"Working class",1,"White","Smaller city","Other","West","Yes","HS Diploma",NA
+2698,2,35,21,12,"Working class",1,"White","Smaller city","None","West","Yes","HS Diploma",0
+2699,2,64,21,11,"Middle class",2,"White","Smaller city","None","West","No","Less Than HS",0
+2699,0,26,NA,13,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2702,0,50,NA,15,"Working class",0,"White","Smaller city","Other","West","Yes","Some College",NA
+2703,5,34,21,9,"Working class",1,"Hispanic","Smaller city","Protestant","West","Yes","Less Than HS",0
+2704,2,28,22,14,"Working class",3,"White","Smaller city","Protestant","West","Yes","Some College",0
+2704,2,44,NA,11,"Middle class",3,"Black","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2705,1,23,21,12,"Working class",1,"White","Smaller city","None","West","Yes","HS Diploma",0
+2706,3,65,19,11,"Working class",1,"Hispanic","Big city","Catholic","Northeast","Yes","Less Than HS",0
+2708,1,51,33,16,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","College Degree",1
+2709,2,50,25,13,"Working class",0,"Hispanic","Suburb","Catholic","Northeast","Yes","Some College",0
+2710,2,50,NA,13,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2712,4,34,20,16,"Middle class",0,"Hispanic","Suburb","None","West","Yes","College Degree",0
+2713,3,62,28,13,"Working class",0,"White","Suburb","Protestant","West","No","Some College",0
+2714,1,32,NA,11,"Working class",5,"Black","Smaller city","None","Southeast","No","Less Than HS",NA
+2714,2,68,24,15,"Middle class",1,"White","Suburb","Protestant","West","No","Some College",0
+2715,4,51,22,14,"Middle class",7,"White","Suburb","Protestant","West","Yes","Some College",0
+2715,1,57,NA,12,"Upper class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2716,1,27,26,12,"Working class",1,"Hispanic","Suburb","None","West","No","HS Diploma",0
+2717,2,40,34,19,"Middle class",7,"White","Big city","Protestant","West","No","Grad/Prof Degree",1
+2720,0,60,NA,16,"Middle class",0,"White","Big city","Jewish","West","No","College Degree",NA
+2722,2,55,23,14,"Working class",1,"White","Suburb","Catholic","Midwest","No","Some College",0
+2723,0,50,NA,14,"Middle class",0,"White","Suburb","Protestant","Midwest","No","Some College",NA
+2724,0,26,NA,14,"Working class",1,"White","Suburb","None","Midwest","No","Some College",NA
+2726,0,52,NA,17,"Working class",3,"White","Smaller city","Protestant","West","Yes","Grad/Prof Degree",NA
+2727,4,82,22,16,"Upper class",2,"White","Smaller city","Catholic","West","Yes","College Degree",0
+2728,2,49,NA,12,"Middle class",4,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2728,0,26,NA,19,"Middle class",1,"White","Suburb","None","West","Yes","Grad/Prof Degree",NA
+2730,0,61,NA,16,"Upper class",4,"White","Suburb","Catholic","Southeast","Yes","College Degree",NA
+2732,3,60,24,16,"Upper class",0,"White","Suburb","None","Midwest","No","College Degree",0
+2733,2,36,32,18,"Middle class",0,"White","Suburb","Protestant","Midwest","Yes","Grad/Prof Degree",1
+2734,2,46,27,16,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","College Degree",0
+2735,2,34,27,16,"Middle class",2,"White","Suburb","Protestant","Southeast","No","College Degree",0
+2736,0,41,NA,18,"Middle class",4,"White","Big city","Protestant","Southeast","No","Grad/Prof Degree",NA
+2737,4,85,26,16,"Middle class",0,"White","Big city","Jewish","Southeast","Yes","College Degree",0
+2737,3,69,NA,9,"Working class",4,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2738,1,22,21,13,"Middle class",4,"Black","Suburb","Protestant","Southeast","No","Some College",0
+2738,0,19,NA,12,"Working class",0,"White","Smaller city","Protestant","Southeast","No","HS Diploma",NA
+2739,1,40,24,12,"Working class",0,"Black","Suburb","Catholic","Southeast","No","HS Diploma",0
+2741,2,56,35,12,"Working class",0,"White","Big city","None","Southeast","No","HS Diploma",1
+2742,1,48,29,11,"Working class",0,"Hispanic","Suburb","Catholic","Southeast","Yes","Less Than HS",0
+2743,4,53,19,13,"Middle class",1,"White","Big city","None","Southeast","Yes","Some College",0
+2744,0,46,NA,18,"Upper class",6,"White","Suburb","None","Northeast","No","Grad/Prof Degree",NA
+2745,2,38,27,13,"Middle class",2,"Black","Suburb","Other","Southeast","Yes","Some College",0
+2745,2,38,NA,12,"Middle class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2746,0,50,NA,12,"Middle class",1,"White","Suburb",NA,"Southeast","Yes","HS Diploma",NA
+2747,4,57,18,12,"Lower class",0,"White","Suburb","Protestant","West","No","HS Diploma",0
+2748,1,32,30,17,"Middle class",0,"White","Suburb","Other","West","Yes","Grad/Prof Degree",1
+2749,1,47,24,12,"Working class",2,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+2749,0,21,NA,13,"Working class",3,"White","Smaller city","Protestant","Southeast","No","Some College",NA
+2750,0,53,NA,20,"Upper class",4,"White","Smaller city","Other","Midwest","Yes","Grad/Prof Degree",NA
+2751,0,36,NA,12,"Working class",3,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2751,2,63,26,11,"Middle class",3,"White","Smaller city","Catholic","Midwest","No","Less Than HS",0
+2752,3,78,23,10,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2753,2,51,NA,12,"Working class",2,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2755,3,67,22,17,"Middle class",2,"White","Suburb","Jewish","Southeast","Yes","Grad/Prof Degree",0
+2757,0,48,NA,16,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","College Degree",NA
+2762,3,55,27,16,"Middle class",3,"White","Suburb","Protestant","West","Yes","College Degree",0
+2763,1,35,27,12,"Lower class",1,"White","Smaller city","None","Northeast","No","HS Diploma",0
+2765,7,37,23,10,"Middle class",0,"Black","Smaller city","None","Northeast","No","Less Than HS",0
+2766,4,71,NA,8,"Lower class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+2766,4,47,20,13,"Middle class",1,"Black","Rural","None","Northeast","Yes","Some College",0
+2767,0,34,NA,14,"Working class",0,"White","Suburb","Catholic","Northeast","Yes","Some College",NA
+2769,3,61,18,15,"Lower class",0,"White","Smaller city","Protestant","Midwest","Yes","Some College",0
+2770,1,67,22,8,"Working class",3,"White","Smaller city","Protestant","Midwest","Yes","Less Than HS",0
+2771,4,45,22,13,"Working class",0,"White","Smaller city","None","Midwest","No","Some College",0
+2771,1,75,NA,8,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2772,0,33,NA,12,"Working class",0,"White","Smaller city","None","Midwest","No","HS Diploma",NA
+2773,2,34,22,12,"Working class",2,"White","Smaller city","Catholic","Midwest","Yes","HS Diploma",0
+2774,3,56,24,14,"Middle class",6,"White","Smaller city","Catholic","Midwest","No","Some College",0
+2776,3,28,NA,12,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",NA
+2776,4,60,19,14,"Working class",1,"Black","Smaller city","Protestant","Midwest","Yes","Some College",0
+2777,2,70,NA,12,"Working class",1,"White","Rural","Protestant","Southeast","No","HS Diploma",NA
+2777,4,74,33,16,"Middle class",6,"White","Suburb","Protestant","Midwest","No","College Degree",1
+2778,3,71,21,12,"Middle class",0,"White","Smaller city","Catholic","Midwest","No","HS Diploma",0
+2779,0,24,NA,17,"Working class",2,"White","Smaller city","Catholic","Midwest","Yes","Grad/Prof Degree",NA
+2781,2,85,26,16,"Middle class",0,"White","Smaller city","None","Midwest","No","College Degree",0
+2782,3,66,18,16,"Middle class",0,"White","Smaller city","Protestant","Midwest","No","College Degree",0
+2784,2,55,29,16,"Middle class",5,"White","Smaller city","Protestant","Southeast","No","College Degree",0
+2785,2,47,26,14,"Middle class",1,"Black","Smaller city","Protestant","Southeast","No","Some College",0
+2786,2,66,21,14,"Middle class",2,"White","Smaller city","Catholic","Southeast","No","Some College",0
+2786,4,56,NA,9,"Middle class",4,"Other","Rural","Catholic","Southeast","No","Less Than HS",NA
+2787,2,43,21,12,"Working class",1,"White","Smaller city","Catholic","Southeast","Yes","HS Diploma",0
+2788,1,27,24,11,"Working class",0,"White","Smaller city","Other","Southeast","No","Less Than HS",0
+2789,1,85,NA,13,"Working class",1,"White","Rural","Protestant","Southeast","Yes","Some College",NA
+2789,4,28,15,10,"Working class",1,"Black","Smaller city","Protestant","Southeast","Yes","Less Than HS",0
+2791,3,43,24,15,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Some College",0
+2792,0,23,NA,12,"Working class",0,"Black","Suburb","Protestant","Southeast","Yes","HS Diploma",NA
+2793,4,35,15,12,"Working class",0,"Black","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2794,1,25,24,16,"Working class",1,"White","Suburb","None","Southeast","Yes","College Degree",0
+2795,0,21,NA,16,"Middle class",5,"White","Suburb","Protestant","Southeast","No","College Degree",NA
+2797,1,89,20,12,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","HS Diploma",0
+2797,1,25,NA,12,"Working class",1,"White","Rural","Catholic","Southeast","Yes","HS Diploma",NA
+2798,0,39,NA,16,"Middle class",0,"White","Smaller city","Other","Southeast","Yes","College Degree",NA
+2801,3,47,43,12,"Working class",0,"Hispanic","Smaller city","Catholic","Southeast","No","HS Diploma",1
+2802,2,62,24,14,"Working class",0,"White","Smaller city","Protestant","Southeast","Yes","Some College",0
+2804,2,33,24,14,"Lower class",6,"White","Smaller city","Protestant","West","Yes","Some College",0
+2807,8,61,26,19,"Middle class",2,"White","Smaller city","Protestant","West","No","Grad/Prof Degree",0
+2808,0,25,NA,17,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Grad/Prof Degree",NA
+2809,0,31,NA,15,"Middle class",1,"White","Smaller city","Protestant","West","No","Some College",NA
+2810,2,62,20,16,"Middle class",1,"White","Smaller city","Protestant","West","No","College Degree",0
+2811,5,43,18,10,"Middle class",0,"Hispanic","Smaller city","Catholic","West","Yes","Less Than HS",0
+2812,4,48,NA,14,"Working class",1,"White","Smaller city","Protestant","Southeast","Yes","Some College",NA
+2817,1,32,NA,11,"Middle class",0,"White","Smaller city","Protestant","Southeast","Yes","Less Than HS",NA
+2823,5,77,NA,8,"Working class",2,"White","Smaller city","Protestant","Southeast","No","Less Than HS",NA
+2831,1,41,NA,12,"Working class",0,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",NA
+2832,2,32,NA,12,"Middle class",1,"Black","Rural","Protestant","Southeast","Yes","HS Diploma",NA
+2839,2,39,NA,16,"Working class",4,"White","Rural","Other","Southeast","No","College Degree",NA
+2841,3,75,NA,14,"Middle class",7,"Black","Rural","Protestant","Southeast","Yes","Some College",NA
+2853,1,78,NA,4,"Working class",1,"Black","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2855,7,56,NA,7,"Lower class",0,"Black","Rural","Protestant","Southeast","Yes","Less Than HS",NA
+2861,4,36,NA,18,"Middle class",4,"White","Smaller city","Catholic","West","Yes","Grad/Prof Degree",NA
+2863,1,76,NA,9,"Middle class",0,"White","Smaller city","Protestant","West","No","Less Than HS",NA
+2869,5,41,NA,16,"Working class",4,"White","Smaller city","Protestant","West","Yes","College Degree",NA
+2876,1,42,NA,15,"Middle class",5,"White","Smaller city","Protestant","West","No","Some College",NA
+2877,3,65,NA,12,"Middle class",4,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2881,2,31,NA,12,"Working class",0,"White","Smaller city","Other","West","No","HS Diploma",NA
+2893,1,34,NA,14,"Working class",0,"White","Smaller city","Protestant","West","No","Some College",NA
+2900,5,89,NA,8,"Middle class",2,"White","Smaller city","Protestant","West","Yes","Less Than HS",NA
+2904,2,55,NA,12,"Working class",0,"White","Smaller city","Protestant","West","Yes","HS Diploma",NA
+2913,4,73,NA,12,"Working class",1,"White","Rural","Protestant","West","Yes","HS Diploma",NA
+2915,7,65,NA,12,"Working class",3,"White","Rural","Protestant","West","Yes","HS Diploma",NA
+2920,5,45,NA,11,"Middle class",0,"White","Rural","Protestant","West","Yes","Less Than HS",NA
+2929,1,29,NA,9,"Working class",1,"White","Smaller city","None","West","No","Less Than HS",NA
+2934,3,79,NA,8,"Lower class",2,"White","Smaller city","Protestant","West","No","Less Than HS",NA
+2941,4,76,NA,12,"Middle class",1,"White","Smaller city","Catholic","West","Yes","HS Diploma",NA
+2942,2,52,NA,12,"Lower class",3,"White","Smaller city","Protestant","West","Yes","HS Diploma",NA
+2944,0,77,NA,8,"Middle class",3,"Black","Smaller city","Protestant","West","Yes","Less Than HS",NA
+2959,0,28,NA,16,"Middle class",2,"White","Smaller city","Catholic","West","No","College Degree",NA
+2961,4,27,NA,11,"Middle class",1,"Black","Smaller city","Protestant","Northeast","Yes","Less Than HS",NA
+2985,0,70,NA,12,"Lower class",0,"White","Suburb","Protestant","Northeast","Yes","HS Diploma",NA

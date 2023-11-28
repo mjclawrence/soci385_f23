@@ -36,7 +36,6 @@ ps2 <- ps2 |>
                                         ifelse(age %in% c(55:64), "55-64",
                                               "65+")))))
 
-
 table(ps2$age, ps2$age_cat)
 
 t.test(ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2018],

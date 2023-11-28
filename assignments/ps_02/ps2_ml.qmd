@@ -1,0 +1,207 @@
+---
+title: "Problem Set 2 Answer Key"
+author: "ML"
+format: pdf
+---
+
+## Set up
+
+```{r}
+#| message: false
+
+library(tidyverse)
+ps2 <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/ps2.csv")
+```
+
+
+## 1. Without using any R shortcuts, find the 95% confidence interval for the mean of `eqwlth` in each of the years in the survey. Plot these intervals in a figure (with error bars), and use your figure to describe how the mean responses have changed over the survey years.
+
+We did the basic set up of this one together in class. You only needed to add labels to the axes and the plot (the `labs()` function is the easiest way to do this). As for interpretation, recall what the confidence intervals represent: if the error bars do not overlap across years, then the means are significantly different.
+
+```{r}
+ps2 |> 
+  filter(year %in% c(2010, 2014, 2018, 2021)) |> 
+  group_by(year) |> 
+  summarize(mean_eqwlth = mean(eqwlth, na.rm = TRUE),
+            sd = sd(eqwlth, na.rm = TRUE),
+            n = length(eqwlth),
+            se = sd / sqrt(n),
+            ll = mean_eqwlth - 1.96*se,
+            ul = mean_eqwlth + 1.96*se) |> 
+  ggplot(aes(x = as.factor(year), y = mean_eqwlth,
+             ymin = ll, ymax = ul)) +
+  geom_point() + geom_errorbar() +
+  labs(x = "Year",
+       y = "Average Score on\nIntervention Scale",
+       title = "Support for Government Intervention to Reduce\nIncome Differences",
+       subtitle = "General Social Survey",
+       caption = "Note: Lower scores on 1-7 scale represent more support for government intervention")
+```
+
+
+## 2. Create a new variable grouping the `age` variable into the following categories: 18-24, 25-39, 40-54, 55-64, 65+. Which (if any) age categories showed significant differences in mean `eqwlth` scores between the 2018 and 2021 surveys? What is a sociological explanation for these differences?
+
+Create age categories. Note that you want to use a new variable name so that you do not replace the existing values of the age variable.
+
+```{r}
+ps2 <- ps2 |> 
+  mutate(age_cat = ifelse(age %in% c(18:24), "18-24",
+                          ifelse(age %in% c(25:39), "25-39",
+                                 ifelse(age %in% c(40:54), "40-54",
+                                        ifelse(age %in% c(55:64), "55-64",
+                                              "65+")))))
+```
+
+Want to check your work? Make a table with the old age variable and the new age_cat variable:
+
+```{r}
+table(ps2$age, ps2$age_cat)
+```
+
+We are testing differences in means, so use a t test. The most efficient way to do this is with a separate test for each age category. You are testing the mean of `eqwlth` so that should be the first variable included in the `t.test()` function. Brackets do the rest of the work here: each t.test should include a separate age category, and each line should include a different year (either 2018 or 2021).
+
+```{r}
+t.test(ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2018],
+       ps2$eqwlth[ps2$age_cat=="18-24" & ps2$year==2021])
+```
+
+The difference for 18-24 year olds is significant since we can reject the null hypothesis. The test statistic of 2.2681 is more extreme than 1.96, the p-value of 0.025 is less than 0.05, and the confidence interval does not include the null hypothesis value of 0.
+
+```{r}
+t.test(ps2$eqwlth[ps2$age_cat=="25-39" & ps2$year==2018],
+       ps2$eqwlth[ps2$age_cat=="25-39" & ps2$year==2021])
+```
+
+The difference for 25-39 year olds is significant since we can reject the null hypothesis. The test statistic of 2.8156 is more extreme than 1.96, the p-value of 0.005 is less than 0.05, and the confidence interval does not include the null hypothesis value of 0.
+
+```{r}
+t.test(ps2$eqwlth[ps2$age_cat=="40-54" & ps2$year==2018],
+       ps2$eqwlth[ps2$age_cat=="40-54" & ps2$year==2021])
+```
+
+The difference for 40-54 year olds is not significant since we cannot reject the null hypothesis. The test statistic of 1.8542 is not more extreme than 1.96, the p-value of 0.06408 is greater than 0.05, and the confidence interval does include the null hypothesis value of 0.
+
+```{r}
+t.test(ps2$eqwlth[ps2$age_cat=="55-64" & ps2$year==2018],
+       ps2$eqwlth[ps2$age_cat=="55-64" & ps2$year==2021])
+```
+
+The difference for 55-64 year olds is not significant since we cannot reject the null hypothesis. The test statistic of 1.8845 is not more extreme than 1.96, the p-value of 0.05997 is greater than 0.05, and the confidence interval does include the null hypothesis value of 0.
+
+```{r}
+t.test(ps2$eqwlth[ps2$age_cat=="65+" & ps2$year==2018],
+       ps2$eqwlth[ps2$age_cat=="65+" & ps2$year==2021])
+```
+
+The difference for 65+ year olds is not significant since we cannot reject the null hypothesis. The test statistic of 0.73563 is not more extreme than 1.96, the p-value of 0.4622 is greater than 0.05, and the confidence interval does include the null hypothesis value of 0.
+
+## 3. Does the proportion of respondents with "Hardly Any" confidence in congress differ between respondents at the lowest and highest extremes of the `eqwlth` scale? What is an additional variable you would want to explain your result in more detail?
+
+There are two things to do to set up this one. First, create a binary variable distinguishing `conlegis` responses of "Hardly Any" from all other responses:
+
+```{r}
+ps2 <- ps2 |> 
+  mutate(hardly_any = ifelse(conlegis == "Hardly Any", 1, 0))
+```
+
+Second, filter to only include responses with a 1 or 7 on the `eqwlth` scale. It makes sense to create a new data frame here so that you can use the full dataset for other questions.
+
+```{r}
+q3 <- ps2 |> 
+  filter(eqwlth == 1 | eqwlth == 7)
+```
+
+We are testing differences in proportions for this question, so eventually we will use the `prop.test()` function. That function requires a table, so let's create it. Note here that since confidence in congress is the outcome, the `hardly_any` variable should be the column variable for this table, leaving support for government intervention as the row variable.
+
+```{r}
+q3_table <- table(q3$eqwlth, q3$hardly_any)
+```
+
+With the table saved as an object, feed its name into `prop.test()`:
+
+```{r}
+prop.test(q3_table)
+```
+
+We can reject the null hypothesis here. The p-value is less than 0.05 and the confidence interval does not include the null hypothesis value of 0. For those reasons, we can conclude that the difference in proportions is significant.
+
+
+## 4. summarize the results of the following three tests of association. In addition to offering sociological interpretations of your findings, describe why you chose which statistical tests to use.
+
+- Is there a significant association between `racehisp` and `eqwlth`?
+
+A chi-squared test works for this question since only one of the variables (`eqwlth`) is ordered.
+
+```{r}
+chisq.test(ps2$racehisp, ps2$eqwlth)
+```
+
+We can reject the null hypothesis because the p-value is less than 0.05. There is a significant association between race and support for government intervention to reduce income differences.
+
+
+- Among respondents with less than a high school diploma, is there a significant association between `racehisp` and `eqwlth`?
+
+We know from the question above that a chi-squared test could work for these variables. Let's try it:
+
+```{r}
+chisq.test(ps2$racehisp[ps2$degree=="Less Than High School"], 
+           ps2$eqwlth[ps2$degree=="Less Than High School"])
+```
+
+The "Warning: Chi-squared approximation may be incorrect" is alerting us to the fact that some cells in the table of these variables have small expected frequencies. Let's check them.
+
+```{r}
+chisq.test(ps2$racehisp[ps2$degree=="Less Than High School"], 
+           ps2$eqwlth[ps2$degree=="Less Than High School"])$expected
+```
+
+Since several cells have expected frequencies below five, we need to use Fisher's Test instead of a regular chi-squared test:
+
+```{r}
+fisher.test(ps2$racehisp[ps2$degree=="Less Than High School"],
+            ps2$eqwlth[ps2$degree=="Less Than High School"],
+            simulate.p.value = TRUE)
+
+```
+
+Note: you probably have a slightly different p-value since we are using different simulations. But the p-value should still be greater than 0.05. For that reason, we cannot reject the null hypothesis. 
+
+
+- Is there a significant association between age (using the categories you created in #2) and confidence in congress?
+
+Both variables are ordered here so we will want to use the Goodman Kruskal Gamma test. Before doing so, put the `conlegis` values in order from least to most confidence. The age categories are already ordered; we would also need to assert the order for those values if they were not.
+
+```{r}
+ps2 <- ps2 |> 
+  mutate(conlegis = factor(conlegis,
+                           levels = c("Hardly Any",
+                                      "Only Some",
+                                      "A Great Deal")))
+```
+
+The GKgamma test is in the vcdExtra package. Load it:
+
+```{r}
+#| message: false
+
+library(vcdExtra)
+```
+
+The `GKgamma()` function reads a saved table:
+
+```{r}
+q4_table <- table(ps2$age_cat, 
+                  ps2$conlegis)
+
+GKgamma(q4_table)
+```
+
+The negative gamma value tells us that the association is negative. That means that higher values of age tend to have lower values on the conlegis scale. In more substantive terms, that means that older respondents tend to have less confidence in congress.
+
+To find out if that negative association is significant, calculate the test statistic by dividing gamma by its standard error:
+
+```{r}
+-.199/.015
+```
+
+This is the value we can compare to -1.96. Since our test statistic of -13.267 is more extreme than -1.96, we can reject the null hypothesis. The negative association between age and confidence in congress is significant.
