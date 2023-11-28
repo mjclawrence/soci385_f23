@@ -1,10 +1,3 @@
----
-title: "OLS With Multiple Variables"
-author: "Matt Lawrence"
-date: "November 28, 2023"
-format: html
----
-
 ## Setting Up
 
 We'll use the `gss_week_11.csv` file on Canvas. Load it as a data frame called `gss_week11` and load the usual packages.
@@ -23,57 +16,29 @@ gss_week11 <- read.csv("https://raw.githubusercontent.com/mjclawrence/soci385_f2
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-warmup1 <- lm(agekdbrn ~ educ, data = gss_week11)
-summary(warmup1)
-```
-
 Predict age at first birth for respondents with 16 years of education:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-13.46735 + .79237*16
-```
 
 **Warm Up 2:** Regress age at first birth (`agekdbrn`) on highest degree (`degree`). Use "College Degree" as the reference group.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-gss_week11$degree <- factor(gss_week11$degree, 
-                     levels = c("Less Than HS", "HS Diploma",
-                              "Some College", "College Degree",
-                              "Grad/Prof Degree"))
-gss_week11$degree <- relevel(factor(gss_week11$degree), ref = "College Degree")
-warmup2 <- lm(agekdbrn ~ degree, data = gss_week11)
-summary(warmup2)
-```
 
 Predict age at first birth for respondents with a graduate or professional degree:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-27.3598 + .3829
-```
 
 **Warm Up 3:** Regress having a first child at age 30 or later (`agekdbrn_30plus`) on religion (`religion`). Use "Protestant" as the reference group.
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-gss_week11$religion <- relevel(factor(gss_week11$religion), ref = "Protestant")
-summary(lm(agekdbrn_30plus ~ religion, data = gss_week11))
-```
-
 Predict probability of having a first child at age 30 or later for Jewish respondents:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-.149915 + .331567
-```
 
 
 ## Introducing Multiple Regression
@@ -99,17 +64,9 @@ Predict age at first birth for a Catholic respondent with 16 years of education:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-13.32 + .76*16 + 1.55*1 + 3.45*0 + 2.85*0 - .14*0 + 1.25*0
-```
-
 Predict age at first birth for respondent from an Eastern religion with 13 years of education:
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-13.32 + .76*13 + 1.55*0 + 3.45*1 + 2.85*0 - .14*0 + 1.25*0
-```
 
 How do we make sense of this in a plot? The slopes (betas) are the same for every value of the control variable. But the intercepts are different.
 
@@ -141,28 +98,13 @@ Models can have as many control variables as you want. Just continue adding them
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-agekd_educ_religion_race_model <- 
-lm(agekdbrn ~ educ + religion + racehisp, data = gss_week11)
-
-summary(agekd_educ_religion_race_model)
-```
-
 What is the predicted age at first birth for a Black Protestant with 17 years of education?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
 
-```{r}
-12.8134 + .7420*17
-```
-
 What is the predicted age at first birth for a Hispanic with no religious affiliation with 14 years of education?
 
 ### REPLACE THIS LINE WITH YOUR CODE CHUNK ###
-
-```{r}
-12.8134 + .7420*14 - .1464 + .2763
-```
 
 
 ## Comparing Models, Introducing R-Squared
