@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Matt Lawrence">
+<meta name="dcterms.date" content="2023-11-28">
+
+<title>OLS With Multiple Variables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="notebook_11_01_ml_files/libs/clipboard/clipboard.min.js"></script>
+<script src="notebook_11_01_ml_files/libs/quarto-html/quarto.js"></script>
+<script src="notebook_11_01_ml_files/libs/quarto-html/popper.min.js"></script>
+<script src="notebook_11_01_ml_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="notebook_11_01_ml_files/libs/quarto-html/anchor.min.js"></script>
+<link href="notebook_11_01_ml_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="notebook_11_01_ml_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="notebook_11_01_ml_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="notebook_11_01_ml_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="notebook_11_01_ml_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">OLS With Multiple Variables</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matt Lawrence </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 28, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<p>We’ll use the <code>gss_week_11.csv</code> file on Canvas. Load it as a data frame called <code>gss_week11</code> and load the usual packages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gss_week11 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/gss_week_11.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="warm-up-review" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up-review">Warm Up / Review</h2>
+<p><strong>Warm Up 1:</strong> Regress age at first birth (<code>agekdbrn</code>) on years of education (<code>educ</code>)</p>
+<section id="replace-this-line-with-your-code-chunk" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>warmup1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(agekdbrn <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(warmup1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn ~ educ, data = gss_week11)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.5223  -3.5605  -0.9757   2.8548  27.0243 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 13.46735    0.80342   16.76   &lt;2e-16 ***
+educ         0.79237    0.05768   13.74   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.157 on 1055 degrees of freedom
+  (868 observations deleted due to missingness)
+Multiple R-squared:  0.1518,    Adjusted R-squared:  0.1509 
+F-statistic: 188.7 on 1 and 1055 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Predict age at first birth for respondents with 16 years of education:</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-1" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-1">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fl">13.46735</span> <span class="sc">+</span> .<span class="dv">79237</span><span class="sc">*</span><span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.14527</code></pre>
+</div>
+</div>
+<p><strong>Warm Up 2:</strong> Regress age at first birth (<code>agekdbrn</code>) on highest degree (<code>degree</code>). Use “College Degree” as the reference group.</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-2" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-2">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>degree <span class="ot">&lt;-</span> <span class="fu">factor</span>(gss_week11<span class="sc">$</span>degree, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Less Than HS"</span>, <span class="st">"HS Diploma"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Some College"</span>, <span class="st">"College Degree"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"Grad/Prof Degree"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>degree <span class="ot">&lt;-</span> <span class="fu">relevel</span>(<span class="fu">factor</span>(gss_week11<span class="sc">$</span>degree), <span class="at">ref =</span> <span class="st">"College Degree"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>warmup2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(agekdbrn <span class="sc">~</span> degree, <span class="at">data =</span> gss_week11)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(warmup2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn ~ degree, data = gss_week11)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-11.7426  -3.3598  -0.9965   2.6402  27.0035 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             27.3598     0.4000  68.400  &lt; 2e-16 ***
+degreeLess Than HS      -6.5101     0.5758 -11.307  &lt; 2e-16 ***
+degreeHS Diploma        -4.3633     0.5027  -8.680  &lt; 2e-16 ***
+degreeSome College      -3.3286     0.4917  -6.770 2.14e-11 ***
+degreeGrad/Prof Degree   0.3829     0.5941   0.645    0.519    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.122 on 1052 degrees of freedom
+  (868 observations deleted due to missingness)
+Multiple R-squared:  0.1655,    Adjusted R-squared:  0.1623 
+F-statistic: 52.14 on 4 and 1052 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Predict age at first birth for respondents with a graduate or professional degree:</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-3" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-3">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fl">27.3598</span> <span class="sc">+</span> .<span class="dv">3829</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27.7427</code></pre>
+</div>
+</div>
+<p><strong>Warm Up 3:</strong> Regress having a first child at age 30 or later (<code>agekdbrn_30plus</code>) on religion (<code>religion</code>). Use “Protestant” as the reference group.</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-4" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-4">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>religion <span class="ot">&lt;-</span> <span class="fu">relevel</span>(<span class="fu">factor</span>(gss_week11<span class="sc">$</span>religion), <span class="at">ref =</span> <span class="st">"Protestant"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(agekdbrn_30plus <span class="sc">~</span> religion, <span class="at">data =</span> gss_week11))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn_30plus ~ religion, data = gss_week11)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.4815 -0.1754 -0.1499 -0.1499  0.8501 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      0.149915   0.015756   9.515  &lt; 2e-16 ***
+religionCatholic 0.068709   0.028952   2.373  0.01782 *  
+religionEastern  0.304631   0.082899   3.675  0.00025 ***
+religionJewish   0.331567   0.075137   4.413 1.13e-05 ***
+religionNone     0.009377   0.039216   0.239  0.81106    
+religionOther    0.025524   0.052961   0.482  0.62995    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3817 on 1047 degrees of freedom
+  (872 observations deleted due to missingness)
+Multiple R-squared:  0.03204,   Adjusted R-squared:  0.02742 
+F-statistic: 6.931 on 5 and 1047 DF,  p-value: 2.229e-06</code></pre>
+</div>
+</div>
+<p>Predict probability of having a first child at age 30 or later for Jewish respondents:</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-5" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-5">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>.<span class="dv">149915</span> <span class="sc">+</span> .<span class="dv">331567</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.481482</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="introducing-multiple-regression" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-multiple-regression">Introducing Multiple Regression</h2>
+<p>Why do we control for other variables? The idea is to find another variable, <em>hold it constant</em>, and see if the association between X and Y changes.</p>
+<p>In R, include more variables by linking them to the independent variable with a plus sign. In this example, we want to regress age at first birth on education, holding religion constant:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>agekd_educ_religion <span class="ot">&lt;-</span> <span class="fu">lm</span>(agekdbrn <span class="sc">~</span> educ <span class="sc">+</span> religion, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gss_week11)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(agekd_educ_religion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn ~ educ + religion, data = gss_week11)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-13.3572  -3.4731  -0.7609   2.5773  25.9809 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      13.32194    0.81313  16.384  &lt; 2e-16 ***
+educ              0.76259    0.05792  13.167  &lt; 2e-16 ***
+religionCatholic  1.54599    0.38639   4.001 6.75e-05 ***
+religionEastern   3.44548    1.10633   3.114  0.00189 ** 
+religionJewish    2.85010    1.01669   2.803  0.00515 ** 
+religionNone     -0.14292    0.52325  -0.273  0.78480    
+religionOther     1.24962    0.70710   1.767  0.07748 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.093 on 1046 degrees of freedom
+  (872 observations deleted due to missingness)
+Multiple R-squared:  0.1764,    Adjusted R-squared:  0.1716 
+F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>To find the predicted values, need to use the full equation. For example, to predict the age at first birth for a Protestant respondent with 16 years of education:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fl">13.32</span> <span class="sc">+</span> .<span class="dv">76</span><span class="sc">*</span><span class="dv">16</span> <span class="sc">+</span> <span class="fl">1.55</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">3.45</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">2.85</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">-</span> .<span class="dv">14</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">1.25</span><span class="sc">*</span><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.48</code></pre>
+</div>
+</div>
+<p>Predict age at first birth for a Catholic respondent with 16 years of education:</p>
+<section id="replace-this-line-with-your-code-chunk-6" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-6">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fl">13.32</span> <span class="sc">+</span> .<span class="dv">76</span><span class="sc">*</span><span class="dv">16</span> <span class="sc">+</span> <span class="fl">1.55</span><span class="sc">*</span><span class="dv">1</span> <span class="sc">+</span> <span class="fl">3.45</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">2.85</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">-</span> .<span class="dv">14</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">1.25</span><span class="sc">*</span><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27.03</code></pre>
+</div>
+</div>
+<p>Predict age at first birth for respondent from an Eastern religion with 13 years of education:</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-7" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-7">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fl">13.32</span> <span class="sc">+</span> .<span class="dv">76</span><span class="sc">*</span><span class="dv">13</span> <span class="sc">+</span> <span class="fl">1.55</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">3.45</span><span class="sc">*</span><span class="dv">1</span> <span class="sc">+</span> <span class="fl">2.85</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">-</span> .<span class="dv">14</span><span class="sc">*</span><span class="dv">0</span> <span class="sc">+</span> <span class="fl">1.25</span><span class="sc">*</span><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.65</code></pre>
+</div>
+</div>
+<p>How do we make sense of this in a plot? The slopes (betas) are the same for every value of the control variable. But the intercepts are different.</p>
+<p><em>Lots of code here; looking at the plot is more important than grasping all the code!</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>agekd_educ_religion_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gss_week11, <span class="fu">aes</span>(<span class="at">x =</span> educ, <span class="at">y =</span> agekdbrn))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>agekd_educ_religion_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"Light Gray"</span>) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_abline</span>(<span class="at">slope =</span> .<span class="dv">76529</span>, <span class="at">intercept =</span> <span class="fl">13.32194</span>, <span class="at">color =</span> <span class="st">"Blue"</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_abline</span>(<span class="at">slope =</span> .<span class="dv">76529</span>, <span class="at">intercept =</span> <span class="fl">13.32194</span> <span class="sc">+</span> <span class="fl">1.54599</span>, <span class="at">color =</span> <span class="st">"Forest Green"</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_abline</span>(<span class="at">slope =</span> .<span class="dv">76529</span>, <span class="at">intercept =</span> <span class="fl">13.32194</span> <span class="sc">+</span> <span class="fl">3.44548</span>, <span class="at">color =</span> <span class="st">"Red"</span>) <span class="sc">+</span> </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_abline</span>(<span class="at">slope =</span> .<span class="dv">76529</span>, <span class="at">intercept =</span> <span class="fl">13.32194</span> <span class="sc">+</span> <span class="fl">2.85010</span>, <span class="at">color =</span> <span class="st">"Purple"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_text</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">y =</span> <span class="dv">48</span>, <span class="at">label =</span> <span class="st">"Eastern"</span>, <span class="at">color =</span> <span class="st">"Red"</span>) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_text</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">y =</span> <span class="dv">45</span>, <span class="at">label =</span> <span class="st">"Jewish"</span>, <span class="at">color =</span> <span class="st">"Purple"</span>) <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_text</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">y =</span> <span class="dv">42</span>, <span class="at">label =</span> <span class="st">"Catholic"</span>, <span class="at">color =</span> <span class="st">"Forest Green"</span>) <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_text</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">y =</span> <span class="dv">39</span>, <span class="at">label =</span> <span class="st">"Protestant"</span>, <span class="at">color =</span> <span class="st">"Blue"</span>) <span class="sc">+</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="dv">16</span>, <span class="at">y =</span> <span class="fl">25.48</span>, <span class="at">color =</span> <span class="st">"Blue"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="dv">16</span>, <span class="at">y =</span> <span class="fl">27.03</span>, <span class="at">color =</span> <span class="st">"Forest Green"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="dv">13</span>, <span class="at">y =</span> <span class="fl">26.65</span>, <span class="at">color =</span> <span class="st">"Red"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Years of Education"</span>, <span class="at">y =</span> <span class="st">"Age at First Birth"</span>, </span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Education and Age at First Birth"</span>, </span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"GSS, 2010-2016"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="notebook_11_01_ml_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="multiple-control-variables" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-control-variables">Multiple Control Variables</h2>
+<p>Models can have as many control variables as you want. Just continue adding them with plus signs. Let’s try regressing age at first birth on education, religion, and race:</p>
+<section id="replace-this-line-with-your-code-chunk-8" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-8">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>agekd_educ_religion_race_model <span class="ot">&lt;-</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(agekdbrn <span class="sc">~</span> educ <span class="sc">+</span> religion <span class="sc">+</span> racehisp, <span class="at">data =</span> gss_week11)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(agekd_educ_religion_race_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn ~ educ + religion + racehisp, data = gss_week11)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-13.437  -3.485  -0.735   2.540  26.774 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       12.8134     0.8728  14.682  &lt; 2e-16 ***
+educ               0.7420     0.0589  12.599  &lt; 2e-16 ***
+religionCatholic   1.5079     0.4110   3.669 0.000256 ***
+religionEastern    3.4348     1.2394   2.771 0.005681 ** 
+religionJewish     2.6802     1.0187   2.631 0.008641 ** 
+religionNone      -0.1464     0.5249  -0.279 0.780304    
+religionOther      1.2509     0.7072   1.769 0.077226 .  
+racehispHispanic   0.2763     0.7641   0.362 0.717710    
+racehispOther      0.7380     1.0481   0.704 0.481469    
+racehispWhite      1.0171     0.4536   2.242 0.025175 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.086 on 1043 degrees of freedom
+  (872 observations deleted due to missingness)
+Multiple R-squared:  0.181, Adjusted R-squared:  0.174 
+F-statistic: 25.62 on 9 and 1043 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>What is the predicted age at first birth for a Black Protestant with 17 years of education?</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-9" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-9">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.4274</code></pre>
+</div>
+</div>
+<p>What is the predicted age at first birth for a Hispanic with no religious affiliation with 14 years of education?</p>
+</section>
+<section id="replace-this-line-with-your-code-chunk-10" class="level3">
+<h3 class="anchored" data-anchor-id="replace-this-line-with-your-code-chunk-10">REPLACE THIS LINE WITH YOUR CODE CHUNK</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">14</span> <span class="sc">-</span> .<span class="dv">1464</span> <span class="sc">+</span> .<span class="dv">2763</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 23.3313</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="comparing-models-introducing-r-squared" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-models-introducing-r-squared">Comparing Models, Introducing R-Squared</h2>
+<p>R-squared is the proportional reduction in the error from using the model. We’ll calculate r-squared for the model regressing number of memberships on years of education.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>memnum_educ_model <span class="ot">&lt;-</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(memnum <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(memnum_educ_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = memnum ~ educ, data = gss_week11)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.1295 -1.3117 -0.3117  0.7794 11.6883 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -1.41495    0.20125  -7.031 2.84e-12 ***
+educ         0.22722    0.01442  15.762  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.78 on 1923 degrees of freedom
+Multiple R-squared:  0.1144,    Adjusted R-squared:  0.1139 
+F-statistic: 248.4 on 1 and 1923 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The r-squared value is 0.1144. Where does that number come from?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the predicted values of Y:</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>pred_memnum <span class="ot">&lt;-</span> memnum_educ_model<span class="sc">$</span>fitted.values</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the residuals (the observed values of Y minus the predicted values of Y) and square them:</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>res_memnum <span class="ot">&lt;-</span> (gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> gss_week11<span class="sc">$</span>pred_memnum)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Find the deviations of each observed value of Y from the mean of Y:</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>gss_week11<span class="sc">$</span>dev_memnum <span class="ot">&lt;-</span> (gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> <span class="fu">mean</span>(gss_week11<span class="sc">$</span>memnum))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Sum the squared deviations and subtract the sum of the squared residuals.</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Divide this difference by the sum of the squared deviations:</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>rsquared <span class="ot">&lt;-</span> ((<span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)) <span class="sc">-</span> </span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>                  (<span class="fu">sum</span>(gss_week11<span class="sc">$</span>res_memnum))) <span class="sc">/</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1144075</code></pre>
+</div>
+</div>
+<p>To Find Adjusted R-squared:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adjusted_rsquared = </span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 - (((1 - rsquared)*(n-1)) / (n-k-1))</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># n = sample size; k = number of variables</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>adjusted_rsquared <span class="ot">&lt;-</span> </span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (((<span class="dv">1</span> <span class="sc">-</span> rsquared)<span class="sc">*</span>(<span class="dv">1924-1</span>)) <span class="sc">/</span> (<span class="dv">1924-1-1</span>))</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>adjusted_rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1139467</code></pre>
+</div>
+</div>
+</section>
+<section id="comparing-r-squared-values" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-r-squared-values">Comparing R-Squared Values</h2>
+<p>When we regress number of memberships on education and age it looks like the model is better since r-squared increases:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>memnum_educ_age_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(memnum <span class="sc">~</span> educ <span class="sc">+</span> age, <span class="at">data =</span> gss_week11)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(memnum_educ_age_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = memnum ~ educ + age, data = gss_week11)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.2381 -1.2830 -0.4119  0.8691 11.8747 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -1.958854   0.243859  -8.033 1.65e-15 ***
+educ         0.234599   0.014486  16.195  &lt; 2e-16 ***
+age          0.009605   0.002451   3.919 9.22e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.773 on 1922 degrees of freedom
+Multiple R-squared:  0.1214,    Adjusted R-squared:  0.1205 
+F-statistic: 132.8 on 2 and 1922 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>But be careful: R-squared will almost always go up as you add variables, even if the variables are not significant. That does not necessarily mean the model is getting better.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>memnum_educ_age_place_model <span class="ot">&lt;-</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">lm</span>(memnum <span class="sc">~</span> educ <span class="sc">+</span> age <span class="sc">+</span> place, <span class="at">data =</span> gss_week11)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(memnum_educ_age_place_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = memnum ~ educ + age + place, data = gss_week11)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.2430 -1.2747 -0.4076  0.8771 11.9065 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    -1.9264512  0.2546124  -7.566 5.93e-14 ***
+educ            0.2334475  0.0146100  15.979  &lt; 2e-16 ***
+age             0.0095195  0.0024569   3.875  0.00011 ***
+placeNortheast  0.0009124  0.1284526   0.007  0.99433    
+placeSoutheast -0.0480122  0.1049289  -0.458  0.64731    
+placeWest       0.0250015  0.1204691   0.208  0.83561    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.774 on 1919 degrees of freedom
+Multiple R-squared:  0.1217,    Adjusted R-squared:  0.1194 
+F-statistic: 53.16 on 5 and 1919 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

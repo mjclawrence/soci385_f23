@@ -773,8 +773,38 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 </section>
 <section id="more-and-more-variables-1" class="slide level2">
 <h2>More And More Variables</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = agekdbrn ~ educ + religion + racehisp, data = gss_week11)
 
-<img data-src="385_figures/agekd_educ_religion_race.png" class="r-stretch"></section>
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-13.437  -3.485  -0.735   2.540  26.774 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       12.8134     0.8728  14.682  &lt; 2e-16 ***
+educ               0.7420     0.0589  12.599  &lt; 2e-16 ***
+religionCatholic   1.5079     0.4110   3.669 0.000256 ***
+religionEastern    3.4348     1.2394   2.771 0.005681 ** 
+religionJewish     2.6802     1.0187   2.631 0.008641 ** 
+religionNone      -0.1464     0.5249  -0.279 0.780304    
+religionOther      1.2509     0.7072   1.769 0.077226 .  
+racehispHispanic   0.2763     0.7641   0.362 0.717710    
+racehispOther      0.7380     1.0481   0.704 0.481469    
+racehispWhite      1.0171     0.4536   2.242 0.025175 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.086 on 1043 degrees of freedom
+  (872 observations deleted due to missingness)
+Multiple R-squared:  0.181, Adjusted R-squared:  0.174 
+F-statistic: 25.62 on 9 and 1043 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
 <section id="more-and-more-variables-2" class="slide level2">
 <h2>More And More Variables</h2>
 <ul>
@@ -793,7 +823,7 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -809,7 +839,7 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">14</span> <span class="sc">-</span> .<span class="dv">1464</span> <span class="sc">+</span> .<span class="dv">2763</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fl">12.8134</span> <span class="sc">+</span> .<span class="dv">7420</span><span class="sc">*</span><span class="dv">14</span> <span class="sc">-</span> .<span class="dv">1464</span> <span class="sc">+</span> .<span class="dv">2763</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -843,10 +873,10 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>memnum_educ_model <span class="ot">&lt;-</span> </span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">lm</span>(memnum <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span>
-<span id="cb27-3"><a href="#cb27-3"></a></span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="fu">summary</span>(memnum_educ_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>memnum_educ_model <span class="ot">&lt;-</span> </span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">lm</span>(memnum <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span>
+<span id="cb28-3"><a href="#cb28-3"></a></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">summary</span>(memnum_educ_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -858,7 +888,7 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h2>R-Squared</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>memnum_educ_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(memnum <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>memnum_educ_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(memnum <span class="sc">~</span> educ, <span class="at">data =</span> gss_week11)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 
@@ -866,19 +896,19 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>gss_week11<span class="sc">$</span>pred_memnum <span class="ot">&lt;-</span> memnum_educ_model<span class="sc">$</span>fitted.values</span>
-<span id="cb29-2"><a href="#cb29-2"></a></span>
-<span id="cb29-3"><a href="#cb29-3"></a>gss_week11<span class="sc">$</span>res_memnum <span class="ot">&lt;-</span> </span>
-<span id="cb29-4"><a href="#cb29-4"></a>(gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> gss_week11<span class="sc">$</span>pred_memnum)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a></span>
-<span id="cb29-6"><a href="#cb29-6"></a>gss_week11<span class="sc">$</span>dev_memnum <span class="ot">&lt;-</span> </span>
-<span id="cb29-7"><a href="#cb29-7"></a>(gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> <span class="fu">mean</span>(gss_week11<span class="sc">$</span>memnum))<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a></span>
-<span id="cb29-9"><a href="#cb29-9"></a>rsquared <span class="ot">&lt;-</span> ((<span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)) <span class="sc">-</span> </span>
-<span id="cb29-10"><a href="#cb29-10"></a>                  (<span class="fu">sum</span>(gss_week11<span class="sc">$</span>res_memnum))) <span class="sc">/</span></span>
-<span id="cb29-11"><a href="#cb29-11"></a>                  <span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)</span>
-<span id="cb29-12"><a href="#cb29-12"></a></span>
-<span id="cb29-13"><a href="#cb29-13"></a>rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>gss_week11<span class="sc">$</span>pred_memnum <span class="ot">&lt;-</span> memnum_educ_model<span class="sc">$</span>fitted.values</span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a>gss_week11<span class="sc">$</span>res_memnum <span class="ot">&lt;-</span> </span>
+<span id="cb30-4"><a href="#cb30-4"></a>(gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> gss_week11<span class="sc">$</span>pred_memnum)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a></span>
+<span id="cb30-6"><a href="#cb30-6"></a>gss_week11<span class="sc">$</span>dev_memnum <span class="ot">&lt;-</span> </span>
+<span id="cb30-7"><a href="#cb30-7"></a>(gss_week11<span class="sc">$</span>memnum <span class="sc">-</span> <span class="fu">mean</span>(gss_week11<span class="sc">$</span>memnum))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a></span>
+<span id="cb30-9"><a href="#cb30-9"></a>rsquared <span class="ot">&lt;-</span> ((<span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)) <span class="sc">-</span> </span>
+<span id="cb30-10"><a href="#cb30-10"></a>                  (<span class="fu">sum</span>(gss_week11<span class="sc">$</span>res_memnum))) <span class="sc">/</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>                  <span class="fu">sum</span>(gss_week11<span class="sc">$</span>dev_memnum)</span>
+<span id="cb30-12"><a href="#cb30-12"></a></span>
+<span id="cb30-13"><a href="#cb30-13"></a>rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -922,15 +952,15 @@ F-statistic: 37.33 on 6 and 1046 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h2>Adjusted R-Squared</h2>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># adjusted_rsquared = </span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="co"># 1 - (((1 - rsquared)*(n-1)) / (n-k-1))</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a></span>
-<span id="cb31-4"><a href="#cb31-4"></a><span class="co"># n = sample size; k = number of variables</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a></span>
-<span id="cb31-6"><a href="#cb31-6"></a>adjusted_rsquared <span class="ot">&lt;-</span> </span>
-<span id="cb31-7"><a href="#cb31-7"></a><span class="dv">1</span> <span class="sc">-</span> (((<span class="dv">1</span> <span class="sc">-</span> rsquared)<span class="sc">*</span>(<span class="dv">1924-1</span>)) <span class="sc">/</span> (<span class="dv">1924-1-1</span>))</span>
-<span id="cb31-8"><a href="#cb31-8"></a></span>
-<span id="cb31-9"><a href="#cb31-9"></a>adjusted_rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># adjusted_rsquared = </span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="co"># 1 - (((1 - rsquared)*(n-1)) / (n-k-1))</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="co"># n = sample size; k = number of variables</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a></span>
+<span id="cb32-6"><a href="#cb32-6"></a>adjusted_rsquared <span class="ot">&lt;-</span> </span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="dv">1</span> <span class="sc">-</span> (((<span class="dv">1</span> <span class="sc">-</span> rsquared)<span class="sc">*</span>(<span class="dv">1924-1</span>)) <span class="sc">/</span> (<span class="dv">1924-1-1</span>))</span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a>adjusted_rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">

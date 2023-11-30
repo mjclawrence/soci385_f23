@@ -371,7 +371,13 @@ summary(agekd_educ_religion_race_model)
 ## More And More Variables
 
 
-![](385_figures/agekd_educ_religion_race.png)
+```{r}
+#| echo: false
+
+summary(agekd_educ_religion_race_model)
+```
+
+
 
 
 ---
