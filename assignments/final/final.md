@@ -33,7 +33,7 @@ For this project, you will prepare a written report related to the research ques
 
 ## OUTLINE OF REPORT
 
-### Introduction
+### Introduction (2 points)
 
 State your research question and hypotheses. Why do you expect there to be an association between your dependent variable and your independent variable? How would you expect your control variable to relate to this association? (Note: no outside reading or research is required or expected.)
 
@@ -42,7 +42,7 @@ Explain the sample you will use for your analysis. Are you using the full set of
 Define the intended audience for your report. For example, are you writing an academic paper, a policy memo, an article for a popular press, etc.?
 
 
-### Descriptive Statistics
+### Descriptive Statistics (10 points)
 
 Briefly summarize your dependent variable, independent variable, and control variable using some of the key types of descriptive statistics (such as the distribution, center, spread, shape, etc.).
 
@@ -57,7 +57,7 @@ Create and summarize a new categorical variable based on your independent variab
 Using the variables you created above, create a table showing the distribution of your categorical dependent variable and categorical independent variable holding your control variable constant. Interpret the results.
 
 
-### Inference
+### Inference (6 points)
 
 Conduct ***two*** of the following three tests of statistical inference. Choose the appropriate tests based on the types of variables you are using and your sample sizes. State the null and alternative hypotheses, include each p-value, and interpret the results fully. You can do the tests in R.
 
@@ -68,7 +68,7 @@ Conduct ***two*** of the following three tests of statistical inference. Choose 
 - Test if your categorical dependent variable and your control variable are independent.
 
 
-### Regression
+### Regression (9 points)
 
 Regress your dependent variable on your independent variable. Interpret the results in words, describe any coefficients that are significant, and use the coefficients to calculate two predicted values of the outcome.
 
@@ -77,6 +77,6 @@ Now add your control variable to the model you estimated above. Interpret the re
 Now add an interaction between your independent variable and your control variable. Interpret the results and describe any coefficients that are significant.
 
 
-### Conclusion
+### Conclusion (3 points)
 
 Briefly summarize your main results and offer a sociological explanation for your findings. Were your hypotheses confirmed? Are there additional variables that you would want to include in other analyses? Are there limitations in the current sample design that should be addressed in a follow-up study? Include a few possible directions for future research based on your results.
