@@ -1,0 +1,58 @@
+---
+title: "Social Statistics"
+subtitle: "Wrapping Up"
+date: "December 5, 2023"
+format: 
+  clean-revealjs:
+    incremental: true
+    progress: false
+    slide-number: false
+    controls: auto
+    menu: 
+      side: left
+---
+
+```{r, include = FALSE, warning = FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+
+
+## Meier and Musick (2014)
+
+- Motivation?
+
+- Research Question?
+
+- Hypotheses?
+
+- Data?
+  - Dependent Variables?
+  - Independent Variable?
+  - Control Variables?
+
+---
+
+## Meier and Musick (2014)
+
+![](385_figures/meier_musick_table.png)
+
+---
+
+## Meier and Musick (2014)
+
+![](385_figures/predicted1_depression.png)
+
+---
+
+## Meier and Musick (2014)
+
+![](385_figures/predicted2_substance_use.png)
+
+---
+
+## Meier and Musick (2014)
+
+![](385_figures/predicted3_delinquency.png)
+

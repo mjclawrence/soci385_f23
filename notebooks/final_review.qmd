@@ -1,0 +1,40 @@
+## Set up
+
+```{r}
+#| message: false
+library(tidyverse)
+library(kableExtra)
+
+final <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/final_review.csv")
+```
+
+This review is based on the "Informal and Formal Punishment" learning guide available at Middlebury's [Sociology Data Lab](https://datastudio.middcreate.net/sociology).
+
+
+
+## Descriptive Statistics
+
+### Summarize dependent variable (`crimsent`), independent variable (`cancul1`), and control variable (choose `race`, `ideology`, `gender`, or `division`).
+
+
+### Create and summarize a new categorical variable based on your dependent variable.
+
+
+### Include and interpret a figure that shows the mean of your dependent variable by each level of your categorical independent variable.
+
+
+## Inference
+
+### Create a binary variable from your dependent variable. Test if the proportions with a 1 for this new binary variable differ significantly at the .05 alpha level between two groups/levels of your control variable.
+
+
+### Test if your categorical dependent variable and your control variable are dependent.
+
+
+## Regression
+
+### Regress your dependent variable on your independent variable. Interpret the results in words, describe any coefficients that are significant, and use the coefficients to calculate two predicted values of the outcome.
+
+### Now add your control variable. Interpret the results, describe any coefficients that are significant, and use the coefficients to calculate the predicted values of the outcome for each level of your control variable.
+
+### Now add an interaction between your independent variable and your control variable. Interpret the results and describe any coefficients that are significant.

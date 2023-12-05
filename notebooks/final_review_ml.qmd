@@ -1,0 +1,202 @@
+---
+author: "ML"
+title: "Final Review"
+subtitle: "SOCI 385 - Fall 2023"
+format: html
+---
+
+## Set up
+
+```{r}
+#| message: false
+library(tidyverse)
+library(kableExtra)
+
+final <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/final_review.csv")
+```
+
+This review is based on the "Informal and Formal Punishment" learning guide available at Middlebury's [Sociology Data Lab](https://datastudio.middcreate.net/sociology).
+
+
+
+## Descriptive Statistics
+
+### Summarize dependent variable (`crimsent`), independent variable (`cancul1`), and control variable (choose `race`, `ideology`, `gender`, or `division`).
+
+These are all categorical variables, so responses to any of them could use proportion tables for summaries.
+
+The responses to the `crimsent` variable are ordered, so you want to assert the levels (from lowest to highest) before making a table.
+
+```{r}
+final <- final |> 
+  mutate(crimsent = factor(crimsent,
+                           levels = c("Too little time",
+                                      "About the right amount",
+                                      "Too much time")))
+```
+
+There are only two responses to the `cancul1` question, so we don't have to order them.
+
+```{r}
+round(prop.table(table(final$cancul1)),2) |> 
+  kbl(booktabs = TRUE,
+      col.names = c("Response", "Proportion"),
+      align = rep("c", 1),
+      caption = "Distribution of Responses to Cancel Culture Question") |> 
+  kable_paper()
+```
+
+The responses to the `ideology` variable are ordered, so you want to assert the levels in a way that makes sense before making a table.
+
+```{r}
+final <- final |> 
+  mutate(ideology = factor(ideology,
+                           levels = c("Very Conservative",
+                                      "Conservative",
+                                      "Moderate",
+                                      "Liberal",
+                                      "Very Liberal")))
+```
+
+```{r}
+round(prop.table(table(final$ideology)),2) |> 
+  kbl(booktabs = TRUE,
+      col.names = c("Response", "Proportion"),
+      align = rep("c", 1),
+      caption = "Distribution of Responses to Ideology Question") |> 
+  kable_paper()
+```
+
+### Create and summarize a new categorical variable based on your dependent variable
+
+One option here would be to make a binary variable for one of the responses to the `crimsent` question. In this example, we'll make a new variable called `crimsent_toomuch` that takes a 1 if a respondent answers "Too much time" to the `crimsent` question and a 0 if they have any other response.
+
+```{r}
+final <- final |> 
+  mutate(crimsent_toomuch = ifelse(crimsent == "Too much time", 1, 0))
+```
+
+
+### Include and interpret a figure that shows the mean of your dependent variable by each level of your categorical independent variable
+
+Use the new binary dependent variable created above. Recall that the mean of a binary variable gives you the proportion with a 1, so the means below are the proportions in each level of `cancul1` answering "Too much time" to the `crimsent` question.
+
+```{r}
+final |> 
+  group_by(cancul1) |> 
+  summarise(prop_toomuch = mean(crimsent_toomuch))
+```
+
+You can use the same setup to create the figure
+
+```{r}
+final |> 
+  group_by(cancul1) |> 
+  summarise(prop_toomuch = mean(crimsent_toomuch)) |> 
+  ggplot(aes(x = cancul1, y = prop_toomuch)) +
+  geom_col() +
+  labs(x = "Beliefs About Cancel Culture",
+       y = "Proportion Believing Individuals\nConvicted of Crimes Spend\nToo Much Time in Prison",
+       title = "Association Between Beliefs\nAbout Formal and Informal Punishment",
+       subtitle = "Pew Research Center's American Trends Panel, 2020-2021",
+       caption = "ML for SOCI 385, Fall 2023") +
+  geom_text(aes(label = round(prop_toomuch, 2), 
+                vjust = -.25),
+            size = 3)
+```
+
+Let's bring in our control variable too.
+
+```{r}
+final |> 
+  group_by(cancul1, ideology) |> 
+  summarise(prop_toomuch = mean(crimsent_toomuch)) |> 
+  ggplot(aes(x = cancul1, y = prop_toomuch)) +
+  geom_col() +
+  labs(x = "Beliefs About Cancel Culture",
+       y = "Proportion Believing Individuals\nConvicted of Crimes Spend\nToo Much Time in Prison",
+       title = "Association Between Beliefs About\nFormal and Informal Punishment",
+       subtitle = "Pew Research Center's American Trends Panel, 2020-2021",
+       caption = "ML for SOCI 385, Fall 2023") +
+  geom_text(aes(label = round(prop_toomuch, 2), 
+                vjust = -.25),
+            size = 3) +
+  facet_grid(.~ideology) +
+  theme(axis.text.x = element_text(angle = 45, vjust = .5),
+        strip.text = element_text(size = 6)) +
+  ylim(c(0,.85)) # stretch out the y axis if labels are cut off
+```
+
+## Inference
+
+Since our dependent variable is categorical, a test of mean differences (like a t test) would not make sense here. The other tests are possible.
+
+
+### Create a binary variable from your dependent variable. Test if the proportions with a 1 for this new binary variable differ significantly at the .05 alpha level between two groups/levels of your control variable.
+
+We already have the binary dependent variable (`crimsent_toomuch`). We'll use the two extremes of our control variable in the test.
+
+```{r}
+proptest_df <- final |> 
+  filter(ideology == "Very Conservative" | 
+           ideology == "Very Liberal") |> 
+  droplevels() # This is new
+```
+
+```{r}
+proptest_table <- table(proptest_df$ideology,
+                        proptest_df$crimsent_toomuch)
+```
+
+Let's look at the responses...
+
+```{r}
+prop.table(proptest_table, 1)
+```
+
+Huge differences here! Three-quarters of respondents identifying as very liberal say that individuals convicted of crimes spend too much time in prison compared to only nine percent of respondents identifying as very conservative.
+
+```{r}
+prop.test(proptest_table)
+```
+
+### Test if your categorical dependent variable and your control variable are dependent.
+
+```{r}
+chisq.test(final$ideology, final$crimsent)
+```
+
+## Regression
+
+For our models, we will want to use the binary dependent variable we created above. 
+
+
+### Regress your dependent variable on your independent variable. Interpret the results in words, describe any coefficients that are significant, and use the coefficients to calculate two predicted values of the outcome.
+
+```{r}
+model1 <- lm(crimsent_toomuch ~ cancul1, data = final)
+summary(model1)
+```
+
+Thirty six percent of respondents who believe that publicly calling out others on social media for posting content that might be considered offensive holds people accountable believe that individuals who are convicted of crimes spend too much time in prison. Approximately twenty percent of respondents who believe that cancel culture punishes people who didn't deserve it believe that convicted criminals spend too much time in prison. The sixteen point gap between these two groups is significant.
+
+### Now add your control variable. Interpret the results, describe any coefficients that are significant, and use the coefficients to calculate the predicted values of the outcome for each level of your control variable.
+
+```{r}
+model2 <- lm(crimsent_toomuch ~ cancul1 + ideology, data = final)
+summary(model2)
+```
+
+Holding political ideology constant, respondents who believe that cancel culture punishes individuals who do not deserve it are only three percentage points less likely to believe individuals convicted of crimes spend too much time in prison. This difference is much smaller than what we saw in the first model but it is still statistically significant.
+
+Net of beliefs about cancel culture, there is no significant difference in the percentages of conservative and very conservative respondents who believe that convicted individuals spend too much time in prison. However, net of beliefs about cancel culture, there is a significant difference of sixty-three points in the percentage of very conservative and very liberal respondents who believe that convicted individuals spend too much time in prison. 
+
+### Now add an interaction between your independent variable and your control variable. Interpret the results and describe any coefficients that are significant.
+
+```{r}
+model3 <- lm(crimsent_toomuch ~ cancul1 * ideology, data = final)
+summary(model3)
+```
+
+The interaction terms are not significant in this model. While political ideology is associated with beliefs about formal punishment and beliefs about informal punishment, the association between beliefs about formal and informal punishment does not vary by political ideology.
+

@@ -22,7 +22,7 @@ library(shinythemes)
 final <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/final_review.csv")
 
 final <- final |> 
-  mutate(accountable = ifelse(cancul1 == "Accountable", 1, 0)) |> 
+  #mutate(accountable = ifelse(cancul1 == "Accountable", 1, 0)) |> 
   mutate(crimsent = factor(crimsent,
                            levels = c("Too little time",
                                       "About the right amount",
@@ -32,7 +32,7 @@ final <- final |>
                                   "Other", "Refused"))) |> 
   drop_na()
 
-#write.csv(final, "data/final_review.csv", row.names = FALSE)
+write.csv(final, "data/final_review.csv", row.names = FALSE)
 
 final |> 
   group_by(crimsent) |> 
