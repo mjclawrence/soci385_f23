@@ -272,7 +272,7 @@ About the right amount        Too little time          Too much time
 <p>The raw output of summary tables and regression output can be messy in rendered files. We have previously seen how to use <code>kable</code> to format some tables. It works well for simple tables but not as well for regression output. Fortunately, there is a different package - <code>huxtable</code> - that works well for . The package is highly customizable; we’ll go over just a few options today. For more details about the package, click <a href="https://cran.r-project.org/web/packages/huxtable/vignettes/huxtable.html">here</a>.</p>
 <p>Install <code>huxtable</code> then load it using <code>library()</code>.</p>
 <p>Summaries of linear regression models have a lot of information and can be messy in rendered files. One option to clean them up is to use the <code>huxreg()</code> function in the <code>huxtable</code> package.</p>
-<p>To see how huxreg compares to the output we are used to, regress <code>crimsent_toomuch</code> on <code>cancul1</code>, save the model as <code>model1</code>, and look at the summary:</p>
+<p>To see how huxreg compares to the output we are used to, regress <code>crimsent_toomuch</code> on <code>cancul1</code>, save the model as <code>model1</code>, and look at the summary.</p>
 <p>Now that you are comfortable interpreting summary outputs, you should continue using the traditional summary outputs to get a sense of your models. But replace <code>summary()</code> with <code>huxreg()</code> when you want to render your file.</p>
 <div class="cell">
 <div class="cell-output-display">

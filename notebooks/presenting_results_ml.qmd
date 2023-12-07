@@ -93,7 +93,7 @@ round(prop.table(table(final$cancul1)),2) |>
 The `pander` package is great for cleaning up output from tests like t.test() and chisq.test(). Install it, remembering to put a hashtag in front of the install line after doing so or else the file won't render.
 
 ```{r}
-#install.packages("pander") # hashtag this line after installing
+install.packages("pander") # hashtag this line after installing
 library(pander)
 ```
 
@@ -125,7 +125,7 @@ Install `huxtable` then load it using `library()`.
 #| warning: false
 #| message: false
 
-#install.packages("huxtable")
+install.packages("huxtable")
 library(huxtable)
 ```
 
