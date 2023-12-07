@@ -17,10 +17,10 @@ This review is based on the "Informal and Formal Punishment" learning guide avai
 ### Summarize dependent variable (`crimsent`), independent variable (`cancul1`), and control variable (choose `race`, `ideology`, `gender`, or `division`).
 
 
-### Create and summarize a new categorical variable based on your dependent variable.
+### Create and summarize a new binary variable based on your dependent variable.
 
 
-### Include and interpret a figure that shows the mean of your dependent variable by each level of your categorical independent variable.
+### Include and interpret a figure that shows the mean of your binary dependent variable by each level of your categorical independent variable.
 
 
 ## Inference

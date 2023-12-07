@@ -1,0 +1,198 @@
+---
+author: "Matt Lawrence"
+title: "Final Review"
+subtitle: "SOCI 385"
+date: "December 7, 2023"
+format: html
+execute:
+  echo: false
+---
+
+## Reviewing the YAML header
+
+Be sure to add your name (in the author field) and a title (in the title field). That's the bare minimum. Adding a subtitle and date would also be nice. 
+
+For your final project, use pdf as the format option.
+
+Note that I have added `execute: echo: false`. This will suppress all the code from appearing in your rendered file. It's an easy way to make publication-ready documents.
+
+## Chunk-Specific Options
+
+Turning off the echo keeps code from rendering but does not keep warnings and messages from appearing. The extra output they create is most commonly associated with loading packages, summarise(), and ggplot(). When you have code chunks using any of those functions, it's a good idea to suppress warnings and/or messages like the chunk below does:
+
+```{r}
+#| message: FALSE
+#| warning: FALSE
+
+library(tidyverse)
+
+final <- read_csv("https://raw.githubusercontent.com/mjclawrence/soci385_f23/main/data/final_review.csv")
+```
+
+The `echo: false` option in the header is a global command. You can change it in individual code chunks using the same syntax that controls messages and warnings. For example, by adding `echo: true` to the code chunk below, the code will render. As a default for your final project, don't render the code (but do submit your qmd file so I can see your code!).
+
+```{r}
+#| echo: true
+
+round(prop.table(table(final$crimsent)),1)
+```
+
+Often when you are working on a project, there will be output that you want to see that the reader of the final project does not need to see. You can suppress that output in the rendered document by adding `output: false` to the code chunk. When this document renders, you won't see the output from the following chunk or the code (since the `echo: false` global command from the header is in operation again).
+
+```{r}
+#| output: false
+
+round(prop.table(table(final$crimsent)),1)
+```
+
+
+Before moving on, the examples below use the `crimsent_toomuch` binary variable. Let's create it.
+
+```{r}
+final <- final |> 
+  mutate(crimsent_toomuch = ifelse(crimsent == "Too much time", 1, 0))
+```
+
+## Use Kable For Most Tables
+
+The `kableExtra` package is a nice way to format most tables. It's a good package to load at the top of a notebook so you can use it later. Recall that you have to laod it before using any of its functions for a document to render correctly.
+
+```{r}
+#| message: FALSE
+#| warning: FALSE
+
+library(kableExtra)
+```
+
+Kable will work with most tables. The simplest syntax adds the `kbl()` function after a pipe, like in this example following a proportion table:
+
+```{r}
+final <- final |> 
+  mutate(crimsent = factor(crimsent,
+                           levels = c("Too little time",
+                                      "About the right amount",
+                                      "Too much time")))
+
+round(prop.table(table(final$cancul1)),2) |> 
+  kbl()
+```
+
+There are a few standard options to improve the kable output:
+
+```{r}
+round(prop.table(table(final$cancul1)),2) |> 
+  kbl(booktabs = TRUE, # booktabs brings in basic formatting
+      col.names = c("Response", "Proportion"), # col.names changes the column names
+      align = rep("c", 1), # to center the columns; the number is the number of columns after the first
+      caption = "Distribution of Responses to Cancel Culture Question") |> # to change the table title 
+  kable_paper() # to make the output easier to read in this notebook
+```
+
+## Pander Formats Other Output
+
+The `pander` package is great for cleaning up output from tests like t.test() and chisq.test(). Install it, remembering to put a hashtag in front of the install line after doing so or else the file won't render.
+
+```{r}
+#install.packages("pander") # hashtag this line after installing
+library(pander)
+```
+
+Example of pander with t.test results:
+
+```{r}
+ttest_table <- t.test(final$weight_w92[final$gender=="Man"],
+                      final$weight_w92[final$gender=="Woman"])
+pander(ttest_table)
+```
+
+Example of pander with chisq.test results:
+
+```{r}
+chisqtest_table <- chisq.test(final$ideology, final$cancul1)
+pander(chisqtest_table)
+```
+
+
+
+
+## Regression Output With Huxtable
+
+The raw output of summary tables and regression output can be messy in rendered files. We have previously seen how to use `kable` to format some tables. It works well for simple tables but not as well for regression output. Fortunately, there is a different package - `huxtable` - that works well for . The package is highly customizable; we'll go over just a few options today. For more details about the package, click [here](https://cran.r-project.org/web/packages/huxtable/vignettes/huxtable.html). 
+
+Install `huxtable` then load it using `library()`.
+
+```{r}
+#| warning: false
+#| message: false
+
+#install.packages("huxtable")
+library(huxtable)
+```
+
+
+Summaries of linear regression models have a lot of information and can be messy in rendered files. One option to clean them up is to use the `huxreg()`  function in the `huxtable` package.
+
+To see how huxreg compares to the output we are used to, regress `crimsent_toomuch` on `cancul1`, save the model as `model1`, and look at the summary.
+
+```{r}
+#| output: false
+
+model1 <- lm(crimsent_toomuch ~ cancul1, data = final)
+summary(model1)
+```
+
+Now that you are comfortable interpreting summary outputs, you should continue using the traditional summary outputs to get a sense of your models. But replace `summary()` with `huxreg()` when you want to render your file. 
+
+```{r}
+huxreg(model1)
+```
+
+\pagebreak
+
+
+
+Here are some options that are good to add to regression tables:
+
+- Change the title with `set_caption()`. Note that all tables titled with this function will be numbered consecutively in the final report.
+- The `huxtable` package has several different themes. The `theme_article()` and `theme_compact()` are the two I use the most. Try `theme_article()` first; it should work well with short tables. If your table is too long for a single page (or single slide), switch to `theme_compact()`.
+- We don't need all the model statistics at the bottom of the table. Let's only keep the number of observations, which we can do with the `statistics = c()` option. The package saves the number of observations as an object called `nobs`; we'll rename it `N. obs.` in the table.
+- We can also rename the coefficient names using the `coefs = c()` option. Each coefficient in the model (including the Intercept) needs to be listed here or else it will be omitted from the table.
+
+
+```{r}
+huxreg(model1,
+       statistics = c("Number of Observations" = "nobs"),
+       coefs = c("(Intercept)" = "(Intercept)",
+                 "Cancel culture = punish" = "cancul1Punish")) |> 
+  set_caption("A Better Title") |> 
+  theme_article()
+```
+
+
+\pagebreak
+
+We can include more than one model in a table too. Let's save a model with a control variable and a model with an interaction.
+
+```{r}
+model2 <- lm(crimsent_toomuch ~ cancul1 + ideology, data = final)
+model3 <- lm(crimsent_toomuch ~ cancul1 * ideology, data = final)
+```
+
+And then include our three models in a huxreg function that also includes several of the changes described above.
+
+```{r}
+huxreg(model1, model2, model3,
+       statistics = c("Number of Observations" = "nobs"),
+       coefs = c("(Intercept)" = "(Intercept)",
+                 "Cancel culture = Punish" = "cancul1Punish",
+                 "Ideology = Liberal" = "ideologyLiberal",
+                 "Ideology = Moderate" = "ideologyModerate",
+                 "Ideology = Very Conservative" = "ideologyVery Conservative",
+                 "Ideology = Very Liberal" = "ideologyVery Liberal",
+                 "Punish X Liberal" = "cancul1Punish:ideologyLiberal",
+                 "Punish X Moderate" = "cancul1Punish:ideologyModerate",
+                 "Punish X Very Conservative" = "cancul1Punish:ideologyVery Conservative",
+                 "Punish X Very Liberal" = "cancul1Punish:ideologyVery Liberal")) |> 
+  set_caption("Individuals Convicted of Crimes Spend Too Much Time in Prison") |> 
+  theme_compact()
+```
